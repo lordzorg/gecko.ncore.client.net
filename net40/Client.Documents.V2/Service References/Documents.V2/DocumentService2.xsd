@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.gecko.no/ephorte/services/documents/v2" elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/documents/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/DocumentService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" />
+  <xs:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/DocumentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/DocumentService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V2" />
+  <xs:element name="BeginCheckin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q1:EphorteIdentity" />
+        <xs:element minOccurs="0" name="documentId" type="xs:int" />
+        <xs:element minOccurs="0" name="version" type="xs:int" />
+        <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginCheckinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="BeginCheckinResult" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteCheckinChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q3:EphorteIdentity" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q4:guid" />
+        <xs:element minOccurs="0" name="contentChunk" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteCheckinChunkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndCheckin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q5:EphorteIdentity" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndCheckinResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelCheckin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q7:EphorteIdentity" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q8:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelCheckinResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginCheckout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q9:EphorteIdentity" />
+        <xs:element minOccurs="0" name="documentId" type="xs:int" />
+        <xs:element minOccurs="0" name="version" type="xs:int" />
+        <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginCheckoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="BeginCheckoutResult" type="q10:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCheckoutChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q11:EphorteIdentity" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q12:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCheckoutChunkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadCheckoutChunkResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndCheckout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q13:EphorteIdentity" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q14:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndCheckoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelCheckout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q15:EphorteIdentity" />
+        <xs:element minOccurs="0" name="journalpostId" type="xs:int" />
+        <xs:element minOccurs="0" name="documentId" type="xs:int" />
+        <xs:element minOccurs="0" name="version" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelCheckoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndDocumentRead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q16:EphorteIdentity" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q17:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndDocumentReadResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginReadDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q18:EphorteIdentity" />
+        <xs:element minOccurs="0" name="documentId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="version" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="journalpostId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="moeteId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="utvalgsbehandlingId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="sakType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dokumentType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginReadDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V2" minOccurs="0" name="BeginReadDocumentResult" nillable="true" type="q19:BeginReadDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDocumentChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q20:EphorteIdentity" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q21:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDocumentChunkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadDocumentChunkResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelReadDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q22:EphorteIdentity" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="contextId" type="q23:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelReadDocumentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

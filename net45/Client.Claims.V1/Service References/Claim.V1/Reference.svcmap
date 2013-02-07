@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5239c0f1-04eb-4365-a0ac-b03a43347644" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/claim/v1/claimservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClaimService.xsd" MetadataType="Schema" ID="a7a6d1ff-1bb5-49d9-85b8-33d482078d30" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ClaimService.wsdl" MetadataType="Wsdl" ID="c8faa1d9-6cff-4cb2-8868-aa021160e745" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?wsdl" />
+    <MetadataFile FileName="ClaimService.disco" MetadataType="Disco" ID="6ccbb62b-73a2-4655-840e-28766ccec51a" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?disco" />
+    <MetadataFile FileName="ClaimService1.xsd" MetadataType="Schema" ID="9001cfdb-8408-43b6-b582-ddc3af3ae86e" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ClaimService2.xsd" MetadataType="Schema" ID="d845f5d3-0923-4e19-84d5-e4ed59809e48" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

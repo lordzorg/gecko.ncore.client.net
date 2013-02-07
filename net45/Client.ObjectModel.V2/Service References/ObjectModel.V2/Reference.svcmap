@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="677fba8b-cd0f-4aef-a131-6092a799a2a5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/objectmodel/v2/ObjectModelService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ObjectModelService.wsdl" MetadataType="Wsdl" ID="4ab3fad9-c4ae-466d-a0b1-02e448e55610" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc?wsdl" />
+    <MetadataFile FileName="ObjectModelService.disco" MetadataType="Disco" ID="4b6f30a4-c567-42ae-b6e3-87e5dd462691" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc?disco" />
+    <MetadataFile FileName="ObjectModelService.xsd" MetadataType="Schema" ID="6eeded81-7e4c-4392-ba85-6ca525daf289" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ObjectModelService1.xsd" MetadataType="Schema" ID="38283889-d352-4f55-a984-fadb439fedd1" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ObjectModelService2.xsd" MetadataType="Schema" ID="20f5a4a5-4f89-4722-a68c-e6916b9e7a42" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

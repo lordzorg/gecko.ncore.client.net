@@ -1,0 +1,649 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ePhorte.ServiceModel.Contracts.ObjectModel.V3</name>
+    </assembly>
+    <members>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorAttribute">
+            <summary>
+            Indicates which field to use as a descriminator to select the appropriate derived class.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorAttribute"/> class.
+            </summary>
+            <param name="descriminatorFieldName">Name of the field.</param>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorAttribute.DescriminatorFieldName">
+            <summary>
+            Gets or sets the name of the field.
+            </summary>
+            <value>The name of the field.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorValueAttribute">
+            <summary>
+            TODO
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorValueAttribute.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorValueAttribute"/> class.
+            </summary>
+            <param name="descrimintatorValue">The descrimintator value.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorValueAttribute.IsMatch(System.Object)">
+            <summary>
+            Determines whether the specified values is match.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            	<c>true</c> if the specified values is match; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DataObjectTypeDescriminatorValueAttribute.DescriminatorValue">
+            <summary>
+            Gets the descriminator value.
+            </summary>
+            <value>The descriminator value.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DefaultFieldMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMapper.AssignValue(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Assigns the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMapper.AssignValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Assigns the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMapper.ExtractValue(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo)">
+            <summary>
+            Extracts the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMapper.ExtractValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo)">
+            <summary>
+            Extracts the value core.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DefaultFieldMapper.AssignValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Assigns the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DefaultFieldMapper.ExtractValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo)">
+            <summary>
+            Extracts the value core.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.DefaultFieldMapper.ConvertValue(System.Object,System.Type)">
+            <summary>
+            Converts the value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="targetType">Type of the target.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMapper.AssignValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Assigns the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMapper.ExtractValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo)">
+            <summary>
+            Extracts the value core.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMapper.ConvertValue(System.Object)">
+            <summary>
+            Converts the value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMappingAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute">
+            <summary>
+            This class is used to mark which field a data contract property maps to.
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute">
+            <summary>
+            This class is used as an abstract base class for attributes used to map data contracts.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute.IsDefined(System.Reflection.MemberInfo)">
+            <summary>
+            Determines whether the specified element is defined.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            	<c>true</c> if the specified element is defined; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute.GetCustomAttribute(System.Reflection.MemberInfo)">
+            <summary>
+            Gets the custom attribute.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute.ConditionalField">
+            <summary>
+            Gets or sets the conditional.
+            </summary>
+            <value>The conditional.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.MappingAttribute.ConditionalValue">
+            <summary>
+            Gets or sets the conditional value.
+            </summary>
+            <value>The conditional value.</value>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="fieldMapperType">Type of the field mapper.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.IsDefined(System.Reflection.MemberInfo)">
+            <summary>
+            Determines whether the specified element is defined.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            	<c>true</c> if the specified element is defined; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.GetCustomAttribute(System.Reflection.MemberInfo)">
+            <summary>
+            Gets the custom attribute.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.ExtractValue(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo)">
+            <summary>
+            Extracts the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.AssignValue(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Assigns the value.
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.FieldMapper">
+            <summary>
+            Gets or sets the type of the field mapper.
+            </summary>
+            <value>The type of the field mapper.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.FieldMappingAttribute.IsPrimaryKey">
+            <summary>
+            Gets or sets a value indicating whether this instance is primary key.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is primary key; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMappingAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMappingAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMappingAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.BooleanFieldMappingAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="fieldMapperType">Type of the field mapper.</param>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ConvertingFieldMapper`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ConvertingFieldMapper`1.AssignValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Assigns the value.  (Converts type if needed)
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ConvertingFieldMapper`1.ExtractValueCore(Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject,System.Reflection.PropertyInfo)">
+            <summary>
+            Extracts the value. (Converts type if needed)
+            </summary>
+            <param name="dataObject">The data object.</param>
+            <param name="propertyInfo">The property info.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject">
+            <summary>
+            Base contract for data objects used by IObjectModelService.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IDataObject.SourceDatabase">
+            <summary>
+            Gets or sets the source database.
+            </summary>
+            <value>The source database.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchArguments`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="TPrimaryKeyCollection">The type of the primary key collection.</typeparam>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchArguments`1.DataObjectName">
+            <summary>
+            Gets or sets the type of the data object.
+            </summary>
+            <value>The type of the data object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchArguments`1.PrimaryKeys">
+            <summary>
+            Gets or sets the primary keys.
+            </summary>
+            <value>The primary keys.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchArguments`1.RelatedObjects">
+            <summary>
+            Gets or sets the include related objects.
+            </summary>
+            <value>The include related objects.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchArguments`1.ReturnAccessRights">
+            <summary>
+            Gets or sets a value indicating whether [fetch access rights].
+            </summary>
+            <value><c>true</c> if [fetch access rights]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchArguments`1.ReturnRequiredFields">
+            <summary>
+            Gets or sets a value indicating whether [fetch access rights].
+            </summary>
+            <value><c>true</c> if [fetch access rights]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchResult`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TDataObject">The type of the data object.</typeparam>
+            <typeparam name="TObjectRights">The type of the object rights.</typeparam>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchResult`2.DataObject">
+            <summary>
+            Gets or sets the data object.
+            </summary>
+            <value>The data object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchResult`2.AccessRights">
+            <summary>
+            Gets or sets the access right.
+            </summary>
+            <value>The access right.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchResult`2.RequiredFields">
+            <summary>
+            Gets or sets the access right.
+            </summary>
+            <value>The access right.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFetchResult`2.ObjectRights">
+            <summary>
+            Gets or sets the access right.
+            </summary>
+            <value>The access right.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.DataObjectName">
+            <summary>
+            Gets or sets the type of the data object.
+            </summary>
+            <value>The type of the data object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.RelatedObjects">
+            <summary>
+            Gets or sets a collection of related objects to return.
+            </summary>
+            <value>The related objects to return.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.FilterExpression">
+            <summary>
+            Gets or sets the expression used to filter the result.
+            </summary>
+            <value>The where expression.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.SortExpression">
+            <summary>
+            Gets or sets the sort expression.
+            </summary>
+            <value>The sort expression.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.TakeCount">
+            <summary>
+            Gets or sets the maximum amount of objects to return in the <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.DataObjects"/>.
+            </summary>
+            <value>The take count.</value>
+            <remarks>
+            Use this property in conjunction with <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.SkipCount"/> and <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.ReturnTotalCount"/> to facilitate paging of large results.
+            </remarks>
+            <seealso cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.SkipCount"/>
+            <seealso cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.ReturnTotalCount"/>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.SkipCount">
+            <summary>
+            Gets or sets the amount of objects to skip  before returning the <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.DataObjects"/>.
+            </summary>
+            <value>The skip count.</value>
+            <remarks>
+            Use this property in conjunction with <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.TakeCount"/> and <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.ReturnTotalCount"/> to facilitate paging of large results.
+            </remarks>
+            <seealso cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.TakeCount"/>
+            <seealso cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.ReturnTotalCount"/>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.ReturnTotalCount">
+            <summary>
+            Gets or sets a value indicating whether to <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.TotalCount"/>.
+            </summary>
+            <value><c>true</c> if asked to return total count; otherwise, <c>false</c>.</value>
+            <remarks>
+            Use this property in conjunction with <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.SkipCount"/> and <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.TakeCount"/> to facilitate paging of large results.
+            </remarks>
+            <seealso cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.SkipCount"/>
+            <seealso cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IFilteredQueryArguments.TakeCount"/>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeArguments`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="TDataObject">The type of the data object.</typeparam>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeArguments`1.DataObject">
+            <summary>
+            Gets or sets the target object.
+            </summary>
+            <value>The target object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeArguments`1.ReturnAccessRights">
+            <summary>
+            Gets or sets a value indicating whether [return access rights].
+            </summary>
+            <value><c>true</c> if [return access rights]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeArguments`1.ReturnRequiredFields">
+            <summary>
+            Gets or sets a value indicating whether [fetch access rights].
+            </summary>
+            <value><c>true</c> if [fetch access rights]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeResult`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TDataObject">The type of the data object.</typeparam>
+            <typeparam name="TObjectRights">The type of the object rights.</typeparam>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeResult`2.DataObject">
+            <summary>
+            Gets or sets the data object.
+            </summary>
+            <value>The data object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeResult`2.AccessRights">
+            <summary>
+            Gets or sets the access rights.
+            </summary>
+            <value>The access rights.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeResult`2.RequiredFields">
+            <summary>
+            Gets or sets the access rights.
+            </summary>
+            <value>The access rights.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IInitializeResult`2.ObjectRights">
+            <summary>
+            Gets or sets the access rights.
+            </summary>
+            <value>The access rights.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IObjectRights">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IObjectRights.KanSlette">
+            <summary>
+            KanSlette
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IObjectRights.KanEndre">
+            <summary>
+            KanEndre
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IObjectRights.KanOpprette">
+            <summary>
+            KanOpprette
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IObjectRights.Sperret">
+            <summary>
+            Sperret
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.PredefinedSearchId">
+            <summary>
+            Gets or sets the predefined search id.
+            </summary>
+            <value>The predefined search id.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.DataObjectName">
+            <summary>
+            Gets or sets the name of the data object.
+            </summary>
+            <value>The name of the data object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.RelatedObjects">
+            <summary>
+            Gets or sets a collection of related objects to return.
+            </summary>
+            <value>The related objects to return.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.SortExpression">
+            <summary>
+            Gets or sets the sort expression.
+            </summary>
+            <value>The sort expression.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.TakeCount">
+            <summary>
+            Gets or sets the maximum amount of objects to return in the <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.DataObjects"/>.
+            </summary>
+            <value>The take count.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.SkipCount">
+            <summary>
+            Gets or sets the amount of objects to skip  before returning the <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.DataObjects"/>.
+            </summary>
+            <value>The skip count.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IPredefinedQueryArguments.ReturnTotalCount">
+            <summary>
+            Gets or sets a value indicating whether to calculate <see cref="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.TotalCount"/>.
+            </summary>
+            <value><c>true</c> if asked to return total count; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1">
+            <summary>
+            Contains the result of a query.
+            </summary>
+            <typeparam name="TDataObject">The type of the data object.</typeparam>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.DataObjects">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>The result.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.IQueryResult`1.TotalCount">
+            <summary>
+            Gets or sets the total count.
+            </summary>
+            <value>The total count.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ObjectMappingAttribute">
+            <summary>
+            This class is used to mark which object data contracts map to.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ObjectMappingAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ObjectMappingAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ObjectMappingAttribute.IsDefined(System.Reflection.MemberInfo)">
+            <summary>
+            Determines whether the specified element is defined.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            	<c>true</c> if the specified element is defined; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ObjectMappingAttribute.GetCustomAttribute(System.Reflection.MemberInfo)">
+            <summary>
+            Gets the custom attribute.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute">
+            <summary>
+            This attribute is used to mark a reference mapping to a related object.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute.IsDefined(System.Reflection.MemberInfo)">
+            <summary>
+            Determines whether the specified element is defined.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            	<c>true</c> if the specified element is defined; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute.GetCustomAttribute(System.Reflection.MemberInfo)">
+            <summary>
+            Gets the custom attribute.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute.ReferenceName">
+            <summary>
+            Gets or sets the name of the reference.
+            </summary>
+            <value>The name of the reference.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute.Where">
+            <summary>
+            Gets or sets the where.
+            </summary>
+            <value>The where.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.ReferenceMappingAttribute.UseJoinedQuery">
+            <summary>
+            Gets or sets a value indicating whether [allow join].
+            </summary>
+            <value><c>true</c> if [allow join]; otherwise, <c>false</c>.</value>
+        </member>
+    </members>
+</doc>

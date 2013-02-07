@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChangeTrackingIsOnlySupportedForINotifyPropertyChanged" xml:space="preserve">
+    <value>The data object must inherit INotifyPropertyChanged in order to support change tracking.</value>
+  </data>
+  <data name="EphorteContext_Current_InvalidOperation" xml:space="preserve">
+    <value>This operation is only supported within the scope of a valid EphorteContext instance.</value>
+  </data>
+  <data name="EphorteContext_Query_DataObjectName_ArgumentOutOfRange" xml:space="preserve">
+    <value>The data object name must be defined as a data object in the configured object model service.</value>
+  </data>
+  <data name="MemberNotFound" xml:space="preserve">
+    <value>The member "{0}" does not exist on the type "{1}".</value>
+  </data>
+  <data name="ObjectModelAdapterFactory_Create_ObjectModelServiceVersion_NotSupported" xml:space="preserve">
+    <value>The value "{0}" specified in ServiceModelContextConfiguration.ObjectModelServiceVersion is not support.</value>
+  </data>
+  <data name="PropertyCanOnlyBeAccessedInTheScopeOfEphorteContext" xml:space="preserve">
+    <value>This property can only be accessed in the scope of an EphorteContext.</value>
+  </data>
+  <data name="EphorteContext_Query_The_type_cannot_be_found" xml:space="preserve">
+    <value>The type cannot be found.</value>
+  </data>
+  <data name="DataObjectQueryProvider_ExecuteCore_A_stored_query_cannot_contain_additional_predicates">
+    <value xml:space="preserve">A stored query cannot contain additional predicates.</value>
+  </data>
+  <data name="FunctionManagerExtensions_The_case_must_have_a_valid_Id">
+    <value xml:space="preserve">The case must have a valid Id.</value>
+  </data>
+  <data name="FunctionManagerExtensions_ApproveRegistryEntry_The_registry_entry_must_have_a_valid_CaseId">
+    <value xml:space="preserve">The registry entry must have a valid CaseId.</value>
+  </data>
+  <data name="FunctionManagerExtensions_ApproveRegistryEntry_The_registry_entry_must_have_a_valid_Id">
+    <value xml:space="preserve">The registry entry must have a valid Id.</value>
+  </data>
+  <data name="FunctionManagerExtensions_The_recipient_must_have_a_valid_Id">
+    <value xml:space="preserve">The recipient must have a valid Id.</value>
+  </data>
+  <data name="FunctionManagerExtensions_The_recipient_must_have_a_valid_RegistryEntryId">
+    <value xml:space="preserve">The recipient must have a valid RegistryEntryId.</value>
+  </data>
+  <data name="FunctionManagerExtensions_The_sender_recipient_must_have_a_valid_Id">
+    <value xml:space="preserve">The sender/recipient must have a valid Id.</value>
+  </data>
+  <data name="FunctionManagerExtensions_The_task_must_have_a_valid_Id">
+    <value xml:space="preserve">The task must have a valid Id.</value>
+  </data>
+  <data
+name="QueryContext_Properties_on_QueryContext_Current_are_only_supported_in_a_Linq_query_based_on_IEphorteContext">
+    <value xml:space="preserve">Properties on QueryContext.Current are only supported in a Linq query based on IEphorteContext.</value>
+  </data>
+  <data name="The_collection_is_read_only">
+    <value xml:space="preserve">The collection is read-only.</value>
+  </data>
+  <data name="PredicateVisitor_VisitBinary_Binary_conditions_with_two_constants_as_operands_are_not_supported">
+    <value xml:space="preserve">Binary conditions with two constants as operands are not supported.</value>
+  </data>
+  <data name="VisitMethodCall_The_method_call_0_on_type_1_is_not_supported">
+    <value xml:space="preserve">The method call '{0}' on type '{1}' is not supported.</value>
+  </data>
+  <data name="KeySelectorVisitor_VisitBinary_Expressions_of_type_0_are_not_supported_in_primary_key_predicates">
+    <value xml:space="preserve">Expressions of type '{0}' are not supported in primary key predicates.</value>
+  </data>
+  <data name="KeySelectorVisitor_VisitBinary_The_right_operand_of_a_binary_expression_must_be_a_constant">
+    <value xml:space="preserve">The right operand of a binary expression must be a constant.</value>
+  </data>
+  <data name="QueryContextVisitor_VisitMember_The_member_0_on_type_1_is_not_supported">
+    <value xml:space="preserve">The member '{0}' on type '{1}' is not supported.</value>
+  </data>
+  <data name="QueryContextVisitor_VisitMethodCall_The_method_0_on_1_is_not_supported">
+    <value xml:space="preserve">The method '{0}' on '{1}' is not supported.</value>
+  </data>
+</root>

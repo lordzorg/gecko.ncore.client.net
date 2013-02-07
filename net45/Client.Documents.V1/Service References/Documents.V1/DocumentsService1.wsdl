@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://www.gecko.no/ephorte/services/documents/v1" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DocumentsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_DocumentsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.gecko.no/ephorte/services/documents/v1" location="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_DocumentsService" type="i0:DocumentsService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_DocumentsService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Checkin">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/Checkin" style="document" />
+      <wsdl:input name="CheckinMessage">
+        <soap:header message="i0:CheckinMessage_Headers" part="DocumentCriteria" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheckout">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/CancelCheckout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentContent">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentContentByDokBeskrivId">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByDokBeskrivId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentContentByJournalPostId">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByJournalPostId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentContentByMoId">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByMoId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentContentByUbId">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByUbId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentFileName">
+      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DocumentsService">
+    <wsdl:port name="BasicHttpBinding_DocumentsService" binding="tns:BasicHttpBinding_DocumentsService">
+      <soap:address location="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

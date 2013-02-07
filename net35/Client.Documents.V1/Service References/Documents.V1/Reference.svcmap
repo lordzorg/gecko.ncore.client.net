@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af3a8da2-e65f-4b2a-a952-8bdfa6c6fdb6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DocumentsService.wsdl" MetadataType="Wsdl" ID="b60c4e0a-3aa5-4268-bebc-121e77960b15" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?wsdl" />
+    <MetadataFile FileName="DocumentsService.xsd" MetadataType="Schema" ID="2c54e1fd-1c1e-47d3-a99e-a622392acfba" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DocumentsService1.xsd" MetadataType="Schema" ID="4bf0d0ce-f7af-45cf-b71f-5be0a2a65a3a" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DocumentsService.disco" MetadataType="Disco" ID="d35e9707-181a-4d46-ab85-5fbc415ffa9e" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?disco" />
+    <MetadataFile FileName="DocumentsService1.wsdl" MetadataType="Wsdl" ID="b9467031-af7f-4b4f-b746-578db16b9d1f" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DocumentsService2.xsd" MetadataType="Schema" ID="cf0df174-4596-45ae-b573-fb084dbdee7f" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DocumentsService3.xsd" MetadataType="Schema" ID="3510fdd1-66c9-4f45-883a-c47977860f25" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DocumentsService4.xsd" MetadataType="Schema" ID="7d2d40fa-5c42-44d0-ad16-2d9135d4bb37" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

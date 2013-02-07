@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{020F6272-4B1F-4024-8946-57831579C2DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gecko.NCore.Client</RootNamespace>
+    <AssemblyName>Gecko.NCore.Client.ObjectModel.V3.En</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\gecko.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\AdministrativeUnit.cs">
+      <Link>ObjectModel\V3\En\AdministrativeUnit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\Case.cs">
+      <Link>ObjectModel\V3\En\Case.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\CustomFieldDescriptor.cs">
+      <Link>ObjectModel\V3\En\CustomFieldDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\DataObjectAccess.cs">
+      <Link>ObjectModel\V3\En\DataObjectAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\DocumentDescription.cs">
+      <Link>ObjectModel\V3\En\DocumentDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\DocumentManagerExtensions.cs">
+      <Link>ObjectModel\V3\En\DocumentManagerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\DocumentObject.cs">
+      <Link>ObjectModel\V3\En\DocumentObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\EphorteIdentity.cs">
+      <Link>ObjectModel\V3\En\EphorteIdentity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\FunctionManagerExtensions.cs">
+      <Link>ObjectModel\V3\En\FunctionManagerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\GeographicalObject.cs">
+      <Link>ObjectModel\V3\En\GeographicalObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\ObjectModelAdapterV3En.cs">
+      <Link>ObjectModel\V3\En\ObjectModelAdapterV3En.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\RegistryEntry.cs">
+      <Link>ObjectModel\V3\En\RegistryEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\RegistryEntryDocument.cs">
+      <Link>ObjectModel\V3\En\RegistryEntryDocument.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\SenderRecipient.cs">
+      <Link>ObjectModel\V3\En\SenderRecipient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\User.cs">
+      <Link>ObjectModel\V3\En\User.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\UserName.cs">
+      <Link>ObjectModel\V3\En\UserName.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Service References\ObjectModel.V3.En\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\gecko.snk">
+      <Link>gecko.snk</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="Gecko.NCore.Client.ObjectModel.V3.En.nuspec" />
+    <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.ChangeSetResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.CustomFieldDescriptor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.DataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.FetchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.InitializeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.wsdl" />
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ObjectModel.V3.En\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
+      <Project>{4593dfac-31c1-4b65-9aaf-5abab4345d43}</Project>
+      <Name>Gecko.NCore.Client %28NET 4.0\Gecko.NCore.Client%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

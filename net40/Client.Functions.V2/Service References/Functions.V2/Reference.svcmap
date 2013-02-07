@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ba54206a-6669-4ffd-b3a6-c17a354738db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FunctionsService.xsd" MetadataType="Schema" ID="0de75956-1db1-4564-a65b-62d51e38e772" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FunctionsService1.xsd" MetadataType="Schema" ID="7f796bda-77b2-4ae8-994b-800d7d45d692" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FunctionsService.wsdl" MetadataType="Wsdl" ID="94201722-b705-423e-a0c7-8510fd6204e7" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?wsdl" />
+    <MetadataFile FileName="FunctionsService2.xsd" MetadataType="Schema" ID="c55150b2-823e-476b-994c-51ae0ded1fdc" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FunctionsService3.xsd" MetadataType="Schema" ID="7ec8f0d6-98ef-49d1-917c-22a60da13822" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FunctionsService.disco" MetadataType="Disco" ID="f825c2ad-cc9c-4f0b-aef8-061f5f44baa5" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

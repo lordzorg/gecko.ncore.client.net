@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/objectmodel/v3/no" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ObjectModelService" targetNamespace="http://www.gecko.no/ephorte/services/objectmodel/v3/no" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ObjectModelService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/objectmodel/v3/no/Imports">
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/no" />
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd3" namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/no/dataobjects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ObjectModelService_FilteredQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:FilteredQuery" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_FilteredQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FilteredQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_PredefinedQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:PredefinedQuery" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_PredefinedQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PredefinedQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Fetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fetch" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Fetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_DeleteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteById" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_DeleteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Initialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Initialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_GetCustomFieldDescriptors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomFieldDescriptors" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_GetCustomFieldDescriptors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomFieldDescriptorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Submit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Submit" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_Submit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ObjectModelService">
+    <wsdl:operation name="FilteredQuery">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/FilteredQuery" message="tns:ObjectModelService_FilteredQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/FilteredQueryResponse" message="tns:ObjectModelService_FilteredQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PredefinedQuery">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/PredefinedQuery" message="tns:ObjectModelService_PredefinedQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/PredefinedQueryResponse" message="tns:ObjectModelService_PredefinedQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetch">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Fetch" message="tns:ObjectModelService_Fetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/FetchResponse" message="tns:ObjectModelService_Fetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Update" message="tns:ObjectModelService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/UpdateResponse" message="tns:ObjectModelService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Insert" message="tns:ObjectModelService_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/InsertResponse" message="tns:ObjectModelService_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Delete" message="tns:ObjectModelService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/DeleteResponse" message="tns:ObjectModelService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteById">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/DeleteById" message="tns:ObjectModelService_DeleteById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/DeleteByIdResponse" message="tns:ObjectModelService_DeleteById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Initialize" message="tns:ObjectModelService_Initialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/InitializeResponse" message="tns:ObjectModelService_Initialize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomFieldDescriptors">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/GetCustomFieldDescriptors" message="tns:ObjectModelService_GetCustomFieldDescriptors_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/GetCustomFieldDescriptorsResponse" message="tns:ObjectModelService_GetCustomFieldDescriptors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Submit">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Submit" message="tns:ObjectModelService_Submit_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/SubmitResponse" message="tns:ObjectModelService_Submit_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ObjectModelService" type="tns:ObjectModelService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ObjectModelService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FilteredQuery">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/FilteredQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PredefinedQuery">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/PredefinedQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetch">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Fetch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteById">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/DeleteById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Initialize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomFieldDescriptors">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/GetCustomFieldDescriptors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Submit">
+      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/objectmodel/v3/no/ObjectModelService/Submit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ObjectModelService">
+    <wsdl:port name="WSHttpBinding_ObjectModelService" binding="tns:WSHttpBinding_ObjectModelService">
+      <soap12:address location="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4593DFAC-31C1-4B65-9AAF-5ABAB4345D43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gecko.NCore.Client</RootNamespace>
+    <AssemblyName>Gecko.NCore.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NET35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Gecko.NCore.Client.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\gecko.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ClientSettings.cs">
+      <Link>ClientSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ClientSettingsExtensions.cs">
+      <Link>ClientSettingsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\CookieManagement\CookieBehavior.cs">
+      <Link>CookieManagement\CookieBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\CookieManagement\CookieMessageInspector.cs">
+      <Link>CookieManagement\CookieMessageInspector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Documents\DocumentManager.cs">
+      <Link>Documents\DocumentManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Documents\IDocumentManager.cs">
+      <Link>Documents\IDocumentManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Documents\IDocumentsAdapter.cs">
+      <Link>Documents\IDocumentsAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\EphorteContext.cs">
+      <Link>EphorteContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\EphorteContextExtensions.cs">
+      <Link>EphorteContextExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\EphorteContextIdentity.cs">
+      <Link>EphorteContextIdentity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\EphorteContextSettings.cs">
+      <Link>EphorteContextSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Functions\FunctionDescriptor.cs">
+      <Link>Functions\FunctionDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Functions\FunctionManager.cs">
+      <Link>Functions\FunctionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Functions\IFunctionManager.cs">
+      <Link>Functions\IFunctionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Functions\IFunctionsAdapter.cs">
+      <Link>Functions\IFunctionsAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\IEphorteContext.cs">
+      <Link>IEphorteContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Metadata\IMetadataAdapter.cs">
+      <Link>Metadata\IMetadataAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Metadata\IMetadataManager.cs">
+      <Link>Metadata\IMetadataManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Metadata\MetadataManager.cs">
+      <Link>Metadata\MetadataManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\DataObjectAccessBase.cs">
+      <Link>ObjectModel\DataObjectAccessBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\DataObjectCollection.cs">
+      <Link>ObjectModel\DataObjectCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\ICustomFieldDescriptor.cs">
+      <Link>ObjectModel\ICustomFieldDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\IDataObjectAccess.cs">
+      <Link>ObjectModel\IDataObjectAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\IDataObjectCollection.cs">
+      <Link>ObjectModel\IDataObjectCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\IObjectModelAdapter.cs">
+      <Link>ObjectModel\IObjectModelAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\ObjectModelAdapterBase.cs">
+      <Link>ObjectModel\ObjectModelAdapterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\TypedDataObjectAccess.cs">
+      <Link>ObjectModel\TypedDataObjectAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ObjectModel\TypedDataObjectCollection.cs">
+      <Link>ObjectModel\TypedDataObjectCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\DataObjectQuery.cs">
+      <Link>Querying\DataObjectQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\DataObjectQueryProvider.cs">
+      <Link>Querying\DataObjectQueryProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\DirectPredicate.cs">
+      <Link>Querying\DirectPredicate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\DynamicExpressions.cs">
+      <Link>Querying\DynamicExpressions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\ExpressionEvaluator.cs">
+      <Link>Querying\ExpressionEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\ExpressionVisitor.cs">
+      <Link>Querying\ExpressionVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\LoadOption.cs">
+      <Link>Querying\LoadOption.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\MemberEvaluator.cs">
+      <Link>Querying\MemberEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\PredicateDenormalizer.cs">
+      <Link>Querying\PredicateDenormalizer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\PredicateOperandAligner.cs">
+      <Link>Querying\PredicateOperandAligner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\PredicateTranslator.cs">
+      <Link>Querying\PredicateTranslator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\PrimaryKeyEvaluator.cs">
+      <Link>Querying\PrimaryKeyEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\QueryableExtensions.cs">
+      <Link>Querying\QueryableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\QueryContext.cs">
+      <Link>Querying\QueryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\QueryContextEvaluator.cs">
+      <Link>Querying\QueryContextEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\QueryTranslator.cs">
+      <Link>Querying\QueryTranslator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\SelectVisitor.cs">
+      <Link>Querying\SelectVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\TypeSystem.cs">
+      <Link>Querying\TypeSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\SavedChangesEventArgs.cs">
+      <Link>SavedChangesEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\SavingChangesEventArgs.cs">
+      <Link>SavingChangesEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\ServiceAdapterBase.cs">
+      <Link>ServiceAdapterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\StateTracking\DataObjectState.cs">
+      <Link>StateTracking\DataObjectState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\StateTracking\IStateManager.cs">
+      <Link>StateTracking\IStateManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\StateTracking\StateEntry.cs">
+      <Link>StateTracking\StateEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\StateTracking\StateManager.cs">
+      <Link>StateTracking\StateManager.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\gecko.snk">
+      <Link>gecko.snk</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="Gecko.NCore.Client.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

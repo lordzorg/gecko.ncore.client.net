@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.gecko.no/ephorte/services/documents/v3" elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/documents/v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
+  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="UploadMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/Message" name="Content" type="q1:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EphorteIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+  <xs:element name="FileName" nillable="true" type="xs:string" />
+  <xs:element name="StorageIdentifier" nillable="true" type="xs:string" />
+  <xs:element name="UploadReturnMessage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Identifier" nillable="true" type="xs:string" />
+  <xs:element name="CheckinMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/Message" name="Content" type="q2:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DocumentCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      <xs:element minOccurs="0" name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+      <xs:element minOccurs="0" name="Variant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentCriteria" nillable="true" type="tns:DocumentCriteria" />
+  <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" name="Guid" type="q3:guid" />
+  <xs:element name="Path" nillable="true" type="xs:string" />
+  <xs:element name="CancelCheckoutRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommitteeHandlingDocumentId" type="xs:int" />
+  <xs:element name="DocumentId" type="xs:int" />
+  <xs:element name="Identity" nillable="true" type="tns:EphorteIdentity" />
+  <xs:element name="JournalpostId" type="xs:int" />
+  <xs:element name="MeetingDocumentId" type="xs:int" />
+  <xs:element name="Variant" nillable="true" type="xs:string" />
+  <xs:element name="Version" type="xs:int" />
+  <xs:element name="CheckoutRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/Message" name="Content" type="q4:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentContentMessage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentReturnMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/Message" name="Content" type="q5:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJournalpostDocumentContentMessage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMoeteDocumentContentMessage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentType" nillable="true" type="xs:string" />
+  <xs:element name="MoId" type="xs:int" />
+  <xs:element name="GetUtvalgDocumentContentMessage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SakType" nillable="true" type="xs:string" />
+  <xs:element name="UbId" type="xs:int" />
+</xs:schema>

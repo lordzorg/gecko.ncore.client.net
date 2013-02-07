@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.WSHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;WSHttpBinding_DynamicObjectModel&quot;&gt;&lt;security mode=&quot;None&quot; /&gt;&lt;/Data&gt;" bindingType="wsHttpBinding" name="WSHttpBinding_DynamicObjectModel" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc&quot; binding=&quot;wsHttpBinding&quot; bindingConfiguration=&quot;WSHttpBinding_DynamicObjectModel&quot; contract=&quot;DynamicObjectModel.V1.DynamicObjectModel&quot; name=&quot;WSHttpBinding_DynamicObjectModel&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc&quot; binding=&quot;wsHttpBinding&quot; bindingConfiguration=&quot;WSHttpBinding_DynamicObjectModel&quot; contract=&quot;DynamicObjectModel.V1.DynamicObjectModel&quot; name=&quot;WSHttpBinding_DynamicObjectModel&quot; /&gt;" contractName="DynamicObjectModel.V1.DynamicObjectModel" name="WSHttpBinding_DynamicObjectModel" />
+  </endpoints>
+</configurationSnapshot>

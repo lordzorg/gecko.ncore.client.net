@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1" elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ExecuteTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+        <xs:element minOccurs="0" name="tasks" nillable="true" type="tns:ArrayOfTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EphorteIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="QueryCountTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Task">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryCountTask" nillable="true" type="tns:QueryCountTask" />
+  <xs:complexType name="QueryTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Task">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OutputFields" nillable="true" type="q1:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryTask" nillable="true" type="tns:QueryTask" />
+  <xs:complexType name="DeleteTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Task">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteTask" nillable="true" type="tns:DeleteTask" />
+  <xs:complexType name="UpdateTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Task">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:DataObjectInput" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateTask" nillable="true" type="tns:UpdateTask" />
+  <xs:complexType name="DataObjectInput">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Field">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FieldName" nillable="true" type="xs:string" />
+            <xs:element name="FieldValue" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataObjectInput" nillable="true" type="tns:DataObjectInput" />
+  <xs:element name="ExecuteTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecuteTaskResult" nillable="true" type="tns:ArrayOfTaskResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfTaskResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskResult" nillable="true" type="tns:TaskResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskResult" nillable="true" type="tns:ArrayOfTaskResult" />
+  <xs:complexType name="TaskResult">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="TaskResult" nillable="true" type="tns:TaskResult" />
+  <xs:complexType name="DeleteTaskResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteTaskResult" nillable="true" type="tns:DeleteTaskResult" />
+  <xs:complexType name="QueryCountTaskResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryCountTaskResult" nillable="true" type="tns:QueryCountTaskResult" />
+  <xs:complexType name="QueryTaskResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResultSet" nillable="true" type="tns:ArrayOfDataObjectOutput" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryTaskResult" nillable="true" type="tns:QueryTaskResult" />
+  <xs:complexType name="ArrayOfDataObjectOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataObjectOutput" nillable="true" type="tns:DataObjectOutput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataObjectOutput" nillable="true" type="tns:ArrayOfDataObjectOutput" />
+  <xs:complexType name="DataObjectOutput">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Field">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FieldName" nillable="true" type="xs:string" />
+            <xs:element name="FieldValue" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataObjectOutput" nillable="true" type="tns:DataObjectOutput" />
+  <xs:complexType name="UpdateTaskResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateTaskResult" nillable="true" type="tns:UpdateTaskResult" />
+</xs:schema>

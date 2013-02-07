@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ephorte.ServiceModel.Contracts.ePhorteWebInternal</name>
+    </assembly>
+    <members>
+        <member name="T:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf">
+            <summary>
+            Wrapper for EphColumn
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.OldValue">
+            <summary>
+            Gets or sets the old value.
+            </summary>
+            <value>
+            The old value.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.Required">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf"/> is required.
+            </summary>
+            <value>
+              <c>true</c> if required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.ReadOnly">
+            <summary>
+            Gets or sets a value indicating whether [read only].
+            </summary>
+            <value>
+              <c>true</c> if [read only]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.DataType">
+            <summary>
+            Gets or sets the type of the data.
+            </summary>
+            <value>
+            The type of the data.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.Format">
+            <summary>
+            Gets or sets the format.
+            </summary>
+            <value>
+            The format.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.IsBoolean">
+            <summary>
+            Gets or sets a value indicating whether this instance is boolean.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is boolean; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.DependOn">
+            <summary>
+            Gets or sets the depend on.
+            </summary>
+            <value>
+            The depend on.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.SqlWhere">
+            <summary>
+            Gets or sets the SQL where.
+            </summary>
+            <value>
+            The SQL where.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.SqlSelect">
+            <summary>
+            Gets or sets the SQL select.
+            </summary>
+            <value>
+            The SQL select.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.ValueListID">
+            <summary>
+            Gets or sets the value list ID.
+            </summary>
+            <value>
+            The value list ID.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.RelColumnID">
+            <summary>
+            Gets or sets the rel column ID.
+            </summary>
+            <value>
+            The rel column ID.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf.IsCustomField">
+            <summary>
+            Gets or sets a value indicating whether this instance is custom field.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is custom field; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity">
+            <summary>
+            Defines the identity of the user executing the request.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.Equals(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+            	<c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            The <paramref name="obj"/> parameter is null.
+            </exception>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.CompareTo(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Compares the current object with another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has the following meanings:
+            Value
+            Meaning
+            Less than zero
+            This object is less than the <paramref name="other"/> parameter.
+            Zero
+            This object is equal to <paramref name="other"/>.
+            Greater than zero
+            This object is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.UserName">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.Role">
+            <summary>
+            Gets or sets the role.
+            </summary>
+            <value>The role.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.Database">
+            <summary>
+            Gets or sets the database.
+            </summary>
+            <value>The database.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity.ExternalSystemName">
+            <summary>
+            Gets or sets the name of the external system.
+            </summary>
+            <value>The name of the external system.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphPermissionWcf">
+            <summary>
+            Contains permissions
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphPermissionWcf.Delete">
+            <summary>
+            Gets or sets a value indicating whether allow user to delete.
+            </summary>
+            <value>
+              <c>true</c> if delete; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphPermissionWcf.Edit">
+            <summary>
+            Gets or sets a value indicating whether allow user to edit.
+            </summary>
+            <value>
+              <c>true</c> if edit; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphPermissionWcf.Protected">
+            <summary>
+            Gets or sets a value indicating whether data is protected.
+            </summary>
+            <value>
+              <c>true</c> if protected; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphPermissionWcf.Addnew">
+            <summary>
+            Gets or sets a value indicating whether allow user to add new.
+            </summary>
+            <value>
+              <c>true</c> if addnew; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.Seek(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Gets the data set.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="criteriaCollection">The criteria collection.</param>
+            <param name="returnRowCount">if set to <c>true</c> [return row count].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.PredefinedSeek(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Seeks the specified predefined search id.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="predefinedSearchId">The predefined search id.</param>
+            <param name="fieldList">The field list.</param>
+            <param name="returnRowCount">if set to <c>true</c> [return row count].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.GetEphColumns(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.String,System.Boolean)">
+            <summary>
+            Ephes the object get data.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="criteriaCollectionString">The criteria collection string.</param>
+            <param name="addNewRecord">if set to <c>true</c> [add new record].</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.GetEphPermission(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.String,System.Boolean)">
+            <summary>
+            Gets the eph permission.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="criteriaCollectionString">The criteria collection string.</param>
+            <param name="addNewRecord">if set to <c>true</c> [add new record].</param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.GetLegalValues(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.Collections.Generic.IEnumerable{Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf})">
+            <summary>
+             Gets legal values for a EphColumn
+            </summary>
+            <param name="identity"></param>
+            <param name="legalValuesParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.UpdateEphObject(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.String,System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{System.String,Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphColumnWcf},System.String)">
+            <summary>
+            Updates the eph object.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="criteriaCollectionString">The criteria collection string.</param>
+            <param name="refreshRecord">if set to <c>true</c> [refresh record].</param>
+            <param name="addNewRecord"></param>
+            <param name="data"></param>
+            <param name="lastRunSearch"></param>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.IEphorteWebInternalService.DeleteEphObject(Ephorte.ServiceModel.Contracts.ePhorteWebInternal.EphorteIdentity,System.String)">
+            <summary>
+            Deletes the eph object.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="criteriaCollectionString">The criteria collection string.</param>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf">
+            <summary>
+             Object used to get multiple LegalValues
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.ColumnName">
+            <summary>
+             Gets or sets the old ColumnName.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.DependOnValue">
+            <summary>
+             Gets or sets the old DependOnValue.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.CustColumnId">
+            <summary>
+             Gets or sets the old CustColumnId.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.DependOn">
+            <summary>
+            Gets or sets the depend on.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.SqlWhere">
+            <summary>
+            Gets or sets the SQL where.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.SqlSelect">
+            <summary>
+            Gets or sets the SQL select.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.ValueListID">
+            <summary>
+            Gets or sets the value list ID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.RelColumnID">
+            <summary>
+            Gets or sets the rel column ID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ePhorteWebInternal.LegalValuesParametersWcf.IsCustomField">
+            <summary>
+            Gets or sets a value indicating whether this instance is custom field.
+            </summary>
+        </member>
+    </members>
+</doc>

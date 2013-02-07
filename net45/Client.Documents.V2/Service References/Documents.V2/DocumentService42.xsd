@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V2" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="BeginReadDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentLength" type="xs:int" />
+      <xs:element minOccurs="0" name="ContextId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeginReadDocumentResponse" nillable="true" type="tns:BeginReadDocumentResponse" />
+</xs:schema>

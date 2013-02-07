@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gecko.NCore.Client.Tests</RootNamespace>
+    <AssemblyName>Gecko.NCore.Client.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Assemblies\Tests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Assemblies\Tests\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\gecko.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BasicLinqTests.cs" />
+    <Compile Include="EphorteContextIdentityTests.cs" />
+    <Compile Include="FakeEphorteContext.cs" />
+    <Compile Include="Querying\DummyA.cs" />
+    <Compile Include="Querying\DummyB.cs" />
+    <Compile Include="Querying\FakeDataObjectCollection.cs" />
+    <Compile Include="Querying\MemberEvaluatorTests.cs" />
+    <Compile Include="Querying\PredicateDenormalizerTests.cs" />
+    <Compile Include="Querying\PredicateTranslatorTests.cs" />
+    <Compile Include="Querying\QueryTranslatorTests.cs" />
+    <Compile Include="Querying\SelectVisitorTests.cs" />
+    <Compile Include="StateTracking\StateManagerTests.cs" />
+    <Compile Include="StateTracking\TrackableObject.cs" />
+    <Compile Include="SubmitTestsEn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client.ObjectModel.V2\Gecko.NCore.Client.ObjectModel.V2.csproj">
+      <Project>{371C666E-D2E2-4276-98F3-FBD813A7009C}</Project>
+      <Name>Gecko.NCore.Client.ObjectModel.V2 %28NET 4.5\Gecko.NCore.Client.ObjectModel.V2%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.Documents.V3\Gecko.NCore.Client.Documents.V3.csproj">
+      <Project>{8FAB91AB-77EA-4450-ABEA-35947EDDF3ED}</Project>
+      <Name>Gecko.NCore.Client.Documents.V3 %28NET 4.5\Gecko.NCore.Client.Documents.V3%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.Functions.V1\Gecko.NCore.Client.Functions.V1.csproj">
+      <Project>{D9D8A830-2EC8-40D9-A70C-3E7F350F6324}</Project>
+      <Name>Gecko.NCore.Client.Functions.V1 %28NET 4.5\Gecko.NCore.Client.Functions.V1%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.csproj">
+      <Project>{C051E08E-57D0-4CF4-A082-7BBE9B0963DF}</Project>
+      <Name>Gecko.NCore.Client.ObjectModel.V3.En %28NET 4.5\Gecko.NCore.Client.ObjectModel.V3.En%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client.ObjectModel.V3.No\Gecko.NCore.Client.ObjectModel.V3.No.csproj">
+      <Project>{D6500AB8-AD06-4C74-9C52-1DCF479C0D2D}</Project>
+      <Name>Gecko.NCore.Client.ObjectModel.V3.No %28NET 4.5\Gecko.NCore.Client.ObjectModel.V3.No%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
+      <Project>{59753DD8-9506-4044-A513-CAD06ADD3673}</Project>
+      <Name>Gecko.NCore.Client %28NET 4.5\Gecko.NCore.Client%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\gecko.snk">
+      <Link>gecko.snk</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

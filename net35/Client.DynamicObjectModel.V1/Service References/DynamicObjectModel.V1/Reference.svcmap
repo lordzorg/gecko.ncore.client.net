@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="702f195a-094d-4bd9-ace7-0870e2a76ea8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DynamicObjectModelService.disco" MetadataType="Disco" ID="fc6d63be-a8e6-4acb-922d-68aeed4cf163" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?disco" />
+    <MetadataFile FileName="DynamicObjectModelService.wsdl" MetadataType="Wsdl" ID="d13daa00-daf4-4f44-bb38-ace15efcccce" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DynamicObjectModelService1.wsdl" MetadataType="Wsdl" ID="e293b808-52a0-457f-a799-7842694d44e9" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl" />
+    <MetadataFile FileName="DynamicObjectModelService.xsd" MetadataType="Schema" ID="bfc8afa6-9fbd-434f-ae3c-d83e6daa5d38" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DynamicObjectModelService1.xsd" MetadataType="Schema" ID="0325691a-51fa-4db5-b9e2-7b6bfe9fb4a3" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DynamicObjectModelService2.xsd" MetadataType="Schema" ID="5062473a-8d0a-4e31-b83b-04a2f2746498" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

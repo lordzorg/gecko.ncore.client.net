@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.gecko.no/ephorte/services/claim/v1" elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/claim/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetDataObjectClaims">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+        <xs:element minOccurs="0" name="identifiers" nillable="true" type="tns:ArrayOfIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EphorteIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+  <xs:complexType name="ArrayOfIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Identifier" nillable="true" type="tns:Identifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentifier" nillable="true" type="tns:ArrayOfIdentifier" />
+  <xs:complexType name="Identifier">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keys" nillable="true" type="q1:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Identifier" nillable="true" type="tns:Identifier" />
+  <xs:element name="GetDataObjectClaimsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataObjectClaimsResult" nillable="true" type="tns:ArrayOfDataObjectClaims" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfDataObjectClaims">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataObjectClaims" nillable="true" type="tns:DataObjectClaims" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataObjectClaims" nillable="true" type="tns:ArrayOfDataObjectClaims" />
+  <xs:complexType name="DataObjectClaims">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Claims" nillable="true" type="tns:ArrayOfEphorteClaim" />
+      <xs:element minOccurs="0" name="Identifier" nillable="true" type="tns:Identifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataObjectClaims" nillable="true" type="tns:DataObjectClaims" />
+  <xs:complexType name="ArrayOfEphorteClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EphorteClaim" nillable="true" type="tns:EphorteClaim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEphorteClaim" nillable="true" type="tns:ArrayOfEphorteClaim" />
+  <xs:complexType name="EphorteClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EphorteClaim" nillable="true" type="tns:EphorteClaim" />
+  <xs:element name="GetUserClaims">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserClaimsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserClaimsResult" nillable="true" type="tns:ArrayOfEphorteClaim" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

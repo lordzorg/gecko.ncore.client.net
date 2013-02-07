@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/objectmodel/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.gecko.no/ephorte/services/objectmodel/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/objectmodel/v1/Imports">
+      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/objectmodel/v1/ObjectModelService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/objectmodel/v1" />
+      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/objectmodel/v1/ObjectModelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/objectmodel/v1/ObjectModelService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" />
+      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/objectmodel/v1/ObjectModelService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.ObjectModel.V1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ObjectModelService_ExecuteSelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSelect" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteSelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteSelectCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSelectCount" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteSelectCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSelectCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteBatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteBatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteBatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteBatchUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteInsert" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDelete" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ExecuteDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ApplyDefaults_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyDefaults" />
+  </wsdl:message>
+  <wsdl:message name="ObjectModelService_ApplyDefaults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyDefaultsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ObjectModelService">
+    <wsdl:operation name="ExecuteSelect">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteSelect" message="tns:ObjectModelService_ExecuteSelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteSelectResponse" message="tns:ObjectModelService_ExecuteSelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSelectCount">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteSelectCount" message="tns:ObjectModelService_ExecuteSelectCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteSelectCountResponse" message="tns:ObjectModelService_ExecuteSelectCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteUpdate">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteUpdate" message="tns:ObjectModelService_ExecuteUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteUpdateResponse" message="tns:ObjectModelService_ExecuteUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteBatchUpdate">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteBatchUpdate" message="tns:ObjectModelService_ExecuteBatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteBatchUpdateResponse" message="tns:ObjectModelService_ExecuteBatchUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteInsert">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteInsert" message="tns:ObjectModelService_ExecuteInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteInsertResponse" message="tns:ObjectModelService_ExecuteInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDelete">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteDelete" message="tns:ObjectModelService_ExecuteDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ExecuteDeleteResponse" message="tns:ObjectModelService_ExecuteDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyDefaults">
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ApplyDefaults" message="tns:ObjectModelService_ApplyDefaults_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/objectmodel/v1/ObjectModelService/ApplyDefaultsResponse" message="tns:ObjectModelService_ApplyDefaults_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
