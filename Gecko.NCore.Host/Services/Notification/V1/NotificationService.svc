@@ -1,0 +1,1 @@
+<%@ ServiceHost Service="Gecko.NCore.Host.Services.Notification.V1.NotificationService" %>
