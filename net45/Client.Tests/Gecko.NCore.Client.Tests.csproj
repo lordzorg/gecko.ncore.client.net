@@ -20,7 +20,7 @@
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,21 +91,9 @@
       <Project>{371C666E-D2E2-4276-98F3-FBD813A7009C}</Project>
       <Name>Gecko.NCore.Client.ObjectModel.V2 %2804 - NET 4.5\Gecko.NCore.Client.ObjectModel.V2%29</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Client.Documents.V3\Gecko.NCore.Client.Documents.V3.csproj">
-      <Project>{8FAB91AB-77EA-4450-ABEA-35947EDDF3ED}</Project>
-      <Name>Gecko.NCore.Client.Documents.V3 %2804 - NET 4.5\Gecko.NCore.Client.Documents.V3%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Client.Functions.V1\Gecko.NCore.Client.Functions.V1.csproj">
-      <Project>{D9D8A830-2EC8-40D9-A70C-3E7F350F6324}</Project>
-      <Name>Gecko.NCore.Client.Functions.V1 %2804 - NET 4.5\Gecko.NCore.Client.Functions.V1%29</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Client.ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.csproj">
       <Project>{C051E08E-57D0-4CF4-A082-7BBE9B0963DF}</Project>
       <Name>Gecko.NCore.Client.ObjectModel.V3.En %2804 - NET 4.5\Gecko.NCore.Client.ObjectModel.V3.En%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Client.ObjectModel.V3.No\Gecko.NCore.Client.ObjectModel.V3.No.csproj">
-      <Project>{D6500AB8-AD06-4C74-9C52-1DCF479C0D2D}</Project>
-      <Name>Gecko.NCore.Client.ObjectModel.V3.No %2804 - NET 4.5\Gecko.NCore.Client.ObjectModel.V3.No%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
       <Project>{59753DD8-9506-4044-A513-CAD06ADD3673}</Project>
@@ -127,7 +115,7 @@
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

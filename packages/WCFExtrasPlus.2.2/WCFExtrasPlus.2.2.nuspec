@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WCFExtrasPlus</id>
+    <version>2.2</version>
+    <title>Based on the great WCFExtras project, which has been inactive, WCFExtras+ is a collection of useful WCF extensions including Soap Header support, WSDL flattening and documentation, and more. Any copyrights from WCFExtras have been maintained in WCFExtras</title>
+    <authors>crjansen</authors>
+    <owners>crjansen</owners>
+    <iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The WCF platform is extensible and allows you to easily add features that are not part of the core product. This project contains useful extensions to WCF: SOAP Header support
+		Support for integrating Source Code XML Comments into WSDL Documentation Override SOAP Address Location URL Single, flattened WSDL file for better compatibility with older SOAP tools</description>
+    <summary>The WCF platform is extensible and allows you to easily add features that are not part of the core product. This project contains useful extensions to WCF: SOAP Header support
+		Support for integrating Source Code XML Comments into WSDL Documentation Override SOAP Address Location URL Single, flattened WSDL file for better compatibility with older SOAP tools</summary>
+    <tags>3dParty WCF</tags>
+    <references>
+      <reference file="WCFExtrasPlus.dll" />
+    </references>
+  </metadata>
+</package>
