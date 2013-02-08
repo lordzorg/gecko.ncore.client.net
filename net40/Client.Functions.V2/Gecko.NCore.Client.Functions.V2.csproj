@@ -27,6 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Gecko.NCore.Client.Functions.V2.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Gecko.NCore.Client.Functions.V2.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -119,7 +121,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
       <Project>{4593dfac-31c1-4b65-9aaf-5abab4345d43}</Project>
-      <Name>Gecko.NCore.Client %28NET 4.0\Gecko.NCore.Client%29</Name>
+      <Name>Gecko.NCore.Client %2803 - NET 4.0\Gecko.NCore.Client%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

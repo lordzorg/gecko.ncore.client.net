@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
+namespace Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -126,10 +126,10 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Task", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryTask))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.UpdateTask))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryCountTask))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DeleteTask))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryTask))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.UpdateTask))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryCountTask))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DeleteTask))]
     public partial class Task : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -175,7 +175,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QueryTask", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class QueryTask : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
+    public partial class QueryTask : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CriteriaField;
@@ -214,13 +214,13 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UpdateTask", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class UpdateTask : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
+    public partial class UpdateTask : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CriteriaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectInput FieldsField;
+        private Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectInput FieldsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Criteria {
@@ -236,7 +236,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectInput Fields {
+        public Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectInput Fields {
             get {
                 return this.FieldsField;
             }
@@ -253,7 +253,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QueryCountTask", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class QueryCountTask : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
+    public partial class QueryCountTask : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CriteriaField;
@@ -276,7 +276,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DeleteTask", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class DeleteTask : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
+    public partial class DeleteTask : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CriteriaField;
@@ -306,10 +306,10 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TaskResult", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryTaskResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.UpdateTaskResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryCountTaskResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DeleteTaskResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryTaskResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.UpdateTaskResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.QueryCountTaskResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DeleteTaskResult))]
     public partial class TaskResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -339,13 +339,13 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QueryTaskResult", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class QueryTaskResult : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
+    public partial class QueryTaskResult : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectOutput[] ResultSetField;
+        private Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectOutput[] ResultSetField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectOutput[] ResultSet {
+        public Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DataObjectOutput[] ResultSet {
             get {
                 return this.ResultSetField;
             }
@@ -362,7 +362,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UpdateTaskResult", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class UpdateTaskResult : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
+    public partial class UpdateTaskResult : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CountField;
@@ -385,7 +385,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QueryCountTaskResult", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class QueryCountTaskResult : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
+    public partial class QueryCountTaskResult : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CountField;
@@ -408,7 +408,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DeleteTaskResult", Namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1")]
     [System.SerializableAttribute()]
-    public partial class DeleteTaskResult : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
+    public partial class DeleteTaskResult : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CountField;
@@ -441,16 +441,16 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1/DynamicObjectModel/Exe" +
             "cuteTask", ReplyAction="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1/DynamicObjectModel/Exe" +
             "cuteTaskResponse")]
-        Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult[] ExecuteTask(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.EphorteIdentity identity, Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task[] tasks);
+        Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult[] ExecuteTask(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.EphorteIdentity identity, Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task[] tasks);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface DynamicObjectModelChannel : Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DynamicObjectModel, System.ServiceModel.IClientChannel {
+    public interface DynamicObjectModelChannel : Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DynamicObjectModel, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DynamicObjectModelClient : System.ServiceModel.ClientBase<Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DynamicObjectModel>, Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DynamicObjectModel {
+    public partial class DynamicObjectModelClient : System.ServiceModel.ClientBase<Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DynamicObjectModel>, Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.DynamicObjectModel {
         
         public DynamicObjectModelClient() {
         }
@@ -471,7 +471,7 @@ namespace Client.DynamicObjectModel.V1.DynamicObjectModel.V1 {
                 base(binding, remoteAddress) {
         }
         
-        public Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult[] ExecuteTask(Client.DynamicObjectModel.V1.DynamicObjectModel.V1.EphorteIdentity identity, Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task[] tasks) {
+        public Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult[] ExecuteTask(Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.EphorteIdentity identity, Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.Task[] tasks) {
             return base.Channel.ExecuteTask(identity, tasks);
         }
     }

@@ -13,9 +13,7 @@ using System.Resources;
 //      Minor Version 
 //      Patch
 // You can specify all the values or you can default the Patche Numbers by using the '*'.
-[assembly: AssemblyVersion("5.0.2")]
-[assembly: AssemblyFileVersion("5.0.2")]
-[assembly: AssemblyInformationalVersion("5.0.2")]
+[assembly: AssemblyVersion("6.0.*")]
 
 [assembly: CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en-US")]

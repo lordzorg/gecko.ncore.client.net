@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="TaskResult" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult, Service References.DynamicObjectModel.V1.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult, Service References.DynamicObjectModel.V1.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

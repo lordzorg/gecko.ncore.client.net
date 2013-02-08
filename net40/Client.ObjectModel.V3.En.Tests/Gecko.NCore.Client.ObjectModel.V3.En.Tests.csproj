@@ -76,11 +76,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Client.ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.csproj">
       <Project>{020f6272-4b1f-4024-8946-57831579c2dc}</Project>
-      <Name>Gecko.NCore.Client.ObjectModel.V3.En %28NET 4.0\Gecko.NCore.Client.ObjectModel.V3.En%29</Name>
+      <Name>Gecko.NCore.Client.ObjectModel.V3.En %2803 - NET 4.0\Gecko.NCore.Client.ObjectModel.V3.En%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
       <Project>{4593dfac-31c1-4b65-9aaf-5abab4345d43}</Project>
-      <Name>Gecko.NCore.Client %28NET 4.0\Gecko.NCore.Client%29</Name>
+      <Name>Gecko.NCore.Client %2803 - NET 4.0\Gecko.NCore.Client%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+    <id>$id$</id>
+    <title>ephorte© nCore Client - Documents V1</title>
+    <description>Contains a the service contracts for using Documents V1.</description>
+    <version>$version$</version>
+    <authors>Gecko Informasjonssystemer AS</authors>
+    <owners>Gecko Informasjonssystemer AS</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
+    <tags>ephorte ncore client gecko</tags>
+    <dependencies>
+			<dependency id="Gecko.NCore.Client" version="6.0.0" />
+		</dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ServiceModel" />
+      <frameworkAssembly assemblyName="System.Runtime.Serialization" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="..\net35\Client.Documents.V1\bin\$configuration$\$id$.dll" target="lib\net35\" />
+    <file src="..\net35\Client.Documents.V1\bin\$configuration$\$id$.xml" target="lib\net35\" />
+    <file src="..\net35\Client.Documents.V1\bin\$configuration$\$id$.pdb" target="lib\net35\" />
+    <file src="..\net40\Client.Documents.V1\bin\$configuration$\$id$.dll" target="lib\net40\" />
+    <file src="..\net40\Client.Documents.V1\bin\$configuration$\$id$.xml" target="lib\net40\" />
+    <file src="..\net40\Client.Documents.V1\bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    <file src="..\net45\Client.Documents.V1\bin\$configuration$\$id$.dll" target="lib\net45\" />
+    <file src="..\net45\Client.Documents.V1\bin\$configuration$\$id$.xml" target="lib\net45\" />
+    <file src="..\net45\Client.Documents.V1\bin\$configuration$\$id$.pdb" target="lib\net45\" />
+    <file src="..\net45\Client.Documents.V1\**\*.cs" target="src" exclude="..\net45\Client.Documents.V1\obj\**" />
+  </files>
+</package>

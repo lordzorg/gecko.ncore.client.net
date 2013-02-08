@@ -28,6 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Gecko.NCore.Client.ObjectModel.V3.En.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Gecko.NCore.Client.ObjectModel.V3.En.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -133,7 +135,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
       <Project>{59753DD8-9506-4044-A513-CAD06ADD3673}</Project>
-      <Name>Gecko.NCore.Client %28NET 4.5\Gecko.NCore.Client%29</Name>
+      <Name>Gecko.NCore.Client %2804 - NET 4.5\Gecko.NCore.Client%29</Name>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
