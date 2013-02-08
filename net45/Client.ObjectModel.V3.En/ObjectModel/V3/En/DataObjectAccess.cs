@@ -1,6 +1,6 @@
 ﻿namespace Gecko.NCore.Client.ObjectModel.V3.En
 {
-    internal class DataObjectAccess: DataObjectAccessBase
+    public class DataObjectAccess: DataObjectAccessBase
     {
         private readonly DataObject _requiredFlags;
         private readonly DataObject _readOnlyFlags;

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Client.ObjectModel.V3.En.Tests")]
+[assembly: AssemblyTitle("Gecko.NCore.Client.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 
@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4c35ccb3-7b7b-4aa7-89a6-9d260a4165a2")]
+[assembly: Guid("f2fcec2f-5f3a-4915-8ba2-629050e99632")]
 

@@ -70,6 +70,7 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="BasicLinqTests.cs" />
+    <Compile Include="DataObjectAccess.cs" />
     <Compile Include="EphorteContextIdentityTests.cs" />
     <Compile Include="FakeEphorteContext.cs" />
     <Compile Include="Querying\DummyA.cs" />
