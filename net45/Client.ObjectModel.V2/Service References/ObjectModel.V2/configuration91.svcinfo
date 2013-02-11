@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="OKcCFxiDdhQa8PLfSweU/XGOv5M=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="71XKShObu7TZJ+qMXpmwbxCcgrI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ObjectModelService">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_ObjectModelService" contract="ObjectModel.V2.ObjectModelService" bindingType="wsHttpBinding" address="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc" bindingConfiguration="WSHttpBinding_ObjectModelService">
+    <endpoint name="WSHttpBinding_ObjectModelService" contract="ObjectModel.V2.ObjectModelService" bindingType="wsHttpBinding" address="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V2/ObjectModelService.svc" bindingConfiguration="WSHttpBinding_ObjectModelService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/objectmodel/v2/ObjectModelService.svc</serializedValue>
+          <serializedValue>http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V2/ObjectModelService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -8,11 +8,264 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/changetracking/v1/Imports">
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/changetracking/v1" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/changetracking/v1">
+      <xsd:element name="GetChangesForCaseDataObjects">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+            <xsd:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="caseIds" nillable="true" type="q1:ArrayOfint" />
+            <xsd:element minOccurs="0" name="after" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="EphorteIdentity">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Database" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Password" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Role" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+      <xsd:element name="GetChangesForCaseDataObjectsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetChangesForCaseDataObjectsResult" nillable="true" type="tns:ArrayOfDataObjectChange" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfDataObjectChange">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DataObjectChange" nillable="true" type="tns:DataObjectChange" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDataObjectChange" nillable="true" type="tns:ArrayOfDataObjectChange" />
+      <xsd:complexType name="DataObjectChange">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+             Contains a single change for a given DataObjectType
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CaseId" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+             The Case Id
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ChangeTimestamp" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+             The change timestamp
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Changetype" type="tns:ChangeType">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+             The ChangeType
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="DataObjectKey" nillable="true" type="tns:DataObjectKey">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+             The Object Key
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="DataObjectType" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+             The DataObjectType
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="RecordId" nillable="true" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+             The Record Id
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DataObjectChange" nillable="true" type="tns:DataObjectChange" />
+      <xsd:simpleType name="ChangeType">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+             The different change types registered for for a DataObject.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Undefined">
+            <xsd:annotation>
+              <xsd:documentation>&lt;summary&gt;
+            Undefined
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InsertUpdate">
+            <xsd:annotation>
+              <xsd:documentation>&lt;summary&gt;
+             The changetypes Insert and update have a single changetype (InsertUpdate) since ePhorte inserts in
+             ePhorte performes both Insert- and Update-statements in the database.
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Delete">
+            <xsd:annotation>
+              <xsd:documentation>&lt;summary&gt;
+             Reflects a Delete statement in the database
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ChangeType" nillable="true" type="tns:ChangeType" />
+      <xsd:complexType name="DataObjectKey">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+          </xsd:appinfo>
+          <xsd:documentation>&lt;summary&gt;
+            Represents the field of a primary key identifying the data object.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Field">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Name" nillable="true" type="xsd:string" />
+                <xsd:element name="Value" nillable="true" type="xsd:string" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DataObjectKey" nillable="true" type="tns:DataObjectKey" />
+      <xsd:element name="GetChangesForRecordDataObjects">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+            <xsd:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="recordIds" nillable="true" type="q2:ArrayOfint" />
+            <xsd:element minOccurs="0" name="after" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetChangesForRecordDataObjectsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetChangesForRecordDataObjectsResult" nillable="true" type="tns:ArrayOfDataObjectChange" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xsd:complexType name="ArrayOfint">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="int" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="ChangeTrackingService_GetChangesForCaseDataObjects_InputMessage">
     <wsdl:part name="parameters" element="tns:GetChangesForCaseDataObjects" />
@@ -27,11 +280,44 @@
     <wsdl:part name="parameters" element="tns:GetChangesForRecordDataObjectsResponse" />
   </wsdl:message>
   <wsdl:portType name="ChangeTrackingService">
+    <wsdl:documentation>&lt;summary&gt;
+             Defines the Change Tracking Service (CTS) contract
+             The CTS can be used to get the latest changes for one or more Sak or Journalpost dataobjects, 
+             or changes in their related data objects.
+             
+             The following is the related objects for which changes is recorded and what change is being record
+             (I = Insert, U = Update, D = Delete):
+             - IUD   Sak
+             - IUD   Journalpost
+             - IUD   Dokumentreferanse
+             - U     Dokumentbeskrivelse
+             - IUD   Dokumentversjon
+             - IUD   Sakspart
+             - IUD   Merknad
+             - IUD   Klassering
+             - IUD   AvsenderMottaker
+             - IUD	Utvalgsbehandling
+             
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="GetChangesForCaseDataObjects">
+      <wsdl:documentation>&lt;summary&gt;
+             Queries the changes for a Sak and related DataObjects.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The ephorte identity&lt;/param&gt;
+            &lt;param name="caseIds"&gt;The Sak-ids to get changes for&lt;/param&gt;
+            &lt;param name="after"&gt;Only get changes that happened after this datetime&lt;/param&gt;
+            &lt;returns&gt;List of changes&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/changetracking/v1/ChangeTrackingService/GetChangesForCaseDataObjects" message="tns:ChangeTrackingService_GetChangesForCaseDataObjects_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/changetracking/v1/ChangeTrackingService/GetChangesForCaseDataObjectsResponse" message="tns:ChangeTrackingService_GetChangesForCaseDataObjects_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetChangesForRecordDataObjects">
+      <wsdl:documentation>&lt;summary&gt;
+             Queries the changes for a Journalpost and related DataObjects
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The ephorte identity&lt;/param&gt;
+            &lt;param name="recordIds"&gt;The Journalpost-ids to get changes for&lt;/param&gt;
+            &lt;param name="after"&gt;Only get changes that happened after this datetime&lt;/param&gt;
+            &lt;returns&gt;List of changes&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/changetracking/v1/ChangeTrackingService/GetChangesForRecordDataObjects" message="tns:ChangeTrackingService_GetChangesForRecordDataObjects_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/changetracking/v1/ChangeTrackingService/GetChangesForRecordDataObjectsResponse" message="tns:ChangeTrackingService_GetChangesForRecordDataObjects_OutputMessage" />
     </wsdl:operation>

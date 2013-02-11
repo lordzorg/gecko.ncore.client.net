@@ -54,6 +54,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -74,19 +78,8 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.ChangeTracking.V1.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="Service References\ChangeTracking.V1\ChangeTrackingService.wsdl" />
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ChangeTracking.V1\Gecko.NCore.Client.ChangeTracking.V1.DataObjectChange.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

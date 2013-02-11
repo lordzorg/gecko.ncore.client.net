@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="EWHBgzRCI4PLQsI6ykX0bzs9t/4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="1HFJRUDhdyRqsniU9IfuRfGRTM8=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_DynamicObjectModel">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_DynamicObjectModel" contract="DynamicObjectModel.V1.DynamicObjectModel" bindingType="wsHttpBinding" address="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc" bindingConfiguration="WSHttpBinding_DynamicObjectModel">
+    <endpoint name="WSHttpBinding_DynamicObjectModel" contract="DynamicObjectModel.V1.DynamicObjectModel" bindingType="wsHttpBinding" address="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc" bindingConfiguration="WSHttpBinding_DynamicObjectModel">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc</serializedValue>
+          <serializedValue>http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

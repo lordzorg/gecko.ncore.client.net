@@ -8,6 +8,14 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("A client proxy that can be used to access service.")]
 [assembly: AssemblyConfiguration("")]
 
+// Version information for an assembly consists of the following three values (according to SemVer schema) :
+//      Major Version
+//      Minor Version 
+//      Patch
+// You can specify all the values or you can default the Patche Numbers by using the '*'.
+[assembly: AssemblyVersion("6.0.*")]
+
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.

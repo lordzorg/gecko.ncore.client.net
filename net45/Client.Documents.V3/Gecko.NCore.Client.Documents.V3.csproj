@@ -55,6 +55,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -79,35 +83,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Gecko.NCore.Client.Documents.V3.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
-      <Project>{59753DD8-9506-4044-A513-CAD06ADD3673}</Project>
-      <Name>Gecko.NCore.Client %2804 - NET 4.5\Gecko.NCore.Client%29</Name>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Documents.V3\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Documents.V3\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Documents.V3\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Service References\Documents.V3\DocumentService.wsdl" />
-    <None Include="Service References\Documents.V3\DocumentService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V3\DocumentService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V3\DocumentService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\Documents.V3\Gecko.NCore.Client.Documents.V3.CancelCheckoutResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -123,13 +100,31 @@
     <None Include="Service References\Documents.V3\Gecko.NCore.Client.Documents.V3.UploadReturnMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
+      <Project>{59753DD8-9506-4044-A513-CAD06ADD3673}</Project>
+      <Name>Gecko.NCore.Client %2804 - NET 4.5\Gecko.NCore.Client%29</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Documents.V3\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Documents.V3\DocumentService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Documents.V3\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Documents.V3\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\Documents.V3\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Documents.V3\DocumentService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,20 +9,27 @@ namespace Gecko.NCore.Client
 	[DebuggerDisplay("Username: {Username}, Password: {Password}, Role: {Role}, Database: {Database}, ExternalSystemName: {ExternalSystemName}")]
 	public class EphorteContextIdentity
 	{
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EphorteContextIdentity" /> class.
+        /// </summary>
 		public EphorteContextIdentity()
 		{
 			ExternalSystemName = ConfigurationManager.AppSettings["ExternalSystemName"];
 		}
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EphorteContextIdentity" /> class.
+        /// </summary>
+        /// <param name="externalSystemName">Name of the external system.</param>
 		public EphorteContextIdentity(string externalSystemName)
 		{
 			ExternalSystemName = externalSystemName;
 		}
 
-		/// <summary>
-		/// Gets or sets the username.
-		/// </summary>
-		/// <value>The username.</value>
+        /// <summary>
+        /// Gets or sets the username.
+        /// </summary>
+        /// <value>The username.</value>
 		public string Username { get; set; }
 
 		/// <summary>

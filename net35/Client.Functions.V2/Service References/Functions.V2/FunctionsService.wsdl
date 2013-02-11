@@ -8,12 +8,259 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/functions/v2/Imports">
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/functions/v2" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V2/FunctionsService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/functions/v2">
+      <xsd:element name="QueryFunctionDescriptors">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="EphorteIdentity">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Database" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Password" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Role" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+      <xsd:element name="QueryFunctionDescriptorsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="QueryFunctionDescriptorsResult" nillable="true" type="tns:ArrayOfFunctionDescriptor" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfFunctionDescriptor">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="FunctionDescriptor" nillable="true" type="tns:FunctionDescriptor" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfFunctionDescriptor" nillable="true" type="tns:ArrayOfFunctionDescriptor" />
+      <xsd:complexType name="FunctionDescriptor">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Defines a class that contains descriptive information about supported functions.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Description" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the description.
+            &lt;/summary&gt;
+            &lt;value&gt;The description.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Name" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the name.
+            &lt;/summary&gt;
+            &lt;value&gt;The name.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Parameters" nillable="true" type="tns:FunctionParameterDictionary">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the parameters.
+            &lt;/summary&gt;
+            &lt;value&gt;The parameters.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FunctionDescriptor" nillable="true" type="tns:FunctionDescriptor" />
+      <xsd:complexType name="FunctionParameterDictionary">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+          </xsd:appinfo>
+          <xsd:documentation>&lt;summary&gt;
+            Defines a class that contains a collection of parameters required by the &lt;see cref="T:FunctionDescriptor"&gt;function&lt;/see&gt;.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Parameter">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Name" nillable="true" type="xsd:string" />
+                <xsd:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="Type" type="q1:TypeCode" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FunctionParameterDictionary" nillable="true" type="tns:FunctionParameterDictionary" />
+      <xsd:element name="ExecuteFunction">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+            <xsd:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q2:ArrayOfanyType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ExecuteFunctionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ExecuteFunctionResult" nillable="true" type="tns:FunctionResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="FunctionResult">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Defines a base class
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ResultValue" nillable="true" type="xsd:anyType">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the result.
+            &lt;/summary&gt;
+            &lt;value&gt;The result.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FunctionResult" nillable="true" type="tns:FunctionResult" />
     </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="TypeCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Empty" />
+          <xs:enumeration value="Object" />
+          <xs:enumeration value="DBNull" />
+          <xs:enumeration value="Boolean" />
+          <xs:enumeration value="Char" />
+          <xs:enumeration value="SByte" />
+          <xs:enumeration value="Byte" />
+          <xs:enumeration value="Int16" />
+          <xs:enumeration value="UInt16" />
+          <xs:enumeration value="Int32" />
+          <xs:enumeration value="UInt32" />
+          <xs:enumeration value="Int64" />
+          <xs:enumeration value="UInt64" />
+          <xs:enumeration value="Single" />
+          <xs:enumeration value="Double" />
+          <xs:enumeration value="Decimal" />
+          <xs:enumeration value="DateTime" />
+          <xs:enumeration value="String">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TypeCode" nillable="true" type="tns:TypeCode" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfanyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType" />
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="FunctionsService_QueryFunctionDescriptors_InputMessage">
     <wsdl:part name="parameters" element="tns:QueryFunctionDescriptors" />
@@ -28,11 +275,30 @@
     <wsdl:part name="parameters" element="tns:ExecuteFunctionResponse" />
   </wsdl:message>
   <wsdl:portType name="FunctionsService">
+    <wsdl:documentation>&lt;summary&gt;
+            Defines a contract for a service working as a function handler.
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="QueryFunctionDescriptors">
+      <wsdl:documentation>&lt;summary&gt;
+            Queries the functions supported by the service.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;returns&gt;
+            A collection of &lt;see cref="T:FunctionDescriptor"&gt;function descriptors&lt;/see&gt;
+            &lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/functions/v2/FunctionsService/QueryFunctionDescriptors" message="tns:FunctionsService_QueryFunctionDescriptors_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/functions/v2/FunctionsService/QueryFunctionDescriptorsResponse" message="tns:FunctionsService_QueryFunctionDescriptors_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ExecuteFunction">
+      <wsdl:documentation>&lt;summary&gt;
+            Executes the function.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="name"&gt;The name of the function to execute.&lt;/param&gt;
+            &lt;param name="parameters"&gt;The parameters required by the function.&lt;/param&gt;
+            &lt;returns&gt;
+            The result of the function executed, if any.
+            &lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/functions/v2/FunctionsService/ExecuteFunction" message="tns:FunctionsService_ExecuteFunction_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/functions/v2/FunctionsService/ExecuteFunctionResponse" message="tns:FunctionsService_ExecuteFunction_OutputMessage" />
     </wsdl:operation>

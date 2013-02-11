@@ -54,6 +54,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus">
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -127,7 +130,7 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.ObjectModel.V3.En.nuspec" />
+    <None Include="packages.config" />
     <None Include="Service References\ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.ChangeSetResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -147,18 +150,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ObjectModel.V3.En\ObjectModelService.wsdl" />
-    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ObjectModel.V3.En\ObjectModelService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ObjectModel.V3.En\ObjectModelService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ObjectModel.V3.En\ObjectModelService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef623bfd-8de4-482b-9162-8488ef0ef34b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ae4d26a7-c060-4eb5-b734-b3a8b7a6c600" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -13,30 +13,17 @@
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
-    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
-    <ReferencedAssemblies>
-      <ReferencedAssembly AssemblyName="mscorlib" />
-      <ReferencedAssembly AssemblyName="System" />
-      <ReferencedAssembly AssemblyName="System.Core" />
-      <ReferencedAssembly AssemblyName="System.Data" />
-      <ReferencedAssembly AssemblyName="System.Data.DataSetExtensions" />
-      <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel" />
-      <ReferencedAssembly AssemblyName="System.Xml" />
-      <ReferencedAssembly AssemblyName="System.Xml.Linq" />
-    </ReferencedAssemblies>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/documents/v3/documentservice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V3/DocumentService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DocumentService.xsd" MetadataType="Schema" ID="bae1942e-66b8-42ba-8251-66b117355f08" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DocumentService.disco" MetadataType="Disco" ID="6ade89e6-4411-47cf-9567-23ae1d038618" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?disco" />
-    <MetadataFile FileName="DocumentService1.xsd" MetadataType="Schema" ID="ccab464e-25c9-4cc6-8b11-a8fda1bb956f" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DocumentService2.xsd" MetadataType="Schema" ID="6e6da3f1-b8ec-4e66-8b78-f7f125b11d4d" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?xsd=xsd2" />
-    <MetadataFile FileName="DocumentService.wsdl" MetadataType="Wsdl" ID="f2e87956-18ac-45ab-acac-c61781f87a33" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc?wsdl" />
+    <MetadataFile FileName="DocumentService.disco" MetadataType="Disco" ID="27b4372e-1b27-4312-9bf3-951ae20af207" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V3/DocumentService.svc?disco" />
+    <MetadataFile FileName="DocumentService.wsdl" MetadataType="Wsdl" ID="d45ff459-0888-4160-af5f-35430ad95657" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V3/DocumentService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

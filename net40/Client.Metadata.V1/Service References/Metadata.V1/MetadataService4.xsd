@@ -2,9 +2,31 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Metadata.V1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Metadata.V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Metadata/V1/MetadataService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="MetadataIdentifier">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;
+            Identifies which object to query metadata for.
+            &lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keys" nillable="true" type="q1:ArrayOfanyType" />
-      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keys" nillable="true" type="q1:ArrayOfanyType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the keys.
+            &lt;/summary&gt;
+            &lt;value&gt;The keys.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the type of the object.
+            &lt;/summary&gt;
+            &lt;value&gt;The type of the object.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MetadataIdentifier" nillable="true" type="tns:MetadataIdentifier" />
@@ -13,6 +35,9 @@
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
+      <xs:documentation>&lt;summary&gt;
+            Defines a list of metadata attributes.
+            &lt;/summary&gt;</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Metadata">

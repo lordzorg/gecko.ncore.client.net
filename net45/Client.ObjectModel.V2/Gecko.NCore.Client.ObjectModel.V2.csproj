@@ -55,6 +55,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -82,7 +86,7 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.ObjectModel.V2.nuspec" />
+    <None Include="packages.config" />
     <None Include="Service References\ObjectModel.V2\Gecko.NCore.Client.ObjectModel.V2.CustomFieldDescriptor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -107,31 +111,7 @@
     <None Include="Service References\ObjectModel.V2\Gecko.NCore.Client.ObjectModel.V2.UpdateResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ObjectModel.V2\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ObjectModel.V2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ObjectModel.V2\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\ObjectModel.V2\ObjectModelService.wsdl" />
-    <None Include="Service References\ObjectModel.V2\ObjectModelService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ObjectModel.V2\ObjectModelService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ObjectModel.V2\ObjectModelService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ObjectModel.V2\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
@@ -141,7 +121,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ObjectModel.V2\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\ObjectModel.V2\ObjectModelService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

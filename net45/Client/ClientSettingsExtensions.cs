@@ -3,8 +3,16 @@ using Gecko.NCore.Client.CookieManagement;
 
 namespace Gecko.NCore.Client
 {
+    /// <summary>
+    /// Class ClientSettingsExtensions
+    /// </summary>
 	public static class ClientSettingsExtensions
 	{
+        /// <summary>
+        /// Adds the cookie beavior.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <param name="serviceClient">The service client.</param>
 		public static void AddCookieBeavior(this ClientSettings settings, object serviceClient)
 		{
 			if (serviceClient == null || string.IsNullOrEmpty(settings.Cookie)) 

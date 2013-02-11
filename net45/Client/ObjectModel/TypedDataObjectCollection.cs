@@ -21,6 +21,10 @@ namespace Gecko.NCore.Client.ObjectModel
         private readonly List<TDataObject> _dataObjects = new List<TDataObject>();
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TypedDataObjectCollection{TDataObject}" /> class.
+        /// </summary>
+        /// <param name="predicate">The predicate.</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
         public TypedDataObjectCollection(Expression<Func<TDataObject, bool>> predicate)
         {
@@ -37,6 +41,11 @@ namespace Gecko.NCore.Client.ObjectModel
         }
 
 #if NET45
+        /// <summary>
+        /// Loads the core async.
+        /// </summary>
+        /// <returns>Task.</returns>
+        /// <exception cref="System.NotSupportedException"></exception>
         protected override async Task LoadCoreAsync()
         {
             if (!IsAsync)
@@ -86,6 +95,10 @@ namespace Gecko.NCore.Client.ObjectModel
             return (IQueryable<TDataObject>)AsQueryableCore();
         }
 
+        /// <summary>
+        /// Ases the queryable core.
+        /// </summary>
+        /// <returns>IQueryable.</returns>
         protected override IQueryable AsQueryableCore()
         {
             if (IsLoaded)

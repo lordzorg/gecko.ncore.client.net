@@ -8,12 +8,5 @@ using System.Resources;
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyTrademark("ePhorte™")]
 
-// Version information for an assembly consists of the following three values (according to SemVer schema) :
-//      Major Version
-//      Minor Version 
-//      Patch
-// You can specify all the values or you can default the Patche Numbers by using the '*'.
-[assembly: AssemblyVersion("6.0.*")]
-
 [assembly: CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en-US")]

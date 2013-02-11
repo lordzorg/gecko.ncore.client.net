@@ -1,5 +1,8 @@
 ﻿namespace Gecko.NCore.Client.ObjectModel
 {
+    /// <summary>
+    /// Class DataObjectAccessBase
+    /// </summary>
     public abstract class DataObjectAccessBase: IDataObjectAccess
     {
     	private readonly object _dataObject;

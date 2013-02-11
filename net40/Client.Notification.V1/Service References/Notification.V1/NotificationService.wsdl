@@ -8,11 +8,149 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/notification/v1/Imports">
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/notification/v1" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Notification.V1" />
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/notification/v1">
+      <xsd:element name="Notify">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Notification.V1" minOccurs="0" name="ephorteIdentity" nillable="true" type="q1:EphorteIdentity" />
+            <xsd:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Notification.V1" minOccurs="0" name="notificationRequest" nillable="true" type="q2:NotificationRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NotifyResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Notification.V1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Notification.V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="EphorteIdentity">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+      <xs:complexType name="NotificationRequest">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a notification request
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NotificationType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the type of the notification.
+            &lt;/summary&gt;
+            &lt;value&gt;The type of the notification.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NotifyChangesAfterThis" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the notify changes after this.
+            &lt;/summary&gt;
+            &lt;value&gt;The notify changes after this.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NotificationRequest" nillable="true" type="tns:NotificationRequest" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="NotificationService_Notify_InputMessage">
     <wsdl:part name="parameters" element="tns:Notify" />
@@ -21,7 +159,15 @@
     <wsdl:part name="parameters" element="tns:NotifyResponse" />
   </wsdl:message>
   <wsdl:portType name="NotificationService">
+    <wsdl:documentation>&lt;summary&gt;
+            Service for batch notification.
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="Notify">
+      <wsdl:documentation>&lt;summary&gt;
+            Notifies about changes.
+            &lt;/summary&gt;
+            &lt;param name="ephorteIdentity"&gt;The ephorte identity.&lt;/param&gt;
+            &lt;param name="notificationRequest"&gt;The notification request.&lt;/param&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/notification/v1/NotificationService/Notify" message="tns:NotificationService_Notify_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/notification/v1/NotificationService/NotifyResponse" message="tns:NotificationService_Notify_OutputMessage" />
     </wsdl:operation>

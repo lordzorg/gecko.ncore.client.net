@@ -21,9 +21,6 @@
     <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NotificationService.xsd" MetadataType="Schema" ID="fcb562b6-a215-4016-b8f6-f49666fd3e31" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NotificationService1.xsd" MetadataType="Schema" ID="fa50737e-d029-4183-8b8b-09b117339a33" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?xsd=xsd1" />
-    <MetadataFile FileName="NotificationService2.xsd" MetadataType="Schema" ID="3edfa302-8ed5-4142-87fa-a29fe781d53a" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?xsd=xsd2" />
     <MetadataFile FileName="NotificationService.disco" MetadataType="Disco" ID="4f1f6e20-1291-4c50-b788-1127bfec2242" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?disco" />
     <MetadataFile FileName="NotificationService.wsdl" MetadataType="Wsdl" ID="78e49786-5506-412d-a66e-34a0ae6d19e5" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?wsdl" />
   </Metadata>

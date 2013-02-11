@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="4vosQH6UnZY7Vo/3QV+nVQHYLAk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="2rR4wVR2416bBBpZ/S56vdThQQE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_NotificationService">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_NotificationService" contract="Notification.V1.NotificationService" bindingType="wsHttpBinding" address="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc" bindingConfiguration="WSHttpBinding_NotificationService">
+    <endpoint name="WSHttpBinding_NotificationService" contract="Notification.V1.NotificationService" bindingType="wsHttpBinding" address="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc" bindingConfiguration="WSHttpBinding_NotificationService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc</serializedValue>
+          <serializedValue>http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

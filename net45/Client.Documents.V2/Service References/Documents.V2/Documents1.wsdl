@@ -1,247 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://www.gecko.no/ephorte/services/documents/v2" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Documents" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="WSHttpBinding_Documents_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsdl:import namespace="http://www.gecko.no/ephorte/services/documents/v2" location="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?wsdl=wsdl0" />
-  <wsdl:types />
-  <wsdl:binding name="WSHttpBinding_Documents" type="i0:Documents">
-    <wsp:PolicyReference URI="#WSHttpBinding_Documents_policy" />
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/documents/v2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.gecko.no/ephorte/services/documents/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/documents/v2/Imports">
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/documents/v2" />
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" />
+      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V2" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Documents_BeginCheckin_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginCheckin" />
+  </wsdl:message>
+  <wsdl:message name="Documents_BeginCheckin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginCheckinResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_WriteCheckinChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteCheckinChunk" />
+  </wsdl:message>
+  <wsdl:message name="Documents_WriteCheckinChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteCheckinChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_EndCheckin_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndCheckin" />
+  </wsdl:message>
+  <wsdl:message name="Documents_EndCheckin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndCheckinResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_CancelCheckin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCheckin" />
+  </wsdl:message>
+  <wsdl:message name="Documents_CancelCheckin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCheckinResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_BeginCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginCheckout" />
+  </wsdl:message>
+  <wsdl:message name="Documents_BeginCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_ReadCheckoutChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCheckoutChunk" />
+  </wsdl:message>
+  <wsdl:message name="Documents_ReadCheckoutChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCheckoutChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_EndCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndCheckout" />
+  </wsdl:message>
+  <wsdl:message name="Documents_EndCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_CancelCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCheckout" />
+  </wsdl:message>
+  <wsdl:message name="Documents_CancelCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_EndDocumentRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndDocumentRead" />
+  </wsdl:message>
+  <wsdl:message name="Documents_EndDocumentRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndDocumentReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_BeginReadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginReadDocument" />
+  </wsdl:message>
+  <wsdl:message name="Documents_BeginReadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginReadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_ReadDocumentChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDocumentChunk" />
+  </wsdl:message>
+  <wsdl:message name="Documents_ReadDocumentChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDocumentChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Documents_CancelReadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelReadDocument" />
+  </wsdl:message>
+  <wsdl:message name="Documents_CancelReadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelReadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Documents">
+    <wsdl:documentation>&lt;summary&gt;
+            Defines the &lt;see cref="T:System.ServiceModel.ServiceContractAttribute"&gt;Service Contract&lt;/see&gt; for &lt;see cref="T:IDocuments" /&gt; end points.
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="BeginCheckin">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckin" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Initiates a the checkin process.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;
+            &lt;param name="variant"&gt;The variant.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckin" message="tns:Documents_BeginCheckin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckinResponse" message="tns:Documents_BeginCheckin_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="WriteCheckinChunk">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/WriteCheckinChunk" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Writes the checkin chunk.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;
+            &lt;param name="contentChunk"&gt;The content chunk.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/WriteCheckinChunk" message="tns:Documents_WriteCheckinChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/WriteCheckinChunkResponse" message="tns:Documents_WriteCheckinChunk_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EndCheckin">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckin" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Ends the checkin.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckin" message="tns:Documents_EndCheckin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckinResponse" message="tns:Documents_EndCheckin_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CancelCheckin">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckin" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Cancels the checkin.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckin" message="tns:Documents_CancelCheckin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckinResponse" message="tns:Documents_CancelCheckin_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="BeginCheckout">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckout" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Begins the checkout.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;
+            &lt;param name="variant"&gt;The variant.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckout" message="tns:Documents_BeginCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckoutResponse" message="tns:Documents_BeginCheckout_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ReadCheckoutChunk">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadCheckoutChunk" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Reads the checkout chunk.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadCheckoutChunk" message="tns:Documents_ReadCheckoutChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadCheckoutChunkResponse" message="tns:Documents_ReadCheckoutChunk_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EndCheckout">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckout" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Ends the checkout.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckout" message="tns:Documents_EndCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckoutResponse" message="tns:Documents_EndCheckout_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CancelCheckout">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckout" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Cancels the checkout.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="journalpostId"&gt;The journalpost id.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckout" message="tns:Documents_CancelCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckoutResponse" message="tns:Documents_CancelCheckout_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EndDocumentRead">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndDocumentRead" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Ends the document read.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndDocumentRead" message="tns:Documents_EndDocumentRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndDocumentReadResponse" message="tns:Documents_EndDocumentRead_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="BeginReadDocument">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginReadDocument" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Begins the read document.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;
+            &lt;param name="variant"&gt;The variant.&lt;/param&gt;
+            &lt;param name="journalpostId"&gt;The journalpost id.&lt;/param&gt;
+            &lt;param name="moeteId"&gt;The moete id.&lt;/param&gt;
+            &lt;param name="utvalgsbehandlingId"&gt;The utvalgsbehandling id.&lt;/param&gt;
+            &lt;param name="sakType"&gt;Type of the sak.&lt;/param&gt;
+            &lt;param name="dokumentType"&gt;Type of the dokument.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginReadDocument" message="tns:Documents_BeginReadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginReadDocumentResponse" message="tns:Documents_BeginReadDocument_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ReadDocumentChunk">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadDocumentChunk" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Reads the document chunk.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadDocumentChunk" message="tns:Documents_ReadDocumentChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadDocumentChunkResponse" message="tns:Documents_ReadDocumentChunk_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CancelReadDocument">
-      <soap12:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelReadDocument" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:documentation>&lt;summary&gt;
+            Cancels the read document.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="contextId"&gt;The context id.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelReadDocument" message="tns:Documents_CancelReadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelReadDocumentResponse" message="tns:Documents_CancelReadDocument_OutputMessage" />
     </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_Documents" type="i0:Documents">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="BeginCheckin">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckin" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WriteCheckinChunk">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/WriteCheckinChunk" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EndCheckin">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckin" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CancelCheckin">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckin" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BeginCheckout">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginCheckout" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ReadCheckoutChunk">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadCheckoutChunk" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EndCheckout">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndCheckout" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CancelCheckout">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelCheckout" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EndDocumentRead">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/EndDocumentRead" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BeginReadDocument">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/BeginReadDocument" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ReadDocumentChunk">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/ReadDocumentChunk" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CancelReadDocument">
-      <soap:operation soapAction="http://www.gecko.no/ephorte/services/documents/v2/Documents/CancelReadDocument" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:service name="Documents">
-    <wsdl:port name="WSHttpBinding_Documents" binding="tns:WSHttpBinding_Documents">
-      <soap12:address location="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc/ws" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc/ws</wsa10:Address>
-      </wsa10:EndpointReference>
-    </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_Documents" binding="tns:BasicHttpBinding_Documents">
-      <soap:address location="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc" />
-    </wsdl:port>
-  </wsdl:service>
+  </wsdl:portType>
 </wsdl:definitions>

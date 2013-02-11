@@ -16,7 +16,16 @@
     <wsdl:part name="parameters" element="tns:GetMetadataResponse" />
   </wsdl:message>
   <wsdl:portType name="MetadataService">
+    <wsdl:documentation>&lt;summary&gt;
+            Implements operations for querying metadata from ePhorte.
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="GetMetadata">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets the metadata.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="identifier"&gt;The identifier.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/metadata/v1/MetadataService/GetMetadata" message="tns:MetadataService_GetMetadata_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/metadata/v1/MetadataService/GetMetadataResponse" message="tns:MetadataService_GetMetadata_OutputMessage" />
     </wsdl:operation>

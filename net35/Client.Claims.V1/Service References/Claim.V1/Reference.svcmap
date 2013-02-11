@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bfcadeba-ef1a-44ba-86d4-eff0a3e97103" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7b6131de-847a-41e3-9aa9-4687632f6629" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,11 +21,8 @@
     <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ClaimService.xsd" MetadataType="Schema" ID="9eeedca3-a09f-487e-a710-9cb41244c5fd" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ClaimService1.xsd" MetadataType="Schema" ID="d2f911c0-53aa-4aac-b905-02f93d04a806" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ClaimService.disco" MetadataType="Disco" ID="2b9a6e0d-55cc-4582-9dec-6015f48443f0" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?disco" />
-    <MetadataFile FileName="ClaimService2.xsd" MetadataType="Schema" ID="f14ebe7b-7c38-49bd-99e7-411cdd78bf21" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ClaimService.wsdl" MetadataType="Wsdl" ID="e91455dd-81c5-401a-aed7-3fb818c5df80" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?wsdl" />
+    <MetadataFile FileName="ClaimService.disco" MetadataType="Disco" ID="f99792d2-81f3-465d-b4c8-6541cbf1412e" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?disco" />
+    <MetadataFile FileName="ClaimService.wsdl" MetadataType="Wsdl" ID="a283ae68-bca3-44ba-a079-24b6d09d19cd" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

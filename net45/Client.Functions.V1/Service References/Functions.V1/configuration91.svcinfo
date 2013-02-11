@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="rVCQSOJN/vzaNtQ9fr6Bi8pVfEE=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SC5eqVMEsltFalg7LqWkGfk8p4M=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_FunctionsService">
       <properties>
@@ -236,10 +236,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_FunctionsService" contract="Functions.V1.FunctionsService" bindingType="wsHttpBinding" address="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc/ws" bindingConfiguration="WSHttpBinding_FunctionsService">
+    <endpoint name="WSHttpBinding_FunctionsService" contract="Functions.V1.FunctionsService" bindingType="wsHttpBinding" address="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc/ws" bindingConfiguration="WSHttpBinding_FunctionsService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc/ws</serializedValue>
+          <serializedValue>http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc/ws</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -321,10 +321,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_FunctionsService" contract="Functions.V1.FunctionsService" bindingType="basicHttpBinding" address="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc" bindingConfiguration="BasicHttpBinding_FunctionsService">
+    <endpoint name="BasicHttpBinding_FunctionsService" contract="Functions.V1.FunctionsService" bindingType="basicHttpBinding" address="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc" bindingConfiguration="BasicHttpBinding_FunctionsService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc</serializedValue>
+          <serializedValue>http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

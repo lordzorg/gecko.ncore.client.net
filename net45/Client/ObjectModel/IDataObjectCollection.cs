@@ -17,6 +17,10 @@ namespace Gecko.NCore.Client.ObjectModel
 		void Load();
 
 #if NET45
+        /// <summary>
+        /// Loads the async.
+        /// </summary>
+        /// <returns>Task.</returns>
 	    Task LoadAsync();
 #endif
 

@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using Ephorte.ServiceModel.Contracts.Functions.V2;
 
 namespace Gecko.NCore.Host.Services.Functions.V2
 {
     [ServiceBehavior(AddressFilterMode = AddressFilterMode.Any, Namespace = "http://www.gecko.no/ephorte/services/functions/v2")]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class FunctionsService : IFunctionsService
     {
         public IEnumerable<FunctionDescriptor> QueryFunctionDescriptors(EphorteIdentity identity)

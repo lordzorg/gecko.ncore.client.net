@@ -1,13 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/documents/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.gecko.no/ephorte/services/documents/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/documents/v1/Imports">
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd1" namespace="http://www.gecko.no/ephorte/services/documents/v1" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V1" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" />
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/documents/v1">
+      <xsd:element name="CheckinMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://schemas.microsoft.com/Message" name="Content" type="q1:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V1" name="DocumentCriteria" nillable="true" type="q2:DocumentCriteria" />
+      <xsd:element name="CancelCheckout">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q3:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="journalpostId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="documentId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="version" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CancelCheckoutResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Checkout">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q4:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="documentId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="version" type="xsd:int" />
+            <xsd:element minOccurs="0" name="variant" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckoutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q5="http://schemas.microsoft.com/Message" name="CheckoutResult" type="q5:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContent">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q6:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="documentId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="version" type="xsd:int" />
+            <xsd:element minOccurs="0" name="variant" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q7="http://schemas.microsoft.com/Message" name="GetDocumentContentResult" type="q7:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByDokBeskrivId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q8:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="dokumentId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="version" type="xsd:int" />
+            <xsd:element minOccurs="0" name="variant" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByDokBeskrivIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q9="http://schemas.microsoft.com/Message" name="GetDocumentContentByDokBeskrivIdResult" type="q9:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByJournalPostId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q10:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="journalpostId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByJournalPostIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q11="http://schemas.microsoft.com/Message" name="GetDocumentContentByJournalPostIdResult" type="q11:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByMoId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q12:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="moId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="documentType" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByMoIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q13="http://schemas.microsoft.com/Message" name="GetDocumentContentByMoIdResult" type="q13:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByUbId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q14="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q14:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="ubId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="sakType" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentContentByUbIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q15="http://schemas.microsoft.com/Message" name="GetDocumentContentByUbIdResult" type="q15:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentFileName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q16="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q16:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="documentId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="version" type="xsd:int" />
+            <xsd:element minOccurs="0" name="variant" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDocumentFileNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetDocumentFileNameResult" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Message">
+      <xsd:simpleType name="StreamBody">
+        <xsd:restriction base="xsd:base64Binary" />
+      </xsd:simpleType>
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Documents.V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="DocumentCriteria">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            DocumentCriteria
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the document id.
+            &lt;/summary&gt;
+            &lt;value&gt;The document id.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="EphorteIdentity" nillable="true" type="q17:EphorteIdentity">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the EphorteIdentity.
+            &lt;/summary&gt;
+            &lt;value&gt;The EphorteIdentity.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Variant" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the variant.
+            &lt;/summary&gt;
+            &lt;value&gt;The variant.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Version" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the version.
+            &lt;/summary&gt;
+            &lt;value&gt;The version.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocumentCriteria" nillable="true" type="tns:DocumentCriteria" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="EphorteIdentity">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;
+            &lt;seealso cref="T:IEphorteIdentity" /&gt;
+            &lt;seealso cref="T:EphorteIdentityComparer" /&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="CheckinMessage">
     <wsdl:part name="parameters" element="tns:CheckinMessage" />
@@ -65,39 +353,105 @@
     <wsdl:part name="parameters" element="tns:GetDocumentFileNameResponse" />
   </wsdl:message>
   <wsdl:portType name="DocumentsService">
+    <wsdl:documentation>&lt;summary&gt;
+            Defines the service contract for document operations.
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="Checkin">
+      <wsdl:documentation>&lt;summary&gt;
+            Check in document contents
+            &lt;/summary&gt;
+            &lt;param name="message"&gt;The message describing the document context.&lt;/param&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/Checkin" name="CheckinMessage" message="tns:CheckinMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/CheckinResponse" message="tns:DocumentsService_Checkin_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CancelCheckout">
+      <wsdl:documentation>&lt;summary&gt;
+            Cancels the checkout.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="journalpostId"&gt;The journalpost id.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/CancelCheckout" message="tns:DocumentsService_CancelCheckout_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/CancelCheckoutResponse" message="tns:DocumentsService_CancelCheckout_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Checkout">
+      <wsdl:documentation>&lt;summary&gt;
+            Checks the out file.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;
+            &lt;param name="variant"&gt;The variant.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/Checkout" message="tns:DocumentsService_Checkout_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/CheckoutResponse" message="tns:DocumentsService_Checkout_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocumentContent">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets the document.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;
+            &lt;param name="variant"&gt;The variant.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContent" message="tns:DocumentsService_GetDocumentContent_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentResponse" message="tns:DocumentsService_GetDocumentContent_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocumentContentByDokBeskrivId">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets the document content by dok beskriv.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="dokumentId"&gt;The dokument id.&lt;/param&gt;
+            &lt;param name="version"&gt;&lt;/param&gt;
+            &lt;param name="variant"&gt;&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByDokBeskrivId" message="tns:DocumentsService_GetDocumentContentByDokBeskrivId_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByDokBeskrivIdResponse" message="tns:DocumentsService_GetDocumentContentByDokBeskrivId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocumentContentByJournalPostId">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets the document context by journal post.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="journalpostId"&gt;The journalpost id.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByJournalPostId" message="tns:DocumentsService_GetDocumentContentByJournalPostId_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByJournalPostIdResponse" message="tns:DocumentsService_GetDocumentContentByJournalPostId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocumentContentByMoId">
+      <wsdl:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;&lt;/param&gt;
+            &lt;param name="moId"&gt;&lt;/param&gt;
+            &lt;param name="documentType"&gt;&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByMoId" message="tns:DocumentsService_GetDocumentContentByMoId_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByMoIdResponse" message="tns:DocumentsService_GetDocumentContentByMoId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocumentContentByUbId">
+      <wsdl:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;&lt;/param&gt;
+            &lt;param name="ubId"&gt;&lt;/param&gt;
+            &lt;param name="sakType"&gt;&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByUbId" message="tns:DocumentsService_GetDocumentContentByUbId_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentContentByUbIdResponse" message="tns:DocumentsService_GetDocumentContentByUbId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocumentFileName">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets the name of the document file.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="documentId"&gt;The document id.&lt;/param&gt;
+            &lt;param name="version"&gt;The version.&lt;/param&gt;
+            &lt;param name="variant"&gt;The variant.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentFileName" message="tns:DocumentsService_GetDocumentFileName_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/documents/v1/DocumentsService/GetDocumentFileNameResponse" message="tns:DocumentsService_GetDocumentFileName_OutputMessage" />
     </wsdl:operation>

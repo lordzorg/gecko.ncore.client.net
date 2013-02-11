@@ -20,11 +20,21 @@ namespace Gecko.NCore.Client.Functions
             _functionsAdapter = functionsAdapter;
         }
 
+        /// <summary>
+        /// Executes the specified function name.
+        /// </summary>
+        /// <param name="functionName">Name of the function.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <returns>Task{System.Object}.</returns>
         public async Task<object> ExecuteAsync(string functionName, params object[] arguments)
         {
             return await _functionsAdapter.ExecuteAsync(functionName, arguments);
         }
 
+        /// <summary>
+        /// Gets the supported functions.
+        /// </summary>
+        /// <returns>The supported functions.</returns>
         public async Task<IEnumerable<FunctionDescriptor>> GetSupportedFunctions()
         {
             return await _functionsAdapter.GetSupportedFunctionsAsync();

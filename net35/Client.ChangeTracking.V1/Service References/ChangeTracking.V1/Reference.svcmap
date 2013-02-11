@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a559c97c-a10d-425e-8de8-6a1e0b1cd89d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f9a9f9e0-99fe-4d2e-845a-aea889c5a2ef" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,11 +21,8 @@
     <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ChangeTrackingService.xsd" MetadataType="Schema" ID="50a01e77-230e-4d23-b1ea-30a3ba140f88" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ChangeTrackingService.wsdl" MetadataType="Wsdl" ID="160cb2b0-dc4e-4f1f-9a8d-b5c7cd70df5f" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?wsdl" />
-    <MetadataFile FileName="ChangeTrackingService1.xsd" MetadataType="Schema" ID="9d10c9d4-4f36-433b-ad92-d7e0510da3e0" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ChangeTrackingService.disco" MetadataType="Disco" ID="2f7c9485-a76a-4329-bcbd-6e2471faa18e" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?disco" />
-    <MetadataFile FileName="ChangeTrackingService2.xsd" MetadataType="Schema" ID="bc28ec30-8001-4ee6-8bbd-08655716f34a" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ChangeTrackingService.wsdl" MetadataType="Wsdl" ID="38fa944e-f207-4aed-ab0f-a8c143c0c726" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?wsdl" />
+    <MetadataFile FileName="ChangeTrackingService.disco" MetadataType="Disco" ID="98376776-5dea-41fe-84be-06020bd40ccb" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ChangeTracking/V1/ChangeTrackingService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

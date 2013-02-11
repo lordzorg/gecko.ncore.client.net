@@ -55,6 +55,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -75,10 +79,18 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.Documents.V1.nuspec" />
+    <None Include="packages.config" />
+    <None Include="Service References\Documents.V1\DocumentsService.wsdl" />
+    <None Include="Service References\Documents.V1\DocumentsService1.wsdl" />
+    <None Include="Service References\Documents.V1\Gecko.NCore.Client.Documents.V1.CheckinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Documents.V1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Documents.V1\DocumentsService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Documents.V1\configuration91.svcinfo" />
@@ -87,33 +99,10 @@
     <None Include="Service References\Documents.V1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Documents.V1\DocumentService1.wsdl" />
-    <None Include="Service References\Documents.V1\DocumentService5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V1\DocumentService51.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V1\DocumentService52.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V1\DocumentService53.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V1\DocumentService54.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Documents.V1\DocumentsService1.wsdl" />
-    <None Include="Service References\Documents.V1\Gecko.NCore.Client.Documents.V1.CheckinResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\Documents.V1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Documents.V1\DocumentService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

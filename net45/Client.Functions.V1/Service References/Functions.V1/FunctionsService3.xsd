@@ -1,42 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Functions.V1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Functions.V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:complexType name="ArrayOfFunctionDescriptor">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FunctionDescriptor" nillable="true" type="tns:FunctionDescriptor" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfFunctionDescriptor" nillable="true" type="tns:ArrayOfFunctionDescriptor" />
-  <xs:complexType name="FunctionDescriptor">
-    <xs:sequence>
-      <xs:element name="Description" nillable="true" type="xs:string" />
-      <xs:element name="Name" nillable="true" type="xs:string" />
-      <xs:element name="Parameters" nillable="true" type="tns:FunctionParameterDictionary" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FunctionDescriptor" nillable="true" type="tns:FunctionDescriptor" />
-  <xs:complexType name="FunctionParameterDictionary">
-    <xs:annotation>
-      <xs:appinfo>
-        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameter">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="Name" nillable="true" type="xs:string" />
-            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="Type" type="q1:TypeCode" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FunctionParameterDictionary" nillable="true" type="tns:FunctionParameterDictionary" />
-  <xs:complexType name="FunctionResult">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ResultValue" nillable="true" type="xs:anyType" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FunctionResult" nillable="true" type="tns:FunctionResult" />
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DataSet" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="xs:schema" />
+        <xs:any />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="907b22b1-fcea-4532-996d-5ff34f86484b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e5b41297-baae-4f6a-bfe7-4d5c360887e0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,19 +19,19 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/functions/v1/functionsservice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FunctionsService.xsd" MetadataType="Schema" ID="ee69a0a9-248f-4eae-b61d-a7bd406ae016" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FunctionsService1.xsd" MetadataType="Schema" ID="ae1d8367-369b-47fb-903a-5becdc035458" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd6" />
-    <MetadataFile FileName="FunctionsService2.xsd" MetadataType="Schema" ID="1b52eadf-e34f-48aa-8f33-d1a29abed565" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd5" />
-    <MetadataFile FileName="FunctionsService3.xsd" MetadataType="Schema" ID="7608ce5e-d172-494d-8dd1-a30350d9e343" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd4" />
-    <MetadataFile FileName="FunctionsService.disco" MetadataType="Disco" ID="08ad54ef-efaa-4532-a23c-5554ecf147f0" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?disco" />
-    <MetadataFile FileName="FunctionsService.wsdl" MetadataType="Wsdl" ID="1e24f239-8e56-454b-b790-d42053ee5da1" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?wsdl" />
-    <MetadataFile FileName="FunctionsService1.wsdl" MetadataType="Wsdl" ID="070b8422-c793-4aac-8d82-2f1e8798342c" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="FunctionsService4.xsd" MetadataType="Schema" ID="4dc25e38-38e2-446c-b0bd-809659cd1934" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd3" />
-    <MetadataFile FileName="FunctionsService5.xsd" MetadataType="Schema" ID="ea947957-a861-4992-b292-1c925fca4b43" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd2" />
-    <MetadataFile FileName="FunctionsService6.xsd" MetadataType="Schema" ID="ee0fd3b5-a05a-41d5-ba52-4f577a5c2433" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FunctionsService1.wsdl" MetadataType="Wsdl" ID="e58e98c2-e4c3-477b-9582-b8653cfa7656" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?wsdl" />
+    <MetadataFile FileName="FunctionsService.wsdl" MetadataType="Wsdl" ID="1c2d4a1a-3862-499b-8cf5-4364339fab3d" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="FunctionsService.xsd" MetadataType="Schema" ID="02d603cb-e427-410f-973d-9b83d4e55d30" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd5" />
+    <MetadataFile FileName="FunctionsService1.xsd" MetadataType="Schema" ID="b157871e-7110-4d5b-8f51-7c0e9feb7da7" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FunctionsService2.xsd" MetadataType="Schema" ID="cc47ea10-59fc-4c3e-94a7-da2dce2992bf" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd6" />
+    <MetadataFile FileName="FunctionsService3.xsd" MetadataType="Schema" ID="9f0bebb7-0a27-4a3a-9114-117126443433" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FunctionsService4.xsd" MetadataType="Schema" ID="220ea2a4-94ac-4f36-b438-e23db0c89342" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FunctionsService5.xsd" MetadataType="Schema" ID="250b1c36-776f-4ac4-88d4-ce52b7ae9c38" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FunctionsService6.xsd" MetadataType="Schema" ID="912864dd-a331-4fdc-a232-00c1bf223bd3" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FunctionsService.disco" MetadataType="Disco" ID="d24b83a8-593a-4a7e-bdae-e3ab0d6b988e" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Functions/V1/FunctionsService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

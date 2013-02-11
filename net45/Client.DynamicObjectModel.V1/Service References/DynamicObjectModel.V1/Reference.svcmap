@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="56a3b5f4-2cce-4c1a-9443-eb489a39903d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a91244f7-d2a4-4d7c-8045-724111635488" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,15 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DynamicObjectModelService2.wsdl" MetadataType="Wsdl" ID="379e791a-a01d-412a-8547-2b460e4e8637" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="DynamicObjectModelService3.xsd" MetadataType="Schema" ID="a984a932-6267-4922-ae69-60bf4fac40a5" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DynamicObjectModelService31.xsd" MetadataType="Schema" ID="ee0c651e-d844-405a-a413-8dd7c550fa7c" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DynamicObjectModelService32.xsd" MetadataType="Schema" ID="7128baca-3a96-4ee6-9c79-db5f9240ec34" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd2" />
-    <MetadataFile FileName="DynamicObjectModelService21.wsdl" MetadataType="Wsdl" ID="40fdd50f-fbe9-4eec-9145-66297f845870" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl" />
-    <MetadataFile FileName="DynamicObjectModelService1.disco" MetadataType="Disco" ID="1e953e8f-4a26-4526-ae82-498f92437f6c" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?disco" />
+    <MetadataFile FileName="DynamicObjectModelService.wsdl" MetadataType="Wsdl" ID="1cf1ca14-fc12-471f-96e2-4723eb57ba6a" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DynamicObjectModelService1.wsdl" MetadataType="Wsdl" ID="890bf08a-47aa-4fca-af21-c84d65bce415" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl" />
+    <MetadataFile FileName="DynamicObjectModelService.disco" MetadataType="Disco" ID="d0156bb7-771b-4643-a2c5-24c16e207599" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

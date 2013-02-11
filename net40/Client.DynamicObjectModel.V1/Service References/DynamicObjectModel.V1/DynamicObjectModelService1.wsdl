@@ -2,11 +2,396 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.gecko.no/ephorte/services/claim/v1" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DynamicObjectModelService" targetNamespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:import namespace="http://www.gecko.no/ephorte/services/claim/v1" location="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?wsdl=wsdl0" />
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1/Imports">
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8888/Gecko.NCore.Host/Services/DynamicObjectModelService/V1/DynamicObjectModelService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1">
+      <xsd:element name="ExecuteTask">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="tasks" nillable="true" type="tns:ArrayOfTask" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="EphorteIdentity">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Database" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Password" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Role" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+      <xsd:complexType name="ArrayOfTask">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+      <xsd:complexType name="Task">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ObjectName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the name of the object.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The name of the object.
+            &lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Task" nillable="true" type="tns:Task" />
+      <xsd:complexType name="QueryTask">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Task">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Criteria" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the values.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The values.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OutputFields" nillable="true" type="q1:ArrayOfstring">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the output fields.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The output fields.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="QueryTask" nillable="true" type="tns:QueryTask" />
+      <xsd:complexType name="QueryCountTask">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Task">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Criteria" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the values.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The values.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="QueryCountTask" nillable="true" type="tns:QueryCountTask" />
+      <xsd:complexType name="DeleteTask">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Task">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Criteria" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the criteria.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The criteria.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DeleteTask" nillable="true" type="tns:DeleteTask" />
+      <xsd:complexType name="UpdateTask">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Task">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Criteria" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the criteria.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The criteria.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Fields" nillable="true" type="tns:DataObjectInput">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the fields.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The fields.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateTask" nillable="true" type="tns:UpdateTask" />
+      <xsd:complexType name="DataObjectInput">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+          </xsd:appinfo>
+          <xsd:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Field">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="FieldName" nillable="true" type="xsd:string" />
+                <xsd:element name="FieldValue" nillable="true" type="xsd:anyType" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DataObjectInput" nillable="true" type="tns:DataObjectInput" />
+      <xsd:element name="ExecuteTaskResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ExecuteTaskResult" nillable="true" type="tns:ArrayOfTaskResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfTaskResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="TaskResult" nillable="true" type="tns:TaskResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfTaskResult" nillable="true" type="tns:ArrayOfTaskResult" />
+      <xsd:complexType name="TaskResult">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="TaskResult" nillable="true" type="tns:TaskResult" />
+      <xsd:complexType name="DeleteTaskResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TaskResult">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Count" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets the deleted objects.
+            &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DeleteTaskResult" nillable="true" type="tns:DeleteTaskResult" />
+      <xsd:complexType name="QueryTaskResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TaskResult">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ResultSet" nillable="true" type="tns:ArrayOfDataObjectOutput">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the result set.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The result set.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="QueryTaskResult" nillable="true" type="tns:QueryTaskResult" />
+      <xsd:complexType name="ArrayOfDataObjectOutput">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DataObjectOutput" nillable="true" type="tns:DataObjectOutput" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDataObjectOutput" nillable="true" type="tns:ArrayOfDataObjectOutput" />
+      <xsd:complexType name="DataObjectOutput">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+          </xsd:appinfo>
+          <xsd:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Field">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="FieldName" nillable="true" type="xsd:string" />
+                <xsd:element name="FieldValue" nillable="true" type="xsd:anyType" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DataObjectOutput" nillable="true" type="tns:DataObjectOutput" />
+      <xsd:complexType name="UpdateTaskResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TaskResult">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Count" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets or sets the updated objects.
+            &lt;/summary&gt;
+            &lt;value&gt;
+            The updated objects.
+            &lt;/value&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateTaskResult" nillable="true" type="tns:UpdateTaskResult" />
+      <xsd:complexType name="QueryCountTaskResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TaskResult">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Count" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gets the count.
+            &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="QueryCountTaskResult" nillable="true" type="tns:QueryCountTaskResult" />
     </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xsd:complexType name="ArrayOfstring">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="DynamicObjectModel_ExecuteTask_InputMessage">
     <wsdl:part name="parameters" element="tns:ExecuteTask" />
@@ -15,7 +400,16 @@
     <wsdl:part name="parameters" element="tns:ExecuteTaskResponse" />
   </wsdl:message>
   <wsdl:portType name="DynamicObjectModel">
+    <wsdl:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="ExecuteTask">
+      <wsdl:documentation>&lt;summary&gt;
+            Executes the task.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="tasks"&gt;The tasks.&lt;/param&gt;
+            &lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1/DynamicObjectModel/ExecuteTask" message="tns:DynamicObjectModel_ExecuteTask_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/dynamicobjectmodel/v1/DynamicObjectModel/ExecuteTaskResponse" message="tns:DynamicObjectModel_ExecuteTask_OutputMessage" />
     </wsdl:operation>

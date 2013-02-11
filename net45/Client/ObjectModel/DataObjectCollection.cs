@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Gecko.NCore.Client.ObjectModel
 {
+    /// <summary>
+    /// Class DataObjectCollection
+    /// </summary>
 	public abstract class DataObjectCollection: IDataObjectCollection
 	{
 		private bool _isLoaded;
@@ -31,9 +34,16 @@ namespace Gecko.NCore.Client.ObjectModel
 			_isLoaded = true;
 		}
 
+        /// <summary>
+        /// Loads the core.
+        /// </summary>
         protected abstract void LoadCore();
 
 #if NET45
+        /// <summary>
+        /// Loads the async.
+        /// </summary>
+        /// <returns>Task.</returns>
         public async Task LoadAsync()
         {
             if (_isLoaded)
@@ -44,6 +54,10 @@ namespace Gecko.NCore.Client.ObjectModel
             _isLoaded = true;
         }
 
+        /// <summary>
+        /// Loads the core async.
+        /// </summary>
+        /// <returns>Task.</returns>
 	    protected abstract Task LoadCoreAsync();
 #endif
 
@@ -56,6 +70,10 @@ namespace Gecko.NCore.Client.ObjectModel
 			return AsQueryableCore();
 		}
 
+        /// <summary>
+        /// Ases the queryable core.
+        /// </summary>
+        /// <returns>IQueryable.</returns>
 		protected abstract IQueryable AsQueryableCore();
 
         /// <summary>

@@ -3,8 +3,15 @@ using System.Linq.Expressions;
 
 namespace Gecko.NCore.Client.ObjectModel
 {
+    /// <summary>
+    /// Interface IDataObjectAccess
+    /// </summary>
 	public interface IDataObjectAccess
 	{
+        /// <summary>
+        /// Gets the data object.
+        /// </summary>
+        /// <value>The data object.</value>
 		object DataObject { get; }
 
 		/// <summary>
@@ -48,6 +55,10 @@ namespace Gecko.NCore.Client.ObjectModel
 		bool CanAdd { get; }
 	}
 
+    /// <summary>
+    /// Interface IDataObjectAccess
+    /// </summary>
+    /// <typeparam name="TDataObject">The type of the T data object.</typeparam>
 	public interface IDataObjectAccess<TDataObject>
 	{
 		/// <summary>

@@ -54,6 +54,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus">
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -74,19 +77,19 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.Documents.V2.nuspec" />
+    <None Include="packages.config" />
     <None Include="Service References\Documents.V2\Documents.wsdl" />
-    <None Include="Service References\Documents.V2\DocumentService.wsdl" />
-    <None Include="Service References\Documents.V2\DocumentService.xsd">
+    <None Include="Service References\Documents.V2\Documents.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Documents.V2\DocumentService1.xsd">
+    <None Include="Service References\Documents.V2\Documents1.wsdl" />
+    <None Include="Service References\Documents.V2\Documents1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Documents.V2\DocumentService2.xsd">
+    <None Include="Service References\Documents.V2\Documents2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Documents.V2\DocumentService3.xsd">
+    <None Include="Service References\Documents.V2\Documents3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Documents.V2\Gecko.NCore.Client.Documents.V2.BeginReadDocumentResponse.datasource">
@@ -97,7 +100,7 @@
     <WCFMetadataStorage Include="Service References\Documents.V2\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Documents.V2\DocumentService.disco" />
+    <None Include="Service References\Documents.V2\Documents.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Documents.V2\configuration91.svcinfo" />

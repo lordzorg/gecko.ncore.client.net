@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="39554fc3-86a3-4c68-b2b9-a6e6b69bb2cc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="03f0fc14-6204-4a09-a0ee-9b618552b44b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,16 +19,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/documents/v2/documentservice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DocumentService4.xsd" MetadataType="Schema" ID="f3c5a05d-e672-4ed2-b74c-f84d451b0eb1" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DocumentService1.wsdl" MetadataType="Wsdl" ID="6d54c527-bc8d-486b-a617-a3299531a3bc" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="DocumentService1.disco" MetadataType="Disco" ID="b9901c1e-55c9-4a3d-92e1-c522814d392a" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?disco" />
-    <MetadataFile FileName="DocumentService41.xsd" MetadataType="Schema" ID="bc0ae1a9-0e7a-4078-8705-317b3a441b25" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?xsd=xsd2" />
-    <MetadataFile FileName="Documents1.wsdl" MetadataType="Wsdl" ID="adc93e66-1b60-4c8d-a4b6-146f8997de7c" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?wsdl" />
-    <MetadataFile FileName="DocumentService42.xsd" MetadataType="Schema" ID="073761ef-d535-4253-8e9f-2966c4924381" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?xsd=xsd3" />
-    <MetadataFile FileName="DocumentService43.xsd" MetadataType="Schema" ID="483f30f8-3fad-4e5a-9f6f-6b78a580f620" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v2/DocumentService.svc?xsd=xsd1" />
+    <MetadataFile FileName="Documents.xsd" MetadataType="Schema" ID="9116378d-5407-41cf-9f4b-35e157253766" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd3" />
+    <MetadataFile FileName="Documents.disco" MetadataType="Disco" ID="0d3c0956-bcd5-4013-a11e-d73b62be0d36" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?disco" />
+    <MetadataFile FileName="Documents1.wsdl" MetadataType="Wsdl" ID="41dec02f-8fa8-46f9-8edf-dcb0315ed36a" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Documents.wsdl" MetadataType="Wsdl" ID="a9fc2a0b-408f-4717-ac63-db583dc11ad6" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?wsdl" />
+    <MetadataFile FileName="Documents1.xsd" MetadataType="Schema" ID="a73e6452-4d9c-48c3-be1f-2a0c226141b6" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd1" />
+    <MetadataFile FileName="Documents2.xsd" MetadataType="Schema" ID="1f56b7ff-e5bb-49bf-8ff8-71e5822b25da" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd0" />
+    <MetadataFile FileName="Documents3.xsd" MetadataType="Schema" ID="449d377a-8396-46b7-8dfc-9487129a0e8d" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V2/Documents.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

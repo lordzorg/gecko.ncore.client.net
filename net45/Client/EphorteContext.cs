@@ -146,6 +146,11 @@ namespace Gecko.NCore.Client
             return _objectModelAdapter.Create(dataObjectName);
         }
 
+        /// <summary>
+        /// Initializes the specified data object.
+        /// </summary>
+        /// <param name="dataObject">The data object.</param>
+        /// <returns>IDataObjectAccess.</returns>
 		public IDataObjectAccess Initialize(object dataObject)
 		{
 			var dataObjectAccess = _objectModelAdapter.Initialize(dataObject);
@@ -153,6 +158,13 @@ namespace Gecko.NCore.Client
 			return dataObjectAccess;
 		}
 
+        /// <summary>
+        /// Finds the specified data object name.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="primaryKeys">The primary keys.</param>
+        /// <param name="relatedObjects">The related objects.</param>
+        /// <returns>IDataObjectAccess.</returns>
     	public IDataObjectAccess Find(string dataObjectName, IDictionary<string, string> primaryKeys, params string[] relatedObjects)
 		{
 			var dataObjectAccess = _objectModelAdapter.Find(dataObjectName, primaryKeys, relatedObjects);
@@ -160,6 +172,13 @@ namespace Gecko.NCore.Client
 			return dataObjectAccess;
 		}
 
+        /// <summary>
+        /// Gets the custom field descriptors.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="primaryKeys">The primary keys.</param>
+        /// <param name="category">The category.</param>
+        /// <returns>ICollection{ICustomFieldDescriptor}.</returns>
 		public ICollection<ICustomFieldDescriptor> GetCustomFieldDescriptors(string dataObjectName, IDictionary<string, string> primaryKeys, string category)
 		{
 			return _objectModelAdapter.GetCustomFieldDescriptor(dataObjectName, primaryKeys, category);
@@ -190,6 +209,9 @@ namespace Gecko.NCore.Client
     	    OnSavedChanges(new SavedChangesEventArgs(_stateManager));
     	}
 
+        /// <summary>
+        /// Occurs when [saved changes].
+        /// </summary>
         public event EventHandler<SavedChangesEventArgs> SavedChanges;
 
 		/// <summary>
@@ -205,6 +227,9 @@ namespace Gecko.NCore.Client
 			}
     	}
 
+        /// <summary>
+        /// Occurs when [saving changes].
+        /// </summary>
     	public event EventHandler<SavingChangesEventArgs> SavingChanges;
 
 		/// <summary>

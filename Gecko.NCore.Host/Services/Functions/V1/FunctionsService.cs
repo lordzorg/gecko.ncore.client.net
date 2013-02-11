@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using Ephorte.ServiceModel.Contracts;
 using Ephorte.ServiceModel.Contracts.Functions.V1;
 
@@ -7,7 +8,8 @@ using Ephorte.ServiceModel.Contracts.Functions.V1;
 namespace Gecko.NCore.Host.Services.Functions.V1
 {
     [ServiceBehavior(AddressFilterMode = AddressFilterMode.Any)]
-	public class FunctionsService : IFunctions
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class FunctionsService : IFunctions
     {
 	    public IEnumerable<FunctionDescriptor> QueryFunctionDescriptors(EphorteIdentity identity)
 	    {

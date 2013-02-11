@@ -8,10 +8,40 @@
   </xs:complexType>
   <xs:element name="ArrayOfFunctionDescriptor" nillable="true" type="tns:ArrayOfFunctionDescriptor" />
   <xs:complexType name="FunctionDescriptor">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;
+            Defines a class that contains descriptive information about supported functions.
+            &lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="Description" nillable="true" type="xs:string" />
-      <xs:element name="Name" nillable="true" type="xs:string" />
-      <xs:element name="Parameters" nillable="true" type="tns:FunctionParameterDictionary" />
+      <xs:element name="Description" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the description.
+            &lt;/summary&gt;
+            &lt;value&gt;The description.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the name.
+            &lt;/summary&gt;
+            &lt;value&gt;The name.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Parameters" nillable="true" type="tns:FunctionParameterDictionary">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the parameters.
+            &lt;/summary&gt;
+            &lt;value&gt;The parameters.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FunctionDescriptor" nillable="true" type="tns:FunctionDescriptor" />
@@ -20,6 +50,9 @@
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
+      <xs:documentation>&lt;summary&gt;
+            Defines a class that contains a collection of parameters required by the &lt;see cref="T:FunctionDescriptor"&gt;function&lt;/see&gt;.
+            &lt;/summary&gt;</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameter">
@@ -34,8 +67,22 @@
   </xs:complexType>
   <xs:element name="FunctionParameterDictionary" nillable="true" type="tns:FunctionParameterDictionary" />
   <xs:complexType name="FunctionResult">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;
+            Defines a base class
+            &lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="ResultValue" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="ResultValue" nillable="true" type="xs:anyType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the result.
+            &lt;/summary&gt;
+            &lt;value&gt;The result.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FunctionResult" nillable="true" type="tns:FunctionResult" />

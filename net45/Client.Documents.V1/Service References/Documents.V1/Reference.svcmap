@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="15bc6dcb-7792-4540-b350-337197f48588" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="25aeb2e5-8989-4038-8510-164b08c899a0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,17 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/documents/v1/documentservice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DocumentsService1.wsdl" MetadataType="Wsdl" ID="b90eb842-c097-4ebb-94d9-114ba81fb925" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?wsdl" />
-    <MetadataFile FileName="DocumentService5.xsd" MetadataType="Schema" ID="c9fa06dd-dc9b-477b-a886-52e36f983f21" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?xsd=xsd4" />
-    <MetadataFile FileName="DocumentService1.wsdl" MetadataType="Wsdl" ID="af038c36-5388-49ec-929d-5f6c9c1f32df" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="DocumentService51.xsd" MetadataType="Schema" ID="e37f2ddc-97e5-4c3a-9f52-90a03699d4aa" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DocumentService52.xsd" MetadataType="Schema" ID="563e3053-085d-45cf-bab5-4cf6b4a47549" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?xsd=xsd3" />
-    <MetadataFile FileName="DocumentService1.disco" MetadataType="Disco" ID="12c2e34a-6d42-4b19-b7a9-794c1593f9cf" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?disco" />
-    <MetadataFile FileName="DocumentService53.xsd" MetadataType="Schema" ID="30301191-60b4-473f-823c-960496d44708" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DocumentService54.xsd" MetadataType="Schema" ID="a0a4a6d3-67a0-4752-86e1-62fe64f4a82f" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v1/DocumentService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DocumentsService.wsdl" MetadataType="Wsdl" ID="e4ec9b8c-05e2-4a5a-91a8-33042709e047" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DocumentsService1.wsdl" MetadataType="Wsdl" ID="fd2fa0e5-416f-4d49-b736-5cb8fadaa3f7" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?wsdl" />
+    <MetadataFile FileName="DocumentsService.disco" MetadataType="Disco" ID="bd254ad9-afcc-406f-bb03-971282cd9874" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V1/DocumentsService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

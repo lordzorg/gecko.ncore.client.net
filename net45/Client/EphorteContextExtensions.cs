@@ -8,8 +8,17 @@ using DynamicExpression = Gecko.NCore.Client.Querying.DynamicExpression;
 
 namespace Gecko.NCore.Client
 {
+    /// <summary>
+    /// Class EphorteContextExtensions
+    /// </summary>
 	public static class EphorteContextExtensions
 	{
+        /// <summary>
+        /// Creates the specified ephorte context.
+        /// </summary>
+        /// <typeparam name="TDataObject">The type of the T data object.</typeparam>
+        /// <param name="ephorteContext">The ephorte context.</param>
+        /// <returns>``0.</returns>
 		public static TDataObject Create<TDataObject>(this IEphorteContext ephorteContext)
 		{
 			return (TDataObject) ephorteContext.Create(typeof (TDataObject).Name);
@@ -61,6 +70,14 @@ namespace Gecko.NCore.Client
 			return ephorteContext.Find(dataObjectName, primaryKeys, relatedObjects);
 		}
 
+        /// <summary>
+        /// Gets the custom field descriptors.
+        /// </summary>
+        /// <typeparam name="TDataObject">The type of the T data object.</typeparam>
+        /// <param name="ephorteContext">The ephorte context.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <param name="category">The category.</param>
+        /// <returns>ICollection{ICustomFieldDescriptor}.</returns>
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
 		public static ICollection<ICustomFieldDescriptor> GetCustomFieldDescriptors<TDataObject>(this IEphorteContext ephorteContext, Expression<Func<TDataObject, bool>> predicate, string category)
 		{

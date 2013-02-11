@@ -7,16 +7,28 @@ using System.Reflection;
 
 namespace Gecko.NCore.Client.ObjectModel.V3.No
 {
+    /// <summary>
+    /// ObjectModelAdapterV3No
+    /// </summary>
 	public class ObjectModelAdapterV3No: ObjectModelAdapterBase<ObjectModelServiceClient>
 	{
 		private readonly EphorteContextIdentity _contextIdentity;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectModelAdapterV3No" /> class.
+        /// </summary>
+        /// <param name="contextIdentity">The context identity.</param>
+        /// <param name="settings">The settings.</param>
 		public ObjectModelAdapterV3No(EphorteContextIdentity contextIdentity, ClientSettings settings)
             : base(settings)
 		{
 			_contextIdentity = contextIdentity;
 		}
 
+        /// <summary>
+        /// Creates the ephorte identity.
+        /// </summary>
+        /// <returns>EphorteIdentity.</returns>
 		protected EphorteIdentity CreateEphorteIdentity()
 		{
 			return new EphorteIdentity
@@ -29,6 +41,16 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No
 					   };
 		}
 
+        /// <summary>
+        /// Queries the specified data object name.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="filterExpression">The filter expression.</param>
+        /// <param name="sortExpression">The sort expression.</param>
+        /// <param name="relatedObjects">The related objects.</param>
+        /// <param name="takeCount">The take count.</param>
+        /// <param name="skipCount">The skip count.</param>
+        /// <returns>IEnumerable{System.Object}.</returns>
 		public override IEnumerable<object> Query(string dataObjectName, string filterExpression, string sortExpression, IEnumerable<string> relatedObjects, int? takeCount, int? skipCount)
 		{
 			var relatedObjectList = (relatedObjects ?? Enumerable.Empty<string>()).ToArray();
@@ -51,6 +73,13 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No
 			}
 		}
 
+        /// <summary>
+        /// Queries the count.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="filterExpression">The filter expression.</param>
+        /// <param name="sortExpression">The sort expression.</param>
+        /// <returns>System.Int32.</returns>
 		public override int QueryCount(string dataObjectName, string filterExpression, string sortExpression)
 		{
 			Trace("ObjectModelAdapter.V3.No", "QueryCount DataObjectName: {0}; Filter: {1}; Sort: {2}", dataObjectName, filterExpression, sortExpression);
@@ -72,6 +101,16 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No
 			}
 		}
 
+        /// <summary>
+        /// Storeds the query.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="queryId">The query id.</param>
+        /// <param name="sortExpression">The sort expression.</param>
+        /// <param name="relatedObjects">The related objects.</param>
+        /// <param name="takeCount">The take count.</param>
+        /// <param name="skipCount">The skip count.</param>
+        /// <returns>IEnumerable{System.Object}.</returns>
 		public override IEnumerable<object> StoredQuery(string dataObjectName, int queryId, string sortExpression, IEnumerable<string> relatedObjects, int? takeCount, int? skipCount)
 		{
 			var relatedObjectList = (relatedObjects ?? Enumerable.Empty<string>()).ToArray();
@@ -95,6 +134,13 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No
 			}
 		}
 
+        /// <summary>
+        /// Storeds the query count.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="queryId">The query id.</param>
+        /// <param name="sortExpression">The sort expression.</param>
+        /// <returns>System.Int32.</returns>
 		public override int StoredQueryCount(string dataObjectName, int queryId, string sortExpression)
 		{
 			Trace("ObjectModelAdapter.V3.No", "Stored Query Count DataObjectName: {0}; Query Id: {1}; Sort: {2}", dataObjectName, queryId, sortExpression);
@@ -212,6 +258,13 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No
 			}
 		}
 
+        /// <summary>
+        /// Gets the custom field descriptor.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="primaryKeys">The primary keys.</param>
+        /// <param name="category">The category.</param>
+        /// <returns>ICollection{ICustomFieldDescriptor}.</returns>
 		public override ICollection<ICustomFieldDescriptor> GetCustomFieldDescriptor(string dataObjectName, IDictionary<string, string> primaryKeys, string category)
 		{
 			using (var objectModelService = CreateServiceClient())
@@ -227,6 +280,10 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No
 			}
 		}
 
+        /// <summary>
+        /// Gets the type of the data object base.
+        /// </summary>
+        /// <value>The type of the data object base.</value>
 	    public override Type DataObjectBaseType
 		{
 			get { return typeof (DataObject); }

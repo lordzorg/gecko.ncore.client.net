@@ -55,6 +55,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -75,40 +79,31 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.ChangeTracking.V1.nuspec">
-      <SubType>Designer</SubType>
+    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService.wsdl" />
+    <None Include="Service References\ChangeTracking.V1\Gecko.NCore.Client.ChangeTracking.V1.DataObjectChange.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ChangeTracking.V1\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService1.wsdl" />
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService32.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService.disco" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\ChangeTracking.V1\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ChangeTracking.V1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ChangeTracking.V1\Gecko.NCore.Client.ChangeTracking.V1.DataObjectChange.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ChangeTracking.V1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ChangeTracking.V1\ChangeTrackingService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

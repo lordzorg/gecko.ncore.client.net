@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using Ephorte.ServiceModel.Contracts.ObjectModel.V3.En;
 
 namespace Gecko.NCore.Host.Services.ObjectModel.V3.En
 {
 	[ServiceBehavior(AddressFilterMode = AddressFilterMode.Any, Namespace = "http://www.gecko.no/ephorte/services/objectmodel/v3/en")]
-	public class ObjectModelService : IObjectModelService
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class ObjectModelService : IObjectModelService
 	{
 		public QueryResult FilteredQuery(EphorteIdentity identity, FilteredQueryArguments arguments)
 		{

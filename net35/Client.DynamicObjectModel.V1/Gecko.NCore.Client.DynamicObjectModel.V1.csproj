@@ -54,6 +54,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus">
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -74,17 +77,11 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.DynamicObjectModel.V1.nuspec" />
+    <None Include="packages.config" />
     <None Include="Service References\DynamicObjectModel.V1\DynamicObjectModelService.wsdl" />
-    <None Include="Service References\DynamicObjectModel.V1\DynamicObjectModelService.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\DynamicObjectModel.V1\DynamicObjectModelService1.wsdl" />
-    <None Include="Service References\DynamicObjectModel.V1\DynamicObjectModelService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\DynamicObjectModel.V1\DynamicObjectModelService2.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\DynamicObjectModel.V1\Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -100,9 +97,6 @@
     <None Include="Service References\DynamicObjectModel.V1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\DynamicObjectModel.V1\Gecko.NCore.Client.DynamicObjectModel.V1.DynamicObjectModel.V1.TaskResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\DynamicObjectModel.V1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

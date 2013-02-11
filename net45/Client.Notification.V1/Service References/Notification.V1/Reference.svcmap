@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="96f9dac5-a083-4f93-a954-844d15995b31" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fde6a6e7-d3dc-4596-92c8-70ffb009fae5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://gvs-e4-2-0/ephorteweb/services/notification/v1/notificationservice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NotificationService3.xsd" MetadataType="Schema" ID="a0f128e5-e3bb-4800-a0db-012b89a1305f" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc?xsd=xsd1" />
-    <MetadataFile FileName="NotificationService1.disco" MetadataType="Disco" ID="fa78e7aa-9d67-42cc-988e-320887602356" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc?disco" />
-    <MetadataFile FileName="NotificationService31.xsd" MetadataType="Schema" ID="beb230ad-fc8a-4e2f-aed0-5ddfc5fe9b6c" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc?xsd=xsd2" />
-    <MetadataFile FileName="NotificationService32.xsd" MetadataType="Schema" ID="cb193465-5a27-4635-ab6f-8543042c0615" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NotificationService1.wsdl" MetadataType="Wsdl" ID="29ea940e-0a78-4dce-9e79-d9555a8dc1b3" SourceId="1" SourceUrl="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/notification/v1/NotificationService.svc?wsdl" />
+    <MetadataFile FileName="NotificationService.disco" MetadataType="Disco" ID="b3b19705-a6d7-4fa6-af84-d184dc9d7396" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?disco" />
+    <MetadataFile FileName="NotificationService.wsdl" MetadataType="Wsdl" ID="4599e066-55f9-44e2-96bb-28fb3e92b994" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/Notification/V1/NotificationService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

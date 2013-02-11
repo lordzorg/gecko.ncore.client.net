@@ -18,20 +18,44 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client", "net45\Client\Gecko.NCore.Client.csproj", "{59753DD8-9506-4044-A513-CAD06ADD3673}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.ChangeTracking.V1", "net45\Client.ChangeTracking.V1\Gecko.NCore.Client.ChangeTracking.V1.csproj", "{EBAA49D4-50B0-4FC7-87BF-9245A404B626}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Claims.V1", "net45\Client.Claims.V1\Gecko.NCore.Client.Claims.V1.csproj", "{3B93F189-3D46-4882-97CE-B309CB58D03E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Documents.V1", "net45\Client.Documents.V1\Gecko.NCore.Client.Documents.V1.csproj", "{F2F88797-A0D0-4730-8ACE-B322D0D773FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Documents.V2", "net45\Client.Documents.V2\Gecko.NCore.Client.Documents.V2.csproj", "{A564D217-5650-4653-85A9-00861A04167F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Documents.V3", "net45\Client.Documents.V3\Gecko.NCore.Client.Documents.V3.csproj", "{8FAB91AB-77EA-4450-ABEA-35947EDDF3ED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Functions.V1", "net45\Client.Functions.V1\Gecko.NCore.Client.Functions.V1.csproj", "{D9D8A830-2EC8-40D9-A70C-3E7F350F6324}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Metadata.V1", "net45\Client.Metadata.V1\Gecko.NCore.Client.Metadata.V1.csproj", "{738D5776-A102-4ADF-9D71-01133BE82572}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Notification.V1", "net45\Client.Notification.V1\Gecko.NCore.Client.Notification.V1.csproj", "{279A554B-D055-45EB-AA30-4275EA0101D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.ObjectModel.V1", "net45\Client.ObjectModel.V1\Gecko.NCore.Client.ObjectModel.V1.csproj", "{7CCB2316-8DC2-403C-9E85-4B0506027614}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -39,6 +63,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.ObjectMo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.ObjectModel.V2", "net45\Client.ObjectModel.V2\Gecko.NCore.Client.ObjectModel.V2.csproj", "{371C666E-D2E2-4276-98F3-FBD813A7009C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.ObjectModel.V3.En", "net45\Client.ObjectModel.V3.En\Gecko.NCore.Client.ObjectModel.V3.En.csproj", "{C051E08E-57D0-4CF4-A082-7BBE9B0963DF}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -51,6 +78,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.ObjectMo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.DynamicObjectModel.V1", "net45\Client.DynamicObjectModel.V1\Gecko.NCore.Client.DynamicObjectModel.V1.csproj", "{50A49079-C0A0-43B9-AE1D-18595E417A8C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Functions.V2", "net45\Client.Functions.V2\Gecko.NCore.Client.Functions.V2.csproj", "{817C4295-2EA0-4847-AB91-536B29B9FFA4}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -144,6 +174,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Documents.V1", "net40\Client.Documents.V1\Gecko.NCore.Client.Documents.V1.csproj", "{432C3931-4053-4E91-BED5-B36D7E993125}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Documents.V2", "net40\Client.Documents.V2\Gecko.NCore.Client.Documents.V2.csproj", "{4A9BE48A-67A2-4C75-8139-F5D2B728DE0A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Documents.V3", "net40\Client.Documents.V3\Gecko.NCore.Client.Documents.V3.csproj", "{103CFF9B-B589-4E5D-B3E9-9945BC44CE90}"
 EndProject

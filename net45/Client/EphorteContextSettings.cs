@@ -1,5 +1,8 @@
 ﻿namespace Gecko.NCore.Client
 {
+    /// <summary>
+    /// Class EphorteContextSettings
+    /// </summary>
 	public class EphorteContextSettings
 	{
 		private readonly ClientSettings _objectModelService = new ClientSettings();

@@ -67,6 +67,11 @@ namespace Gecko.NCore.Client
             get { return _metadataManager; }
         }
 
+        /// <summary>
+        /// Initializes the async.
+        /// </summary>
+        /// <param name="dataObject">The data object.</param>
+        /// <returns>Task{IDataObjectAccess}.</returns>
         public async Task<IDataObjectAccess> InitializeAsync(object dataObject)
         {
             var dataObjectAccess = await _objectModelAdapter.InitializeAsync(dataObject);
@@ -74,6 +79,13 @@ namespace Gecko.NCore.Client
             return dataObjectAccess;
         }
 
+        /// <summary>
+        /// Finds the async.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <param name="relatedObjects">The related objects.</param>
+        /// <returns>Task{IDataObjectAccess}.</returns>
         public async Task<IDataObjectAccess> FindAsync(string dataObjectName, IDictionary<string, string> predicate, params string[] relatedObjects)
         {
             var dataObjectAccess = await _objectModelAdapter.FindAsync(dataObjectName, predicate, relatedObjects);
@@ -81,11 +93,22 @@ namespace Gecko.NCore.Client
             return dataObjectAccess;
         }
 
+        /// <summary>
+        /// Gets the custom field descriptors async.
+        /// </summary>
+        /// <param name="dataObjectName">Name of the data object.</param>
+        /// <param name="primaryKeys">The primary keys.</param>
+        /// <param name="category">The category.</param>
+        /// <returns>Task{ICollection{ICustomFieldDescriptor}}.</returns>
         public async Task<ICollection<ICustomFieldDescriptor>> GetCustomFieldDescriptorsAsync(string dataObjectName, IDictionary<string, string> primaryKeys, string category)
         {
             return await _objectModelAdapter.GetCustomFieldDescriptorAsync(dataObjectName, primaryKeys, category);
         }
 
+        /// <summary>
+        /// Saves the changes async.
+        /// </summary>
+        /// <returns>Task.</returns>
         public async Task SaveChangesAsync()
         {
             OnSavingChanges(new SavingChangesEventArgs(_stateManager));

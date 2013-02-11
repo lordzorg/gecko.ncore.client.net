@@ -118,6 +118,11 @@ namespace Gecko.NCore.Client.Querying
 			return StoredQueryCore(model, queryId);
 		}
 
+        /// <summary>
+        /// Gets the active user id core.
+        /// </summary>
+        /// <value>The active user id core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual int ActiveUserIdCore
 		{
 			get
@@ -126,6 +131,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active user name id core.
+        /// </summary>
+        /// <value>The active user name id core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual int ActiveUserNameIdCore
 		{
 			get
@@ -134,6 +144,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active administrative unit id core.
+        /// </summary>
+        /// <value>The active administrative unit id core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual int ActiveAdministrativeUnitIdCore
 		{
 			get
@@ -142,6 +157,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active classification system id core.
+        /// </summary>
+        /// <value>The active classification system id core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual string ActiveClassificationSystemIdCore
 		{
 			get
@@ -150,6 +170,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active registry management unit id core.
+        /// </summary>
+        /// <value>The active registry management unit id core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual string ActiveRegistryManagementUnitIdCore
 		{
 			get
@@ -158,6 +183,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active municipality id core.
+        /// </summary>
+        /// <value>The active municipality id core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual string ActiveMunicipalityIdCore
 		{
 			get
@@ -166,6 +196,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the writable administrative unit ids core.
+        /// </summary>
+        /// <value>The writable administrative unit ids core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual IEnumerable<int> WritableAdministrativeUnitIdsCore
 		{
 			get
@@ -174,6 +209,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active administrative unit hierarchy ids core.
+        /// </summary>
+        /// <value>The active administrative unit hierarchy ids core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual IEnumerable<int> ActiveAdministrativeUnitHierarchyIdsCore
 		{
 			get
@@ -182,6 +222,11 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Gets the active administrative unit sub hierarchy ids core.
+        /// </summary>
+        /// <value>The active administrative unit sub hierarchy ids core.</value>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual IEnumerable<int> ActiveAdministrativeUnitSubHierarchyIdsCore
 		{
 			get
@@ -190,6 +235,14 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
+        /// <summary>
+        /// Storeds the query core.
+        /// </summary>
+        /// <typeparam name="TModel">The type of the T model.</typeparam>
+        /// <param name="model">The model.</param>
+        /// <param name="queryId">The query id.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise</returns>
+        /// <exception cref="System.NotSupportedException"></exception>
 		protected virtual bool StoredQueryCore<TModel>(TModel model, int queryId)
 		{
 			throw new NotSupportedException(Resources.QueryContext_Properties_on_QueryContext_Current_are_only_supported_in_a_Linq_query_based_on_IEphorteContext);

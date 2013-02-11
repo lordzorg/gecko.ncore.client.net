@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/claim/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClaimService" targetNamespace="http://www.gecko.no/ephorte/services/claim/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.gecko.no/ephorte/services/claim/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClaimService" targetNamespace="http://www.gecko.no/ephorte/services/claim/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="WSHttpBinding_ClaimService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -8,11 +8,230 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.gecko.no/ephorte/services/claim/v1/Imports">
-      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd0" namespace="http://www.gecko.no/ephorte/services/claim/v1" />
-      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/claim/v1">
+      <xsd:element name="GetDataObjectClaims">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="identifiers" nillable="true" type="tns:ArrayOfIdentifier" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="EphorteIdentity">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Database" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Password" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Role" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
+      <xsd:complexType name="ArrayOfIdentifier">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" nillable="true" type="tns:Identifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfIdentifier" nillable="true" type="tns:ArrayOfIdentifier" />
+      <xsd:complexType name="Identifier">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keys" nillable="true" type="q1:ArrayOfanyType">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the keys.
+            &lt;/summary&gt;
+            &lt;value&gt;The keys.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ObjectType" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            Gets or sets the type of the object.
+            &lt;/summary&gt;
+            &lt;value&gt;The type of the object.&lt;/value&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Identifier" nillable="true" type="tns:Identifier" />
+      <xsd:element name="GetDataObjectClaimsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetDataObjectClaimsResult" nillable="true" type="tns:ArrayOfDataObjectClaims" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfDataObjectClaims">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DataObjectClaims" nillable="true" type="tns:DataObjectClaims" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDataObjectClaims" nillable="true" type="tns:ArrayOfDataObjectClaims" />
+      <xsd:complexType name="DataObjectClaims">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Claims" nillable="true" type="tns:ArrayOfEphorteClaim">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Identifier" nillable="true" type="tns:Identifier">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DataObjectClaims" nillable="true" type="tns:DataObjectClaims" />
+      <xsd:complexType name="ArrayOfEphorteClaim">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="EphorteClaim" nillable="true" type="tns:EphorteClaim" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfEphorteClaim" nillable="true" type="tns:ArrayOfEphorteClaim" />
+      <xsd:complexType name="EphorteClaim">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Value" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo />
+              <xsd:documentation>&lt;summary&gt;
+            &lt;/summary&gt;</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EphorteClaim" nillable="true" type="tns:EphorteClaim" />
+      <xsd:element name="GetUserClaims">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="identity" nillable="true" type="tns:EphorteIdentity" />
+            <xsd:element minOccurs="0" name="userId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetUserClaimsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetUserClaimsResult" nillable="true" type="tns:ArrayOfEphorteClaim" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfanyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="ClaimService_GetDataObjectClaims_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataObjectClaims" />
@@ -27,11 +246,29 @@
     <wsdl:part name="parameters" element="tns:GetUserClaimsResponse" />
   </wsdl:message>
   <wsdl:portType name="ClaimService">
+    <wsdl:documentation>&lt;summary&gt;
+             Defines the Claim service contract
+             
+             The claim services provides an interface to look up claims for
+             specific users or data objects (Sak, Journalpost etc..)
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="GetDataObjectClaims">
+      <wsdl:documentation>&lt;summary&gt;
+             Returns the &lt;see cref="T:EphorteClaim" /&gt;s for each data object referenced by the supplied identifiers
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;Login identity&lt;/param&gt;
+            &lt;param name="identifiers"&gt;Data object identifiers that reference specific data objects (Sak, Journalpost etc..)&lt;/param&gt;
+            &lt;returns&gt;Claims for each of the supplied identifiers&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/claim/v1/ClaimService/GetDataObjectClaims" message="tns:ClaimService_GetDataObjectClaims_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/claim/v1/ClaimService/GetDataObjectClaimsResponse" message="tns:ClaimService_GetDataObjectClaims_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUserClaims">
+      <wsdl:documentation>&lt;summary&gt;
+             Returns the &lt;see cref="T:EphorteClaim" /&gt;s a specific user is authorizied to.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;Login identity&lt;/param&gt;
+            &lt;param name="userId"&gt;The user id&lt;/param&gt;
+            &lt;returns&gt;The users claims&lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/claim/v1/ClaimService/GetUserClaims" message="tns:ClaimService_GetUserClaims_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/claim/v1/ClaimService/GetUserClaimsResponse" message="tns:ClaimService_GetUserClaims_OutputMessage" />
     </wsdl:operation>
@@ -60,9 +297,9 @@
   </wsdl:binding>
   <wsdl:service name="ClaimService">
     <wsdl:port name="WSHttpBinding_ClaimService" binding="tns:WSHttpBinding_ClaimService">
-      <soap12:address location="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc" />
+      <soap12:address location="http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/claim/v1/ClaimService.svc</wsa10:Address>
+        <wsa10:Address>http://localhost:8888/Gecko.NCore.Host/Services/Claim/V1/ClaimService.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

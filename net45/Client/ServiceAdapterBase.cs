@@ -3,11 +3,19 @@ using System.ServiceModel;
 
 namespace Gecko.NCore.Client
 {
+    /// <summary>
+    /// Class ServiceAdapterBase
+    /// </summary>
+    /// <typeparam name="TServiceClient">The type of the T service client.</typeparam>
     public abstract class ServiceAdapterBase<TServiceClient>
         where TServiceClient: class, new()
     {
         private readonly ClientSettings _clientSettings;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceAdapterBase{TServiceClient}" /> class.
+        /// </summary>
+        /// <param name="clientSettings">The client settings.</param>
         protected ServiceAdapterBase(ClientSettings clientSettings)
         {
             _clientSettings = clientSettings;
@@ -16,8 +24,7 @@ namespace Gecko.NCore.Client
         /// <summary>
         /// Creates the object model service client.
         /// </summary>
-        /// <typeparam name="TServiceClient">The type of the service client.</typeparam>
-        /// <returns></returns>
+        /// <returns>`0.</returns>
         protected TServiceClient CreateServiceClient()
         {
             return CreateServiceClient(_clientSettings);
@@ -26,9 +33,8 @@ namespace Gecko.NCore.Client
         /// <summary>
         /// Creates the object model service client.
         /// </summary>
-        /// <typeparam name="TServiceClient">The type of the service client.</typeparam>
         /// <param name="settings">The configuration.</param>
-        /// <returns></returns>
+        /// <returns>`0.</returns>
         protected static TServiceClient CreateServiceClient(ClientSettings settings)
         {
             var instance = CreateObjectModelServiceClientInstance(settings);
@@ -36,6 +42,11 @@ namespace Gecko.NCore.Client
             return instance;
         }
 
+        /// <summary>
+        /// Creates the object model service client instance.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <returns>`0.</returns>
         protected static TServiceClient CreateObjectModelServiceClientInstance(ClientSettings settings)
         {
             if (settings.Binding != null && !string.IsNullOrEmpty(settings.Address))

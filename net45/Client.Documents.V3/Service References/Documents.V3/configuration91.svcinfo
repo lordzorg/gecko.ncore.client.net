@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="XMk9k4nN2pYW3lXiROuj3+avGRU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="NYpuoHXFCmqziSNPwWioiojnhLw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_DocumentService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_DocumentService" contract="Documents.V3.DocumentService" bindingType="basicHttpBinding" address="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc" bindingConfiguration="BasicHttpBinding_DocumentService">
+    <endpoint name="BasicHttpBinding_DocumentService" contract="Documents.V3.DocumentService" bindingType="basicHttpBinding" address="http://localhost:8888/Gecko.NCore.Host/Services/Documents/V3/DocumentService.svc" bindingConfiguration="BasicHttpBinding_DocumentService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/documents/v3/DocumentService.svc</serializedValue>
+          <serializedValue>http://localhost:8888/Gecko.NCore.Host/Services/Documents/V3/DocumentService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

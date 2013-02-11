@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://www.gecko.no/ephorte/services/functions/v1" elementFormDefault="qualified" targetNamespace="http://www.gecko.no/ephorte/services/functions/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" />
-  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Functions.V1" />
-  <xs:import schemaLocation="http://gvs-e4-2-0.gecko.no/ePhorteWeb/services/Functions/V1/FunctionsService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:element name="QueryFunctionDescriptors">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q1:EphorteIdentity" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="QueryFunctionDescriptorsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Functions.V1" minOccurs="0" name="QueryFunctionDescriptorsResult" nillable="true" type="q2:ArrayOfFunctionDescriptor" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecuteFunction">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" minOccurs="0" name="identity" nillable="true" type="q3:EphorteIdentity" />
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q4:ArrayOfanyType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecuteFunctionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts.Functions.V1" minOccurs="0" name="ExecuteFunctionResult" nillable="true" type="q5:FunctionResult" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ephorte.ServiceModel.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="EphorteIdentity">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;
+            Defines the identity of the user executing the request.
+            &lt;/summary&gt;
+            &lt;seealso cref="T:IEphorteIdentity" /&gt;
+            &lt;seealso cref="T:EphorteIdentityComparer" /&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the database.
+            &lt;/summary&gt;
+            &lt;value&gt;The database.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the password.
+            &lt;/summary&gt;
+            &lt;value&gt;The password.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the role.
+            &lt;/summary&gt;
+            &lt;value&gt;The role.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the username.
+            &lt;/summary&gt;
+            &lt;value&gt;The username.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Gets or sets the name of the external system.
+            &lt;/summary&gt;
+            &lt;value&gt;The name of the external system.&lt;/value&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EphorteIdentity" nillable="true" type="tns:EphorteIdentity" />
 </xs:schema>

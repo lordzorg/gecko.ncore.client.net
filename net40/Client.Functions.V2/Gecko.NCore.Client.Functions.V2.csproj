@@ -54,6 +54,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
@@ -74,22 +78,8 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="Gecko.NCore.Client.Functions.V2.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="Service References\Functions.V2\FunctionsService.wsdl" />
-    <None Include="Service References\Functions.V2\FunctionsService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Functions.V2\FunctionsService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Functions.V2\FunctionsService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Functions.V2\FunctionsService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\Functions.V2\Gecko.NCore.Client.Functions.V2.FunctionDescriptor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

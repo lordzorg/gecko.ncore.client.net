@@ -6,6 +6,9 @@ using Gecko.NCore.Client.CookieManagement;
 
 namespace Gecko.NCore.Client
 {
+    /// <summary>
+    /// Class ClientSettings
+    /// </summary>
 	[DebuggerDisplay("Address: {Address}, Endpoint Name: {EndpointName}")]
 	public class ClientSettings
 	{
@@ -30,6 +33,10 @@ namespace Gecko.NCore.Client
 		/// <value>The name of the service endpoint.</value>
 		public string EndpointName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the cookie.
+        /// </summary>
+        /// <value>The cookie.</value>
 		public string Cookie { get; set; }
 	}
 }

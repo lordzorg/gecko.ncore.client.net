@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Web;
 using Ephorte.ServiceModel.Contracts.ObjectModel.V2;
 using Ephorte.ServiceModel.Contracts.ObjectModel.V2.DataObjects;
@@ -9,7 +10,8 @@ using Ephorte.ServiceModel.Contracts.ObjectModel.V2.DataObjects;
 namespace Gecko.NCore.Host.Services.ObjectModel.V2
 {
 	[ServiceBehavior(AddressFilterMode = AddressFilterMode.Any, Namespace = "http://www.gecko.no/ephorte/services/objectmodel/v2")]
-	public class ObjectModelService : IObjectModelService
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class ObjectModelService : IObjectModelService
 	{
 		public QueryResult Query(EphorteIdentity identity, QueryArguments arguments)
 		{

@@ -24,11 +24,30 @@
     <wsdl:part name="parameters" element="tns:ExecuteFunctionResponse" />
   </wsdl:message>
   <wsdl:portType name="FunctionsService">
+    <wsdl:documentation>&lt;summary&gt;
+            Defines a contract for a service working as a function handler.
+            &lt;/summary&gt;</wsdl:documentation>
     <wsdl:operation name="QueryFunctionDescriptors">
+      <wsdl:documentation>&lt;summary&gt;
+            Queries the functions supported by the service.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;returns&gt;
+            A collection of &lt;see cref="T:FunctionDescriptor"&gt;function descriptors&lt;/see&gt;
+            &lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/functions/v1/FunctionsService/QueryFunctionDescriptors" message="tns:FunctionsService_QueryFunctionDescriptors_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/functions/v1/FunctionsService/QueryFunctionDescriptorsResponse" message="tns:FunctionsService_QueryFunctionDescriptors_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ExecuteFunction">
+      <wsdl:documentation>&lt;summary&gt;
+            Executes the function.
+            &lt;/summary&gt;
+            &lt;param name="identity"&gt;The identity.&lt;/param&gt;
+            &lt;param name="name"&gt;The name of the function to execute.&lt;/param&gt;
+            &lt;param name="parameters"&gt;The parameters required by the function.&lt;/param&gt;
+            &lt;returns&gt;
+            The result of the function executed, if any.
+            &lt;/returns&gt;</wsdl:documentation>
       <wsdl:input wsaw:Action="http://www.gecko.no/ephorte/services/functions/v1/FunctionsService/ExecuteFunction" message="tns:FunctionsService_ExecuteFunction_InputMessage" />
       <wsdl:output wsaw:Action="http://www.gecko.no/ephorte/services/functions/v1/FunctionsService/ExecuteFunctionResponse" message="tns:FunctionsService_ExecuteFunction_OutputMessage" />
     </wsdl:operation>

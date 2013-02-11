@@ -2,6 +2,9 @@ using System.Linq;
 
 namespace Gecko.NCore.Client.StateTracking
 {
+    /// <summary>
+    /// Interface IStateManager
+    /// </summary>
 	public interface IStateManager
 	{
 		/// <summary>
