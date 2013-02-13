@@ -111,7 +111,9 @@
     <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\UserName.cs">
       <Link>ObjectModel\V3\En\UserName.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>

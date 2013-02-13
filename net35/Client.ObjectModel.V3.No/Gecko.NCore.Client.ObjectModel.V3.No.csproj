@@ -83,7 +83,9 @@
     <Compile Include="..\..\net45\Client.ObjectModel.V3.No\ObjectModel\V3\No\Sak.cs">
       <Link>ObjectModel\V3\No\Sak.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\net45\Client.ObjectModel.V3.No\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Service References\ObjectModel.V3.No\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
