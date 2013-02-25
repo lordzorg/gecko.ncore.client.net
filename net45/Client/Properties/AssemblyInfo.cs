@@ -14,7 +14,15 @@ using System.Runtime.InteropServices;
 //      Minor Version 
 //      Patch
 // You can specify all the values or you can default the Patche Numbers by using the '*'.
-[assembly: AssemblyVersion("6.0.*")]
+
+// Dette versjonsnummeret beholdes konstant og endres aldri
+[assembly: AssemblyVersion("6.2.0")]
+
+// Dette versjonsnummeret økes i hennhold til semver.org
+[assembly: AssemblyFileVersion("6.2.0")]
+
+// Dette versjonsnummeret bør samsvare med AssemblyFileVersion pluss eventuelt postfiks for pre release pakker.
+[assembly: AssemblyInformationalVersion("6.2.0")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

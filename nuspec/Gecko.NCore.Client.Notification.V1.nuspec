@@ -11,7 +11,7 @@
     <iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
     <tags>ephorte ncore client gecko</tags>
     <dependencies>
-      <dependency id="Gecko.NCore.Client" version="6.0.0" />
+      <dependency id="Gecko.NCore.Client" version="6.2.0" />
       <dependency id="WCFExtrasPlus" version="2.3.0" />
     </dependencies>
     <frameworkAssemblies>
