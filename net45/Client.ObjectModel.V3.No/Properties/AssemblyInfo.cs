@@ -18,10 +18,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("6.2.0")]
 
 // Dette versjonsnummeret økes i hennhold til semver.org
-[assembly: AssemblyFileVersion("6.2.0")]
+[assembly: AssemblyFileVersion("6.3.0")]
 
 // Dette versjonsnummeret bør samsvare med AssemblyFileVersion pluss eventuelt postfiks for pre release pakker.
-[assembly: AssemblyInformationalVersion("6.2.0")]
+[assembly: AssemblyInformationalVersion("6.3.0")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

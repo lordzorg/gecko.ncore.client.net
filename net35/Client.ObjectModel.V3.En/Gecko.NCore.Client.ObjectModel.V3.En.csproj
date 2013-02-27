@@ -172,6 +172,18 @@
     <None Include="Service References\ObjectModel.V3.En\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ObjectModel.V3.En\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

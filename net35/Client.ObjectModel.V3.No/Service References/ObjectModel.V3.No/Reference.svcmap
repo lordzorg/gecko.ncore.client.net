@@ -21,8 +21,12 @@
     <MetadataSource Address="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ObjectModelService.wsdl" MetadataType="Wsdl" ID="0e49959f-7b7a-4297-a6e7-fcde8139fd75" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?wsdl" />
     <MetadataFile FileName="ObjectModelService.disco" MetadataType="Disco" ID="ecac6317-9152-47ee-8f28-9456ec788956" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?disco" />
+    <MetadataFile FileName="ObjectModelService.xsd" MetadataType="Schema" ID="8513e631-2d35-454b-a6a4-2360721365b1" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ObjectModelService1.xsd" MetadataType="Schema" ID="c0ce4e7c-53bb-46a1-b359-c8a0b259ecee" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ObjectModelService.wsdl" MetadataType="Wsdl" ID="0e49959f-7b7a-4297-a6e7-fcde8139fd75" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?wsdl" />
+    <MetadataFile FileName="ObjectModelService2.xsd" MetadataType="Schema" ID="d4f90305-4f4e-4744-9175-df3e1b71be1f" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ObjectModelService3.xsd" MetadataType="Schema" ID="4b07a278-07bc-4665-9ae4-b935df71c8c2" SourceId="1" SourceUrl="http://localhost:8888/Gecko.NCore.Host/Services/ObjectModel/V3/No/ObjectModelService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

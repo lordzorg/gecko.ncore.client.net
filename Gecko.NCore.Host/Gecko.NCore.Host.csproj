@@ -48,73 +48,76 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ephorte.ServiceModel.Contracts, Version=5.1.4789.29519, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.5.1.4789.29519\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.ChangeTracking.V1, Version=5.1.4789.29522, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.ChangeTracking.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ChangeTracking.V1.5.1.4789.29522\lib\net45\Ephorte.ServiceModel.Contracts.ChangeTracking.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ChangeTracking.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.ChangeTracking.V1.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Claims.V1, Version=5.1.4789.29519, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Claims.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Claims.V1.5.1.4789.29519\lib\net45\Ephorte.ServiceModel.Contracts.Claims.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Claims.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Claims.V1.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Documents.V1, Version=5.1.4789.29522, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Documents.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Documents.V1.5.1.4789.29522\lib\net45\Ephorte.ServiceModel.Contracts.Documents.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Documents.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Documents.V1.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Documents.V2, Version=5.1.4789.29521, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Documents.V2, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Documents.V2.5.1.4789.29521\lib\net45\Ephorte.ServiceModel.Contracts.Documents.V2.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Documents.V2.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Documents.V2.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Documents.V3, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Documents.V3, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Documents.V3.5.1.4789.29520\lib\net45\Ephorte.ServiceModel.Contracts.Documents.V3.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Documents.V3.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Documents.V3.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.DynamicObjectModel.V1, Version=5.1.4789.29519, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.DynamicObjectModel.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.DynamicObjectModel.V1.5.1.4789.29519\lib\net45\Ephorte.ServiceModel.Contracts.DynamicObjectModel.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.DynamicObjectModel.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.DynamicObjectModel.V1.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.ePhorteWebInternal, Version=5.1.4789.29521, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.ePhorteWebInternal, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ePhorteWebInternal.5.1.4789.29521\lib\net45\Ephorte.ServiceModel.Contracts.ePhorteWebInternal.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ePhorteWebInternal.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.ePhorteWebInternal.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Functions.V1, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Functions.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Functions.V1.5.1.4789.29520\lib\net45\Ephorte.ServiceModel.Contracts.Functions.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Functions.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Functions.V1.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Functions.V2, Version=5.1.4789.29521, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Functions.V2, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Functions.V2.5.1.4789.29521\lib\net45\Ephorte.ServiceModel.Contracts.Functions.V2.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Functions.V2.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Functions.V2.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Metadata.V1, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Metadata.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Metadata.V1.5.1.4789.29520\lib\net45\Ephorte.ServiceModel.Contracts.Metadata.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Metadata.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Metadata.V1.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.Notification.V1, Version=5.1.4789.29521, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ephorte.ServiceModel.Contracts.Notification.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Notification.V1.5.1.4789.29521\lib\net45\Ephorte.ServiceModel.Contracts.Notification.V1.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.Notification.V1.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.Notification.V1.dll</HintPath>
     </Reference>
-    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V1, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V1.5.1.4789.29520\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V1.dll</HintPath>
+    <Reference Include="Ephorte.ServiceModel.Contracts.ObjectModel">
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.6.2.1\lib\net45\Ephorte.ServiceModel.Contracts.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V2, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V2.5.1.4789.29520\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V2.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V1.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V1.dll</HintPath>
     </Reference>
-    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V2, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.5.1.4789.29520\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V2.6.2.1\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V2.dll</HintPath>
     </Reference>
-    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En, Version=5.1.4789.29520, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.5.1.4789.29520\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
     </Reference>
-    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.No, Version=5.1.4789.29521, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.5.1.4789.29521\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+    </Reference>
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.No, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
