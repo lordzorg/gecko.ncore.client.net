@@ -217,6 +217,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - NUSPEC", "05 - NUSPEC"
 		nuspec\Gecko.NCore.Client.ObjectModel.V3.No.nuspec = nuspec\Gecko.NCore.Client.ObjectModel.V3.No.nuspec
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - IMPORTANT", "01 - IMPORTANT", "{8E80C8BF-C9AB-4A49-9A0C-6DFE2834E8A5}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 47
