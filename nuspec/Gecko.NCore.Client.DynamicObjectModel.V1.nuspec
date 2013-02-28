@@ -23,12 +23,19 @@
     <file src="..\net35\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.dll" target="lib\net35\" />
     <file src="..\net35\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.xml" target="lib\net35\" />
     <file src="..\net35\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.pdb" target="lib\net35\" />
+    <file src="..\net35\Client.DynamicObjectModel.V1\Service References\**\*.cs" target="src\net35\" exclude="..\net45\Client.DynamicObjectModel.V1\obj\**" />
+
     <file src="..\net40\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.dll" target="lib\net40\" />
     <file src="..\net40\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.xml" target="lib\net40\" />
     <file src="..\net40\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    <file src="..\net40\Client.DynamicObjectModel.V1\Service References\**\*.cs" target="src\net40\" exclude="..\net45\Client.DynamicObjectModel.V1\obj\**" />
+
     <file src="..\net45\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.dll" target="lib\net45\" />
     <file src="..\net45\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.xml" target="lib\net45\" />
     <file src="..\net45\Client.DynamicObjectModel.V1\bin\$configuration$\$id$.pdb" target="lib\net45\" />
+    <file src="..\net45\Client.DynamicObjectModel.V1\Service References\**\*.cs" target="src\net45\" exclude="..\net45\Client.DynamicObjectModel.V1\obj\**" />
+
+    <!-- include common files -->
     <file src="..\net45\Client.DynamicObjectModel.V1\**\*.cs" target="src" exclude="..\net45\Client.DynamicObjectModel.V1\obj\**" />
   </files>
 </package>

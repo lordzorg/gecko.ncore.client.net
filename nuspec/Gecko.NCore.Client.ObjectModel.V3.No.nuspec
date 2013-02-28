@@ -23,12 +23,19 @@
     <file src="..\net35\Client.ObjectModel.V3.No\bin\$configuration$\$id$.dll" target="lib\net35\" />
     <file src="..\net35\Client.ObjectModel.V3.No\bin\$configuration$\$id$.xml" target="lib\net35\" />
     <file src="..\net35\Client.ObjectModel.V3.No\bin\$configuration$\$id$.pdb" target="lib\net35\" />
+    <file src="..\net35\Client.ObjectModel.V3.No\Service References\**\*.cs" target="src\net35\" exclude="..\net45\Client.ObjectModel.V3.No\obj\**" />
+
     <file src="..\net40\Client.ObjectModel.V3.No\bin\$configuration$\$id$.dll" target="lib\net40\" />
     <file src="..\net40\Client.ObjectModel.V3.No\bin\$configuration$\$id$.xml" target="lib\net40\" />
     <file src="..\net40\Client.ObjectModel.V3.No\bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    <file src="..\net40\Client.ObjectModel.V3.No\Service References\**\*.cs" target="src\net40\" exclude="..\net45\Client.ObjectModel.V3.No\obj\**" />
+
     <file src="..\net45\Client.ObjectModel.V3.No\bin\$configuration$\$id$.dll" target="lib\net45\" />
     <file src="..\net45\Client.ObjectModel.V3.No\bin\$configuration$\$id$.xml" target="lib\net45\" />
     <file src="..\net45\Client.ObjectModel.V3.No\bin\$configuration$\$id$.pdb" target="lib\net45\" />
+    <file src="..\net45\Client.ObjectModel.V3.No\Service References\**\*.cs" target="src\net45\" exclude="..\net45\Client.ObjectModel.V3.No\obj\**" />
+
+    <!-- include common files -->
     <file src="..\net45\Client.ObjectModel.V3.No\**\*.cs" target="src" exclude="..\net45\Client.ObjectModel.V3.No\obj\**" />
   </files>
 </package>
