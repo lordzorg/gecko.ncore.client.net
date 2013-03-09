@@ -3,10 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+#if USE_DTOs
+using Ephorte.ServiceModel.Contracts.ObjectModel.V3.En;
+using Gecko.NCore.Client;
+using Gecko.NCore.Client.ObjectModel;
+
+namespace Ephorte.ServiceModel.Client.ObjectModel.V3.En
+#else
 namespace Gecko.NCore.Client.ObjectModel.V3.En
+#endif
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	public class AsyncObjectModelAdapterV3En: ObjectModelAdapterV3En, IAsyncObjectModelAdapter
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="contextIdentity"></param>
+		/// <param name="settings"></param>
 		public AsyncObjectModelAdapterV3En(EphorteContextIdentity contextIdentity, ClientSettings settings)
             : base(contextIdentity, settings)
 		{
@@ -57,7 +73,11 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
             var predefinedQueryArguments = new PredefinedQueryArguments
             {
                 DataObjectName = dataObjectName,
+#if USE_DTOs
+                PredefinedSearchId = queryId,
+#else
                 PredefinedSeachId = queryId,
+#endif
                 SortExpression = sortExpression,
                 RelatedObjects = relatedObjects.ToArray(),
                 SkipCount = skipCount,
@@ -77,7 +97,11 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
             var predefinedQueryArguments = new PredefinedQueryArguments
             {
                 DataObjectName = dataObjectName,
+#if USE_DTOs
+                PredefinedSearchId = queryId,
+#else
                 PredefinedSeachId = queryId,
+#endif
                 SortExpression = sortExpression,
                 RelatedObjects = Enumerable.Empty<string>().ToArray(),
                 TakeCount = 0,
@@ -92,7 +116,12 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
             }
         }
 
-	    public async System.Threading.Tasks.Task DeleteAsync(object dataObject)
+	    /// <summary>
+	    /// 
+	    /// </summary>
+	    /// <param name="dataObject"></param>
+	    /// <returns></returns>
+        public async System.Threading.Tasks.Task DeleteAsync(object dataObject)
 	    {
             using (var objectModelService = CreateServiceClient())
             {
@@ -118,18 +147,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
 
 	    public async Task<IDataObjectAccess> FindAsync(string dataObjectName, IDictionary<string, string> primaryKeys, params string[] relatedObjects)
 	    {
-            var primaryKeysCollection = new PrimaryKeyCollection();
-            foreach (var primaryKey in primaryKeys)
-                primaryKeysCollection.Add(primaryKey.Key, primaryKey.Value);
-
-            var fetchArguments = new FetchArguments
-            {
-                DataObjectName = dataObjectName,
-                PrimaryKeys = primaryKeysCollection,
-                RelatedObjects = relatedObjects.ToArray(),
-                ReturnAccessRights = true,
-                ReturnRequiredFields = true
-            };
+            var fetchArguments = GetFetchArguments(dataObjectName, primaryKeys, relatedObjects);
 
             using (var objectModelService = CreateServiceClient())
             {
@@ -158,7 +176,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
                 }
 
                 var customFieldDescriptors = await objectModelService.GetCustomFieldDescriptorsAsync(CreateEphorteIdentity(), dataObjectName, category, id);
-                return customFieldDescriptors.Cast<ICustomFieldDescriptor>().ToList();
+                return GetCustomFieldDescriptors(customFieldDescriptors);
             }
         }
 

@@ -1,11 +1,28 @@
-﻿namespace Gecko.NCore.Client.ObjectModel.V3.En
+﻿#if USE_DTOs
+using Ephorte.ServiceModel.Contracts.ObjectModel.V3.En;
+using Gecko.NCore.Client.ObjectModel;
+
+namespace Ephorte.ServiceModel.Client.ObjectModel.V3.En
+#else
+namespace Gecko.NCore.Client.ObjectModel.V3.En
+#endif
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class DataObjectAccess: DataObjectAccessBase
     {
         private readonly DataObject _requiredFlags;
         private readonly DataObject _readOnlyFlags;
         private readonly ObjectRights _objectRights;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataObject"></param>
+        /// <param name="requiredFlags"></param>
+        /// <param name="readOnlyFlags"></param>
+        /// <param name="objectRights"></param>
         public DataObjectAccess(DataObject dataObject, DataObject requiredFlags, DataObject readOnlyFlags, ObjectRights objectRights)
 			: base(dataObject)
         {

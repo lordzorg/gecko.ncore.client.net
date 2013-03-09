@@ -3,12 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+#if USE_DTOs
+using Ephorte.ServiceModel.Contracts.ObjectModel.V3.En;
+using Gecko.NCore.Client;
+using Gecko.NCore.Client.ObjectModel;
+
+namespace Ephorte.ServiceModel.Client.ObjectModel.V3.En
+#else
 namespace Gecko.NCore.Client.ObjectModel.V3.En
+#endif
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	public class ObjectModelAdapterV3En: ObjectModelAdapterBase<ObjectModelServiceClient>
 	{
 		private readonly EphorteContextIdentity _contextIdentity;
 		
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="contextIdentity"></param>
+        /// <param name="settings"></param>
         public ObjectModelAdapterV3En(EphorteContextIdentity contextIdentity, ClientSettings settings)
             : base(settings)
 		{
@@ -72,7 +88,11 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
 			var predefinedQueryArguments = new PredefinedQueryArguments
 			{
 				DataObjectName = dataObjectName,
-				PredefinedSeachId = queryId,
+#if USE_DTOs
+				PredefinedSearchId = queryId,
+#else
+                PredefinedSeachId = queryId,
+#endif
 				SortExpression = sortExpression,
 				RelatedObjects = relatedObjects.ToArray(),
 				SkipCount = skipCount,
@@ -92,8 +112,12 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
 			var predefinedQueryArguments = new PredefinedQueryArguments
 			{
 				DataObjectName = dataObjectName,
-				PredefinedSeachId = queryId,
-				SortExpression = sortExpression,
+#if USE_DTOs
+				PredefinedSearchId = queryId,
+#else
+                PredefinedSeachId = queryId,
+#endif
+                SortExpression = sortExpression,
 				RelatedObjects = Enumerable.Empty<string>().ToArray(),
 				TakeCount = 0,
 				SkipCount = 0,
@@ -176,27 +200,36 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
 
 		public override IDataObjectAccess Find(string dataObjectName, IDictionary<string, string> primaryKeys, params string[] relatedObjects)
 		{
-			var primaryKeysCollection = new PrimaryKeyCollection();
-			foreach (var primaryKey in primaryKeys)
-				primaryKeysCollection.Add(primaryKey.Key, primaryKey.Value);
+		    var fetchArguments = GetFetchArguments(dataObjectName, primaryKeys, relatedObjects);
 
-			var fetchArguments = new FetchArguments
-									 {
-										 DataObjectName = dataObjectName,
-										 PrimaryKeys = primaryKeysCollection,
-										 RelatedObjects = relatedObjects.ToArray(),
-										 ReturnAccessRights = true, 
-										 ReturnRequiredFields = true
-									 };
-
-			using (var objectModelService = CreateServiceClient())
+		    using (var objectModelService = CreateServiceClient())
 			{
 				var result = objectModelService.Fetch(CreateEphorteIdentity(), fetchArguments);
 				return new DataObjectAccess(result.DataObject, result.RequiredFields, result.AccessRights, result.ObjectRights);
 			}
 		}
 
-		public override ICollection<ICustomFieldDescriptor> GetCustomFieldDescriptor(string dataObjectName, IDictionary<string, string> primaryKeys, string category)
+	    protected FetchArguments GetFetchArguments(string dataObjectName, IDictionary<string, string> primaryKeys, string[] relatedObjects)
+	    {
+#if USE_DTOs
+            var primaryKeysCollection = new global::Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.PrimaryKeyCollection();
+#else
+	        var primaryKeysCollection = new PrimaryKeyCollection();
+#endif
+	        foreach (var primaryKey in primaryKeys)
+	            primaryKeysCollection.Add(primaryKey.Key, primaryKey.Value);
+
+	        return new FetchArguments
+	                   {
+	                       DataObjectName = dataObjectName,
+	                       PrimaryKeys = primaryKeysCollection,
+	                       RelatedObjects = relatedObjects.ToArray(),
+	                       ReturnAccessRights = true,
+	                       ReturnRequiredFields = true
+	                   };
+	    }
+
+	    public override ICollection<ICustomFieldDescriptor> GetCustomFieldDescriptor(string dataObjectName, IDictionary<string, string> primaryKeys, string category)
 		{
 			using (var objectModelService = CreateServiceClient())
 			{
@@ -207,14 +240,52 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
 				}
 
 				var customFieldDescriptors = objectModelService.GetCustomFieldDescriptors(CreateEphorteIdentity(), dataObjectName, category, id);
-				return customFieldDescriptors.Cast<ICustomFieldDescriptor>().ToList();
+                return GetCustomFieldDescriptors(customFieldDescriptors);
 			}
 		}
 
-	    public override Type DataObjectBaseType
-		{
-			get { return typeof (DataObject); }
-		}
+        protected static ICollection<ICustomFieldDescriptor> GetCustomFieldDescriptors(CustomFieldDescriptor[] customFieldDescriptors)
+        {
+#if USE_DTOs
+            return
+                customFieldDescriptors.Select(descriptor => new CustomFieldDescriptorAdapter(descriptor))
+                                      .Cast<ICustomFieldDescriptor>()
+                                      .ToList();
+#else
+            return customFieldDescriptors.Cast<ICustomFieldDescriptor>().ToList();
+#endif
+        }
+
+#if USE_DTOs
+        class CustomFieldDescriptorAdapter : ICustomFieldDescriptor
+        {
+            private readonly CustomFieldDescriptor _descriptor;
+
+            public CustomFieldDescriptorAdapter(CustomFieldDescriptor descriptor)
+            {
+                _descriptor = descriptor;
+            }
+
+            public string Caption { get { return _descriptor.Caption; } set { _descriptor.Caption = value; } }
+
+            public string DataType
+            {
+                get { return _descriptor.DataType.ToString(); }
+                set { _descriptor.DataType = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), value); }
+            }
+
+            public string DefaultValue { get { return _descriptor.DefaultValue; } set { _descriptor.DefaultValue = value; } }
+            public string Format { get { return _descriptor.Format; } set { _descriptor.Format = value; } }
+            public string LegalValues { get { return _descriptor.LegalValues; } set { _descriptor.LegalValues = value; } }
+            public int MaxLength { get { return _descriptor.MaxLength; } set { _descriptor.MaxLength = value; } }
+            public string Name { get { return _descriptor.Name; } set { _descriptor.Name = value; } }
+        }
+#endif
+
+        public override Type DataObjectBaseType
+        {
+            get { return typeof (DataObject); }
+        }
 
 	}
 }

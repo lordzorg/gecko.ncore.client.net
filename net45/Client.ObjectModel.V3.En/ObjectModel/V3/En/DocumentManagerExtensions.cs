@@ -187,13 +187,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En
 			var identifier = instance.Upload(content, fileName, storageIdentifier);
 			documentObject.FilePath = identifier;
 		}
-
-        /// <summary>
-        /// Checks in the <paramref name="content"/> to the specified <paramref name="documentObject"/>.
-        /// </summary>
-        /// <param name="instance">The instance.</param>
-        /// <param name="documentObject">The document object.</param>
-        /// <param name="content">The content.</param>
     }
    
 }
