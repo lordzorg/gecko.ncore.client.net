@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DBE78A3-9365-413E-8CBB-2EB8F8A156AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ephorte.ServiceModel.Client</RootNamespace>
+    <AssemblyName>ePhorte.ServiceModel.Client.ObjectModel.V3.En</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;USE_DTOs</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;USE_DTOs</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\ePhorte.ServiceModel.Client.ObjectModel.V3.En.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ephorte.ServiceModel.Contracts, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Ephorte.ServiceModel.Contracts.ObjectModel, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.6.2.1\lib\net45\Ephorte.ServiceModel.Contracts.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
+    </Reference>
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WCFExtrasPlus">
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Client.ObjectModel.V3.En\ObjectModel\V3\En\AsyncObjectModelAdapterV3En.cs">
+      <Link>ObjectModel\V3\En\AsyncObjectModelAdapterV3En.cs</Link>
+    </Compile>
+    <Compile Include="..\Client.ObjectModel.V3.En\ObjectModel\V3\En\DataObjectAccess.cs">
+      <Link>ObjectModel\V3\En\DataObjectAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\Client.ObjectModel.V3.En\ObjectModel\V3\En\ObjectModelAdapterV3En.cs">
+      <Link>ObjectModel\V3\En\ObjectModelAdapterV3En.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ObjectModel.V3.En\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.ChangeSetResult.datasource" />
+    <None Include="Properties\DataSources\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.CustomFieldDescriptor.datasource" />
+    <None Include="Properties\DataSources\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObject.datasource" />
+    <None Include="Properties\DataSources\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.FetchResult.datasource" />
+    <None Include="Properties\DataSources\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.InitializeResult.datasource" />
+    <None Include="Properties\DataSources\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.QueryResult.datasource" />
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ObjectModel.V3.En\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\ObjectModelService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ObjectModel.V3.En\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
+      <Project>{59753dd8-9506-4044-a513-cad06add3673}</Project>
+      <Name>Gecko.NCore.Client %2804 - NET 4.5\Gecko.NCore.Client%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
