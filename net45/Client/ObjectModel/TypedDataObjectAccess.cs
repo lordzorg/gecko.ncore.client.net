@@ -18,6 +18,16 @@ namespace Gecko.NCore.Client.ObjectModel
 			get { return (TDataObject) _innerDataObjectAccess.DataObject; }
 		}
 
+		public TDataObject RequiredFlags
+		{
+			get { return (TDataObject) _innerDataObjectAccess.RequiredFlags;  }
+		}
+
+		public TDataObject ReadOnlyFlags
+		{
+			get { return (TDataObject) _innerDataObjectAccess.ReadOnlyFlags; }
+		}
+
 		/// <summary>
 		/// Determines whether the specified property selector is required.
 		/// </summary>

@@ -5,45 +5,36 @@
     /// </summary>
     public abstract class DataObjectAccessBase: IDataObjectAccess
     {
-    	private readonly object _dataObject;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="DataObjectAccessBase"/> class.
-		/// </summary>
-		/// <param name="dataObject">The data object.</param>
-		protected DataObjectAccessBase(object dataObject)
+	    /// <summary>
+	    /// Initializes a new instance of the <see cref="DataObjectAccessBase"/> class.
+	    /// </summary>
+	    /// <param name="dataObject">The data object.</param>
+	    /// <param name="requiredFlags">Required flags</param>
+	    /// <param name="readOnlyFlags">ReadOnly flags</param>
+	    protected DataObjectAccessBase(object dataObject, object requiredFlags, object readOnlyFlags)
 		{
-			_dataObject = dataObject;
+			DataObject = dataObject;
+			RequiredFlags = requiredFlags;
+		    ReadOnlyFlags = readOnlyFlags;
 		}
 
-    	/// <summary>
+	    /// <summary>
 		/// Gets the data object.
 		/// </summary>
 		/// <value>The data object.</value>
-		public object DataObject
-    	{
-    		get { return _dataObject; }
-    	}
+		public object DataObject { get; private set; }
 
-    	/// <summary>
-        /// Determines whether [is property required] [the specified property name].
-        /// </summary>
-        /// <param name="propertyName">Name of the property.</param>
-        /// <returns>
-        /// 	<c>true</c> if [is property required] [the specified property name]; otherwise, <c>false</c>.
-        /// </returns>
-        public abstract bool IsPropertyRequired(string propertyName);
+	    /// <summary>
+	    /// Returns an object with all the fields of the DataObject. Each field return a boolean indicating if the field is required.
+	    /// </summary>
+		public object RequiredFlags { get; private set; }
 
-        /// <summary>
-        /// Determines whether [is property read only] [the specified property name].
-        /// </summary>
-        /// <param name="propertyName">Name of the property.</param>
-        /// <returns>
-        /// 	<c>true</c> if [is property read only] [the specified property name]; otherwise, <c>false</c>.
-        /// </returns>
-        public abstract bool IsPropertyReadOnly(string propertyName);
+	    /// <summary>
+	    /// Returns an object with all the fields of the DataObject. Each field return a boolean indicating if the field is read only.
+	    /// </summary>
+	    public object ReadOnlyFlags { get; private set; }
 
-        /// <summary>
+	    /// <summary>
         /// Gets a value indicating whether this instance can be modified.
         /// </summary>
         /// <value>
@@ -64,5 +55,33 @@
         /// </summary>
         /// <value><c>true</c> if this instance can be added; otherwise, <c>false</c>.</value>
         public abstract bool CanAdd { get; }
+
+	    /// <summary>
+	    /// Determines whether [is property required] [the specified property name].
+	    /// </summary>
+	    /// <param name="propertyName">Name of the property.</param>
+	    /// <returns>
+	    /// 	<c>true</c> if [is property required] [the specified property name]; otherwise, <c>false</c>.
+	    /// </returns>
+	    public bool IsPropertyRequired(string propertyName)
+	    {
+		    var requiredPropertyFlagsType = RequiredFlags.GetType();
+		    var property = requiredPropertyFlagsType.GetProperty(propertyName);
+		    return (bool)property.GetValue(RequiredFlags, null);
+	    }
+
+	    /// <summary>
+	    /// Determines whether [is property read only] [the specified property name].
+	    /// </summary>
+	    /// <param name="propertyName">Name of the property.</param>
+	    /// <returns>
+	    /// 	<c>true</c> if [is property read only] [the specified property name]; otherwise, <c>false</c>.
+	    /// </returns>
+	    public bool IsPropertyReadOnly(string propertyName)
+	    {
+		    var readOnlyPropertyFlagsType = ReadOnlyFlags.GetType();
+		    var property = readOnlyPropertyFlagsType.GetProperty(propertyName);
+		    return !(bool)property.GetValue(ReadOnlyFlags, null);
+	    }
     }
 }

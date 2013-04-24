@@ -1,48 +1,16 @@
 ﻿namespace Gecko.NCore.Client.ObjectModel.V2
 {
-    internal class DataObjectAccess: DataObjectAccessBase
+    internal class DataObjectAccess : DataObjectAccessBase
     {
-        private readonly DataObject _requiredFlags;
-        private readonly DataObject _readOnlyFlags;
         private readonly ObjectRights _objectRights;
 
         public DataObjectAccess(DataObject dataObject, DataObject requiredFlags, DataObject readOnlyFlags, ObjectRights objectRights)
-			: base(dataObject)
+			: base(dataObject, requiredFlags, readOnlyFlags)
         {
-            _requiredFlags = requiredFlags;
-            _readOnlyFlags = readOnlyFlags;
             _objectRights = objectRights;
         }
 
-        /// <summary>
-        /// Determines whether [is property required] [the specified property name].
-        /// </summary>
-        /// <param name="propertyName">Name of the property.</param>
-        /// <returns>
-        /// 	<c>true</c> if [is property required] [the specified property name]; otherwise, <c>false</c>.
-        /// </returns>
-        public override bool IsPropertyRequired(string propertyName)
-        {
-            var requiredPropertyFlagsType = _requiredFlags.GetType();
-            var property = requiredPropertyFlagsType.GetProperty(propertyName);
-            return (bool)property.GetValue(_requiredFlags, null);
-        }
-
-        /// <summary>
-        /// Determines whether [is property read only] [the specified property name].
-        /// </summary>
-        /// <param name="propertyName">Name of the property.</param>
-        /// <returns>
-        /// 	<c>true</c> if [is property read only] [the specified property name]; otherwise, <c>false</c>.
-        /// </returns>
-        public override bool IsPropertyReadOnly(string propertyName)
-        {
-            var readOnlyPropertyFlagsType = _readOnlyFlags.GetType();
-            var property = readOnlyPropertyFlagsType.GetProperty(propertyName);
-            return !(bool)property.GetValue(_readOnlyFlags, null);
-        }
-
-        /// <summary>
+	    /// <summary>
         /// Gets a value indicating whether this instance can be modified.
         /// </summary>
         /// <value>

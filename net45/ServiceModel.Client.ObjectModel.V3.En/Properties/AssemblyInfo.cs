@@ -26,10 +26,10 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Patche Numbers by using the '*'.
 
 // Dette versjonsnummeret beholdes konstant og endres aldri
-[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyVersion("6.2.0")]
 
 // Dette versjonsnummeret økes i hennhold til semver.org
-[assembly: AssemblyFileVersion("0.0.1.*")]
+[assembly: AssemblyFileVersion("0.0.2")]
 
 // Dette versjonsnummeret bør samsvare med AssemblyFileVersion pluss eventuelt postfiks for pre release pakker.
-[assembly: AssemblyInformationalVersion("0.0.1-Alfa1")]
+[assembly: AssemblyInformationalVersion("0.0.2-Alfa1")]

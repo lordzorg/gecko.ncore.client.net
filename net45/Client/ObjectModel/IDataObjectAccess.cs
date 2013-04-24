@@ -15,6 +15,16 @@ namespace Gecko.NCore.Client.ObjectModel
 		object DataObject { get; }
 
 		/// <summary>
+		/// Returns an object with all the fields of the DataObject. Each field return a boolean indicating if the field is required.
+		/// </summary>
+		object RequiredFlags { get; }
+
+		/// <summary>
+		/// Returns an object with all the fields of the DataObject. Each field return a boolean indicating if the field is read only.
+		/// </summary>
+		object ReadOnlyFlags { get; }
+
+		/// <summary>
 		/// Determines whether [is property required] [the specified property name].
 		/// </summary>
 		/// <param name="propertyName">Name of the property.</param>
@@ -67,6 +77,16 @@ namespace Gecko.NCore.Client.ObjectModel
 		/// <value>The data object.</value>
 		TDataObject DataObject { get; }
 
+		/// <summary>
+		/// Returns an object with all the fields of the DataObject. Each field return a boolean indicating if the field is required.
+		/// </summary>
+		TDataObject RequiredFlags { get; }
+		
+		/// <summary>
+		/// Returns an object with all the fields of the DataObject. Each field return a boolean indicating if the field is read only.
+		/// </summary>
+		TDataObject ReadOnlyFlags { get; }
+		
 		/// <summary>
 		/// Determines whether the specified property selector is required.
 		/// </summary>
