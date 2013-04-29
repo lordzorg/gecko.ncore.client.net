@@ -177,6 +177,9 @@
     <Compile Include="..\..\net45\Client\Querying\MemberEvaluator.cs">
       <Link>Querying\MemberEvaluator.cs</Link>
     </Compile>
+    <Compile Include="..\..\net45\Client\Querying\ODataExpressionWithNullableFieldVisitor.cs">
+      <Link>Querying\ODataExpressionWithNullableFieldVisitor.cs</Link>
+    </Compile>
     <Compile Include="..\..\net45\Client\Querying\PredicateDenormalizer.cs">
       <Link>Querying\PredicateDenormalizer.cs</Link>
     </Compile>
