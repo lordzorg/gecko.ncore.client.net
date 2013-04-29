@@ -34,7 +34,7 @@ namespace Gecko.NCore.Client
         public EphorteContext(IObjectModelAdapter objectModelAdapter, IFunctionsAdapter functionsAdapter, IDocumentsAdapter documentsAdapter, IMetadataAdapter metadataAdapter)
         {
             var stateManager = new StateManager(() => _queryProvider);
-            var queryProvider = new DataObjectQueryProvider(_stateManager, _objectModelAdapter);
+            var queryProvider = new DataObjectQueryProvider(stateManager, objectModelAdapter);
             var functionManager = new FunctionManager(functionsAdapter);
             var documentManager = new DocumentManager(documentsAdapter);
             var metadataManager = new MetadataManager(metadataAdapter);
