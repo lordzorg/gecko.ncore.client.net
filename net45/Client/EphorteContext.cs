@@ -17,12 +17,12 @@ namespace Gecko.NCore.Client
     /// </summary>
     public class EphorteContext : IEphorteContext
     {
-        private readonly IObjectModelAdapter _objectModelAdapter;
-        private readonly IQueryProvider _queryProvider;
-        private readonly IStateManager _stateManager;
-        private readonly FunctionManager _functionManager;
-        private readonly DocumentManager _documentManager;
-        private readonly MetadataManager _metadataManager;
+        private IObjectModelAdapter _objectModelAdapter;
+        private IQueryProvider _queryProvider;
+        private IStateManager _stateManager;
+        private IFunctionManager _functionManager;
+        private IDocumentManager _documentManager;
+        private IMetadataManager _metadataManager;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EphorteContext"/> class.
@@ -33,12 +33,42 @@ namespace Gecko.NCore.Client
         /// <param name="metadataAdapter">The metadata adapter.</param>
         public EphorteContext(IObjectModelAdapter objectModelAdapter, IFunctionsAdapter functionsAdapter, IDocumentsAdapter documentsAdapter, IMetadataAdapter metadataAdapter)
         {
+            var stateManager = new StateManager(() => _queryProvider);
+            var queryProvider = new DataObjectQueryProvider(_stateManager, _objectModelAdapter);
+            var functionManager = new FunctionManager(functionsAdapter);
+            var documentManager = new DocumentManager(documentsAdapter);
+            var metadataManager = new MetadataManager(metadataAdapter);
+
+            Init(objectModelAdapter, functionManager, documentManager, metadataManager, stateManager, queryProvider);
+        }
+
+        protected EphorteContext()
+        {
+        }
+
+        protected void Init(IObjectModelAdapter objectModelAdapter, IFunctionManager functionManager, IDocumentManager documentManager, IMetadataManager metadataManager, IStateManager stateManager, IQueryProvider queryProvider)
+        {
             _objectModelAdapter = objectModelAdapter;
-            _stateManager = new StateManager(() => _queryProvider);
-            _queryProvider = new DataObjectQueryProvider(_stateManager, _objectModelAdapter);
-            _functionManager = new FunctionManager(functionsAdapter);
-            _documentManager = new DocumentManager(documentsAdapter);
-            _metadataManager = new MetadataManager(metadataAdapter);
+            _functionManager = functionManager;
+            _documentManager = documentManager;
+            _metadataManager = metadataManager;
+            _stateManager = stateManager;
+            _queryProvider = queryProvider;
+        }
+
+        protected IQueryProvider QueryProvider
+        {
+            get { return _queryProvider; }
+        }
+
+        protected IStateManager StateManager
+        {
+            get { return _stateManager; }
+        }
+
+        protected IObjectModelAdapter ObjectModelAdapter
+        {
+            get { return _objectModelAdapter; }
         }
 
         /// <summary>

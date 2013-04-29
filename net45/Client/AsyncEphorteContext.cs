@@ -16,13 +16,6 @@ namespace Gecko.NCore.Client
     /// </summary>
     public class AsyncEphorteContext : EphorteContext, IAsyncEphorteContext
     {
-        private readonly IAsyncObjectModelAdapter _objectModelAdapter;
-        private readonly IQueryProvider _queryProvider;
-        private readonly IStateManager _stateManager;
-        private readonly AsyncFunctionManager _functionManager;
-        private readonly AsyncDocumentManager _documentManager;
-        private readonly AsyncMetadataManager _metadataManager;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="EphorteContext"/> class.
         /// </summary>
@@ -31,14 +24,14 @@ namespace Gecko.NCore.Client
         /// <param name="documentsAdapter">The documents adapter.</param>
         /// <param name="metadataAdapter">The metadata adapter.</param>
         public AsyncEphorteContext(IAsyncObjectModelAdapter objectModelAdapter, IAsyncFunctionsAdapter functionsAdapter, IAsyncDocumentsAdapter documentsAdapter, IAsyncMetadataAdapter metadataAdapter)
-            : base(objectModelAdapter, functionsAdapter, documentsAdapter, metadataAdapter)
         {
-            _objectModelAdapter = objectModelAdapter;
-            _stateManager = new StateManager(() => _queryProvider);
-            _queryProvider = new AsyncDataObjectQueryProvider(_stateManager, _objectModelAdapter);
-            _functionManager = new AsyncFunctionManager(functionsAdapter);
-            _documentManager = new AsyncDocumentManager(documentsAdapter);
-            _metadataManager = new AsyncMetadataManager(metadataAdapter);
+            var stateManager = new StateManager(() => QueryProvider);
+            var queryProvider = new AsyncDataObjectQueryProvider(stateManager, objectModelAdapter);
+            var functionManager = new AsyncFunctionManager(functionsAdapter);
+            var documentManager = new AsyncDocumentManager(documentsAdapter);
+            var metadataManager = new AsyncMetadataManager(metadataAdapter);
+
+            Init(objectModelAdapter, functionManager, documentManager, metadataManager, stateManager, queryProvider);
         }
 
         /// <summary>
@@ -47,7 +40,7 @@ namespace Gecko.NCore.Client
         /// <value>The <see cref="FunctionManager"/>.</value>
         public new IAsyncFunctionManager Functions
         {
-            get { return _functionManager;  }
+            get { return (IAsyncFunctionManager)base.Functions;  }
         }
 
         /// <summary>
@@ -56,7 +49,7 @@ namespace Gecko.NCore.Client
         /// <value>The documents.</value>
         public new IAsyncDocumentManager Documents
         {
-            get { return _documentManager; }
+            get { return (IAsyncDocumentManager)base.Documents; }
         }
 
         /// <summary>
@@ -64,7 +57,12 @@ namespace Gecko.NCore.Client
         /// </summary>
         public new IAsyncMetadataManager Metadata
         {
-            get { return _metadataManager; }
+            get { return (IAsyncMetadataManager)base.Metadata; }
+        }
+
+        protected new IAsyncObjectModelAdapter ObjectModelAdapter
+        {
+            get { return (IAsyncObjectModelAdapter)base.ObjectModelAdapter; }
         }
 
         /// <summary>
@@ -74,7 +72,7 @@ namespace Gecko.NCore.Client
         /// <returns>Task{IDataObjectAccess}.</returns>
         public async Task<IDataObjectAccess> InitializeAsync(object dataObject)
         {
-            var dataObjectAccess = await _objectModelAdapter.InitializeAsync(dataObject);
+            var dataObjectAccess = await ObjectModelAdapter.InitializeAsync(dataObject);
             RefreshDataObject(dataObject, dataObjectAccess.DataObject);
             return dataObjectAccess;
         }
@@ -88,8 +86,8 @@ namespace Gecko.NCore.Client
         /// <returns>Task{IDataObjectAccess}.</returns>
         public async Task<IDataObjectAccess> FindAsync(string dataObjectName, IDictionary<string, string> predicate, params string[] relatedObjects)
         {
-            var dataObjectAccess = await _objectModelAdapter.FindAsync(dataObjectName, predicate, relatedObjects);
-            _stateManager.WeakAttach(dataObjectAccess.DataObject);
+            var dataObjectAccess = await ObjectModelAdapter.FindAsync(dataObjectName, predicate, relatedObjects);
+            StateManager.WeakAttach(dataObjectAccess.DataObject);
             return dataObjectAccess;
         }
 
@@ -102,7 +100,7 @@ namespace Gecko.NCore.Client
         /// <returns>Task{ICollection{ICustomFieldDescriptor}}.</returns>
         public async Task<ICollection<ICustomFieldDescriptor>> GetCustomFieldDescriptorsAsync(string dataObjectName, IDictionary<string, string> primaryKeys, string category)
         {
-            return await _objectModelAdapter.GetCustomFieldDescriptorAsync(dataObjectName, primaryKeys, category);
+            return await ObjectModelAdapter.GetCustomFieldDescriptorAsync(dataObjectName, primaryKeys, category);
         }
 
         /// <summary>
@@ -111,8 +109,8 @@ namespace Gecko.NCore.Client
         /// <returns>Task.</returns>
         public async Task SaveChangesAsync()
         {
-            OnSavingChanges(new SavingChangesEventArgs(_stateManager));
-            foreach (var stateEntryGroup in _stateManager.Entries.GroupBy(x => x.State).ToList())
+            OnSavingChanges(new SavingChangesEventArgs(StateManager));
+            foreach (var stateEntryGroup in StateManager.Entries.GroupBy(x => x.State).ToList())
             {
                 var stateEntries = stateEntryGroup.ToList();
                 switch (stateEntryGroup.Key)
@@ -128,21 +126,21 @@ namespace Gecko.NCore.Client
                         break;
                 }
             }
-            OnSavedChanges(new SavedChangesEventArgs(_stateManager));
+            OnSavedChanges(new SavedChangesEventArgs(StateManager));
         }
 
         private async Task DeleteDataObjectsAsync(IEnumerable<StateEntry> stateEntries)
         {
             foreach (var stateEntry in stateEntries)
             {
-                await _objectModelAdapter.DeleteAsync(stateEntry.DataObject);
-                _stateManager.Detach(stateEntry.DataObject);
+                await ObjectModelAdapter.DeleteAsync(stateEntry.DataObject);
+                StateManager.Detach(stateEntry.DataObject);
             }
         }
 
         private async Task UpdateDataObjectsAsync(ICollection<StateEntry> stateEntries)
         {
-            var updatedDataObjects = await _objectModelAdapter.BatchUpdateAsync(stateEntries.Select(x => x.DataObject));
+            var updatedDataObjects = await ObjectModelAdapter.BatchUpdateAsync(stateEntries.Select(x => x.DataObject));
 
             var stateEntryEnumerator = stateEntries.GetEnumerator();
             var updatedDataObjectEnumerator = updatedDataObjects.GetEnumerator();
@@ -161,7 +159,7 @@ namespace Gecko.NCore.Client
 
         private async Task InsertDataObjectsAsync(ICollection<StateEntry> stateEntries)
         {
-            var insertedDataObjects = await _objectModelAdapter.BatchInsertAsync(stateEntries.Select(x => x.DataObject));
+            var insertedDataObjects = await ObjectModelAdapter.BatchInsertAsync(stateEntries.Select(x => x.DataObject));
             var stateEntryEnumerator = stateEntries.GetEnumerator();
             var insertedDataObjectEnumerator = insertedDataObjects.GetEnumerator();
             while (stateEntryEnumerator.MoveNext() && insertedDataObjectEnumerator.MoveNext())
@@ -187,11 +185,11 @@ namespace Gecko.NCore.Client
             
             foreach (var property in targetType.GetProperties())
             {
-                if (_objectModelAdapter.DataObjectBaseType.IsAssignableFrom(property.PropertyType))
+                if (ObjectModelAdapter.DataObjectBaseType.IsAssignableFrom(property.PropertyType))
                     continue;
 
                 var elementType = TypeSystem.ResolveElementType(property.PropertyType);
-                if (elementType != null && _objectModelAdapter.DataObjectBaseType.IsAssignableFrom(elementType))
+                if (elementType != null && ObjectModelAdapter.DataObjectBaseType.IsAssignableFrom(elementType))
                     continue;
 
                 property.SetValue(target, property.GetValue(source, null), null);
