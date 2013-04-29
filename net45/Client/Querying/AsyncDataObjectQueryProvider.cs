@@ -40,7 +40,7 @@ namespace Gecko.NCore.Client.Querying
 	    private async Task<object> ExecuteCoreAsync(Expression expression)
 	    {
             expression = ExpressionEvaluator.PartialEval(expression);
-            var queryTranslater = new QueryTranslator();
+            var queryTranslater = new AsyncQueryTranslator();
             expression = queryTranslater.Visit(expression);
 
 
