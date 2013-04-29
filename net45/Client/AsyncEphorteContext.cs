@@ -14,7 +14,7 @@ namespace Gecko.NCore.Client
     /// <summary>
     /// This class provides a context for access to the ePhorte© Integration Services.
     /// </summary>
-    public class AsyncEphorteContext : EphorteContext
+    public class AsyncEphorteContext : EphorteContext, IAsyncEphorteContext
     {
         private readonly IAsyncObjectModelAdapter _objectModelAdapter;
         private readonly IQueryProvider _queryProvider;
