@@ -242,6 +242,8 @@ namespace Gecko.NCore.Client.Querying
 					return VisitTakeMethodCall(methodCall);
 				case "Skip":
 					return VisitSkipMethodCall(methodCall);
+				case "LongCount":
+					return VisitCountMethodCall(methodCall);
 				case "Count":
 					return VisitCountMethodCall(methodCall);
 				case "Select":

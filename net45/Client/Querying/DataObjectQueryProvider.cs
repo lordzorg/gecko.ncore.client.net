@@ -104,7 +104,9 @@ namespace Gecko.NCore.Client.Querying
             {
                 switch (methodCall.Method.Name)
                 {
-                    case "Count":
+					case "LongCount":
+						return (long) GetTotalCount(queryTranslater);
+					case "Count":
                         return GetTotalCount(queryTranslater);
                     case "First":
                         return GetFirst(queryTranslater);
