@@ -118,9 +118,9 @@ namespace Gecko.NCore.Client.Querying
             		_filterExpression.Append(Convert.ToInt16(constant.Value));
             		return constant;
             	}
-
+                
                 _filterExpression.Append(constant.Value);
-
+                
                 return constant;
             }
 
@@ -199,7 +199,7 @@ namespace Gecko.NCore.Client.Querying
         		return methodCall;
         	}
 
-        	private Expression VisitStringMethodCall(MethodCallExpression methodCall)
+            private Expression VisitStringMethodCall(MethodCallExpression methodCall)
             {
                 _filterExpression.Append(MemberEvaluator.Evaluate(methodCall.Object));
                 _filterExpression.Append("=");
@@ -207,36 +207,32 @@ namespace Gecko.NCore.Client.Querying
                 {
                     case "StartsWith":
                         return VisitStringStartsWithMethodCall(methodCall);
-                	case "EndsWith":
+                    case "EndsWith":
                         return VisitStringEndsWithMethodCall(methodCall);
-                	case "Contains":
+                    case "Contains":
                         return VisitStringContainsMethodCall(methodCall);
-                	default:
+                    default:
                         throw new NotSupportedException(string.Format(Resources.VisitMethodCall_The_method_call_0_on_type_1_is_not_supported, methodCall.Method.Name, methodCall.Method.DeclaringType));
                 }
             }
 
-        	private Expression VisitStringContainsMethodCall(MethodCallExpression methodCall)
-        	{
-        		_filterExpression.Append("*");
-        		Visit(methodCall.Arguments[0]);
-        		_filterExpression.Append("*");
-        		return methodCall;
-        	}
+            private Expression VisitStringContainsMethodCall(MethodCallExpression methodCall)
+            {
+                Visit(methodCall.Arguments[0]);
+                return methodCall;
+            }
 
-        	private Expression VisitStringEndsWithMethodCall(MethodCallExpression methodCall)
-        	{
-        		_filterExpression.Append("*");
-        		Visit(methodCall.Arguments[0]);
-        		return methodCall;
-        	}
+            private Expression VisitStringEndsWithMethodCall(MethodCallExpression methodCall)
+            {
+                Visit(methodCall.Arguments[0]);
+                return methodCall;
+            }
 
-        	private Expression VisitStringStartsWithMethodCall(MethodCallExpression methodCall)
-        	{
-        		Visit(methodCall.Arguments[0]);
-        		_filterExpression.Append("*");
-        		return methodCall;
-        	}
+            private Expression VisitStringStartsWithMethodCall(MethodCallExpression methodCall)
+            {
+                Visit(methodCall.Arguments[0]);
+                return methodCall;
+            }
 
         	private Expression VisitInstanceEnumerableMethodCall(MethodCallExpression methodCall)
             {
@@ -300,7 +296,7 @@ namespace Gecko.NCore.Client.Querying
         		_filterExpression.Append(member);
         		_filterExpression.Append("=");
         		var enumerable = (IEnumerable) ((ConstantExpression) methodCall.Arguments[0]).Value;
-        		var operandValues = (from object operandValue in enumerable select (operandValue ?? "@").ToString()).ToArray();
+                var operandValues = (from object operandValue in enumerable select (operandValue ?? "@").ToString()).ToArray();
         		_filterExpression.Append(operandValues.Any() ? string.Join(",", operandValues) : "@");
         		return methodCall;
         	}

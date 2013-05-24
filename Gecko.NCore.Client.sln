@@ -226,11 +226,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ephorte.ServiceModel.Client
 		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {F3B19182-875D-4429-8AC0-94BB6F09FBCB}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gecko.NCore.Client.Tests", "net45\Client.Tests\Gecko.NCore.Client.Tests.csproj", "{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 49
+		SccNumberOfProjects = 50
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccTeamFoundationServer = http://tfs.gecko.no:8080/tfs/defaultcollection
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = Gecko.NCore.Host\\Gecko.NCore.Host.csproj
 		SccProjectTopLevelParentUniqueName1 = Gecko.NCore.Client.sln
@@ -424,6 +426,10 @@ Global
 		SccProjectTopLevelParentUniqueName48 = Gecko.NCore.Client.sln
 		SccProjectName48 = net40/ServiceModel.Client.ObjectModel.V3.En
 		SccLocalPath48 = net40\\ServiceModel.Client.ObjectModel.V3.En
+		SccProjectUniqueName49 = net45\\Client.Tests\\Gecko.NCore.Client.Tests.csproj
+		SccProjectTopLevelParentUniqueName49 = Gecko.NCore.Client.sln
+		SccProjectName49 = net45/Client.Tests
+		SccLocalPath49 = net45\\Client.Tests
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1157,6 +1163,21 @@ Global
 		{BB0586B2-50CD-49B0-899C-A439BCC54AD9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BB0586B2-50CD-49B0-899C-A439BCC54AD9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BB0586B2-50CD-49B0-899C-A439BCC54AD9}.Release|x86.ActiveCfg = Release|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Deploy|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Deploy|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Deploy|x86.ActiveCfg = Debug|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1178,6 +1199,7 @@ Global
 		{50A49079-C0A0-43B9-AE1D-18595E417A8C} = {581D4AE9-AF31-45D9-AB4D-4F531359C114}
 		{817C4295-2EA0-4847-AB91-536B29B9FFA4} = {581D4AE9-AF31-45D9-AB4D-4F531359C114}
 		{5DBE78A3-9365-413E-8CBB-2EB8F8A156AD} = {581D4AE9-AF31-45D9-AB4D-4F531359C114}
+		{3D4B6E7C-2B43-4358-ADF1-5CF6F6A2B603} = {581D4AE9-AF31-45D9-AB4D-4F531359C114}
 		{F3B19182-875D-4429-8AC0-94BB6F09FBCB} = {AFDFEDAC-62B4-4F8B-A2DC-06DEFBF29287}
 		{B4F0D3BA-5C30-4C6A-A78A-5D802D43F944} = {2BB53F7A-7E22-4111-AFE7-7D0365754E8B}
 		{035A2CBD-2566-4DA6-BECE-7428592F0770} = {2BB53F7A-7E22-4111-AFE7-7D0365754E8B}

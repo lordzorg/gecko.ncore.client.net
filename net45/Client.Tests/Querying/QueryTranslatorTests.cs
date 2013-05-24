@@ -51,7 +51,7 @@ namespace Gecko.NCore.Client.Tests.Querying
             var queryTranslator = new QueryTranslator();
             queryTranslator.Visit(queryable.Expression);
 
-            Assert.AreEqual("B1.Tittel=Foo", queryTranslator.FilterExpression);
+            Assert.AreEqual("B1.Tittel='Foo'", queryTranslator.FilterExpression);
         }
 
         [TestMethod]

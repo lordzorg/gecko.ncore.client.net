@@ -153,6 +153,9 @@
     <Compile Include="..\..\net45\Client\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\..\net45\Client\Querying\ConstantQuotifier.cs">
+      <Link>Querying\ConstantQuotifier.cs</Link>
+    </Compile>
     <Compile Include="..\..\net45\Client\Querying\DataObjectQuery.cs">
       <Link>Querying\DataObjectQuery.cs</Link>
     </Compile>
@@ -209,6 +212,9 @@
     </Compile>
     <Compile Include="..\..\net45\Client\Querying\TypeSystem.cs">
       <Link>Querying\TypeSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Querying\WildcardInserter.cs">
+      <Link>Querying\WildcardInserter.cs</Link>
     </Compile>
     <Compile Include="..\..\net45\Client\SavedChangesEventArgs.cs">
       <Link>SavedChangesEventArgs.cs</Link>

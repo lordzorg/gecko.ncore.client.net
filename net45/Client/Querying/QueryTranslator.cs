@@ -133,6 +133,9 @@ namespace Gecko.NCore.Client.Querying
 			expression = PredicateOperandAligner.Align(expression);
 			expression = PredicateDenormalizer.Denormalize(expression);
 
+		    expression = WildcardInserter.Insert(expression);
+            expression = ConstantQuotifier.Quotify(expression);
+
 			return PredicateTranslator.Translate(expression, out queryId);
 		}
 

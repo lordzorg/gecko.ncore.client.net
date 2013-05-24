@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using Gecko.NCore.Client.Properties;
@@ -358,6 +359,19 @@ namespace Gecko.NCore.Client
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+    }
+
+    public class NCoreUtility
+    {
+        public const char QuoteChar = '\'';   //  '
+        public const char EscapeChar = '\\';  //  \
+
+        public static string QuoteField(string toEscape)
+        {
+            return QuoteChar.ToString(CultureInfo.InvariantCulture) +
+                   toEscape.Replace(QuoteChar.ToString(CultureInfo.InvariantCulture), EscapeChar.ToString(CultureInfo.InvariantCulture) + QuoteChar.ToString(CultureInfo.InvariantCulture)) +
+                   QuoteChar.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

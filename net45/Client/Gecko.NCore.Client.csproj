@@ -113,6 +113,7 @@
     <Compile Include="Querying\AsyncQueryableExtensions.cs" />
     <Compile Include="Querying\AsyncQueryTranslator.cs" />
     <Compile Include="ObjectModel\DataObjectCollection.cs" />
+    <Compile Include="Querying\ConstantQuotifier.cs" />
     <Compile Include="Querying\DataObjectQuery.cs" />
     <Compile Include="Querying\DataObjectQueryProvider.cs" />
     <Compile Include="Querying\DirectPredicate.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="ClientSettings.cs" />
     <Compile Include="EphorteContextSettings.cs" />
     <Compile Include="EphorteContextIdentity.cs" />
+    <Compile Include="Querying\WildcardInserter.cs" />
     <Compile Include="SavedChangesEventArgs.cs" />
     <Compile Include="SavingChangesEventArgs.cs" />
     <Compile Include="ServiceAdapterBase.cs" />

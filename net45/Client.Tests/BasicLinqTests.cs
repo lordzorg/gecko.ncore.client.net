@@ -86,7 +86,29 @@ namespace Gecko.NCore.Client.Tests
             var query = _queryContext.QueryArguments[0];
             Assert.AreEqual("Sak", query.DataObjectName, "DataObjectName");
             Assert.IsNull(query.SortExpression, "SortExpression");
-            Assert.AreEqual("SaksstatusId=R,F AND JournalEnhetId=enhetsid", query.FilterExpression, "FilterExpression");
+            Assert.AreEqual("SaksstatusId='R,F' AND JournalEnhetId='enhetsid'", query.FilterExpression, "FilterExpression");
+            Assert.IsNull(query.SkipCount, "SkipCount");
+            Assert.IsNull(query.TakeCount, "TakeCount");
+        }
+
+        [TestMethod]
+        public void HandlesMultipleNumberCriteriaOnField()
+        {
+            var expectedResult = new List<Sak> { new Sak { Id = 1001, SaksstatusId = "R" } };
+            _queryContext.Results.Enqueue(expectedResult);
+
+            var requiredId = new List<int?> { 1001, 1002, 1003 };
+
+            var list = (from s in _queryContext.Query<Sak>()
+                        where requiredId.Contains(s.Id) && s.JournalEnhetId == "enhetsid"
+                        select s).ToList();
+
+            Assert.AreEqual(expectedResult.Count, list.Count);
+
+            var query = _queryContext.QueryArguments[0];
+            Assert.AreEqual("Sak", query.DataObjectName, "DataObjectName");
+            Assert.IsNull(query.SortExpression, "SortExpression");
+            Assert.AreEqual("Id=1001,1002,1003 AND JournalEnhetId='enhetsid'", query.FilterExpression, "FilterExpression");
             Assert.IsNull(query.SkipCount, "SkipCount");
             Assert.IsNull(query.TakeCount, "TakeCount");
         }
@@ -108,7 +130,7 @@ namespace Gecko.NCore.Client.Tests
 
 			var q = _queryContext.QueryArguments[0];
 			Assert.AreEqual("Journalpost", q.DataObjectName, "DataObjectName");
-			Assert.AreEqual("JournalstatusId=I,U", q.FilterExpression, "FilterExpression");
+			Assert.AreEqual("JournalstatusId='I','U'", q.FilterExpression, "FilterExpression");
 		}
 
 		[TestMethod]
@@ -563,7 +585,7 @@ namespace Gecko.NCore.Client.Tests
 
             var query = _queryContext.QueryArguments[0];
             Assert.AreEqual("Sak", query.DataObjectName, "DataObjectName");
-            Assert.AreEqual("Tittel=STARTSWITH* OR Tittel=*ENDSWITH OR Tittel=*CONTAINS*", query.FilterExpression, "FilterExpression");
+            Assert.AreEqual("Tittel='STARTSWITH*' OR Tittel='*ENDSWITH' OR Tittel='*CONTAINS*'", query.FilterExpression, "FilterExpression");
         }
 
 		[TestMethod]
