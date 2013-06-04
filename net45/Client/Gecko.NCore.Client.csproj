@@ -124,6 +124,7 @@
     <Compile Include="Querying\LoadOption.cs" />
     <Compile Include="Querying\MemberEvaluator.cs" />
     <Compile Include="Querying\ODataExpressionWithNullableFieldVisitor.cs" />
+    <Compile Include="Querying\ConditionalNullRemoverVisitor.cs" />
     <Compile Include="Querying\PredicateDenormalizer.cs" />
     <Compile Include="Querying\PredicateOperandAligner.cs" />
     <Compile Include="Querying\PredicateTranslator.cs" />

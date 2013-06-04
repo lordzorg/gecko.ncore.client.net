@@ -153,6 +153,9 @@
     <Compile Include="..\..\net45\Client\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\..\net45\Client\Querying\ConditionalNullRemoverVisitor.cs">
+      <Link>Querying\ConditionalNullRemoverVisitor.cs</Link>
+    </Compile>
     <Compile Include="..\..\net45\Client\Querying\ConstantQuotifier.cs">
       <Link>Querying\ConstantQuotifier.cs</Link>
     </Compile>

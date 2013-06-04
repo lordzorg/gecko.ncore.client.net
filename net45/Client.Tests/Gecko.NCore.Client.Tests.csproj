@@ -72,6 +72,7 @@
     <Compile Include="DataObjectAccess.cs" />
     <Compile Include="EphorteContextIdentityTests.cs" />
     <Compile Include="FakeEphorteContext.cs" />
+    <Compile Include="Querying\ConditionalNullRemoverVisitorTests.cs" />
     <Compile Include="Querying\DummyA.cs" />
     <Compile Include="Querying\DummyB.cs" />
     <Compile Include="Querying\FakeDataObjectCollection.cs" />

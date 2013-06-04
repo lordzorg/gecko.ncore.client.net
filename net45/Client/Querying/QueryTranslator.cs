@@ -129,9 +129,11 @@ namespace Gecko.NCore.Client.Querying
 				}
 			}
 
-			expression = ODataExpressionWithNullableFieldVisitor.StripAwayOuterTrueCheck(expression);
 			expression = PredicateOperandAligner.Align(expression);
 			expression = PredicateDenormalizer.Denormalize(expression);
+
+			expression = ConditionalNullRemoverVisitor.RemoveReferenceTypeNullChecks(expression);
+			expression = ODataExpressionWithNullableFieldVisitor.StripAwayOuterTrueCheck(expression);
 
 		    expression = WildcardInserter.Insert(expression);
             expression = ConstantQuotifier.Quotify(expression);
