@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Ephorte.ServiceModel.Contracts.ObjectModel.V3.No</id>
-    <version>6.2.0</version>
+    <version>6.3.0</version>
     <title>ephorte® nCore Server - Object Model V3 No Service Contracts</title>
     <authors>Gecko Informasjonssystemer AS</authors>
     <owners>Gecko Informasjonssystemer AS</owners>
@@ -23,8 +23,5 @@
         <dependency id="WCFExtrasPlus" version="2.3" />
       </group>
     </dependencies>
-    <references>
-      <reference file="ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll" />
-    </references>
   </metadata>
 </package>

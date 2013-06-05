@@ -3367,6 +3367,32 @@
             </summary>
             <norwegianFieldName>Arkivdel.Tilgangskode</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.Series.PreservationTime">
+            <summary>
+            Number of years the cases of this class should be preserved before disposal
+            </summary>
+            <norwegianFieldName>Ordningsverdi.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.Series.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>Ordningsverdi.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.Series.DisposalCode">
+            <summary>
+            Referenced object: All the properties of the Disposal Code
+            </summary>
+            <norwegianFieldName>Ordningsverdi.Kassasjonskode</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.Series.DisposalPrinciple">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            </summary>
+            <norwegianFieldName>Ordningsverdi.Kassasjonsregel</norwegianFieldName>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.SeriesPropertyFlags">
             <summary>
             Inneholder informasjon som beskriver de enkelte deler virksomhetens arkiver består av.
@@ -3536,6 +3562,26 @@
             Transfer controlled by user with name id
             </summary>
             <norwegianFieldName>ArkivdelPropertyFlags.EksportKontrollertAvId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.SeriesPropertyFlags.PreservationTime">
+            <summary>
+            Number of years the cases of this class should be preserved before disposal
+            </summary>
+            <norwegianFieldName>OrdningsverdiPropertyFlags.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.SeriesPropertyFlags.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>OrdningsverdiPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.SeriesPropertyFlags.DisposalPrinciple">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            </summary>
+            <norwegianFieldName>OrdningsverdiPropertyFlags.Kassasjonsregel</norwegianFieldName>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.FondsPeriod">
             <summary>
@@ -4943,18 +4989,114 @@
             </summary>
             <norwegianFieldName>Byggesak.Sak</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.ActionId">
+            <summary>
+            Reference to ActionId
+            FieldLenght:50
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.ActionRemark">
+            <summary>
+            Action Remark
+            FieldLength:255
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.PropertyUnitNumber">
+            <summary>
+            Gets or sets the property unit number (BNR).
+            </summary>
+            <value>The property unit number.</value>
+            <remarks>Abbreviation BNR</remarks>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.UsableFloorArea">
+            <summary>
+            UsableFloorArea
+            FieldLength:10
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.BuildingId">
+            <summary>
+            Buildingnumber
+            </summary>
+            <value>The building number.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.BuildingSequenceNumber">
+            <summary>
+            The buildings sequencenumber
+            </summary>
+            <value>The building sequence number.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.LeaseholdUnitNumber">
+            <summary>
+            Gets or sets the leasehold unit number.
+            </summary>
+            <value>The leasehold unit number.</value>
+            <remarks>Abbreviation FNR</remarks>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.BuildingType">
+            <summary>
+            BuildingType
+            FieldLength:4
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.StreetId">
+            <summary>
+            StreetId
+            FieldLength:6
+            </summary>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.StreetName">
             <summary>
             Gatenavn.
-            Feltlengde: 50 tegn.
+            FieldLength: 50
             </summary>
-            <norwegianFieldName>Byggesak.Gatenavn</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.CadastralUnitNumber">
+            <summary>
+            Gets or sets the cadastral unit number.
+            </summary>
+            <value>The cadastral unit number.</value>
+            <remarks>Abbreviation GNR</remarks>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.HouseId">
+            <summary>
+            HouseId.
+            FieldLength: 7
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.MapSheet">
+            <summary>
+            MapSheet.
+            FieldLength: 30
+            </summary>
         </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.MunicipalityNumber">
             <summary>
             Municipality number
             </summary>
             <norwegianFieldName>Byggesak.Kommunenummer</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.ExemptionTypeId">
+            <summary>
+            ExemptionType.
+            FieldLength: 10
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.ExemptionType">
+            <summary>
+            ExemptionType.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.ApplicationTypeId">
+            <summary>
+            ApplicationTypeId.
+            FieldLength: 10
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.ApplicationType">
+            <summary>
+            ApplicationType.
+            </summary>
         </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.CoordinateSystem">
             <summary>
@@ -4991,6 +5133,14 @@
             </summary>
             <norwegianFieldName>Byggesak.Poststed</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.SectionUnitNumber">
+            <summary>
+            Gets or sets the section unit number.
+            FieldLength : 10
+            </summary>
+            <value>The section unit number.</value>
+            <remarks>Abbreviation SNR</remarks>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.PropertyArea">
             <summary>
             Tomteareal.
@@ -5007,21 +5157,21 @@
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.Xcoordinate">
             <summary>
             X-koordinat.
-            Feltlengde: 10 tegn.
+            Feltlengde: 30 tegn.
             </summary>
             <norwegianFieldName>Byggesak.XKoordinat</norwegianFieldName>
         </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.Ycoordinate">
             <summary>
             Y-koordinat.
-            Feltlengde: 10 tegn.
+            Feltlengde: 30 tegn.
             </summary>
             <norwegianFieldName>Byggesak.YKoordinat</norwegianFieldName>
         </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.ConstructionCase.Zcoordinate">
             <summary>
             Z-koordinat.
-            Feltlengde: 10 tegn.
+            Feltlengde: 30 tegn.
             </summary>
             <norwegianFieldName>Byggesak.ZKoordinat</norwegianFieldName>
         </member>
@@ -6151,6 +6301,30 @@
             </summary>
             <norwegianFieldName>Dokumentbeskrivelse.OpprettetAvId</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescription.PreservationTime">
+            <summary>
+            Number of years the case should be preserved before disposal
+            </summary>
+            <norwegianFieldName>Sak.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescription.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>Sak.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescription.DisposalCode">
+            <summary>
+            Referenced object: All the properties of the Disposal Code
+            </summary>
+            <norwegianFieldName>Sak.Kassasjonskode</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescription.DisposalDate">
+            <summary>
+            Date for disposal
+            </summary>
+            <norwegianFieldName>Sak.Kassasjonsdato</norwegianFieldName>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescription.CustomAttribute1">
             <summary>
             Custom attribute #1
@@ -6458,6 +6632,24 @@
             </summary>
             <norwegianFieldName>DokumentbeskrivelsePropertyFlags.AktivVersjon</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescriptionPropertyFlags.PreservationTime">
+            <summary>
+            Number of years the case should be preserved before disposal
+            </summary>
+            <norwegianFieldName>SakPropertyFlags.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescriptionPropertyFlags.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>SakPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescriptionPropertyFlags.DisposalDate">
+            <summary>
+            Date for disposal
+            </summary>
+            <norwegianFieldName>SakPropertyFlags.Kassasjonsdato</norwegianFieldName>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentDescriptionPropertyFlags.CustomAttribute1">
             <summary>
             Custom attribute #1
@@ -6601,6 +6793,32 @@
             </summary>
             <norwegianFieldName>Dokumentkategori.MvaKode</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategory.PreservationTime">
+            <summary>
+            Number of years the cases of this class should be preserved before disposal
+            </summary>
+            <norwegianFieldName>Ordningsverdi.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategory.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>Ordningsverdi.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategory.DisposalCode">
+            <summary>
+            Referenced object: All the properties of the Disposal Code
+            </summary>
+            <norwegianFieldName>Ordningsverdi.Kassasjonskode</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategory.DisposalPrinciple">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            </summary>
+            <norwegianFieldName>Ordningsverdi.Kassasjonsregel</norwegianFieldName>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategoryPropertyFlags">
             <summary>
             Inneholder attributter som beskriver dokumentkategorier.
@@ -6665,6 +6883,26 @@
             VAT
             </summary>
             <norwegianFieldName>DokumentkategoriPropertyFlags.MvaKode</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategoryPropertyFlags.PreservationTime">
+            <summary>
+            Number of years the cases of this class should be preserved before disposal
+            </summary>
+            <norwegianFieldName>OrdningsverdiPropertyFlags.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategoryPropertyFlags.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>OrdningsverdiPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentCategoryPropertyFlags.DisposalPrinciple">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            </summary>
+            <norwegianFieldName>OrdningsverdiPropertyFlags.Kassasjonsregel</norwegianFieldName>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.MeetingDocumentLink">
             <summary>
@@ -10018,6 +10256,30 @@
             </summary>
             <norwegianFieldName>Journalpost.SisteAvslagDato</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntry.PreservationTime">
+            <summary>
+            Number of years the case should be preserved before disposal
+            </summary>
+            <norwegianFieldName>Sak.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntry.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>Sak.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntry.DisposalCode">
+            <summary>
+            Referenced object: All the properties of the Disposal Code
+            </summary>
+            <norwegianFieldName>Sak.Kassasjonskode</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntry.DisposalDate">
+            <summary>
+            Date for disposal
+            </summary>
+            <norwegianFieldName>Sak.Kassasjonsdato</norwegianFieldName>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntry.CustomAttribute1">
             <summary>
             Custom attribute #1
@@ -10495,6 +10757,24 @@
             Date that indicates when a registry entry is last rejected (not approved)
             </summary>
             <norwegianFieldName>JournalpostPropertyFlags.SisteAvslagDato</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntryPropertyFlags.PreservationTime">
+            <summary>
+            Number of years the case should be preserved before disposal
+            </summary>
+            <norwegianFieldName>SakPropertyFlags.Bevaringstid</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntryPropertyFlags.DisposalCodeId">
+            <summary>
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            </summary>
+            <norwegianFieldName>SakPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntryPropertyFlags.DisposalDate">
+            <summary>
+            Date for disposal
+            </summary>
+            <norwegianFieldName>SakPropertyFlags.Kassasjonsdato</norwegianFieldName>
         </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.RegistryEntryPropertyFlags.CustomAttribute1">
             <summary>

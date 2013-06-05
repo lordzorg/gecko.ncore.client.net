@@ -50,7 +50,7 @@
       <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.6.2.0\lib\net40\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En">
-      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.2.0\lib\net40\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.3.0\lib\net40\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -70,7 +70,7 @@
     <Compile Include="..\..\net45\Client.ObjectModel.V3.En\ObjectModel\V3\En\ObjectModelAdapterV3En.cs">
       <Link>ObjectModel\V3\En\ObjectModelAdapterV3En.cs</Link>
     </Compile>
-    <Compile Include="..\..\net45\Client.ObjectModel.V3.En\Properties\AssemblyInfo.cs">
+    <Compile Include="..\..\net45\ServiceModel.Client.ObjectModel.V3.En\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Service References\ObjectModel.V3.En\Reference.cs">

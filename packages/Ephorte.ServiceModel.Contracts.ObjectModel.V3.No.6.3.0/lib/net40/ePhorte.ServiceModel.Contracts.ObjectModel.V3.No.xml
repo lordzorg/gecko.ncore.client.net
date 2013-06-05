@@ -3195,6 +3195,32 @@
             </summary>
             <value>Inneholder detaljer om tilgangskoden arkivdelen er knyttet til.</value>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Arkivdel.Bevaringstid">
+            <summary>
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Arkivdel.KassasjonskodeId">
+            <summary>
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Arkivdel.Kassasjonskode">
+            <summary>
+            Standard kassasjonskode.
+            </summary>
+            <value>Inneholder attributter som beskriver standard kassasjonskode for denne ordningsverdi.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Arkivdel.Kassasjonsregel">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            </summary>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.ArkivdelPropertyFlags">
             <summary>
             Inneholder informasjon som beskriver de enkelte deler virksomhetens arkiver består av.
@@ -3397,6 +3423,26 @@
             <summary>
             - Referanse til den person som har kontrollert at eksporten er utført med vellykket resultat.
             Tilsvarer NOARK4 feltet AD.KONTRAV.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.ArkivdelPropertyFlags.Bevaringstid">
+            <summary>
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.ArkivdelPropertyFlags.KassasjonskodeId">
+            <summary>
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.ArkivdelPropertyFlags.Kassasjonsregel">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
             </summary>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Arkivperiode">
@@ -6045,26 +6091,6 @@
              Bygningens løpenummer
             </summary>
         </member>
-        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags">
-            <summary>
-             Representerer en ephorte entitet (objekt) som innholder geografisk informasjon, for eks <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Sak"/>
-            </summary>
-        </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Id">
-            <summary>
-            Id som representerer en ephorte entitet.
-            </summary>
-        </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Betegnelse">
-            <summary>
-            Betegnelse for en entitet.
-            </summary>
-        </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Aktiv">
-            <summary>
-             Markerer om denne entiteten er aktiv eller ikke, mht lagring av geografisk informasjon.
-            </summary>
-        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitet">
             <summary>
              Representerer en ephorte entitet (objekt) som innholder geografisk informasjon, for eks <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Sak"/>
@@ -6083,6 +6109,26 @@
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitet.Aktiv">
             <summary>
              Markerer om denne entiteten er aktiv eller ikke, mht lagring av geografisk informasjon.  Standardverdi er true.
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags">
+            <summary>
+             Representerer en ephorte entitet (objekt) som innholder geografisk informasjon, for eks <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Sak"/>
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Id">
+            <summary>
+            Id som representerer en ephorte entitet.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Betegnelse">
+            <summary>
+            Betegnelse for en entitet.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Aktiv">
+            <summary>
+             Markerer om denne entiteten er aktiv eller ikke, mht lagring av geografisk informasjon.
             </summary>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.PlanIdentPropertyFlags">
@@ -8048,6 +8094,33 @@
             Created by  - Hvem recorden er opprettet av (personnavnId)
             </summary>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentbeskrivelse.Bevaringstid">
+            <summary>
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentbeskrivelse.KassasjonskodeId">
+            <summary>
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentbeskrivelse.Kassasjonskode">
+            <summary>
+            Disposal information - Sakens kassasjonskode.
+            </summary>
+            <value>Angir hva som skal skje når angitt kassasjonstidspunkt er nådd.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentbeskrivelse.Kassasjonsdato">
+            <summary>
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            </summary>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentbeskrivelse.Tilleggsattributt1">
             <summary>
             Tilleggsattributt 1.
@@ -8344,6 +8417,27 @@
             </summary>
             <value>Inneholder attributter som beskriver aktiv versjon av dokumentet.</value>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentbeskrivelsePropertyFlags.Bevaringstid">
+            <summary>
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentbeskrivelsePropertyFlags.KassasjonskodeId">
+            <summary>
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentbeskrivelsePropertyFlags.Kassasjonsdato">
+            <summary>
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            </summary>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentbeskrivelsePropertyFlags.Tilleggsattributt1">
             <summary>
             Tilleggsattributt 1.
@@ -8483,6 +8577,32 @@
             - Valgt dersom MVA kode skal overføres, ikke valgt ellers.
             </summary>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentkategori.Bevaringstid">
+            <summary>
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentkategori.KassasjonskodeId">
+            <summary>
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentkategori.Kassasjonskode">
+            <summary>
+            Standard kassasjonskode.
+            </summary>
+            <value>Inneholder attributter som beskriver standard kassasjonskode for denne ordningsverdi.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentkategori.Kassasjonsregel">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            </summary>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentkategoriPropertyFlags">
             <summary>
             Inneholder attributter som beskriver dokumentkategorier.
@@ -8552,6 +8672,26 @@
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentkategoriPropertyFlags.MvaKode">
             <summary>
             - Valgt dersom MVA kode skal overføres, ikke valgt ellers.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentkategoriPropertyFlags.Bevaringstid">
+            <summary>
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentkategoriPropertyFlags.KassasjonskodeId">
+            <summary>
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentkategoriPropertyFlags.Kassasjonsregel">
+            <summary>
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
             </summary>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentlinkMoetedokument">
@@ -11670,6 +11810,33 @@
             Dato som angir når en journalpost er sist avslått(ikke godkjent)
             </summary>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Journalpost.Bevaringstid">
+            <summary>
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Journalpost.KassasjonskodeId">
+            <summary>
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Journalpost.Kassasjonskode">
+            <summary>
+            Disposal information - Sakens kassasjonskode.
+            </summary>
+            <value>Angir hva som skal skje når angitt kassasjonstidspunkt er nådd.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Journalpost.Kassasjonsdato">
+            <summary>
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            </summary>
+        </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Journalpost.Tilleggsattributt1">
             <summary>
             Additional attribute #1 - Tilleggsattributt nummer 1.
@@ -12099,6 +12266,27 @@
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.JournalpostPropertyFlags.SisteAvslagDato">
             <summary>
             Dato som angir når en journalpost er sist avslått(ikke godkjent)
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.JournalpostPropertyFlags.Bevaringstid">
+            <summary>
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.JournalpostPropertyFlags.KassasjonskodeId">
+            <summary>
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.JournalpostPropertyFlags.Kassasjonsdato">
+            <summary>
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
             </summary>
         </member>
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.JournalpostPropertyFlags.Tilleggsattributt1">
