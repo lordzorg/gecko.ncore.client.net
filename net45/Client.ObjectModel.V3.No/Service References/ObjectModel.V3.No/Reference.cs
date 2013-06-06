@@ -449,6 +449,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Arkivperiode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Arkivstatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Bortsettingskode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Dokumenttype))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.AktivitetPrioritet))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.AktivitetRapportKategori))]
@@ -468,7 +469,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Journalpostaktivitet))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Journalpost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Sak))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Klassering))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Ordningsverdi))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.No.Prosjekt))]
@@ -7144,6 +7144,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> ValgfrittSekundaertOrdningsprinsippField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode KassasjonskodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KassasjonskodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KassasjonsregelField;
+        
         /// <summary>
         /// The archive that the record section is part of  - Arkivet som arkivdelen inngår i.
         /// </summary>
@@ -7853,6 +7865,76 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.ValgfrittSekundaertOrdningsprinsippField.Equals(value) != true)) {
                     this.ValgfrittSekundaertOrdningsprinsippField = value;
                     this.RaisePropertyChanged("ValgfrittSekundaertOrdningsprinsipp");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+        /// Tilsvarer NOARK4 feltet OV.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+        public System.Nullable<int> Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standard kassasjonskode.
+        /// </summary>
+        /// <value>Inneholder attributter som beskriver standard kassasjonskode for denne ordningsverdi.</value>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+        public Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode Kassasjonskode {
+            get {
+                return this.KassasjonskodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeField, value) != true)) {
+                    this.KassasjonskodeField = value;
+                    this.RaisePropertyChanged("Kassasjonskode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+        /// Feltlengde: 2 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+        public string KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeIdField, value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+        public string Kassasjonsregel {
+            get {
+                return this.KassasjonsregelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonsregelField, value) != true)) {
+                    this.KassasjonsregelField = value;
+                    this.RaisePropertyChanged("Kassasjonsregel");
                 }
             }
         }
@@ -9218,6 +9300,59 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
     }
     
     /// <summary>
+    /// Inneholder koder som angir hva som skal skje når angitt kassasjonstidspunkt er nådd.
+    /// </summary>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Kassasjonskode", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/no/dataobjects", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class Kassasjonskode : Gecko.NCore.Client.ObjectModel.V3.No.DataObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BetegnelseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        /// <summary>
+        /// Betegnelse i klartekst.
+        /// Feltlengde: 2 tegn.
+        /// Obligatorisk.
+        /// Tilsvarer NOARK4 feltet KK.BETEGN.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Betegnelse {
+            get {
+                return this.BetegnelseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BetegnelseField, value) != true)) {
+                    this.BetegnelseField = value;
+                    this.RaisePropertyChanged("Betegnelse");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kortkode.
+        /// Feltlengde: 2 tegn.
+        /// Tilsvarer NOARK4 feltet KK.KODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     /// Inneholder attributter som beskriver Noark dokumenttype.
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9689,6 +9824,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> UtarbeidetAvIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> KassasjonsdatoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode KassasjonskodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KassasjonskodeIdField;
         
         /// <summary>
         /// Aktiv versjon av dokumentet.
@@ -10248,6 +10395,77 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.UtarbeidetAvIdField.Equals(value) != true)) {
                     this.UtarbeidetAvIdField = value;
                     this.RaisePropertyChanged("UtarbeidetAvId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas.
+        /// Tilsvarer NOARK4 feltet SA.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
+        public System.Nullable<int> Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført,
+        /// bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSDATO
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+        public System.Nullable<System.DateTime> Kassasjonsdato {
+            get {
+                return this.KassasjonsdatoField;
+            }
+            set {
+                if ((this.KassasjonsdatoField.Equals(value) != true)) {
+                    this.KassasjonsdatoField = value;
+                    this.RaisePropertyChanged("Kassasjonsdato");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Disposal information - Sakens kassasjonskode.
+        /// </summary>
+        /// <value>Angir hva som skal skje når angitt kassasjonstidspunkt er nådd.</value>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+        public Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode Kassasjonskode {
+            get {
+                return this.KassasjonskodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeField, value) != true)) {
+                    this.KassasjonskodeField = value;
+                    this.RaisePropertyChanged("Kassasjonskode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd.
+        /// Feltlengde: 2 tegn.
+        /// Oppslag mot tabellen Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+        public string KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeIdField, value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
                 }
             }
         }
@@ -11309,6 +11527,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TilgangskodeIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode KassasjonskodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KassasjonskodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KassasjonsregelField;
+        
         /// <summary>
         /// - Referanse til aktivitetsmal.
         /// Hvis det registreres en aktivitetsmal på denne dokumentkategori, legges denne dokumentflyten automatisk på journalposter med denne kategorien.
@@ -11532,6 +11762,76 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((object.ReferenceEquals(this.TilgangskodeIdField, value) != true)) {
                     this.TilgangskodeIdField = value;
                     this.RaisePropertyChanged("TilgangskodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+        /// Tilsvarer NOARK4 feltet OV.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public System.Nullable<int> Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standard kassasjonskode.
+        /// </summary>
+        /// <value>Inneholder attributter som beskriver standard kassasjonskode for denne ordningsverdi.</value>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode Kassasjonskode {
+            get {
+                return this.KassasjonskodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeField, value) != true)) {
+                    this.KassasjonskodeField = value;
+                    this.RaisePropertyChanged("Kassasjonskode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+        /// Feltlengde: 2 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeIdField, value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string Kassasjonsregel {
+            get {
+                return this.KassasjonsregelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonsregelField, value) != true)) {
+                    this.KassasjonsregelField = value;
+                    this.RaisePropertyChanged("Kassasjonsregel");
                 }
             }
         }
@@ -13239,6 +13539,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> SisteAvslagDatoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> KassasjonsdatoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode KassasjonskodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KassasjonskodeIdField;
+        
         /// <summary>
         /// The administrative unit of the case worker - Den administrative enhet som journalposten er knyttet til.
         /// </summary>
@@ -14476,6 +14788,77 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SisteAvslagDatoField.Equals(value) != true)) {
                     this.SisteAvslagDatoField = value;
                     this.RaisePropertyChanged("SisteAvslagDato");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas.
+        /// Tilsvarer NOARK4 feltet SA.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
+        public System.Nullable<int> Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført,
+        /// bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSDATO
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
+        public System.Nullable<System.DateTime> Kassasjonsdato {
+            get {
+                return this.KassasjonsdatoField;
+            }
+            set {
+                if ((this.KassasjonsdatoField.Equals(value) != true)) {
+                    this.KassasjonsdatoField = value;
+                    this.RaisePropertyChanged("Kassasjonsdato");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Disposal information - Sakens kassasjonskode.
+        /// </summary>
+        /// <value>Angir hva som skal skje når angitt kassasjonstidspunkt er nådd.</value>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
+        public Gecko.NCore.Client.ObjectModel.V3.No.Kassasjonskode Kassasjonskode {
+            get {
+                return this.KassasjonskodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeField, value) != true)) {
+                    this.KassasjonskodeField = value;
+                    this.RaisePropertyChanged("Kassasjonskode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd.
+        /// Feltlengde: 2 tegn.
+        /// Oppslag mot tabellen Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
+        public string KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KassasjonskodeIdField, value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
                 }
             }
         }
@@ -16078,59 +16461,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((object.ReferenceEquals(this.Tilleggsattributt30Field, value) != true)) {
                     this.Tilleggsattributt30Field = value;
                     this.RaisePropertyChanged("Tilleggsattributt30");
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Inneholder koder som angir hva som skal skje når angitt kassasjonstidspunkt er nådd.
-    /// </summary>
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Kassasjonskode", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/no/dataobjects", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class Kassasjonskode : Gecko.NCore.Client.ObjectModel.V3.No.DataObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BetegnelseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
-        
-        /// <summary>
-        /// Betegnelse i klartekst.
-        /// Feltlengde: 2 tegn.
-        /// Obligatorisk.
-        /// Tilsvarer NOARK4 feltet KK.BETEGN.
-        /// </summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Betegnelse {
-            get {
-                return this.BetegnelseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BetegnelseField, value) != true)) {
-                    this.BetegnelseField = value;
-                    this.RaisePropertyChanged("Betegnelse");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Kortkode.
-        /// Feltlengde: 2 tegn.
-        /// Tilsvarer NOARK4 feltet KK.KODE.
-        /// </summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -22704,6 +23034,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ValgfrittSekundaertOrdningsprinsippField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonskodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonsregelField;
+        
         /// <summary>
         /// Reference to the archive that the record section is part of - Referanse til det arkiv som arkivdelen inngår i.
         /// Oppslag mot tabellen Arkiv.
@@ -23196,6 +23535,59 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.ValgfrittSekundaertOrdningsprinsippField.Equals(value) != true)) {
                     this.ValgfrittSekundaertOrdningsprinsippField = value;
                     this.RaisePropertyChanged("ValgfrittSekundaertOrdningsprinsipp");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+        /// Tilsvarer NOARK4 feltet OV.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public bool Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+        /// Feltlengde: 2 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public bool KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((this.KassasjonskodeIdField.Equals(value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+        public bool Kassasjonsregel {
+            get {
+                return this.KassasjonsregelField;
+            }
+            set {
+                if ((this.KassasjonsregelField.Equals(value) != true)) {
+                    this.KassasjonsregelField = value;
+                    this.RaisePropertyChanged("Kassasjonsregel");
                 }
             }
         }
@@ -39381,6 +39773,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool UtarbeidetAvIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonsdatoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonskodeIdField;
+        
         /// <summary>
         /// Aktiv versjon av dokumentet.
         /// </summary>
@@ -39824,6 +40225,60 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 }
             }
         }
+        
+        /// <summary>
+        /// Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas.
+        /// Tilsvarer NOARK4 feltet SA.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public bool Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført,
+        /// bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSDATO
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public bool Kassasjonsdato {
+            get {
+                return this.KassasjonsdatoField;
+            }
+            set {
+                if ((this.KassasjonsdatoField.Equals(value) != true)) {
+                    this.KassasjonsdatoField = value;
+                    this.RaisePropertyChanged("Kassasjonsdato");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd.
+        /// Feltlengde: 2 tegn.
+        /// Oppslag mot tabellen Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public bool KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((this.KassasjonskodeIdField.Equals(value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -39861,6 +40316,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool TilgangskodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonskodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonsregelField;
         
         /// <summary>
         /// - Referanse til aktivitetsmal.
@@ -40034,6 +40498,59 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.TilgangskodeIdField.Equals(value) != true)) {
                     this.TilgangskodeIdField = value;
                     this.RaisePropertyChanged("TilgangskodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+        /// Tilsvarer NOARK4 feltet OV.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public bool Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+        /// Feltlengde: 2 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public bool KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((this.KassasjonskodeIdField.Equals(value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public bool Kassasjonsregel {
+            get {
+                return this.KassasjonsregelField;
+            }
+            set {
+                if ((this.KassasjonsregelField.Equals(value) != true)) {
+                    this.KassasjonsregelField = value;
+                    this.RaisePropertyChanged("Kassasjonsregel");
                 }
             }
         }
@@ -48143,6 +48660,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SisteAvslagDatoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BevaringstidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonsdatoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool KassasjonskodeIdField;
+        
         /// <summary>
         /// Reference to the administrative unit of the case worker - Referanse til den administrative enhet som journalposten er knyttet til.
         /// Obligatorisk.
@@ -49094,6 +49620,60 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SisteAvslagDatoField.Equals(value) != true)) {
                     this.SisteAvslagDatoField = value;
                     this.RaisePropertyChanged("SisteAvslagDato");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas.
+        /// Tilsvarer NOARK4 feltet SA.BEVTID.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+        public bool Bevaringstid {
+            get {
+                return this.BevaringstidField;
+            }
+            set {
+                if ((this.BevaringstidField.Equals(value) != true)) {
+                    this.BevaringstidField = value;
+                    this.RaisePropertyChanged("Bevaringstid");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført,
+        /// bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSDATO
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+        public bool Kassasjonsdato {
+            get {
+                return this.KassasjonsdatoField;
+            }
+            set {
+                if ((this.KassasjonsdatoField.Equals(value) != true)) {
+                    this.KassasjonsdatoField = value;
+                    this.RaisePropertyChanged("Kassasjonsdato");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd.
+        /// Feltlengde: 2 tegn.
+        /// Oppslag mot tabellen Kassasjonskode.
+        /// Tilsvarer NOARK4 feltet SA.KASSKODE.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
+        public bool KassasjonskodeId {
+            get {
+                return this.KassasjonskodeIdField;
+            }
+            set {
+                if ((this.KassasjonskodeIdField.Equals(value) != true)) {
+                    this.KassasjonskodeIdField = value;
+                    this.RaisePropertyChanged("KassasjonskodeId");
                 }
             }
         }

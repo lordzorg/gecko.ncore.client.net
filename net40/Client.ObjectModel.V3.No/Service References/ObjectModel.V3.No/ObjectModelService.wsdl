@@ -5808,6 +5808,45 @@
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsdato" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonskode" nillable="true" type="tns:Kassasjonskode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposal information - Sakens kassasjonskode.
+            &lt;/summary&gt;
+            &lt;value&gt;Angir hva som skal skje når angitt kassasjonstidspunkt er nådd.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -6213,6 +6252,44 @@
             Valgt dersom sekundært ordningsprinsipp kan velges fritt i denne arkivdelen,
             uavhengig av den primære ordningsverdien, ikke valgt ellers.
             Tilsvarer NOARK4 feltet AD.FRISEK.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonskode" nillable="true" type="tns:Kassasjonskode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standard kassasjonskode.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder attributter som beskriver standard kassasjonskode for denne ordningsverdi.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsregel" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -8133,6 +8210,35 @@
             Valgt dersom sekundært ordningsprinsipp kan velges fritt i denne arkivdelen,
             uavhengig av den primære ordningsverdien, ikke valgt ellers.
             Tilsvarer NOARK4 feltet AD.FRISEK.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsregel" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -10513,6 +10619,45 @@
             Referanse til den person som har utarbeidet dette saksdokumentet.
             Oppslag mot tabellen Personnavn.
             Tilsvarer NOARK4 feltet DB.UTARBAV
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsdato" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonskode" nillable="true" type="tns:Kassasjonskode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposal information - Sakens kassasjonskode.
+            &lt;/summary&gt;
+            &lt;value&gt;Angir hva som skal skje når angitt kassasjonstidspunkt er nådd.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -16540,6 +16685,36 @@
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsdato" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -16675,6 +16850,44 @@
                   <xs:documentation>&lt;summary&gt;
             Referanse til tilgangskode for dokumentkategori. 
             Journalposter som knyttes til denne dokumentkategorien får denne satt automatisk.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonskode" nillable="true" type="tns:Kassasjonskode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standard kassasjonskode.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder attributter som beskriver standard kassasjonskode for denne ordningsverdi.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsregel" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -17000,6 +17213,35 @@
                   <xs:documentation>&lt;summary&gt;
             Referanse til tilgangskode for dokumentkategori. 
             Journalposter som knyttes til denne dokumentkategorien får denne satt automatisk.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Bevaringstid (i antall år) for saker med denne ordningsverdien som primærkode.
+            Tilsvarer NOARK4 feltet OV.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Standardverdi for Kassasjonskode for saker med denne ordningsverdien. Oppslag mot tabellen Kassasjonskode. Se denne for beskrivelse av standard koder.
+            Feltlengde: 2 tegn.
+            Tilsvarer NOARK4 feltet OV.KASKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsregel" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -22547,6 +22789,36 @@
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
             Dato som angir når en journalpost er sist avslått(ikke godkjent)
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Bevaringstid" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Preservationtime - Antall år saken skal oppbevares før kassasjon eller annen aksjon i henhold til kassasjonskoden skal foretas. 
+            Tilsvarer NOARK4 feltet SA.BEVTID.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Kassasjonsdato" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Tilsvarer NOARK4 feltet SA.KASSDATO
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassasjonskodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Reference to the disposal information Referanse til kode som angir hva som skal skje når kassasjonsåret er nådd. 
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen Kassasjonskode. 
+            Tilsvarer NOARK4 feltet SA.KASSKODE.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>

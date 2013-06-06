@@ -7911,6 +7911,42 @@
             &lt;norwegianFieldName&gt;Journalpost.SisteAvslagDato&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="DisposalCode" nillable="true" type="tns:DisposalCode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Disposal Code
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.Kassasjonskode&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalDate" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Date for disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.Kassasjonsdato&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the case should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -8602,6 +8638,44 @@
             &lt;norwegianFieldName&gt;Arkivdel.EksportertDato&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="DisposalCode" nillable="true" type="tns:DisposalCode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Disposal Code
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.Kassasjonskode&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalPrinciple" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.Kassasjonsregel&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the cases of this class should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -8916,6 +8990,35 @@
             Transfer date
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;ArkivdelPropertyFlags.EksportertDato&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;OrdningsverdiPropertyFlags.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalPrinciple" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;OrdningsverdiPropertyFlags.Kassasjonsregel&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the cases of this class should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;OrdningsverdiPropertyFlags.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>
@@ -11146,9 +11249,8 @@
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
             Gatenavn.
-            Feltlengde: 50 tegn.
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Byggesak.Gatenavn&lt;/norwegianFieldName&gt;</xs:documentation>
+            FieldLength: 50
+            &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
               <xs:element minOccurs="0" name="Xcoordinate" nillable="true" type="xs:string">
@@ -11156,7 +11258,7 @@
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
             X-koordinat.
-            Feltlengde: 10 tegn.
+            Feltlengde: 30 tegn.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Byggesak.XKoordinat&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
@@ -11166,7 +11268,7 @@
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
             Y-koordinat.
-            Feltlengde: 10 tegn.
+            Feltlengde: 30 tegn.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Byggesak.YKoordinat&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
@@ -11176,9 +11278,165 @@
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
             Z-koordinat.
-            Feltlengde: 10 tegn.
+            Feltlengde: 30 tegn.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Byggesak.ZKoordinat&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ActionId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Reference to ActionId
+            FieldLenght:50
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ActionRemark" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Action Remark
+            FieldLength:255
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="tns:ApplicationType">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            ApplicationType.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ApplicationTypeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            ApplicationTypeId.
+            FieldLength: 10
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="BuildingId" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Buildingnumber
+            &lt;/summary&gt;
+            &lt;value&gt;The building number.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="BuildingSequenceNumber" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The buildings sequencenumber
+            &lt;/summary&gt;
+            &lt;value&gt;The building sequence number.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="BuildingType" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            BuildingType
+            FieldLength:4
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="CadastralUnitNumber" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Gets or sets the cadastral unit number.
+            &lt;/summary&gt;
+            &lt;value&gt;The cadastral unit number.&lt;/value&gt;
+            &lt;remarks&gt;Abbreviation GNR&lt;/remarks&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ExemptionType" nillable="true" type="tns:DispensationType">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            ExemptionType.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ExemptionTypeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            ExemptionType.
+            FieldLength: 10
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="HouseId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            HouseId.
+            FieldLength: 7
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="LeaseholdUnitNumber" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Gets or sets the leasehold unit number.
+            &lt;/summary&gt;
+            &lt;value&gt;The leasehold unit number.&lt;/value&gt;
+            &lt;remarks&gt;Abbreviation FNR&lt;/remarks&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="MapSheet" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            MapSheet.
+            FieldLength: 30
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PropertyUnitNumber" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Gets or sets the property unit number (BNR).
+            &lt;/summary&gt;
+            &lt;value&gt;The property unit number.&lt;/value&gt;
+            &lt;remarks&gt;Abbreviation BNR&lt;/remarks&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="SectionUnitNumber" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Gets or sets the section unit number.
+            FieldLength : 10
+            &lt;/summary&gt;
+            &lt;value&gt;The section unit number.&lt;/value&gt;
+            &lt;remarks&gt;Abbreviation SNR&lt;/remarks&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="StreetId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            StreetId
+            FieldLength:6
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="UsableFloorArea" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            UsableFloorArea
+            FieldLength:10
+            &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>
@@ -11186,9 +11444,45 @@
         </xs:complexContent>
       </xs:complexType>
       <xs:element name="ConstructionCase" nillable="true" type="tns:ConstructionCase" />
-      <xs:complexType name="BuildingType">
+      <xs:complexType name="ApplicationType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Application type for new buildings
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
         <xs:complexContent mixed="false">
           <xs:extension xmlns:q86="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q86:DataObject">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Betegnelse i klartekst.
+            Feltlengde: 70 tegn.
+            Obligatorisk.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;ByggesakSoeknadstype.Betegnelse&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Kortkode.
+            Feltlengde: 10 tegn.
+            /// &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;ByggesakSoeknadstype.Id&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ApplicationType" nillable="true" type="tns:ApplicationType" />
+      <xs:complexType name="BuildingType">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q87="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q87:DataObject">
             <xs:sequence>
               <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
                 <xs:annotation>
@@ -11226,7 +11520,7 @@
       <xs:element name="BuildingType" nillable="true" type="tns:BuildingType" />
       <xs:complexType name="BuildingTypePropertyFlags">
         <xs:complexContent mixed="false">
-          <xs:extension xmlns:q87="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q87:DataObject">
+          <xs:extension xmlns:q88="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q88:DataObject">
             <xs:sequence>
               <xs:element minOccurs="0" name="Description" type="xs:boolean">
                 <xs:annotation>
@@ -11263,8 +11557,14 @@
       </xs:complexType>
       <xs:element name="BuildingTypePropertyFlags" nillable="true" type="tns:BuildingTypePropertyFlags" />
       <xs:complexType name="DispensationType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Type of dispensation from zoning regulations
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
         <xs:complexContent mixed="false">
-          <xs:extension xmlns:q88="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q88:DataObject">
+          <xs:extension xmlns:q89="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q89:DataObject">
             <xs:sequence>
               <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
                 <xs:annotation>
@@ -11294,7 +11594,7 @@
       <xs:element name="DispensationType" nillable="true" type="tns:DispensationType" />
       <xs:complexType name="DispensationTypePropertyFlags">
         <xs:complexContent mixed="false">
-          <xs:extension xmlns:q89="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q89:DataObject">
+          <xs:extension xmlns:q90="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q90:DataObject">
             <xs:sequence>
               <xs:element minOccurs="0" name="Description" type="xs:boolean">
                 <xs:annotation>
@@ -11324,7 +11624,7 @@
       <xs:element name="DispensationTypePropertyFlags" nillable="true" type="tns:DispensationTypePropertyFlags" />
       <xs:complexType name="ConstructionCasePropertyFlags">
         <xs:complexContent mixed="false">
-          <xs:extension xmlns:q90="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q90:DataObject">
+          <xs:extension xmlns:q91="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q91:DataObject">
             <xs:sequence>
               <xs:element minOccurs="0" name="CaseId" type="xs:boolean">
                 <xs:annotation>
@@ -11468,36 +11768,6 @@
         </xs:complexContent>
       </xs:complexType>
       <xs:element name="ConstructionCasePropertyFlags" nillable="true" type="tns:ConstructionCasePropertyFlags" />
-      <xs:complexType name="ApplicationType">
-        <xs:complexContent mixed="false">
-          <xs:extension xmlns:q91="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q91:DataObject">
-            <xs:sequence>
-              <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
-                <xs:annotation>
-                  <xs:appinfo />
-                  <xs:documentation>&lt;summary&gt;
-            Betegnelse i klartekst.
-            Feltlengde: 70 tegn.
-            Obligatorisk.
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;ByggesakSoeknadstype.Betegnelse&lt;/norwegianFieldName&gt;</xs:documentation>
-                </xs:annotation>
-              </xs:element>
-              <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string">
-                <xs:annotation>
-                  <xs:appinfo />
-                  <xs:documentation>&lt;summary&gt;
-            Kortkode.
-            Feltlengde: 10 tegn.
-            /// &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;ByggesakSoeknadstype.Id&lt;/norwegianFieldName&gt;</xs:documentation>
-                </xs:annotation>
-              </xs:element>
-            </xs:sequence>
-          </xs:extension>
-        </xs:complexContent>
-      </xs:complexType>
-      <xs:element name="ApplicationType" nillable="true" type="tns:ApplicationType" />
       <xs:complexType name="ApplicationTypePropertyFlags">
         <xs:complexContent mixed="false">
           <xs:extension xmlns:q92="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q92:DataObject">
@@ -13100,6 +13370,42 @@
             &lt;norwegianFieldName&gt;Dokumentbeskrivelse.Hjemmel&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="DisposalCode" nillable="true" type="tns:DisposalCode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Disposal Code
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.Kassasjonskode&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalDate" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Date for disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.Kassasjonsdato&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the case should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Sak.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -14079,6 +14385,33 @@
             &lt;norwegianFieldName&gt;DokumentbeskrivelsePropertyFlags.Hjemmel&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;SakPropertyFlags.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalDate" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Date for disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;SakPropertyFlags.Kassasjonsdato&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the case should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;SakPropertyFlags.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -14209,6 +14542,44 @@
             VAT
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Dokumentkategori.MvaKode&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCode" nillable="true" type="tns:DisposalCode">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Disposal Code
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.Kassasjonskode&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalPrinciple" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.Kassasjonsregel&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the cases of this class should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Ordningsverdi.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>
@@ -14527,6 +14898,35 @@
             VAT
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;DokumentkategoriPropertyFlags.MvaKode&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;OrdningsverdiPropertyFlags.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalPrinciple" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Beskrivelse av reglene som skal følges ved kassasjon.
+            Feltlengde: 1000 tegn.
+            Tilsvarer NOARK4 feltet OV.KASREGEL.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;OrdningsverdiPropertyFlags.Kassasjonsregel&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the cases of this class should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;OrdningsverdiPropertyFlags.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>
@@ -19899,6 +20299,33 @@
             Date that indicates when a registry entry is last rejected (not approved)
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalpostPropertyFlags.SisteAvslagDato&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalCodeId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected disposal code. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;SakPropertyFlags.KassasjonskodeId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="DisposalDate" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Date for disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;SakPropertyFlags.Kassasjonsdato&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PreservationTime" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Number of years the case should be preserved before disposal
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;SakPropertyFlags.Bevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>

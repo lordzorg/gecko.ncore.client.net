@@ -32,4 +32,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("0.0.2")]
 
 // Dette versjonsnummeret bør samsvare med AssemblyFileVersion pluss eventuelt postfiks for pre release pakker.
-[assembly: AssemblyInformationalVersion("0.0.2-Alfa2")]
+[assembly: AssemblyInformationalVersion("0.0.2-Alfa3")]

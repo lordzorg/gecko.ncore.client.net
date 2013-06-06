@@ -450,6 +450,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FondsStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FondsPeriod))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.RemoteStorageCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DocumentStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DowngradingCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FollowUpMethod))]
@@ -468,7 +469,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.AdditionalCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.Case))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.CaseStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.Classification))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.Class))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.Project))]
@@ -528,12 +528,12 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.CommitteeHandlingStatusPropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.RemoteStorageCodePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.ConstructionCase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.ApplicationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DispensationType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.BuildingType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.BuildingTypePropertyFlags))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DispensationType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DispensationTypePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.ConstructionCasePropertyFlags))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.ApplicationType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.ApplicationTypePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.BuildingActionCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.BuildingActionCodePropertyFlags))]
@@ -6292,6 +6292,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PursuantField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DisposalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PreservationTimeField;
+        
         /// <summary>
         /// Referenced object: All the properties of the access code
         /// </summary>
@@ -6849,6 +6861,74 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((object.ReferenceEquals(this.PursuantField, value) != true)) {
                     this.PursuantField = value;
                     this.RaisePropertyChanged("Pursuant");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Referenced object: All the properties of the Disposal Code
+        /// </summary>
+        /// <norwegianFieldName>Sak.Kassasjonskode</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCode {
+            get {
+                return this.DisposalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeField, value) != true)) {
+                    this.DisposalCodeField = value;
+                    this.RaisePropertyChanged("DisposalCode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>Sak.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+        public string DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeIdField, value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Date for disposal
+        /// </summary>
+        /// <norwegianFieldName>Sak.Kassasjonsdato</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+        public System.Nullable<System.DateTime> DisposalDate {
+            get {
+                return this.DisposalDateField;
+            }
+            set {
+                if ((this.DisposalDateField.Equals(value) != true)) {
+                    this.DisposalDateField = value;
+                    this.RaisePropertyChanged("DisposalDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the case should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>Sak.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+        public System.Nullable<int> PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
@@ -7942,6 +8022,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> VATField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisposalPrincipleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PreservationTimeField;
+        
         /// <summary>
         /// Referenced object: All the properties of the access code
         /// </summary>
@@ -8159,6 +8251,76 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.VATField.Equals(value) != true)) {
                     this.VATField = value;
                     this.RaisePropertyChanged("VAT");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Referenced object: All the properties of the Disposal Code
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.Kassasjonskode</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCode {
+            get {
+                return this.DisposalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeField, value) != true)) {
+                    this.DisposalCodeField = value;
+                    this.RaisePropertyChanged("DisposalCode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public string DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeIdField, value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.Kassasjonsregel</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string DisposalPrinciple {
+            get {
+                return this.DisposalPrincipleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalPrincipleField, value) != true)) {
+                    this.DisposalPrincipleField = value;
+                    this.RaisePropertyChanged("DisposalPrinciple");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the cases of this class should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public System.Nullable<int> PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
@@ -8883,6 +9045,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> TransferDateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisposalPrincipleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PreservationTimeField;
+        
         /// <summary>
         /// The Id of teh connected Access code. Explore the referenced object for more properties
         /// </summary>
@@ -9563,6 +9737,76 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.TransferDateField.Equals(value) != true)) {
                     this.TransferDateField = value;
                     this.RaisePropertyChanged("TransferDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Referenced object: All the properties of the Disposal Code
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.Kassasjonskode</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCode {
+            get {
+                return this.DisposalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeField, value) != true)) {
+                    this.DisposalCodeField = value;
+                    this.RaisePropertyChanged("DisposalCode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+        public string DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeIdField, value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.Kassasjonsregel</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+        public string DisposalPrinciple {
+            get {
+                return this.DisposalPrincipleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalPrincipleField, value) != true)) {
+                    this.DisposalPrincipleField = value;
+                    this.RaisePropertyChanged("DisposalPrinciple");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the cases of this class should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>Ordningsverdi.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+        public System.Nullable<int> PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
@@ -10724,6 +10968,56 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         /// Short code
         /// </summary>
         /// <norwegianFieldName>Bortsettingskode.Id</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Codes for different disposal routines
+    /// </summary>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DisposalCode", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class DisposalCode : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        /// <summary>
+        /// Description of disposal code
+        /// </summary>
+        /// <norwegianFieldName>Kassasjonskode.Betegnelse</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Short code
+        /// </summary>
+        /// <norwegianFieldName>Kassasjonskode.Id</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Id {
             get {
@@ -12946,6 +13240,18 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> LastRejectedDateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DisposalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PreservationTimeField;
+        
         /// <summary>
         /// Referenced object: All the properties of the access code
         /// </summary>
@@ -14184,6 +14490,74 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.LastRejectedDateField.Equals(value) != true)) {
                     this.LastRejectedDateField = value;
                     this.RaisePropertyChanged("LastRejectedDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Referenced object: All the properties of the Disposal Code
+        /// </summary>
+        /// <norwegianFieldName>Sak.Kassasjonskode</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.DisposalCode DisposalCode {
+            get {
+                return this.DisposalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeField, value) != true)) {
+                    this.DisposalCodeField = value;
+                    this.RaisePropertyChanged("DisposalCode");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>Sak.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
+        public string DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisposalCodeIdField, value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Date for disposal
+        /// </summary>
+        /// <norwegianFieldName>Sak.Kassasjonsdato</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
+        public System.Nullable<System.DateTime> DisposalDate {
+            get {
+                return this.DisposalDateField;
+            }
+            set {
+                if ((this.DisposalDateField.Equals(value) != true)) {
+                    this.DisposalDateField = value;
+                    this.RaisePropertyChanged("DisposalDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the case should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>Sak.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
+        public System.Nullable<int> PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
@@ -15947,56 +16321,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.IsTemporaryField.Equals(value) != true)) {
                     this.IsTemporaryField = value;
                     this.RaisePropertyChanged("IsTemporary");
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Codes for different disposal routines
-    /// </summary>
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DisposalCode", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class DisposalCode : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
-        
-        /// <summary>
-        /// Description of disposal code
-        /// </summary>
-        /// <norwegianFieldName>Kassasjonskode.Betegnelse</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Short code
-        /// </summary>
-        /// <norwegianFieldName>Kassasjonskode.Id</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -22457,6 +22781,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool TransferDateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalPrincipleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool PreservationTimeField;
+        
         /// <summary>
         /// Blocked for new cases
         /// </summary>
@@ -22915,6 +23248,59 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.TransferDateField.Equals(value) != true)) {
                     this.TransferDateField = value;
                     this.RaisePropertyChanged("TransferDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>OrdningsverdiPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public bool DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((this.DisposalCodeIdField.Equals(value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        /// <norwegianFieldName>OrdningsverdiPropertyFlags.Kassasjonsregel</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public bool DisposalPrinciple {
+            get {
+                return this.DisposalPrincipleField;
+            }
+            set {
+                if ((this.DisposalPrincipleField.Equals(value) != true)) {
+                    this.DisposalPrincipleField = value;
+                    this.RaisePropertyChanged("DisposalPrinciple");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the cases of this class should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>OrdningsverdiPropertyFlags.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+        public bool PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
@@ -28583,6 +28969,57 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ZcoordinateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ActionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ActionRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.ApplicationType ApplicationTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApplicationTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BuildingIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BuildingSequenceNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BuildingTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CadastralUnitNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.DispensationType ExemptionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExemptionTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HouseIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LeaseholdUnitNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MapSheetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PropertyUnitNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SectionUnitNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsableFloorAreaField;
+        
         /// <summary>
         /// Referenced object: All the properties of the case file
         /// </summary>
@@ -28779,9 +29216,8 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         /// <summary>
         /// Gatenavn.
-        /// Feltlengde: 50 tegn.
+        /// FieldLength: 50
         /// </summary>
-        /// <norwegianFieldName>Byggesak.Gatenavn</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string StreetName {
             get {
@@ -28797,7 +29233,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         /// <summary>
         /// X-koordinat.
-        /// Feltlengde: 10 tegn.
+        /// Feltlengde: 30 tegn.
         /// </summary>
         /// <norwegianFieldName>Byggesak.XKoordinat</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -28815,7 +29251,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         /// <summary>
         /// Y-koordinat.
-        /// Feltlengde: 10 tegn.
+        /// Feltlengde: 30 tegn.
         /// </summary>
         /// <norwegianFieldName>Byggesak.YKoordinat</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -28833,7 +29269,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         /// <summary>
         /// Z-koordinat.
-        /// Feltlengde: 10 tegn.
+        /// Feltlengde: 30 tegn.
         /// </summary>
         /// <norwegianFieldName>Byggesak.ZKoordinat</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -28845,6 +29281,404 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((object.ReferenceEquals(this.ZcoordinateField, value) != true)) {
                     this.ZcoordinateField = value;
                     this.RaisePropertyChanged("Zcoordinate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Reference to ActionId
+        /// FieldLenght:50
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string ActionId {
+            get {
+                return this.ActionIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ActionIdField, value) != true)) {
+                    this.ActionIdField = value;
+                    this.RaisePropertyChanged("ActionId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Action Remark
+        /// FieldLength:255
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string ActionRemark {
+            get {
+                return this.ActionRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ActionRemarkField, value) != true)) {
+                    this.ActionRemarkField = value;
+                    this.RaisePropertyChanged("ActionRemark");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// ApplicationType.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.ApplicationType ApplicationType {
+            get {
+                return this.ApplicationTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApplicationTypeField, value) != true)) {
+                    this.ApplicationTypeField = value;
+                    this.RaisePropertyChanged("ApplicationType");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// ApplicationTypeId.
+        /// FieldLength: 10
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public string ApplicationTypeId {
+            get {
+                return this.ApplicationTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApplicationTypeIdField, value) != true)) {
+                    this.ApplicationTypeIdField = value;
+                    this.RaisePropertyChanged("ApplicationTypeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Buildingnumber
+        /// </summary>
+        /// <value>The building number.</value>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public System.Nullable<int> BuildingId {
+            get {
+                return this.BuildingIdField;
+            }
+            set {
+                if ((this.BuildingIdField.Equals(value) != true)) {
+                    this.BuildingIdField = value;
+                    this.RaisePropertyChanged("BuildingId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The buildings sequencenumber
+        /// </summary>
+        /// <value>The building sequence number.</value>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public System.Nullable<int> BuildingSequenceNumber {
+            get {
+                return this.BuildingSequenceNumberField;
+            }
+            set {
+                if ((this.BuildingSequenceNumberField.Equals(value) != true)) {
+                    this.BuildingSequenceNumberField = value;
+                    this.RaisePropertyChanged("BuildingSequenceNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// BuildingType
+        /// FieldLength:4
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        public string BuildingType {
+            get {
+                return this.BuildingTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BuildingTypeField, value) != true)) {
+                    this.BuildingTypeField = value;
+                    this.RaisePropertyChanged("BuildingType");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the cadastral unit number.
+        /// </summary>
+        /// <value>The cadastral unit number.</value>
+        /// <remarks>Abbreviation GNR</remarks>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public string CadastralUnitNumber {
+            get {
+                return this.CadastralUnitNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CadastralUnitNumberField, value) != true)) {
+                    this.CadastralUnitNumberField = value;
+                    this.RaisePropertyChanged("CadastralUnitNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// ExemptionType.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.DispensationType ExemptionType {
+            get {
+                return this.ExemptionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExemptionTypeField, value) != true)) {
+                    this.ExemptionTypeField = value;
+                    this.RaisePropertyChanged("ExemptionType");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// ExemptionType.
+        /// FieldLength: 10
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public string ExemptionTypeId {
+            get {
+                return this.ExemptionTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExemptionTypeIdField, value) != true)) {
+                    this.ExemptionTypeIdField = value;
+                    this.RaisePropertyChanged("ExemptionTypeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// HouseId.
+        /// FieldLength: 7
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public string HouseId {
+            get {
+                return this.HouseIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HouseIdField, value) != true)) {
+                    this.HouseIdField = value;
+                    this.RaisePropertyChanged("HouseId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the leasehold unit number.
+        /// </summary>
+        /// <value>The leasehold unit number.</value>
+        /// <remarks>Abbreviation FNR</remarks>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public string LeaseholdUnitNumber {
+            get {
+                return this.LeaseholdUnitNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LeaseholdUnitNumberField, value) != true)) {
+                    this.LeaseholdUnitNumberField = value;
+                    this.RaisePropertyChanged("LeaseholdUnitNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// MapSheet.
+        /// FieldLength: 30
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public string MapSheet {
+            get {
+                return this.MapSheetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MapSheetField, value) != true)) {
+                    this.MapSheetField = value;
+                    this.RaisePropertyChanged("MapSheet");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the property unit number (BNR).
+        /// </summary>
+        /// <value>The property unit number.</value>
+        /// <remarks>Abbreviation BNR</remarks>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public string PropertyUnitNumber {
+            get {
+                return this.PropertyUnitNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PropertyUnitNumberField, value) != true)) {
+                    this.PropertyUnitNumberField = value;
+                    this.RaisePropertyChanged("PropertyUnitNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the section unit number.
+        /// FieldLength : 10
+        /// </summary>
+        /// <value>The section unit number.</value>
+        /// <remarks>Abbreviation SNR</remarks>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+        public string SectionUnitNumber {
+            get {
+                return this.SectionUnitNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SectionUnitNumberField, value) != true)) {
+                    this.SectionUnitNumberField = value;
+                    this.RaisePropertyChanged("SectionUnitNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// StreetId
+        /// FieldLength:6
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
+        public string StreetId {
+            get {
+                return this.StreetIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetIdField, value) != true)) {
+                    this.StreetIdField = value;
+                    this.RaisePropertyChanged("StreetId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// UsableFloorArea
+        /// FieldLength:10
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
+        public string UsableFloorArea {
+            get {
+                return this.UsableFloorAreaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsableFloorAreaField, value) != true)) {
+                    this.UsableFloorAreaField = value;
+                    this.RaisePropertyChanged("UsableFloorArea");
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Application type for new buildings
+    /// </summary>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ApplicationType", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class ApplicationType : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        /// <summary>
+        /// Betegnelse i klartekst.
+        /// Feltlengde: 70 tegn.
+        /// Obligatorisk.
+        /// </summary>
+        /// <norwegianFieldName>ByggesakSoeknadstype.Betegnelse</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kortkode.
+        /// Feltlengde: 10 tegn.
+        /// /// </summary>
+        /// <norwegianFieldName>ByggesakSoeknadstype.Id</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Type of dispensation from zoning regulations
+    /// </summary>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispensationType", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class DispensationType : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        /// <summary>
+        /// Betegnelse i klartekst.
+        /// Feltlengde: 70 tegn.
+        /// Obligatorisk.
+        /// </summary>
+        /// <norwegianFieldName>ByggesakDispensasjonstype.Betegnelse</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kortkode.
+        /// Feltlengde: 10 tegn.
+        /// /// </summary>
+        /// <norwegianFieldName>ByggesakDispensasjonstype.Id</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -28983,56 +29817,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.IsValidForRegistrationField.Equals(value) != true)) {
                     this.IsValidForRegistrationField = value;
                     this.RaisePropertyChanged("IsValidForRegistration");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispensationType", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class DispensationType : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
-        
-        /// <summary>
-        /// Betegnelse i klartekst.
-        /// Feltlengde: 70 tegn.
-        /// Obligatorisk.
-        /// </summary>
-        /// <norwegianFieldName>ByggesakDispensasjonstype.Betegnelse</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Kortkode.
-        /// Feltlengde: 10 tegn.
-        /// /// </summary>
-        /// <norwegianFieldName>ByggesakDispensasjonstype.Id</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -29381,56 +30165,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.ZcoordinateField.Equals(value) != true)) {
                     this.ZcoordinateField = value;
                     this.RaisePropertyChanged("Zcoordinate");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ApplicationType", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class ApplicationType : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
-        
-        /// <summary>
-        /// Betegnelse i klartekst.
-        /// Feltlengde: 70 tegn.
-        /// Obligatorisk.
-        /// </summary>
-        /// <norwegianFieldName>ByggesakSoeknadstype.Betegnelse</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Kortkode.
-        /// Feltlengde: 10 tegn.
-        /// /// </summary>
-        /// <norwegianFieldName>ByggesakSoeknadstype.Id</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -33075,6 +33809,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool PursuantField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool PreservationTimeField;
+        
         /// <summary>
         /// Access code ID
         /// </summary>
@@ -33516,6 +34259,57 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 }
             }
         }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>SakPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public bool DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((this.DisposalCodeIdField.Equals(value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Date for disposal
+        /// </summary>
+        /// <norwegianFieldName>SakPropertyFlags.Kassasjonsdato</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public bool DisposalDate {
+            get {
+                return this.DisposalDateField;
+            }
+            set {
+                if ((this.DisposalDateField.Equals(value) != true)) {
+                    this.DisposalDateField = value;
+                    this.RaisePropertyChanged("DisposalDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the case should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>SakPropertyFlags.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public bool PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -33553,6 +34347,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool VATField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalPrincipleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool PreservationTimeField;
         
         /// <summary>
         /// Access code id
@@ -33720,6 +34523,59 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.VATField.Equals(value) != true)) {
                     this.VATField = value;
                     this.RaisePropertyChanged("VAT");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>OrdningsverdiPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public bool DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((this.DisposalCodeIdField.Equals(value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Beskrivelse av reglene som skal følges ved kassasjon.
+        /// Feltlengde: 1000 tegn.
+        /// Tilsvarer NOARK4 feltet OV.KASREGEL.
+        /// </summary>
+        /// <norwegianFieldName>OrdningsverdiPropertyFlags.Kassasjonsregel</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public bool DisposalPrinciple {
+            get {
+                return this.DisposalPrincipleField;
+            }
+            set {
+                if ((this.DisposalPrincipleField.Equals(value) != true)) {
+                    this.DisposalPrincipleField = value;
+                    this.RaisePropertyChanged("DisposalPrinciple");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the cases of this class should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>OrdningsverdiPropertyFlags.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public bool PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
@@ -42735,6 +43591,15 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool LastRejectedDateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalCodeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisposalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool PreservationTimeField;
+        
         /// <summary>
         /// Access code ID
         /// </summary>
@@ -43684,6 +44549,57 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.LastRejectedDateField.Equals(value) != true)) {
                     this.LastRejectedDateField = value;
                     this.RaisePropertyChanged("LastRejectedDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The Id of the connected disposal code. Explore the referenced object for more properties
+        /// </summary>
+        /// <norwegianFieldName>SakPropertyFlags.KassasjonskodeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+        public bool DisposalCodeId {
+            get {
+                return this.DisposalCodeIdField;
+            }
+            set {
+                if ((this.DisposalCodeIdField.Equals(value) != true)) {
+                    this.DisposalCodeIdField = value;
+                    this.RaisePropertyChanged("DisposalCodeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Date for disposal
+        /// </summary>
+        /// <norwegianFieldName>SakPropertyFlags.Kassasjonsdato</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+        public bool DisposalDate {
+            get {
+                return this.DisposalDateField;
+            }
+            set {
+                if ((this.DisposalDateField.Equals(value) != true)) {
+                    this.DisposalDateField = value;
+                    this.RaisePropertyChanged("DisposalDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of years the case should be preserved before disposal
+        /// </summary>
+        /// <norwegianFieldName>SakPropertyFlags.Bevaringstid</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
+        public bool PreservationTime {
+            get {
+                return this.PreservationTimeField;
+            }
+            set {
+                if ((this.PreservationTimeField.Equals(value) != true)) {
+                    this.PreservationTimeField = value;
+                    this.RaisePropertyChanged("PreservationTime");
                 }
             }
         }
