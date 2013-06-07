@@ -136,9 +136,14 @@ namespace Gecko.NCore.Client.Querying
 			expression = ODataExpressionWithNullableFieldVisitor.StripAwayOuterTrueCheck(expression);
 
 		    expression = WildcardInserter.Insert(expression);
-            expression = ConstantQuotifier.Quotify(expression);
 
-			return PredicateTranslator.Translate(expression, out queryId);
+
+            if (!ObjectModelAdapterBase<object>.UseLegacyFieldQuoting)
+            {
+                expression = ConstantQuotifier.Quotify(expression);
+            }
+
+		    return PredicateTranslator.Translate(expression, out queryId);
 		}
 
 		/// <summary>

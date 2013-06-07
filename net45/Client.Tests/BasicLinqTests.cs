@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using Gecko.NCore.Client.ObjectModel.V2;
+using Gecko.NCore.Client.ObjectModel.V3.En;
 using Gecko.NCore.Client.Querying;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -50,6 +51,53 @@ namespace Gecko.NCore.Client.Tests
         // public void MyTestCleanup() { }
         //
         #endregion
+
+
+        [TestMethod]
+        public void LegacyQuotingEnabled()
+        {
+            ObjectModelAdapterV3En.UseLegacyFieldQuoting = true;
+
+            _queryContext.Results.Enqueue(new List<Journalpost> { new Journalpost { Id = 1 } });
+
+            var status = new List<string> { "I", "U" };
+
+            var query = from jp in _queryContext.Query<Journalpost>()
+                        where status.Contains(jp.JournalstatusId)
+                        select jp;
+
+            var list = query.ToList();
+
+            Assert.AreEqual(1, list.Count());
+
+            var q = _queryContext.QueryArguments[0];
+            Assert.AreEqual("Journalpost", q.DataObjectName, "DataObjectName");
+            Assert.AreEqual("JournalstatusId=I,U", q.FilterExpression, "FilterExpression");
+
+            ObjectModelAdapterV3En.UseLegacyFieldQuoting = false;
+        }
+
+        [TestMethod]
+        public void LegacyQuotingDisabled()
+        {
+            ObjectModelAdapterV3En.UseLegacyFieldQuoting = false;
+
+            _queryContext.Results.Enqueue(new List<Journalpost> { new Journalpost { Id = 1 } });
+
+            var status = new List<string> { "I", "U" };
+
+            var query = from jp in _queryContext.Query<Journalpost>()
+                        where status.Contains(jp.JournalstatusId)
+                        select jp;
+
+            var list = query.ToList();
+
+            Assert.AreEqual(1, list.Count());
+
+            var q = _queryContext.QueryArguments[0];
+            Assert.AreEqual("Journalpost", q.DataObjectName, "DataObjectName");
+            Assert.AreEqual("JournalstatusId='I','U'", q.FilterExpression, "FilterExpression");
+        }
 
         [TestMethod]
         public void WhenServiceReturnsOneSak_ResultReturnsOneSak()

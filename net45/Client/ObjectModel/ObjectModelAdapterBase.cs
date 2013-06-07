@@ -9,6 +9,14 @@ namespace Gecko.NCore.Client.ObjectModel
     /// <typeparam name="TServiceClient">The type of the T service client.</typeparam>
     public abstract class ObjectModelAdapterBase<TServiceClient>: ServiceAdapterBase<TServiceClient>, IObjectModelAdapter where TServiceClient : class, new()
     {
+        protected static bool UseLegacyFieldQuotingInternal = false;
+
+        public static bool UseLegacyFieldQuoting
+        {
+            get { return ObjectModelAdapterBase<object>.UseLegacyFieldQuotingInternal; }
+            set { ObjectModelAdapterBase<object>.UseLegacyFieldQuotingInternal = value; }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ObjectModelAdapterBase{TServiceClient}" /> class.
         /// </summary>
