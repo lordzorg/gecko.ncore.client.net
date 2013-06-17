@@ -250,6 +250,9 @@
     <None Include="..\..\gecko.snk">
       <Link>gecko.snk</Link>
     </None>
+    <None Include="..\..\net45\Client\readme.md">
+      <Link>readme.md</Link>
+    </None>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>

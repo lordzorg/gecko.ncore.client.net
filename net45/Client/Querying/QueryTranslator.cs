@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -138,12 +139,36 @@ namespace Gecko.NCore.Client.Querying
 			expression = WildcardInserter.Insert(expression);
 
 
-			if (!ObjectModelAdapterBase<object>.UseLegacyFieldQuoting)
-			{
+			if (!UseLegacyFieldQuoting())
 				expression = ConstantQuotifier.Quotify(expression);
-			}
 
 			return PredicateTranslator.Translate(expression, out queryId);
+		}
+
+		// NCore 3.1.3 and 5.1.3 have implemented support for stripping away quotes
+		// We default to true since that is the most backwards compatible
+		// Ref changeset 19122
+		private static bool UseLegacyFieldQuoting()
+		{
+			const string ncoreVersionConfigKey = "EphorteContext:NCoreVersion";
+			var ncoreVersionString = ConfigurationManager.AppSettings[ncoreVersionConfigKey];
+			if (string.IsNullOrEmpty(ncoreVersionString))
+				return true;
+
+			try
+			{
+				var nCoreVersion = new Version(ncoreVersionString);
+
+				if ((nCoreVersion >= new Version(3, 1, 3) && nCoreVersion < new Version(4, 0)) ||
+				    nCoreVersion >= new Version(5, 1, 3))
+					return false;
+			}
+			catch (ArgumentException ex)
+			{
+				throw new ConfigurationErrorsException(string.Format("The value '{0}' for configuration key '{1}' was not a valid version number. It must be on the form Major.Minor.Patch (ex. 2.1.3).", ncoreVersionString, ncoreVersionConfigKey), ex);
+			}
+
+			return true;
 		}
 
 		/// <summary>
