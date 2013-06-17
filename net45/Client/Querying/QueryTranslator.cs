@@ -51,7 +51,7 @@ namespace Gecko.NCore.Client.Querying
 		public Type DataObjectType
 		{
 			get { return _dataObjectType; }
-            protected set { _dataObjectType = value; }
+			protected set { _dataObjectType = value; }
 		}
 
 		/// <summary>
@@ -60,11 +60,11 @@ namespace Gecko.NCore.Client.Querying
 		/// <value>The take count.</value>
 		public int? TakeCount
 		{
-		    get { return _takeCount; }
-		    set { _takeCount = value; }
+			get { return _takeCount; }
+			set { _takeCount = value; }
 		}
 
-	    /// <summary>
+		/// <summary>
 		/// Gets the skip count.
 		/// </summary>
 		/// <value>The skip count.</value>
@@ -135,15 +135,15 @@ namespace Gecko.NCore.Client.Querying
 			expression = ConditionalNullRemoverVisitor.RemoveReferenceTypeNullChecks(expression);
 			expression = ODataExpressionWithNullableFieldVisitor.StripAwayOuterTrueCheck(expression);
 
-		    expression = WildcardInserter.Insert(expression);
+			expression = WildcardInserter.Insert(expression);
 
 
-            if (!ObjectModelAdapterBase<object>.UseLegacyFieldQuoting)
-            {
-                expression = ConstantQuotifier.Quotify(expression);
-            }
+			if (!ObjectModelAdapterBase<object>.UseLegacyFieldQuoting)
+			{
+				expression = ConstantQuotifier.Quotify(expression);
+			}
 
-		    return PredicateTranslator.Translate(expression, out queryId);
+			return PredicateTranslator.Translate(expression, out queryId);
 		}
 
 		/// <summary>
@@ -169,7 +169,7 @@ namespace Gecko.NCore.Client.Querying
 		/// </summary>
 		/// <param name="methodCall">The method call.</param>
 		/// <returns></returns>
-        protected override Expression VisitMethodCall(MethodCallExpression methodCall)
+		protected override Expression VisitMethodCall(MethodCallExpression methodCall)
 		{
 			if (methodCall.Method.DeclaringType == typeof(Queryable))
 				return VisitQueryableMethodCall(methodCall);
@@ -177,10 +177,10 @@ namespace Gecko.NCore.Client.Querying
 			if (methodCall.Method.DeclaringType == typeof(QueryableExtensions))
 				return VisitQueryableExtensionsMethodCall(methodCall);
 
-            throw new NotSupportedException(string.Format(Resources.VisitMethodCall_The_method_call_0_on_type_1_is_not_supported, methodCall.Method.Name, methodCall.Method.DeclaringType));
+			throw new NotSupportedException(string.Format(Resources.VisitMethodCall_The_method_call_0_on_type_1_is_not_supported, methodCall.Method.Name, methodCall.Method.DeclaringType));
 		}
 
-	    protected virtual Expression VisitQueryableExtensionsMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitQueryableExtensionsMethodCall(MethodCallExpression methodCall)
 		{
 			switch (methodCall.Method.Name)
 			{
@@ -191,7 +191,7 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
-        protected virtual Expression VisitIncludeMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitIncludeMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			
@@ -210,7 +210,7 @@ namespace Gecko.NCore.Client.Querying
 			return methodCall;
 		}
 
-        protected virtual IEnumerable<Expression> UnwindMemberAccess(Expression expression)
+		protected virtual IEnumerable<Expression> UnwindMemberAccess(Expression expression)
 		{
 			while (expression.NodeType == ExpressionType.MemberAccess)
 			{
@@ -220,7 +220,7 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
-        protected virtual void ProcessIncludeSelector(LambdaExpression lambda)
+		protected virtual void ProcessIncludeSelector(LambdaExpression lambda)
 		{
 			var memberPath = MemberEvaluator.Evaluate(lambda.Body);
 
@@ -242,7 +242,7 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
-        protected virtual Expression VisitQueryableMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitQueryableMethodCall(MethodCallExpression methodCall)
 		{
 			switch (methodCall.Method.Name)
 			{
@@ -266,38 +266,22 @@ namespace Gecko.NCore.Client.Querying
 					return VisitOrderByMethodCall(methodCall, "DESC");
 				case "ThenBy":
 					return VisitOrderByMethodCall(methodCall, "ASC");
+				case "SingleOrDefault":
+				case "Single":
+					return VisitSingleMethodCall(methodCall);
+				case "FirstOrDefault":
 				case "First":
 					return VisitFirstMethodCall(methodCall);
-				case "FirstOrDefault":
-					return VisitFirstOrDefaultMethodCall(methodCall);
 				case "Cast":
 					return VisitCastMethodCall(methodCall);
-                case "Any":
-			        return VisitAnyMethodCall(methodCall);
+				case "Any":
+					return VisitAnyMethodCall(methodCall);
 				default:
 					throw new NotSupportedException(string.Format(Resources.VisitMethodCall_The_method_call_0_on_type_1_is_not_supported, methodCall.Method.Name, methodCall.Method.DeclaringType));
 			}
 		}
 
-        protected virtual Expression VisitAnyMethodCall(MethodCallExpression methodCall)
-	    {
-            Visit(methodCall.Arguments[0]);
-            if (methodCall.Arguments.Count > 1)
-            {
-                var lambda = (LambdaExpression)StripQuotes(methodCall.Arguments[1]);
-                _predicates.Add(lambda.Body);
-            }
-            _takeCount = 1;
-            return methodCall;
-        }
-
-        protected virtual Expression VisitCastMethodCall(MethodCallExpression methodCall)
-		{
-			Visit(methodCall.Arguments[0]);
-			return methodCall;
-		}
-
-        protected virtual Expression VisitFirstOrDefaultMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitAnyMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			if (methodCall.Arguments.Count > 1)
@@ -306,6 +290,26 @@ namespace Gecko.NCore.Client.Querying
 				_predicates.Add(lambda.Body);
 			}
 			_takeCount = 1;
+			return methodCall;
+		}
+
+		protected virtual Expression VisitCastMethodCall(MethodCallExpression methodCall)
+		{
+			Visit(methodCall.Arguments[0]);
+			return methodCall;
+		}
+
+		protected virtual Expression VisitSingleMethodCall(MethodCallExpression methodCall)
+		{
+			Visit(methodCall.Arguments[0]);
+			if (methodCall.Arguments.Count > 1)
+			{
+				var lambda = (LambdaExpression)StripQuotes(methodCall.Arguments[1]);
+				_predicates.Add(lambda.Body);
+			}
+
+			// We take two so that we can throw an exception if there returned more than one.
+			_takeCount = 2;
 			return methodCall;
 		}
 
@@ -321,7 +325,7 @@ namespace Gecko.NCore.Client.Querying
 			return methodCall;
 		}
 
-        protected virtual Expression VisitOrderByMethodCall(MethodCallExpression methodCall, string direction)
+		protected virtual Expression VisitOrderByMethodCall(MethodCallExpression methodCall, string direction)
 		{
 			Visit(methodCall.Arguments[0]);
 			
@@ -337,7 +341,7 @@ namespace Gecko.NCore.Client.Querying
 			return methodCall;
 		}
 
-        protected virtual Expression VisitSelectMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitSelectMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			var selectLambda = (LambdaExpression) StripQuotes(methodCall.Arguments[1]);
@@ -348,28 +352,28 @@ namespace Gecko.NCore.Client.Querying
 			return methodCall;
 		}
 
-        protected virtual Expression VisitCountMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitCountMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			_takeCount = 0;
 			return methodCall;
 		}
 
-        protected virtual Expression VisitSkipMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitSkipMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			_skipCount = (int)((ConstantExpression)methodCall.Arguments[1]).Value;
 			return methodCall;
 		}
 
-        protected virtual Expression VisitTakeMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitTakeMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			_takeCount = (int)((ConstantExpression)methodCall.Arguments[1]).Value;
 			return methodCall;
 		}
 
-        protected virtual Expression VisitWhereMethodCall(MethodCallExpression methodCall)
+		protected virtual Expression VisitWhereMethodCall(MethodCallExpression methodCall)
 		{
 			Visit(methodCall.Arguments[0]);
 			var lambda = (LambdaExpression)StripQuotes(methodCall.Arguments[1]);

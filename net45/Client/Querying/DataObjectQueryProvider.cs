@@ -89,7 +89,7 @@ namespace Gecko.NCore.Client.Querying
 			return (TResult)result;
 		}
 
-	    private object ExecuteCore(Expression expression)
+		private object ExecuteCore(Expression expression)
 		{
 			expression = ExpressionEvaluator.PartialEval(expression);
 			var queryTranslater = new QueryTranslator();
@@ -100,24 +100,28 @@ namespace Gecko.NCore.Client.Querying
 				throw new InvalidOperationException(Resources.DataObjectQueryProvider_ExecuteCore_A_stored_query_cannot_contain_additional_predicates);
 
 			var methodCall = expression as MethodCallExpression;
-            if (methodCall != null && methodCall.Method.DeclaringType == typeof(Queryable))
-            {
-                switch (methodCall.Method.Name)
-                {
+			if (methodCall != null && methodCall.Method.DeclaringType == typeof(Queryable))
+			{
+				switch (methodCall.Method.Name)
+				{
 					case "LongCount":
 						return (long) GetTotalCount(queryTranslater);
 					case "Count":
-                        return GetTotalCount(queryTranslater);
-                    case "First":
-                        return GetFirst(queryTranslater);
-                    case "FirstOrDefault":
-                        return GetFirstOrDefault(queryTranslater);
-                    case "Any":
-                        return GetAny(queryTranslater);
-                }
-            }
+						return GetTotalCount(queryTranslater);
+					case "First":
+						return GetFirst(queryTranslater);
+					case "FirstOrDefault":
+						return GetFirstOrDefault(queryTranslater);
+					case "Single":
+						return GetSingle(queryTranslater);
+					case "SingleOrDefault":
+						return GetSingleOrDefault(queryTranslater);
+					case "Any":
+						return GetAny(queryTranslater);
+				}
+			}
 
-	        return GetDataObjects(queryTranslater);
+			return GetDataObjects(queryTranslater);
 		}
 
 		private object GetFirstOrDefault(QueryTranslator queryTranslater)
@@ -130,6 +134,16 @@ namespace Gecko.NCore.Client.Querying
 			return GetDataObjects(queryTranslater).First();
 		}
 
+		private object GetSingleOrDefault(QueryTranslator queryTranslater)
+		{
+			return GetDataObjects(queryTranslater).SingleOrDefault();
+		}
+
+		private object GetSingle(QueryTranslator queryTranslater)
+		{
+			return GetDataObjects(queryTranslater).Single();
+		}
+
 		private int GetTotalCount(QueryTranslator queryTranslator)
 		{
 			if (queryTranslator.QueryId.HasValue)
@@ -138,15 +152,15 @@ namespace Gecko.NCore.Client.Querying
 			return _objectModelAdapter.QueryCount(queryTranslator.DataObjectType.Name, queryTranslator.FilterExpression, queryTranslator.SortExpression);
 		}
 
-        private bool GetAny(QueryTranslator queryTranslator)
-        {
-            if (queryTranslator.QueryId.HasValue)
-                return _objectModelAdapter.StoredQueryCount(queryTranslator.DataObjectType.Name, queryTranslator.QueryId.Value, queryTranslator.SortExpression) > 0;
+		private bool GetAny(QueryTranslator queryTranslator)
+		{
+			if (queryTranslator.QueryId.HasValue)
+				return _objectModelAdapter.StoredQueryCount(queryTranslator.DataObjectType.Name, queryTranslator.QueryId.Value, queryTranslator.SortExpression) > 0;
 
-            return _objectModelAdapter.QueryCount(queryTranslator.DataObjectType.Name, queryTranslator.FilterExpression, queryTranslator.SortExpression) > 0;
-        }
+			return _objectModelAdapter.QueryCount(queryTranslator.DataObjectType.Name, queryTranslator.FilterExpression, queryTranslator.SortExpression) > 0;
+		}
 
-        private IEnumerable<object> GetDataObjects(QueryTranslator queryTranslater)
+		private IEnumerable<object> GetDataObjects(QueryTranslator queryTranslater)
 		{
 			IEnumerable<object> queryResult;
 			
@@ -180,7 +194,7 @@ namespace Gecko.NCore.Client.Querying
 			}
 		}
 
-        private void ProcessIncludeSelectors(object dataObject, IDictionary<string, Delegate> includeSelectors)
+		private void ProcessIncludeSelectors(object dataObject, IDictionary<string, Delegate> includeSelectors)
 		{
 			var includeTargets = new Dictionary<string, object>();
 			foreach (var includeSelector in includeSelectors)
