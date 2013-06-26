@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("6.2.0")]
 
 // Dette versjonsnummeret økes i hennhold til semver.org
-[assembly: AssemblyFileVersion("0.0.2")]
+[assembly: AssemblyFileVersion("0.0.3")]
 
 // Dette versjonsnummeret bør samsvare med AssemblyFileVersion pluss eventuelt postfiks for pre release pakker.
-[assembly: AssemblyInformationalVersion("0.0.2-Alfa3")]
+[assembly: AssemblyInformationalVersion("0.0.3-Alfa3")]
