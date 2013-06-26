@@ -187,4 +187,16 @@ name="QueryContext_Properties_on_QueryContext_Current_are_only_supported_in_a_Li
   <data name="QueryContextVisitor_VisitMethodCall_The_method_0_on_1_is_not_supported">
     <value xml:space="preserve">The method '{0}' on '{1}' is not supported.</value>
   </data>
+	<data name="EphorteContext_Functions_Function_access_functionality_requires_the_IFunctionsAdapter_to_be_provided" xml:space="preserve">
+    <value>Function access functionality requires the IFunctionsAdapter to be provided</value>
+  </data>
+	<data name="EphorteContext_Documents_Document_access_functionality_requires_the_IDocumentsAdapter_to_be_provided" xml:space="preserve">
+    <value>Document access functionality requires the IDocumentsAdapter to be provided</value>
+  </data>
+	<data name="EphorteContext_Metadata_Metadata_access_functionality_requires_the_IMetadataAdapter_to_be_provided" xml:space="preserve">
+    <value>Metadata access functionality requires the IMetadataAdapter to be provided</value>
+  </data>
+	<data name="EphorteContext_StateManager_Any_statemanagement_requires_the_IObjectModelAdapter_to_be_provided" xml:space="preserve">
+    <value>Any statemanagement requires the IObjectModelAdapter to be provided</value>
+  </data>
 </root>

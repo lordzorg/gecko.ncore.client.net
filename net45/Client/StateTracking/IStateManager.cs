@@ -13,7 +13,9 @@ namespace Gecko.NCore.Client.StateTracking
 		/// <value>The entries.</value>
 		IQueryable<StateEntry> Entries { get; }
 
-		/// <summary>
+	    IQueryProvider QueryProvider { get; }
+
+	    /// <summary>
 		/// Adds the specified data object.
 		/// </summary>
 		/// <param name="dataObject">The data object.</param>

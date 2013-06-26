@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -13,8 +12,9 @@ namespace Gecko.NCore.Client.Querying
 	/// <summary>
 	/// 
 	/// </summary>
-	internal class QueryTranslator: ExpressionVisitor
+	internal class QueryTranslator : ExpressionVisitor
 	{
+		private readonly NcoreVersion _ncoreVersion;
 		private Type _dataObjectType;
 		private int? _takeCount;
 		private int? _skipCount;
@@ -25,6 +25,11 @@ namespace Gecko.NCore.Client.Querying
 		private readonly List<Expression> _predicates = new List<Expression>();
 		private string _filterExpression;
 		private int? _queryId;
+
+		public QueryTranslator(NcoreVersion ncoreVersion)
+		{
+			_ncoreVersion = ncoreVersion;
+		}
 
 		/// <summary>
 		/// Gets the select delegate.
@@ -139,36 +144,10 @@ namespace Gecko.NCore.Client.Querying
 			expression = WildcardInserter.Insert(expression);
 
 
-			if (!UseLegacyFieldQuoting())
+			if (_ncoreVersion.SupportFieldQuoting())
 				expression = ConstantQuotifier.Quotify(expression);
 
 			return PredicateTranslator.Translate(expression, out queryId);
-		}
-
-		// NCore 3.1.3 and 5.1.3 have implemented support for stripping away quotes
-		// We default to true since that is the most backwards compatible
-		// Ref changeset 19122
-		private static bool UseLegacyFieldQuoting()
-		{
-			const string ncoreVersionConfigKey = "EphorteContext:NCoreVersion";
-			var ncoreVersionString = ConfigurationManager.AppSettings[ncoreVersionConfigKey];
-			if (string.IsNullOrEmpty(ncoreVersionString))
-				return true;
-
-			try
-			{
-				var nCoreVersion = new Version(ncoreVersionString);
-
-				if ((nCoreVersion >= new Version(3, 1, 3) && nCoreVersion < new Version(4, 0)) ||
-				    nCoreVersion >= new Version(5, 1, 3))
-					return false;
-			}
-			catch (ArgumentException ex)
-			{
-				throw new ConfigurationErrorsException(string.Format("The value '{0}' for configuration key '{1}' was not a valid version number. It must be on the form Major.Minor.Patch (ex. 2.1.3).", ncoreVersionString, ncoreVersionConfigKey), ex);
-			}
-
-			return true;
 		}
 
 		/// <summary>
@@ -311,8 +290,9 @@ namespace Gecko.NCore.Client.Querying
 			Visit(methodCall.Arguments[0]);
 			if (methodCall.Arguments.Count > 1)
 			{
-				var lambda = (LambdaExpression)StripQuotes(methodCall.Arguments[1]);
-				_predicates.Add(lambda.Body);
+				var lambda = StripQuotes(methodCall.Arguments[1]) as LambdaExpression;
+				if(lambda != null)
+					_predicates.Add(lambda.Body);
 			}
 			_takeCount = 1;
 			return methodCall;
@@ -329,8 +309,10 @@ namespace Gecko.NCore.Client.Querying
 			Visit(methodCall.Arguments[0]);
 			if (methodCall.Arguments.Count > 1)
 			{
-				var lambda = (LambdaExpression)StripQuotes(methodCall.Arguments[1]);
-				_predicates.Add(lambda.Body);
+				var lambda = StripQuotes(methodCall.Arguments[1]) as LambdaExpression;
+
+				if(lambda != null)
+					_predicates.Add(lambda.Body);
 			}
 
 			// We take two so that we can throw an exception if there returned more than one.
@@ -343,8 +325,10 @@ namespace Gecko.NCore.Client.Querying
 			Visit(methodCall.Arguments[0]);
 			if (methodCall.Arguments.Count > 1)
 			{
-				var lambda = (LambdaExpression) StripQuotes(methodCall.Arguments[1]);
-				_predicates.Add(lambda.Body);
+				var lambda = StripQuotes(methodCall.Arguments[1]) as LambdaExpression;
+
+				if(lambda != null)
+					_predicates.Add(lambda.Body);
 			}
 			_takeCount = 1;
 			return methodCall;

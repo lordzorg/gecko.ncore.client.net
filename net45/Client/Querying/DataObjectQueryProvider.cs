@@ -13,20 +13,17 @@ namespace Gecko.NCore.Client.Querying
 	/// <summary>
 	/// Provides <see cref="IQueryable"/> instances.
 	/// </summary>
-	internal class DataObjectQueryProvider: IQueryProvider
+	internal class DataObjectQueryProvider : IQueryProvider
 	{
 		private readonly IStateManager _stateManager;
 		private readonly IObjectModelAdapter _objectModelAdapter;
+		private readonly NcoreVersion _ncoreVersion;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="DataObjectQueryProvider"/> class.
-		/// </summary>
-		/// <param name="stateManager">The state manager.</param>
-		/// <param name="objectModelAdapter">The object model.</param>
-		public DataObjectQueryProvider(IStateManager stateManager, IObjectModelAdapter objectModelAdapter)
+		public DataObjectQueryProvider(IStateManager stateManager, IObjectModelAdapter objectModelAdapter, NcoreVersion ncoreVersion)
 		{
 			_stateManager = stateManager;
 			_objectModelAdapter = objectModelAdapter;
+			_ncoreVersion = ncoreVersion;
 		}
 
 		/// <summary>
@@ -59,7 +56,7 @@ namespace Gecko.NCore.Client.Querying
 		/// An <see cref="T:System.Linq.IQueryable`1"/> that can evaluate the query represented by the specified expression tree.
 		/// </returns>
 		/// <param name="expression">An expression tree that represents a LINQ query.</param><typeparam name="TElement">The type of the elements of the <see cref="T:System.Linq.IQueryable`1"/> that is returned.</typeparam>
-		public virtual IQueryable<TElement> CreateQuery<TElement>(Expression expression)
+		public IQueryable<TElement> CreateQuery<TElement>(Expression expression)
 		{
 			return new DataObjectQuery<TElement>(this, expression);
 		}
@@ -76,23 +73,15 @@ namespace Gecko.NCore.Client.Querying
 			return ExecuteCore(expression);
 		}
 
-		/// <summary>
-		/// Executes the strongly-typed query represented by a specified expression tree.
-		/// </summary>
-		/// <returns>
-		/// The value that results from executing the specified query.
-		/// </returns>
-		/// <param name="expression">An expression tree that represents a LINQ query.</param><typeparam name="TResult">The type of the value that results from executing the query.</typeparam>
 		public TResult Execute<TResult>(Expression expression)
 		{
-			var result = ExecuteCore(expression);
-			return (TResult)result;
+			return (TResult) ExecuteCore(expression);
 		}
 
 		private object ExecuteCore(Expression expression)
 		{
 			expression = ExpressionEvaluator.PartialEval(expression);
-			var queryTranslater = new QueryTranslator();
+			var queryTranslater = new QueryTranslator(_ncoreVersion);
 			expression = queryTranslater.Visit(expression);
 
 

@@ -1,41 +1,41 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
-    <id>$id$</id>
-    <title>ephorte© nCore Client - Object Model V2</title>
-    <description>Contains a service contracts for using Object Model V2.</description>
-    <version>$version$</version>
-    <authors>Gecko Informasjonssystemer AS</authors>
-    <owners>Gecko Informasjonssystemer AS</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
-    <tags>ephorte ncore client gecko</tags>
-    <dependencies>
-      <dependency id="Gecko.NCore.Client" version="6.2.0" />
-      <dependency id="WCFExtrasPlus" version="2.3.0" />
-    </dependencies>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.ServiceModel" />
-      <frameworkAssembly assemblyName="System.Runtime.Serialization" />
-    </frameworkAssemblies>
-  </metadata>
-  <files>
-    <file src="..\net35\Client.ObjectModel.V2\bin\$configuration$\$id$.dll" target="lib\net35\" />
-    <file src="..\net35\Client.ObjectModel.V2\bin\$configuration$\$id$.xml" target="lib\net35\" />
-    <file src="..\net35\Client.ObjectModel.V2\bin\$configuration$\$id$.pdb" target="lib\net35\" />
-    <file src="..\net35\Client.ObjectModel.V2\Service References\**\*.cs" target="src\net35\" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
+		<id>$id$</id>
+		<title>ephorte© nCore Client - Object Model V2</title>
+		<description>Contains a service contracts for using Object Model V2.</description>
+		<version>$version$</version>
+		<authors>Gecko Informasjonssystemer AS</authors>
+		<owners>Gecko Informasjonssystemer AS</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
+		<tags>ephorte ncore client gecko</tags>
+		<dependencies>
+			<dependency id="Gecko.NCore.Client" version="9.0.0" />
+			<dependency id="WCFExtrasPlus" version="2.3.0" />
+		</dependencies>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System.ServiceModel" />
+			<frameworkAssembly assemblyName="System.Runtime.Serialization" />
+		</frameworkAssemblies>
+	</metadata>
+	<files>
+		<file src="..\net35\Client.ObjectModel.V2\bin\$configuration$\$id$.dll" target="lib\net35\" />
+		<file src="..\net35\Client.ObjectModel.V2\bin\$configuration$\$id$.xml" target="lib\net35\" />
+		<file src="..\net35\Client.ObjectModel.V2\bin\$configuration$\$id$.pdb" target="lib\net35\" />
+		<file src="..\net35\Client.ObjectModel.V2\Service References\**\*.cs" target="src\net35\" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
 
-    <file src="..\net40\Client.ObjectModel.V2\bin\$configuration$\$id$.dll" target="lib\net40\" />
-    <file src="..\net40\Client.ObjectModel.V2\bin\$configuration$\$id$.xml" target="lib\net40\" />
-    <file src="..\net40\Client.ObjectModel.V2\bin\$configuration$\$id$.pdb" target="lib\net40\" />
-    <file src="..\net40\Client.ObjectModel.V2\Service References\**\*.cs" target="src\net40\" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
+		<file src="..\net40\Client.ObjectModel.V2\bin\$configuration$\$id$.dll" target="lib\net40\" />
+		<file src="..\net40\Client.ObjectModel.V2\bin\$configuration$\$id$.xml" target="lib\net40\" />
+		<file src="..\net40\Client.ObjectModel.V2\bin\$configuration$\$id$.pdb" target="lib\net40\" />
+		<file src="..\net40\Client.ObjectModel.V2\Service References\**\*.cs" target="src\net40\" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
 
-    <file src="..\net45\Client.ObjectModel.V2\bin\$configuration$\$id$.dll" target="lib\net45\" />
-    <file src="..\net45\Client.ObjectModel.V2\bin\$configuration$\$id$.xml" target="lib\net45\" />
-    <file src="..\net45\Client.ObjectModel.V2\bin\$configuration$\$id$.pdb" target="lib\net45\" />
-    <file src="..\net45\Client.ObjectModel.V2\Service References\**\*.cs" target="src\net45\" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
+		<file src="..\net45\Client.ObjectModel.V2\bin\$configuration$\$id$.dll" target="lib\net45\" />
+		<file src="..\net45\Client.ObjectModel.V2\bin\$configuration$\$id$.xml" target="lib\net45\" />
+		<file src="..\net45\Client.ObjectModel.V2\bin\$configuration$\$id$.pdb" target="lib\net45\" />
+		<file src="..\net45\Client.ObjectModel.V2\Service References\**\*.cs" target="src\net45\" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
 
-    <!-- include common files -->
-    <file src="..\net45\Client.ObjectModel.V2\**\*.cs" target="src" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
-  </files>
+		<!-- include common files -->
+		<file src="..\net45\Client.ObjectModel.V2\**\*.cs" target="src" exclude="..\net45\Client.ObjectModel.V2\obj\**" />
+	</files>
 </package>

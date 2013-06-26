@@ -78,6 +78,9 @@
     <Compile Include="Documents\IAsyncDocumentsAdapter.cs" />
     <Compile Include="Documents\IDocumentManager.cs" />
     <Compile Include="Documents\IDocumentsAdapter.cs" />
+    <Compile Include="NCoreUtility.cs" />
+    <Compile Include="NcoreVersion.cs" />
+    <Compile Include="StateTracking\IStateManager.cs" />
     <Compile Include="EphorteContext.cs" />
     <Compile Include="EphorteContextExtensions.cs" />
     <Compile Include="Functions\AsyncFunctionManager.cs" />
@@ -143,7 +146,6 @@
     <Compile Include="SavingChangesEventArgs.cs" />
     <Compile Include="ServiceAdapterBase.cs" />
     <Compile Include="StateTracking\DataObjectState.cs" />
-    <Compile Include="StateTracking\IStateManager.cs" />
     <Compile Include="StateTracking\StateEntry.cs" />
     <Compile Include="StateTracking\StateManager.cs" />
   </ItemGroup>

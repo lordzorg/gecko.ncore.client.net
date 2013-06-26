@@ -16,7 +16,7 @@ namespace Gecko.NCore.Client.Tests.StateTracking
         public void TestInitialize()
         {
             _queryProvider = MockRepository.GenerateStub<IQueryProvider>();
-            _stateManager = new StateManager(() => _queryProvider);
+            _stateManager = new StateManager(_ => _queryProvider);
             _trackableObject = new TrackableObject();
         }
 

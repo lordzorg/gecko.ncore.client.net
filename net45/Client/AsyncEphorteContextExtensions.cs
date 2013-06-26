@@ -15,24 +15,13 @@ namespace Gecko.NCore.Client
 	public static class AsyncEphorteContextExtensions
 	{
         /// <summary>
-        /// Creates the specified ephorte context.
-        /// </summary>
-        /// <typeparam name="TDataObject">The type of the T data object.</typeparam>
-        /// <param name="ephorteContext">The ephorte context.</param>
-        /// <returns>``0.</returns>
-		public static TDataObject Create<TDataObject>(this IAsyncEphorteContext ephorteContext)
-		{
-			return (TDataObject) ephorteContext.Create(typeof (TDataObject).Name);
-		}
-
-        /// <summary>
         /// Initializes the specified ephorte context.
         /// </summary>
         /// <typeparam name="TDataObject">The type of the data object.</typeparam>
         /// <param name="ephorteContext">The ephorte context.</param>
         /// <param name="dataObject">The data object.</param>
         /// <returns></returns>
-        public static async Task<IDataObjectAccess<TDataObject>> InitializeAsync<TDataObject>(this IAsyncEphorteContext ephorteContext, TDataObject dataObject) where TDataObject : class
+		public static async Task<IDataObjectAccess<TDataObject>> InitializeAsync<TDataObject>(this IEphorteContext ephorteContext, TDataObject dataObject) where TDataObject : class
         {
             var result = await ephorteContext.InitializeAsync(dataObject);
             return new TypedDataObjectAccess<TDataObject>(result);
@@ -47,7 +36,7 @@ namespace Gecko.NCore.Client
         /// <param name="includeSelectors">The include selectors.</param>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
-        public static async Task<IDataObjectAccess<TDataObject>> FindAsync<TDataObject>(this IAsyncEphorteContext ephorteContext, Expression<Func<TDataObject, bool>> predicate, params Expression<Func<TDataObject, object>>[] includeSelectors) where TDataObject : class
+		public static async Task<IDataObjectAccess<TDataObject>> FindAsync<TDataObject>(this IEphorteContext ephorteContext, Expression<Func<TDataObject, bool>> predicate, params Expression<Func<TDataObject, object>>[] includeSelectors) where TDataObject : class
         {
             var relatedObjects = includeSelectors.Select(EvaluateMemberSelector).ToArray();
             var result = await ephorteContext.FindAsync(typeof(TDataObject).Name, ExtractPrimaryKeyFromKeySelector(predicate), relatedObjects);
@@ -62,7 +51,7 @@ namespace Gecko.NCore.Client
         /// <param name="predicate">The predicate.</param>
         /// <param name="relatedObjects">The related objects.</param>
         /// <returns></returns>
-        public static async Task<IDataObjectAccess> FindAsync(this IAsyncEphorteContext ephorteContext, string dataObjectName, string predicate, params string[] relatedObjects)
+		public static async Task<IDataObjectAccess> FindAsync(this IEphorteContext ephorteContext, string dataObjectName, string predicate, params string[] relatedObjects)
         {
             var dataObject = ephorteContext.Create(dataObjectName);
             var dataObjectType = dataObject.GetType();
@@ -80,7 +69,7 @@ namespace Gecko.NCore.Client
         /// <param name="category">The category.</param>
         /// <returns>Task{ICollection{ICustomFieldDescriptor}}.</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
-        public static async Task<ICollection<ICustomFieldDescriptor>> GetCustomFieldDescriptorsAsync<TDataObject>(this IAsyncEphorteContext ephorteContext, Expression<Func<TDataObject, bool>> predicate, string category)
+		public static async Task<ICollection<ICustomFieldDescriptor>> GetCustomFieldDescriptorsAsync<TDataObject>(this IEphorteContext ephorteContext, Expression<Func<TDataObject, bool>> predicate, string category)
         {
             return await ephorteContext.GetCustomFieldDescriptorsAsync(typeof(TDataObject).Name, ExtractPrimaryKeyFromKeySelector(predicate), category);
         }
@@ -93,7 +82,7 @@ namespace Gecko.NCore.Client
         /// <param name="predicate">The predicate.</param>
         /// <param name="category">The category.</param>
         /// <returns></returns>
-        public static async Task<ICollection<ICustomFieldDescriptor>> GetCustomFieldDescriptorsAsync(this IAsyncEphorteContext ephorteContext, string dataObjectName, string predicate, string category)
+		public static async Task<ICollection<ICustomFieldDescriptor>> GetCustomFieldDescriptorsAsync(this IEphorteContext ephorteContext, string dataObjectName, string predicate, string category)
         {
             var dataObject = ephorteContext.Create(dataObjectName);
             var dataObjectType = dataObject.GetType();

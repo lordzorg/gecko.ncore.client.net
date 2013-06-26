@@ -11,14 +11,14 @@
 		<iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
 		<dependencies>
 			<group>
-				<dependency id="Gecko.NCore.Client" version="6.2.0" />
+				<dependency id="Gecko.NCore.Client" version="9.0.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts" version="6.2.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts.ObjectModel" version="6.2.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts.ObjectModel.V3" version="6.2.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts.ObjectModel.V3.En" version="6.2.0" />
 			</group>
 			<group targetFramework="net45">
-				<dependency id="Gecko.NCore.Client" version="6.2.0" />
+				<dependency id="Gecko.NCore.Client" version="9.0.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts" version="6.2.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts.ObjectModel" version="6.2.0" />
 				<dependency id="Ephorte.ServiceModel.Contracts.ObjectModel.V3" version="6.2.0" />
@@ -26,15 +26,6 @@
 				<dependency id="WCFExtrasPlus" version="2.3" />
 			</group>
 		</dependencies>
-		<!--<dependencies>
-      <group>
-        <dependency id="Gecko.NCore.Client" version="6.2.0" />
-        <dependency id="Ephorte.ServiceModel.Contracts" version="6.2.0" />
-        <dependency id="Ephorte.ServiceModel.Contracts.ObjectModel" version="6.2.0" />
-        <dependency id="Ephorte.ServiceModel.Contracts.ObjectModel.V3" version="6.2.0" />
-        <dependency id="Ephorte.ServiceModel.Contracts.ObjectModel.V3.En" version="6.2.0" />
-      </group>
-    </dependencies>-->
 	</metadata>
 	<files>
 		<file src="..\net40\ServiceModel.Client.ObjectModel.V3.En\bin\$configuration$\$id$.dll" target="lib\net40\" />
@@ -44,7 +35,7 @@
 		<file src="..\net45\ServiceModel.Client.ObjectModel.V3.En\bin\$configuration$\$id$.dll" target="lib\net45\" />
 		<file src="..\net45\ServiceModel.Client.ObjectModel.V3.En\bin\$configuration$\$id$.xml" target="lib\net45\" />
 		<file src="..\net45\ServiceModel.Client.ObjectModel.V3.En\bin\$configuration$\$id$.pdb" target="lib\net45\" />
-		
+
 		<file src="..\net45\Client.ObjectModel.V3.En\**\*.cs" target="src" exclude="..\net45\Client.ObjectModel.V3.En\obj\**" />
 	</files>
 </package>

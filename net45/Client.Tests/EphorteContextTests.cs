@@ -2,16 +2,28 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using Gecko.NCore.Client.Functions;
 using Gecko.NCore.Client.ObjectModel;
 using Gecko.NCore.Client.ObjectModel.V3.En;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
+using FluentAssertions;
 
 namespace Gecko.NCore.Client.Tests
 {
 	[TestClass]
 	public class EphorteContextTests
 	{
+		private IObjectModelAdapter _objectModelAdapterMock;
+		private IFunctionsAdapter _functionsAdapterMock;
+
+		[TestInitialize]
+		public void TestInit()
+		{
+			_objectModelAdapterMock = MockRepository.GenerateMock<IObjectModelAdapter>();
+			_functionsAdapterMock = MockRepository.GenerateMock<IFunctionsAdapter>();
+		}
+
 		[TestCleanup]
 		public void Cleanup()
 		{
@@ -20,7 +32,67 @@ namespace Gecko.NCore.Client.Tests
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(InvalidOperationException))]
+		public void Ctor_WithInvalidConfiguredNCoreVersion_ShouldThrowException()
+		{
+			ConfigurationManager.AppSettings["EphorteContext:NCoreVersion"] = "SomeInvalidVersion";
+
+			Action act = () => CreateEphorteContextWithObjectModelAdapter();
+
+			act.ShouldThrow<ConfigurationErrorsException>();
+		}
+
+		[TestMethod]
+		public void Ctor_WithoutObjectModelAdapterProvided_QueryingShouldThrow()
+		{
+			var ctx = CreateEphorteContextWithFunctionsAdapter();
+
+			Action act = () => ctx.Query<Case>();
+
+			act.ShouldThrow<NotSupportedException>();
+		}
+
+		[TestMethod]
+		public void Ctor_WithoutObjectModelAdapterProvided_AnyStateManagementShouldThrow()
+		{
+			var functionsAdapterStub = MockRepository.GenerateStub<IFunctionsAdapter>();
+			var ctx = new EphorteContext(functionsAdapter: functionsAdapterStub);
+
+			Action act = () => ctx.Attach(new object());
+
+			act.ShouldThrow<NotSupportedException>();
+		}
+
+		[TestMethod]
+		public void Ctor_WithoutDocumentsAdapterProvided_DocumentAccessShouldThrow()
+		{
+			var ctx = CreateEphorteContextWithObjectModelAdapter();
+
+			Action act = () => ctx.Documents.Checkout(123, "A", 1);
+
+			act.ShouldThrow<NotSupportedException>();
+		}
+
+		[TestMethod]
+		public void Ctor_WithoutFunctionsAdapterProvided_FunctionsAccessShouldThrow()
+		{
+			var ctx = CreateEphorteContextWithObjectModelAdapter();
+
+			Action act = () => ctx.Functions.Execute("fooo");
+
+			act.ShouldThrow<NotSupportedException>();
+		}
+
+		[TestMethod]
+		public void Ctor_WithoutMetadataProvided_MetadataAccessShouldThrow()
+		{
+			var ctx = CreateEphorteContextWithObjectModelAdapter();
+
+			Action act = () => ctx.Metadata.GetMetadata("foo", new object[0]);
+
+			act.ShouldThrow<NotSupportedException>();
+		}
+
+		[TestMethod]
 		public void QuerySingleOperator_WithMoreThan1Result_ShouldThrowInvalidOperationException()
 		{
 			var cases = new List<Case>
@@ -29,30 +101,31 @@ namespace Gecko.NCore.Client.Tests
 					            new Case()
 				            };
 
-			var objectModelAdapterStub = MockRepository.GenerateStub<IObjectModelAdapter>();
-			objectModelAdapterStub.StubQuery().Return(cases);
+			_objectModelAdapterMock.StubQuery().Return(cases);
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterStub);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 // ReSharper disable ReturnValueOfPureMethodIsNotUsed
-			ephorteContext.Query<Case>().Single();
+			Action act = () => ephorteContext.Query<Case>().Single();
 // ReSharper restore ReturnValueOfPureMethodIsNotUsed
+
+			act.ShouldThrow<InvalidOperationException>();
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(InvalidOperationException))]
 		public void QuerySingleOperator_With0Results_ShouldThrowInvalidOperationException()
 		{
 			var cases = new List<Case>();
 
-			var objectModelAdapterStub = MockRepository.GenerateStub<IObjectModelAdapter>();
-			objectModelAdapterStub.StubQuery().Return(cases);
+			_objectModelAdapterMock.StubQuery().Return(cases);
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterStub);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 // ReSharper disable ReturnValueOfPureMethodIsNotUsed
-			ephorteContext.Query<Case>().Single();
+			Action act = () => ephorteContext.Query<Case>().Single();
 // ReSharper restore ReturnValueOfPureMethodIsNotUsed
+
+			act.ShouldThrow<InvalidOperationException>();
 		}
 
 		[TestMethod]
@@ -63,10 +136,9 @@ namespace Gecko.NCore.Client.Tests
 					            new Case()
 				            };
 
-			var objectModelAdapterStub = MockRepository.GenerateStub<IObjectModelAdapter>();
-			objectModelAdapterStub.StubQuery().Return(cases);
+			_objectModelAdapterMock.StubQuery().Return(cases);
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterStub);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 			var @case = ephorteContext.Query<Case>().Single();
 
@@ -74,7 +146,6 @@ namespace Gecko.NCore.Client.Tests
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(InvalidOperationException))]
 		public void QuerySingleOrDefaultOperator_WithMoreThan1Result_ShouldThrowInvalidOperationException()
 		{
 			var cases = new List<Case>
@@ -83,14 +154,15 @@ namespace Gecko.NCore.Client.Tests
 					            new Case()
 				            };
 
-			var objectModelAdapterStub = MockRepository.GenerateStub<IObjectModelAdapter>();
-			objectModelAdapterStub.StubQuery().Return(cases);
+			_objectModelAdapterMock.StubQuery().Return(cases);
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterStub);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 // ReSharper disable ReturnValueOfPureMethodIsNotUsed
-			ephorteContext.Query<Case>().SingleOrDefault();
+			Action act = () => ephorteContext.Query<Case>().SingleOrDefault();
 // ReSharper restore ReturnValueOfPureMethodIsNotUsed
+
+			act.ShouldThrow<InvalidOperationException>();
 		}
 
 		[TestMethod]
@@ -98,10 +170,9 @@ namespace Gecko.NCore.Client.Tests
 		{
 			var cases = new List<Case>();
 
-			var objectModelAdapterStub = MockRepository.GenerateStub<IObjectModelAdapter>();
-			objectModelAdapterStub.StubQuery().Return(cases);
+			_objectModelAdapterMock.StubQuery().Return(cases);
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterStub);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 			var @case = ephorteContext.Query<Case>().SingleOrDefault();
 
@@ -116,10 +187,9 @@ namespace Gecko.NCore.Client.Tests
 					            new Case()
 				            };
 
-			var objectModelAdapterStub = MockRepository.GenerateStub<IObjectModelAdapter>();
-			objectModelAdapterStub.StubQuery().Return(cases);
+			_objectModelAdapterMock.StubQuery().Return(cases);
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterStub);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 			var @case = ephorteContext.Query<Case>().SingleOrDefault();
 
@@ -131,10 +201,9 @@ namespace Gecko.NCore.Client.Tests
 		{
 			ConfigurationManager.AppSettings["EphorteContext:NCoreVersion"] = "2.0.0"; // <-- Field quoting not available
 
-			var objectModelAdapterMock = MockRepository.GenerateMock<IObjectModelAdapter>();
-			objectModelAdapterMock.StubQuery().Return(new List<RegistryEntry>());
+			_objectModelAdapterMock.StubQuery().Return(new List<RegistryEntry>());
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterMock);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 			var query =
 				from re in ephorteContext.Query<RegistryEntry>()
@@ -145,7 +214,7 @@ namespace Gecko.NCore.Client.Tests
 			query.ToList();
 // ReSharper restore ReturnValueOfPureMethodIsNotUsed
 
-			var lastFilterQueryArgument = objectModelAdapterMock.GetQueryFilterArguments();
+			var lastFilterQueryArgument = _objectModelAdapterMock.GetQueryFilterArguments();
 
 			Assert.AreEqual("RecordStatusId=I", lastFilterQueryArgument);
 		}
@@ -155,10 +224,9 @@ namespace Gecko.NCore.Client.Tests
 		{
 			ConfigurationManager.AppSettings["EphorteContext:NCoreVersion"] = "3.1.3"; // <-- Field quoting available
 
-			var objectModelAdapterMock = MockRepository.GenerateMock<IObjectModelAdapter>();
-			objectModelAdapterMock.StubQuery().Return(new List<RegistryEntry>());
+			_objectModelAdapterMock.StubQuery().Return(new List<RegistryEntry>());
 
-			var ephorteContext = GetEphorteContext(objectModelAdapterMock);
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
 
 			var query =
 				from re in ephorteContext.Query<RegistryEntry>()
@@ -170,35 +238,19 @@ namespace Gecko.NCore.Client.Tests
 			query.ToList();
 // ReSharper restore ReturnValueOfPureMethodIsNotUsed
 
-			var lastFilterQueryArgument = objectModelAdapterMock.GetQueryFilterArguments();
+			var lastFilterQueryArgument = _objectModelAdapterMock.GetQueryFilterArguments();
 
 			Assert.AreEqual("RecordStatusId='I'", lastFilterQueryArgument);
 		}
 
-		[TestMethod]
-		[ExpectedException(typeof(ConfigurationErrorsException))]
-		public void Query_WithInvalidConfiguredNCoreVersion_ShouldThrowException()
+		private EphorteContext CreateEphorteContextWithObjectModelAdapter()
 		{
-			ConfigurationManager.AppSettings["EphorteContext:NCoreVersion"] = "SomeInvalidVersion";
-
-			var objectModelAdapterMock = MockRepository.GenerateMock<IObjectModelAdapter>();
-
-			var ephorteContext = GetEphorteContext(objectModelAdapterMock);
-
-			var query =
-				from re in ephorteContext.Query<RegistryEntry>()
-				where re.RecordStatusId == "I"
-
-				select re;
-
-			// ReSharper disable ReturnValueOfPureMethodIsNotUsed
-			query.ToList();
-			// ReSharper restore ReturnValueOfPureMethodIsNotUsed
+			return new EphorteContext(_objectModelAdapterMock);
 		}
 
-		private static EphorteContext GetEphorteContext(IObjectModelAdapter objectModelAdapterStub)
+		private EphorteContext CreateEphorteContextWithFunctionsAdapter()
 		{
-			return new EphorteContext(objectModelAdapterStub, null, null, null);
+			return new EphorteContext(functionsAdapter: _functionsAdapterMock);
 		}
 	}
 }

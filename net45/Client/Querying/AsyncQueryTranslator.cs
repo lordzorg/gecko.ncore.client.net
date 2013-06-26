@@ -10,6 +10,9 @@ namespace Gecko.NCore.Client.Querying
 	/// </summary>
 	internal class AsyncQueryTranslator : QueryTranslator
 	{
+		public AsyncQueryTranslator(NcoreVersion ncoreVersion) : base(ncoreVersion)
+		{}
+
 		/// <summary>
 		/// Visits the method call.
 		/// </summary>
@@ -32,6 +35,9 @@ namespace Gecko.NCore.Client.Querying
 				case "FirstOrDefaultAsync":
 				case "FirstAsync":
 					return VisitFirstMethodCall(methodCall);
+				case "SingleOrDefaultAsync":
+				case "SingleAsync":
+					return VisitSingleMethodCall(methodCall);
 				case "AnyAsync":
 					return VisitAnyMethodCall(methodCall);
 				case "ToListAsync":

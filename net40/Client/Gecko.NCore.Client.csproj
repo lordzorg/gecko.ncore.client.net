@@ -123,6 +123,12 @@
     <Compile Include="..\..\net45\Client\Metadata\MetadataManager.cs">
       <Link>Metadata\MetadataManager.cs</Link>
     </Compile>
+    <Compile Include="..\..\net45\Client\NCoreUtility.cs">
+      <Link>NCoreUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\NcoreVersion.cs">
+      <Link>NcoreVersion.cs</Link>
+    </Compile>
     <Compile Include="..\..\net45\Client\ObjectModel\DataObjectAccessBase.cs">
       <Link>ObjectModel\DataObjectAccessBase.cs</Link>
     </Compile>
@@ -152,6 +158,12 @@
     </Compile>
     <Compile Include="..\..\net45\Client\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="..\..\net45\Client\Querying\ConditionalNullRemoverVisitor.cs">
       <Link>Querying\ConditionalNullRemoverVisitor.cs</Link>
@@ -240,11 +252,6 @@
     <Compile Include="..\..\net45\Client\StateTracking\StateManager.cs">
       <Link>StateTracking\StateManager.cs</Link>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\gecko.snk">
@@ -256,13 +263,12 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Include="..\..\net45\Client\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

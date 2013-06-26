@@ -13,11 +13,16 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().Take(10);
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.IsNotNull(queryTranslator.TakeCount);
 			Assert.AreEqual(10, queryTranslator.TakeCount.Value);
+		}
+
+		private static QueryTranslator GetQueryTranslator()
+		{
+			return new QueryTranslator(NcoreVersion.Default);
 		}
 
 		[TestMethod]
@@ -25,7 +30,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().Skip(10);
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.IsNotNull(queryTranslator.SkipCount);
@@ -37,7 +42,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().Where(x => x.B1 == null);
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.AreEqual("B1=@", queryTranslator.FilterExpression);
@@ -48,7 +53,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().Where(x => x.B1.Tittel == "Foo");
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.AreEqual("B1.Tittel=Foo", queryTranslator.FilterExpression);
@@ -59,7 +64,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().OrderBy(x => x.B1.Tittel);
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.AreEqual("@B1.Tittel ASC", queryTranslator.SortExpression);
@@ -70,7 +75,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().OrderByDescending(x => x.B1.Tittel);
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.AreEqual("@B1.Tittel DESC", queryTranslator.SortExpression);
@@ -81,7 +86,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 		{
 			var queryable = Enumerable.Empty<DummyA>().AsQueryable().OrderByDescending(x => x.Id).ThenBy(x => x.B1.Tittel);
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(queryable.Expression);
 
 			Assert.AreEqual("@Id DESC,@B1.Tittel ASC", queryTranslator.SortExpression);
@@ -99,7 +104,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 			expression = ExpressionEvaluator.PartialEval(expression);
 			expression = PredicateOperandAligner.Align(expression);
 			expression = PredicateDenormalizer.Denormalize(expression);
-			var queryTranslater = new QueryTranslator();
+			var queryTranslater = GetQueryTranslator();
 			queryTranslater.Visit(expression);
 
 			Assert.AreEqual(2, queryTranslater.RelatedObjects.Count());
@@ -122,7 +127,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 			expression = ExpressionEvaluator.PartialEval(expression);
 			expression = PredicateOperandAligner.Align(expression);
 			expression = PredicateDenormalizer.Denormalize(expression);
-			var queryTranslater = new QueryTranslator();
+			var queryTranslater = GetQueryTranslator();
 			queryTranslater.Visit(expression);
 
 			Assert.AreEqual(2, queryTranslater.IncludeSelectors.Count());
@@ -143,7 +148,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 			expression = ExpressionEvaluator.PartialEval(expression);
 			expression = PredicateOperandAligner.Align(expression);
 			expression = PredicateDenormalizer.Denormalize(expression);
-			var queryTranslater = new QueryTranslator();
+			var queryTranslater = GetQueryTranslator();
 			queryTranslater.Visit(expression);
 
 			Assert.AreEqual(2, queryTranslater.RelatedObjects.Count());
@@ -160,7 +165,7 @@ namespace Gecko.NCore.Client.Tests.Querying
 						where x.Id == 1 && DirectPredicate<DummyB>.Member(m => m.Id) == 3
 						select x;
 
-			var queryTranslator = new QueryTranslator();
+			var queryTranslator = GetQueryTranslator();
 			queryTranslator.Visit(query.Expression);
 
 			Assert.AreEqual("Id=1 AND !DummyB.Id=3", queryTranslator.FilterExpression);

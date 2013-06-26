@@ -6,258 +6,181 @@ using System.Threading.Tasks;
 
 namespace Gecko.NCore.Client.Querying
 {
-    /// <summary>
-    /// Class AsyncQueryableExtensions
-    /// </summary>
-    public static class AsyncQueryableExtensions
-    {
-        /// <summary>
-        /// Firsts the async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns>Task{``0}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<TElement> FirstAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+	public static class AsyncQueryableExtensions
+	{
+		public static Task<TElement> FirstAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			return FirstAsync(queryable, element => true);
+		}
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+		public static async Task<TElement> FirstAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-            var methodCallExpression = Expression.Call(typeof (AsyncQueryableExtensions), "FirstAsync", new[] {typeof (TElement)}, queryable.Expression);
-            var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
-            return result;
-        }
+			if (predicate == null)
+				throw new ArgumentNullException("predicate");
 
-        /// <summary>
-        /// Firsts the async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <param name="predicate">The predicate.</param>
-        /// <returns>Task{``0}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<TElement> FirstAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-            if (predicate == null)
-                throw new ArgumentNullException("predicate");
+			var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "FirstAsync", new[] { typeof(TElement) }, queryable.Expression, predicate);
+			var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
+			return result;
+		}
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+		public static Task<TElement> FirstOrDefaultAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			return FirstOrDefaultAsync(queryable, element => true);
+		}
 
-            var methodCallExpression = Expression.Call(typeof (AsyncQueryableExtensions), "FirstAsync", new[] {typeof (TElement)}, queryable.Expression, predicate);
-            var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
-            return result;
-        }
+		public static async Task<TElement> FirstOrDefaultAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-        /// <summary>
-        /// Firsts the or default async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns>Task{``0}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<TElement> FirstOrDefaultAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+			if (predicate == null)
+				throw new ArgumentNullException("predicate");
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-            var methodCallExpression = Expression.Call(typeof (AsyncQueryableExtensions), "FirstOrDefaultAsync", new[] {typeof (TElement)}, queryable.Expression);
-            var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
-            return result;
-        }
+			var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "FirstOrDefaultAsync", new[] { typeof(TElement) }, queryable.Expression, predicate);
+			var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
+			return result;
+		}
 
-        /// <summary>
-        /// Firsts the or default async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <param name="predicate">The predicate.</param>
-        /// <returns>Task{``0}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<TElement> FirstOrDefaultAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+		public static Task<TElement> SingleAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			return SingleAsync(queryable, element => true);
+		}
 
-            if (predicate == null)
-                throw new ArgumentNullException("predicate");
+		public static async Task<TElement> SingleAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+			if (predicate == null)
+				throw new ArgumentNullException("predicate");
 
-            var methodCallExpression = Expression.Call(typeof (AsyncQueryableExtensions), "FirstOrDefaultAsync", new[] {typeof (TElement)}, queryable.Expression, predicate);
-            var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
-            return result;
-        }
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-        /// <summary>
-        /// Counts the async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns>Task{System.Int32}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<int> CountAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+			var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "SingleAsync", new[] { typeof(TElement) }, queryable.Expression, predicate);
+			var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
+			return result;
+		}
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+		public static Task<TElement> SingleOrDefaultAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			return SingleOrDefaultAsync(queryable, element => true);
+		}
 
-            var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "CountAsync", new[] { typeof(TElement) }, queryable.Expression);
-            return await queryProvider.ExecuteAsync<int>(methodCallExpression);
-        }
+		public static async Task<TElement> SingleOrDefaultAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-        /// <summary>
-        /// To the list async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns>Task{List{``0}}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<List<TElement>> ToListAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+			if (predicate == null)
+				throw new ArgumentNullException("predicate");
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-            var result = await queryProvider.ExecuteAsync<IEnumerable<TElement>>(queryable.Expression);
-            return result.ToList();
-        }
+			var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "SingleOrDefaultAsync", new[] { typeof(TElement) }, queryable.Expression, predicate);
+			var result = await queryProvider.ExecuteAsync<TElement>(methodCallExpression);
+			return result;
+		}
 
-        /// <summary>
-        /// To the array async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns>Task{``0[]}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<TElement[]> ToArrayAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+		public static async Task<int> CountAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-            var result = await queryProvider.ExecuteAsync<IEnumerable<TElement>>(queryable.Expression);
-            return result.ToArray();
-        }
+			var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "CountAsync", new[] { typeof(TElement) }, queryable.Expression);
+			return await queryProvider.ExecuteAsync<int>(methodCallExpression);
+		}
 
-        /// <summary>
-        /// Anies the async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns>Task{System.Boolean}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<bool> AnyAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+		public static async Task<List<TElement>> ToListAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-            var methodCallExpression = Expression.Call(typeof (AsyncQueryableExtensions), "AnyAsync", new[] {typeof (TElement)}, queryable.Expression);
-            return await queryProvider.ExecuteAsync<bool>(methodCallExpression);
-        }
+			var result = await queryProvider.ExecuteAsync<IEnumerable<TElement>>(queryable.Expression);
+			return result.ToList();
+		}
 
-        /// <summary>
-        /// Anies the async.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the T element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <param name="predicate">The predicate.</param>
-        /// <returns>Task{System.Boolean}.</returns>
-        /// <exception cref="System.ArgumentNullException">queryable</exception>
-        /// <exception cref="System.NotSupportedException"></exception>
-        public static async Task<bool> AnyAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
-        {
-            if (queryable == null)
-                throw new ArgumentNullException("queryable");
+		public static async Task<TElement[]> ToArrayAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-            if (predicate == null)
-                throw new ArgumentNullException("predicate");
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-            var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
-            if (queryProvider == null)
-                throw new NotSupportedException();
+			var result = await queryProvider.ExecuteAsync<IEnumerable<TElement>>(queryable.Expression);
+			return result.ToArray();
+		}
 
-            var methodCallExpression = Expression.Call(typeof (AsyncQueryableExtensions), "AnyAsync", new[] {typeof (TElement)}, queryable.Expression, predicate);
-            return await queryProvider.ExecuteAsync<bool>(methodCallExpression);
-        }
+		public static Task<bool> AnyAsync<TElement>(this IQueryable<TElement> queryable)
+		{
+			return AnyAsync(queryable, x => true);
+		}
 
-        /// <summary>
-        /// Lazies the specified queryable.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <returns></returns>
-        public static async Task<IEnumerable<TElement>> LazyAsync<TElement>(this IQueryable<TElement> queryable)
-        {
-            return await queryable.LazyAsync(10);
-        }
+		public static async Task<bool> AnyAsync<TElement>(this IQueryable<TElement> queryable, Expression<Func<TElement, bool>> predicate)
+		{
+			if (queryable == null)
+				throw new ArgumentNullException("queryable");
 
-        /// <summary>
-        /// Lazies the specified queryable.
-        /// </summary>
-        /// <typeparam name="TElement">The type of the element.</typeparam>
-        /// <param name="queryable">The queryable.</param>
-        /// <param name="batchSize">Size of the batch.</param>
-        /// <returns>Task{IEnumerable{``0}}.</returns>
-        public static async Task<IEnumerable<TElement>> LazyAsync<TElement>(this IQueryable<TElement> queryable, int batchSize)
-        {
-            var combinedResult = new List<TElement>();
-            var totalCount = queryable.Count();
-            var skip = 0;
-            while (skip < totalCount)
-            {
-                var batchQuery = queryable.Skip<TElement>(skip).Take<TElement>(batchSize);
-                var batchQueryCount = 0;
-                foreach (var result in await batchQuery.ToListAsync())
-                {
-                    combinedResult.Add(result);
-                    batchQueryCount++;
-                }
+			if (predicate == null)
+				throw new ArgumentNullException("predicate");
 
-                skip += batchQueryCount;
+			var queryProvider = queryable.Provider as AsyncDataObjectQueryProvider;
+			if (queryProvider == null)
+				throw new NotSupportedException();
 
-                if (batchQueryCount < batchSize)
-                {
-                    return combinedResult;
-                }
-            }
+			var methodCallExpression = Expression.Call(typeof(AsyncQueryableExtensions), "AnyAsync", new[] { typeof(TElement) }, queryable.Expression, predicate);
+			return await queryProvider.ExecuteAsync<bool>(methodCallExpression);
+		}
 
-            return combinedResult;
-        }
-    }
+		private const int DefaultBatchSize = 10;
+		public static async Task<IEnumerable<TElement>> LazyAsync<TElement>(this IQueryable<TElement> queryable, int batchSize = DefaultBatchSize)
+		{
+			var combinedResult = new List<TElement>();
+			var totalCount = await queryable.CountAsync();
+			var skip = 0;
+			while (skip < totalCount)
+			{
+				var batchQuery = queryable.Skip<TElement>(skip).Take<TElement>(batchSize);
+				var batchQueryCount = 0;
+				foreach (var result in await batchQuery.ToListAsync())
+				{
+					combinedResult.Add(result);
+					batchQueryCount++;
+				}
+
+				skip += batchQueryCount;
+
+				if (batchQueryCount < batchSize)
+				{
+					return combinedResult;
+				}
+			}
+
+			return combinedResult;
+		}
+	}
 }
