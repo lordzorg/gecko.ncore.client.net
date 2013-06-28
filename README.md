@@ -5,20 +5,24 @@ with the ephorte® nCore Integration Services.
 
 00 - IMPORTANT
 	You are reading it
+
 01 - .NET 3.5
 	This is the .NET 3.5 edition of the contracts. All source files are linked
 	to their respective locations in the .NET 4.5 structure. If there are
 	code changes neede for specific frameworks, these changes can be handled
 	with #ifdef directives or ConditionalAttribute decorations.
+
 02 - .NET 4.0
 	This is the .NET 4.0 edition of the contracts. All source files are linked
 	to their respective locations in the .NET 4.5 structure. If there are
 	code changes needed for specific frameworks, these changes can be handled
 	with #ifdef directives or ConditionalAttribute decorations.
+
 03 - .NET 4.5
 	This is the .NET 4.5 edition of the contracts. If there are
 	code changes needed for specific frameworks, these changes can be handled
 	with #ifdef directives or ConditionalAttribute decorations.
+	
 04 - NUSPEC
 	This structure represents the packages that are handled by the 
 	nuget.msbuild file. The packages generated consist of the dlls from
