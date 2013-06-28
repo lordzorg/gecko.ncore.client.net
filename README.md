@@ -3,7 +3,15 @@
 
 This is the .NET based client for integrating with ePhorte Integration Services (EIS). It is intended to be a helpful tool for integrating parties to more easily perform the functions that the EIS offers.
 
-## The solution
+## Installation
+
+The library can included as a nuget package from Myget at http://www.myget.org/F/geckopublic/api/v2/package. 
+
+The corresponding symbol files can found at http://nuget.gw.symbolsource.org/MyGet/geckopublic.
+
+We support .NET version 3.5, 4.0 and 4.5.
+
+## The source
 
 This solution contains the projects that compose the client proxies used to work 
 with the ephorte® nCore Integration Services.
@@ -32,12 +40,3 @@ nuget.msbuild file. The packages generated consist of the dlls from
 
 The result contains a release package for use in other dependent projects
 as well as symbol packages for debugging assitance.
-
-Release packages are deployed to [Myget](http://www.myget.org/F/geckopublic/api/v2/package)
-Symbol packages are deployed to [SymbolSource](http://nuget.gw.symbolsource.org/MyGet/geckopublic)
-
-## Updating packages
-1. Update the nuget package dependencies
-2. Update the affected services references
-3. Increase the semver numbers in the respective AssemblyInfo.cs files
-4. Publish to Myget
