@@ -1,0 +1,7 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Push">
+
+  <Target Name="Push">
+    <MSBuild Projects="NuGet.msbuild" Targets="Push" />
+  </Target>
+
+</Project>

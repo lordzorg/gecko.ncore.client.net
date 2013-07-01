@@ -1,0 +1,150 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Pack">
+
+	<PropertyGroup>
+		<ExtensionTasksPath>$(MSBuildProjectDirectory)\..\MSBuildExtensionPack\</ExtensionTasksPath>
+		<TPath>$(ExtensionTasksPath)MSBuild.ExtensionPack.tasks</TPath>
+	</PropertyGroup>
+
+	<Import Project="$(TPath)"/>
+
+	<PropertyGroup>
+		<OutDir></OutDir>
+		<NuGet>$(MSBuildProjectDir)..\.nuget\NuGet.exe</NuGet>
+		<IgnoreExitCode>false</IgnoreExitCode>
+		<ContinueOnError>false</ContinueOnError>
+		<Configuration>Release</Configuration>
+		<NuGetVerbose></NuGetVerbose>
+		<NuSpecDir>$(MSBuildProjectDir)..\nuspec\</NuSpecDir>
+		<NuPkgDir>$(MSBuildProjectDir)..\nupkg\</NuPkgDir>
+		<NuPkgSnapshotDir>\\GECKO-NS1\TFS2010DROP\NuGetSnapshot\</NuPkgSnapshotDir>
+		<SolutionFile>$(MSBuildProjectDir)..\Gecko.NCore.Client.sln</SolutionFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Package Include="Ephorte.ServiceModel.Client.ObjectModel.V3.En">
+			<Folder>ServiceModel.Client.ObjectModel.V3.En\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client">
+			<Folder>Client\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.ChangeTracking.V1">
+			<Folder>Client.ChangeTracking.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Claims.V1">
+			<Folder>Client.Claims.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Documents.V1">
+			<Folder>Client.Documents.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Documents.V2">
+			<Folder>Client.Documents.V2\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Documents.V3">
+			<Folder>Client.Documents.V3\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.DynamicObjectModel.V1">
+			<Folder>Client.DynamicObjectModel.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Functions.V1">
+			<Folder>Client.Functions.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Functions.V2">
+			<Folder>Client.Functions.V2\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Metadata.V1">
+			<Folder>Client.Metadata.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.Notification.V1">
+			<Folder>Client.Notification.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.ObjectModel.V1">
+			<Folder>Client.ObjectModel.V1\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.ObjectModel.V2">
+			<Folder>Client.ObjectModel.V2\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.ObjectModel.V3.En">
+			<Folder>Client.ObjectModel.V3.En\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+		<Package Include="Gecko.NCore.Client.ObjectModel.V3.No">
+			<Folder>Client.ObjectModel.V3.No\</Folder>
+			<Symbols>-symbols</Symbols>
+		</Package>
+	</ItemGroup>
+
+	<Target Name="Clean" Label="Removing old packages from build output">
+		<MakeDir Directories="$(NuPkgDir)" ContinueOnError="true" />
+		<ItemGroup>
+			<DeleteTarget Include="$(NuPkgDir)**\*.*" />
+		</ItemGroup>
+		<Delete Files="@(DeleteTarget)" TreatErrorsAsWarnings="true" />
+	</Target>
+
+	<Target Name="Build" Label="Building solution with Release configuration">
+		<MSBuild Properties="Configuration=Release" Projects="$(SolutionFile)" />
+	</Target>
+
+	<Target Name="PrepareInfo" Returns="@(PackageWithInfo)" Label="Preparing necessary package info">
+		<MSBuild.ExtensionPack.Framework.Assembly TaskAction="GetInfo" NetAssembly="$(MSBuilderProjectDir)..\net45\%(Package.Folder)\bin\$(Configuration)\%(Package.Identity).dll" Condition="'%(Package.Folder)'!=''">
+			<Output TaskParameter="OutputItems" ItemName="Info"/>
+		</MSBuild.ExtensionPack.Framework.Assembly>
+
+		<ItemGroup>
+			<PackageWithInfo Include="%(Identity)">
+				<Folder>@(Package->'%(Folder)')</Folder>
+				<Symbols>@(Package->'%(Symbols)')</Symbols>
+				<Version>@(Info->'%(AssemblyInformationalVersion)')</Version>
+				<NuSpec>@(Package->'$(NuSpecDir)%(Identity).nuspec')</NuSpec>
+			</PackageWithInfo>
+		</ItemGroup>
+
+		<Message Text="%(PackageWithInfo.Identity) - Version %(PackageWithInfo.Version)" />
+
+	</Target>
+
+	<Target Name="Pack" DependsOnTargets="Clean;Build;PrepareInfo" Returns="@(PackageWithInfo)" Label="Create .nupkg and .symbols.nupkg packages">
+		<Exec IgnoreExitCode="$(IgnoreExitCode)" ContinueOnError="$(ContinueOnError)" Command="$(NuGet) pack %(PackageWithInfo.NuSpec) %(PackageWithInfo.Symbols) /Output $(NuPkgDir) /Properties Configuration=$(Configuration);Id=%(PackageWithInfo.Identity);Version=%(PackageWithInfo.Version) $(NuGetVerbose)" />
+	</Target>
+
+	<Target Name="PushSymbolSource" DependsOnTargets="Pack;PrepareInfo" Label="Pushing symbols package to http://nuget.gw.symbolsource.org/MyGet/geckopublic">
+
+		<ItemGroup>
+			<SymbolsNuPkg Include="$(NuPkgDir)\**\*.symbols.nupkg" />
+		</ItemGroup>
+
+		<Exec Command="$(NuGet) push %(SymbolsNuPkg.FullPath) b0fcc373-78ce-46be-ae07-78e59293084d -Source http://nuget.gw.symbolsource.org/MyGet/geckopublic" Condition="Exists('%(SymbolsNuPkg.FullPath)')" />
+	</Target>
+
+	<Target Name="Push" DependsOnTargets="Pack;PrepareInfo">
+		<ItemGroup>
+			<NuPkg Include="$(NuPkgDir)\**\*.nupkg" Exclude="$(NuPkgDir)\**\*.symbols.nupkg" />
+		</ItemGroup>
+
+		<Exec Command="$(NuGet) push %(NuPkg.FullPath) $(MyGetPushKey) -Source http://www.myget.org/F/geckopublic/api/v2/package" Condition="!Exists('$(NuPkgSnapshotDir)%(NuPkg.Filename)%(NuPkg.Extension)')" />
+
+		<Copy SourceFiles="%(NuPkg.FullPath)" DestinationFolder="$(NuPkgSnapshotDir)" Condition="!Exists('$(NuPkgSnapshotDir)%(NuPkg.Filename)%(NuPkg.Extension)')" />
+
+		<ItemGroup>
+			<SymbolsNuPkg Include="$(NuPkgDir)\**\*.symbols.nupkg" />
+		</ItemGroup>
+
+		<Exec Command="$(NuGet) push %(SymbolsNuPkg.FullPath) $(MyGetPushKey) -Source http://nuget.gw.symbolsource.org/MyGet/geckopublic" Condition="Exists('%(SymbolsNuPkg.FullPath)') And !Exists('$(NuPkgSnapshotDir)%(SymbolsNuPkg.Filename)%(SymbolsNuPkg.Extension)')" />
+		<Copy SourceFiles="%(SymbolsNuPkg.FullPath)" DestinationFolder="$(NuPkgSnapshotDir)" Condition="Exists('%(SymbolsNuPkg.FullPath)') And !Exists('$(NuPkgSnapshotDir)%(SymbolsNuPkg.Filename)%(SymbolsNuPkg.Extension)')" />
+	</Target>
+
+</Project>
