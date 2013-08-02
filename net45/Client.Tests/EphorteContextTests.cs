@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Linq.Expressions;
 using Gecko.NCore.Client.Functions;
 using Gecko.NCore.Client.ObjectModel;
 using Gecko.NCore.Client.ObjectModel.V3.En;
@@ -241,6 +242,62 @@ namespace Gecko.NCore.Client.Tests
 			var lastFilterQueryArgument = _objectModelAdapterMock.GetQueryFilterArguments();
 
 			Assert.AreEqual("RecordStatusId='I'", lastFilterQueryArgument);
+		}
+
+		/// <summary>
+		/// Expression visualization:
+		/// Assume the type Case is used
+		/// 1 AndExpression (type: bool) // Could be any BinaryExpression
+		///	2	Left: EqualExpression (type: bool)
+		///	3		Left: EqualExpression (type: bool?)
+		///	4			Left: MemberAccessExpression (type: int?) Ex: Case.OfficerNameId
+		///	5			Right: ConstantExpression (type: int?) Ex: 123
+		///	6		Right: ConstantExpression (type: bool?) Ex: True
+		///	7	Right: ConstantExpression (type: bool) Ex: True (this could also be any other expression)
+		/// 
+		/// OData creates an expression on the form ((CaseId == 5) == true) when accessing nullable fields.
+		/// We created the ODataExpressionWithNullableFieldVisitor to remove the '== true'-part.
+		/// This resulted in an issue where the owning BinaryExpression (AndExpression in the sample above)
+		/// would fail when constructing the new modified BinaryExpression using Expression.MakeBinary().
+		/// It failed because Expression.MakeBinary requires that left and right must be of a compatible type.
+		/// 
+		/// In the sample above that recreates what OData will pass in the line 3 EqualExpression would replace the
+		/// line2 EqualExpression by the ODataExpressionWithNuyllableFieldVisitor.
+		/// This would cause left side in the AndExpression to become nullable bool and the right would be non-nullable.
+		/// This caused Expression.MakeBinary to fail.
+		/// 
+		/// We fix this by introducing an Expression.Convert to match up the types of left and right side
+		/// for the AndExpression.
+		/// </summary>
+		[TestMethod]
+		public void Query_WithChildrenTypeMimatchForBinaryExpression_ShouldNotFail()
+		{
+			_objectModelAdapterMock.StubQuery().Return(new List<Case>());
+
+			var ephorteContext = CreateEphorteContextWithObjectModelAdapter();
+
+			var queryable = ephorteContext.Query<Case>();
+
+			var item = Expression.Parameter(typeof(Case), "case");
+			var memberAccess = Expression.Property(item, "OfficerNameId");
+			var const250 = Expression.Constant(123, typeof(int?));
+			
+			// We need to lift the equal expression so that it also get the type <Nullable<Boolean>>
+			var equal2 = Expression.Equal(memberAccess, const250, true, null);
+
+			var trueNullableConstant = Expression.Constant(true, typeof(bool?));
+			var equal = Expression.Equal(equal2, trueNullableConstant);
+
+			var trueConstant = Expression.Constant(true, typeof (bool));
+			var and = Expression.And(equal, trueConstant);
+
+			var lambda = Expression.Lambda<Func<Case, bool>>(and, item);
+
+			queryable = queryable.Where(lambda);
+
+// ReSharper disable ReturnValueOfPureMethodIsNotUsed
+			queryable.ToList();
+// ReSharper restore ReturnValueOfPureMethodIsNotUsed
 		}
 
 		private EphorteContext CreateEphorteContextWithObjectModelAdapter()
