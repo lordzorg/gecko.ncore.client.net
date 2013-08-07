@@ -51,7 +51,7 @@ This project will self-host the wcf endpoints using the included contracts. We c
 Simplest way to do this is to run the following command in the 'Package Manager Console' using the Myget internal package source: update-package -ProjectName gecko.ncore.Host
 2. Open the Gecko.NCore.Client.ObjectModel.V3.En project.
 3. Expand Service References.
-4. Right-click ObjectModel.V3.En and click 'Update service reference' from the dropdown.
+4. Right-click ObjectModel.V3.En and click 'Update service reference' from the dropdown. Do this for all .net versions(3.5, 4.0, 4.5)
 This should update the generated client.
 5. Verify that the contract changes are present in the updated client proxy. 
 This can typically be done by inspecting the generated 'Reference.cs' file. 
@@ -60,3 +60,5 @@ Click 'Show all files' while standing in the project to make it visible below th
 7. Run all tests!
 8. Check in changes.
 9. Create and push new nuget packages. See the gecko.ncore.client.net.nuget on github for how to do this.
+
+NB! When updating objectmodel.V3.En update both Ephorte.ServiceModel.Client.ObjectModel.V3.En and Gecko.Ncore.Client.ObjectModel.V3.En
