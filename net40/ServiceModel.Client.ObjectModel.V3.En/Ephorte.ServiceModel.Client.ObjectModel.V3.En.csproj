@@ -50,7 +50,7 @@
       <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.6.2.0\lib\net40\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En">
-      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.3.0\lib\net40\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.4.0\lib\net40\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

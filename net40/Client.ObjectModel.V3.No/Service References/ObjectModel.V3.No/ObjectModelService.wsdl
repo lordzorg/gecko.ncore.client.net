@@ -10635,8 +10635,9 @@
                 <xs:annotation>
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
-            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
-            bør attributtet oppdateres med virkelig dato for kassasjon, og verdien U (kassasjon utført) registreres i Kassasjonskode.
+            Disposal date - Når saken avsluttes, skal feltet automatisk oppdateres til dato (for kassasjon eller annen aksjon) ved å legge til årstall fra attributtet 
+            Siste journaldato til det antall år som er angitt i Bevaringstid. Ved gjenåpning av saken skal attributtet nullstilles igjen. Når kassasjon er utført, 
+            blir verdien U (kassasjon utført) registrert i Kassasjonskode.
             Tilsvarer NOARK4 feltet SA.KASSDATO
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
@@ -10658,6 +10659,24 @@
             Feltlengde: 2 tegn.
             Oppslag mot tabellen Kassasjonskode. 
             Tilsvarer NOARK4 feltet SA.KASSKODE.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassertAv" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposed by - Referanse til den person som har gjennomført kassasjon.
+            Inneholder blank dersom versjonen aldri har blitt kassert eller et positivt tall som markerer hvilken person (PN_ID) som har utført kassasjon.
+            Oppslag mot tabellen Person.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="KassertDato" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Disposed date - Dato for når kassasjon er blitt utført
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>

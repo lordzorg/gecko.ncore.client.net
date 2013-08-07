@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="CustomFieldDescriptor" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Gecko.NCore.Client.ObjectModel.V3.En.CustomFieldDescriptor</TypeInfo>
+   <TypeInfo>Gecko.NCore.Client.ObjectModel.V3.En.CustomFieldDescriptor, Service References.ObjectModel.V3.En.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>
