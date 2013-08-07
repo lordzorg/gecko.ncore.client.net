@@ -113,11 +113,11 @@
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.3.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.4.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.No, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.6.3.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.6.4.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -138,9 +138,9 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+    <Reference Include="WCFExtrasPlus, Version=2.3.1.8201, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+      <HintPath>..\packages\WCFExtrasPlus.2.3.1\lib\WCFExtrasPlus.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

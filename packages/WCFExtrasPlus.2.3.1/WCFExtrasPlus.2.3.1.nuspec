@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WCFExtrasPlus</id>
+    <version>2.3.1</version>
+    <title>WCFExtrasPlus</title>
+    <authors>Chris.Jansen</authors>
+    <owners>Chris.Jansen</owners>
+    <licenseUrl>http://wcfextrasplus.codeplex.com/license</licenseUrl>
+    <projectUrl>http://wcfextrasplus.codeplex.com/</projectUrl>
+    <iconUrl>https://nugetgallery.blob.core.windows.net/icons/WCFExtrasPlus.2.3.1.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Based on the WCFExtras project, which has been inactive, WCFExtras+ is a collection of useful WCF extensions including SOAP Header support, WSDL flattening and documentation, and more.</description>
+    <releaseNotes>Fixed an issue with overriding the endpoint location when wsHttpBinding is used.</releaseNotes>
+    <copyright>Copyright © 2008-2013 Eyal Post, Chris Jansen</copyright>
+    <tags>wcf wcfextras soap wsdl</tags>
+    <references>
+      <reference file="WCFExtrasPlus.dll" />
+    </references>
+  </metadata>
+</package>
