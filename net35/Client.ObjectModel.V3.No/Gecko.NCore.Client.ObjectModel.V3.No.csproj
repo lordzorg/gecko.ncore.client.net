@@ -103,7 +103,9 @@
       <Link>gecko.snk</Link>
     </None>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ObjectModel.V3.No\Gecko.NCore.Client.ObjectModel.V3.No.ChangeSetResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
