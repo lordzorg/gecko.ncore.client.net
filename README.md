@@ -40,3 +40,23 @@ nuget.msbuild file. The packages generated consist of the dlls from
 
 The result contains a release package for use in other dependent projects
 as well as symbol packages for debugging assitance.
+
+## Updating contract how-to
+In this how-to we will give an example of how to update the contract for Gecko.NCore.Client.ObjectModel.V3.En. Everything should work the same for the other projects.
+
+- This assumes that you already have updates the contract nuget packages with your changes.
+
+1. Update all contract nuget packages in the Gecko.NCore.Host project. 
+This project will self-host the wcf endpoints using the included contracts. We can than in turn generate new client proxies based on it. 
+Simplest way to do this is to run the following command in the 'Package Manager Console' using the Myget internal package source: update-package -ProjectName gecko.ncore.Host
+2. Open the Gecko.NCore.Client.ObjectModel.V3.En project.
+3. Expand Service References.
+4. Right-click ObjectModel.V3.En and click 'Update service reference' from the dropdown.
+This should update the generated client.
+5. Verify that the contract changes are present in the updated client proxy. 
+This can typically be done by inspecting the generated 'Reference.cs' file. 
+Click 'Show all files' while standing in the project to make it visible below the service reference.
+6. Increment version number according to semver.
+7. Run all tests!
+8. Check in changes.
+9. Create and push new nuget packages. See the gecko.ncore.client.net.nuget on github for how to do this.
