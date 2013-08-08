@@ -12,11 +12,19 @@ namespace Gecko.NCore.Client
 	/// </summary>
 	public class NcoreVersion
 	{
+		/// <summary>
+		/// Represents the most backwards compatible version of ncore. Internally represented by the version 0.0.1
+		/// </summary>
 		public static NcoreVersion Default
 		{
 			get { return new NcoreVersion(new Version(0, 0, 1)); }
 		}
 
+		/// <summary>
+		/// You can specify an ncore version in the AppSettings section using the key: 'EphorteContext:NCoreVersion'
+		/// 
+		/// This value must be parseable by the System.Version class
+		/// </summary>
 		public static NcoreVersion Configured
 		{
 			get
