@@ -93,6 +93,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ObjectModelAdapterTestExtensions.cs" />
     <Compile Include="AsyncEphorteContextTests.cs" />
+    <Compile Include="NcoreVersionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Client.ObjectModel.V2\Gecko.NCore.Client.ObjectModel.V2.csproj">

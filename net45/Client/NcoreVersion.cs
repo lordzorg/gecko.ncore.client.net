@@ -34,6 +34,19 @@ namespace Gecko.NCore.Client
 			}
 		}
 
+		/// <summary>
+		/// Use this ncoreversion if you always want to use the latest ncore version.
+		/// 
+		/// Internally represented by 'new Version(int.MaxValue, int.MaxValue, int.MaxValue)'
+		/// </summary>
+		public static NcoreVersion Latest
+		{
+			get
+			{
+				return new NcoreVersion(new Version(int.MaxValue, int.MaxValue, int.MaxValue));
+			}
+		}
+
 		public Version Version { get; private set; }
 
 		public NcoreVersion(Version version)
