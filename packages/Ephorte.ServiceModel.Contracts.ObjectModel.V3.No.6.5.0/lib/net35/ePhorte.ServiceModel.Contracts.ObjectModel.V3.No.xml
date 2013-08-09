@@ -6091,26 +6091,6 @@
              Bygningens løpenummer
             </summary>
         </member>
-        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags">
-            <summary>
-             Representerer en ephorte entitet (objekt) som innholder geografisk informasjon, for eks <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Sak"/>
-            </summary>
-        </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Id">
-            <summary>
-            Id som representerer en ephorte entitet.
-            </summary>
-        </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Betegnelse">
-            <summary>
-            Betegnelse for en entitet.
-            </summary>
-        </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Aktiv">
-            <summary>
-             Markerer om denne entiteten er aktiv eller ikke, mht lagring av geografisk informasjon.
-            </summary>
-        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitet">
             <summary>
              Representerer en ephorte entitet (objekt) som innholder geografisk informasjon, for eks <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Sak"/>
@@ -6129,6 +6109,26 @@
         <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitet.Aktiv">
             <summary>
              Markerer om denne entiteten er aktiv eller ikke, mht lagring av geografisk informasjon.  Standardverdi er true.
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags">
+            <summary>
+             Representerer en ephorte entitet (objekt) som innholder geografisk informasjon, for eks <see cref="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Sak"/>
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Id">
+            <summary>
+            Id som representerer en ephorte entitet.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Betegnelse">
+            <summary>
+            Betegnelse for en entitet.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.GeografiskEntitetPropertyFlags.Aktiv">
+            <summary>
+             Markerer om denne entiteten er aktiv eller ikke, mht lagring av geografisk informasjon.
             </summary>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.PlanIdentPropertyFlags">
@@ -15041,6 +15041,14 @@
             Personens nåværende navn.
             </summary>
             <value>Inneholder attributter som beskriver personens nåværende navn.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Person.Passord">
+            <summary>
+            Passord (kun for skriving)
+            
+            Verdien på dette feltet kan ikke spørres frem.
+            </summary>
+            <norwegianFieldName>Person.Passord</norwegianFieldName>
         </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.PersonAdresse">
             <summary>

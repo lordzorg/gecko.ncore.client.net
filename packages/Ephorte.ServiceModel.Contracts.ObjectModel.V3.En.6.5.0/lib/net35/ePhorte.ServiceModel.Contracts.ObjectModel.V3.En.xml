@@ -13770,6 +13770,14 @@
             </summary>
             <norwegianFieldName>Person.AktivtNavn</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.User.Password">
+            <summary>
+            Write-only password.
+            
+            This field cannot be used for lookups
+            </summary>
+            <norwegianFieldName>Person.Passord</norwegianFieldName>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.UserAddress">
             <summary>
             User address records

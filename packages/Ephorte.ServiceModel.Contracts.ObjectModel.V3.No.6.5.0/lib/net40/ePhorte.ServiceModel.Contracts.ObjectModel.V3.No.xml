@@ -15042,6 +15042,14 @@
             </summary>
             <value>Inneholder attributter som beskriver personens nåværende navn.</value>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Person.Passord">
+            <summary>
+            Passord (kun for skriving)
+            
+            Verdien på dette feltet kan ikke spørres frem.
+            </summary>
+            <norwegianFieldName>Person.Passord</norwegianFieldName>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.PersonAdresse">
             <summary>
             Inneholder referanser til adresser tilknyttet personer.
