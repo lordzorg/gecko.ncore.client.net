@@ -3041,6 +3041,9 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> SkrivetilgangTilAlleRegistrerteRollerField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PassordField;
+        
         /// <summary>
         /// Personens nåværende navn.
         /// </summary>
@@ -3157,6 +3160,25 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SkrivetilgangTilAlleRegistrerteRollerField.Equals(value) != true)) {
                     this.SkrivetilgangTilAlleRegistrerteRollerField = value;
                     this.RaisePropertyChanged("SkrivetilgangTilAlleRegistrerteRoller");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Passord (kun for skriving)
+        /// 
+        /// Verdien på dette feltet kan ikke spørres frem.
+        /// </summary>
+        /// <norwegianFieldName>Person.Passord</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string Passord {
+            get {
+                return this.PassordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PassordField, value) != true)) {
+                    this.PassordField = value;
+                    this.RaisePropertyChanged("Passord");
                 }
             }
         }

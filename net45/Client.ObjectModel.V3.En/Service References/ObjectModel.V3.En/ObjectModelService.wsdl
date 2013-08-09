@@ -1695,6 +1695,17 @@
             &lt;norwegianFieldName&gt;Person.Brukernavn&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="Password" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Write-only password.
+            
+            This field cannot be used for lookups
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Person.Passord&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>

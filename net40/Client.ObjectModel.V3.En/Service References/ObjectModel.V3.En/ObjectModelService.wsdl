@@ -1695,6 +1695,17 @@
             &lt;norwegianFieldName&gt;Person.Brukernavn&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Write-only password.
+            
+            This field cannot be used for lookups
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Person.Passord&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>

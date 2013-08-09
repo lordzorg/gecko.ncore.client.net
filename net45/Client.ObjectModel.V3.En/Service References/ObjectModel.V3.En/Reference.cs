@@ -2421,6 +2421,9 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UserIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
         /// <summary>
         /// User gains access rights to all own roles of the same type
         /// </summary>
@@ -2536,6 +2539,25 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((object.ReferenceEquals(this.UserIdField, value) != true)) {
                     this.UserIdField = value;
                     this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Write-only password.
+        /// 
+        /// This field cannot be used for lookups
+        /// </summary>
+        /// <norwegianFieldName>Person.Passord</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
                 }
             }
         }

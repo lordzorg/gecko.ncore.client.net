@@ -7890,6 +7890,17 @@
             &lt;/summary&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="Passord" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Passord (kun for skriving)
+            
+            Verdien på dette feltet kan ikke spørres frem.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Person.Passord&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
