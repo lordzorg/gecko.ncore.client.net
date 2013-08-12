@@ -57,9 +57,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WCFExtrasPlus, Version=2.3.0.2, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\packages\WCFExtrasPlus.2.3.0\lib\WCFExtrasPlus.dll</HintPath>
+    <Reference Include="WCFExtrasPlus, Version=2.3.1.8201, Culture=neutral, PublicKeyToken=f8633fc5451b43fc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WCFExtrasPlus.2.3.1\lib\WCFExtrasPlus.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
