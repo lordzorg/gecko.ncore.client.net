@@ -12,7 +12,6 @@
 		<tags>ephorte ncore client gecko</tags>
 		<dependencies>
 			<dependency id="Gecko.NCore.Client" version="9.0.0" />
-			<dependency id="WCFExtrasPlus" version="2.3.0" />
 		</dependencies>
 		<frameworkAssemblies>
 			<frameworkAssembly assemblyName="System.ServiceModel" />

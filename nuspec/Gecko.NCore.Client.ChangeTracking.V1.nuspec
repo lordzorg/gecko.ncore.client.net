@@ -11,7 +11,6 @@
 		<iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
 		<tags>ephorte ncore client gecko</tags>
 		<dependencies>
-			<dependency id="WCFExtrasPlus" version="2.3.0" />
 		</dependencies>
 		<frameworkAssemblies>
 			<frameworkAssembly assemblyName="System.ServiceModel" />
