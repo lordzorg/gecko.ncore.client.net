@@ -40,20 +40,17 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ephorte.ServiceModel.Contracts, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.6.2.0\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
+    <Reference Include="Ephorte.ServiceModel.Contracts">
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.6.2.2\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
     </Reference>
-    <Reference Include="Ephorte.ServiceModel.Contracts.ObjectModel, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.6.2.1\lib\net45\Ephorte.ServiceModel.Contracts.ObjectModel.dll</HintPath>
+    <Reference Include="Ephorte.ServiceModel.Contracts.ObjectModel">
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.6.2.2\lib\net45\Ephorte.ServiceModel.Contracts.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.6.2.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
+    <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3">
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.6.2.2\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.dll</HintPath>
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En">
-      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.5.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+      <HintPath>..\..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.5.4\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -65,9 +62,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WCFExtrasPlus">
-      <HintPath>..\..\packages\WCFExtrasPlus.2.3.1\lib\WCFExtrasPlus.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Client.ObjectModel.V3.En\ObjectModel\V3\En\AsyncObjectModelAdapterV3En.cs">

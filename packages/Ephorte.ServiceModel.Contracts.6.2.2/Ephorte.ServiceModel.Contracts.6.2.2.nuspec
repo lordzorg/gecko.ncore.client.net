@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Ephorte.ServiceModel.Contracts</id>
+    <version>6.2.2</version>
+    <title>ephorte® nCore Server - Contracts</title>
+    <authors>Gecko Informasjonssystemer AS</authors>
+    <owners>Gecko Informasjonssystemer AS</owners>
+    <iconUrl>http://www.gecko.no/gecko.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains common elements and logic for the ephorte® nCore Server contracts.</description>
+  </metadata>
+</package>

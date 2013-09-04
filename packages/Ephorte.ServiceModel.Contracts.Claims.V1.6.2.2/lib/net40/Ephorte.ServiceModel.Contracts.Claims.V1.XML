@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ephorte.ServiceModel.Contracts.Claims.V1</name>
+    </assembly>
+    <members>
+        <member name="T:Ephorte.ServiceModel.Contracts.Claim.V1.DataObjectClaims">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.DataObjectClaims.Identifier">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.DataObjectClaims.Claims">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteClaim">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteClaim.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>true if same type, and have same Value</returns>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with the current <see cref="T:System.Object"/>. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteClaim.GetHashCode">
+            <summary>
+            Hashcode of value
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteClaim.Value">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity">
+            <summary>
+            Defines the identity of the user executing the request.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.Equals(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+            	<c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            The <paramref name="obj"/> parameter is null.
+            </exception>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.CompareTo(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Compares the current object with another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has the following meanings:
+            Value
+            Meaning
+            Less than zero
+            This object is less than the <paramref name="other"/> parameter.
+            Zero
+            This object is equal to <paramref name="other"/>.
+            Greater than zero
+            This object is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.UserName">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.Role">
+            <summary>
+            Gets or sets the role.
+            </summary>
+            <value>The role.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.Database">
+            <summary>
+            Gets or sets the database.
+            </summary>
+            <value>The database.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity.ExternalSystemName">
+            <summary>
+            Gets or sets the name of the external system.
+            </summary>
+            <value>The name of the external system.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Claim.V1.IClaimService">
+            <summary>
+             Defines the Claim service contract
+             
+             The claim services provides an interface to look up claims for
+             specific users or data objects (Sak, Journalpost etc..)
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.IClaimService.GetDataObjectClaims(Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity,System.Collections.Generic.IEnumerable{Ephorte.ServiceModel.Contracts.Claim.V1.Identifier})">
+            <summary>
+             Returns the <see cref="T:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteClaim"/>s for each data object referenced by the supplied identifiers
+            </summary>
+            <param name="identity">Login identity</param>
+            <param name="identifiers">Data object identifiers that reference specific data objects (Sak, Journalpost etc..)</param>
+            <returns>Claims for each of the supplied identifiers</returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Claim.V1.IClaimService.GetUserClaims(Ephorte.ServiceModel.Contracts.Claim.V1.EphorteIdentity,System.Int32)">
+            <summary>
+             Returns the <see cref="T:Ephorte.ServiceModel.Contracts.Claim.V1.EphorteClaim"/>s a specific user is authorizied to.
+            </summary>
+            <param name="identity">Login identity</param>
+            <param name="userId">The user id</param>
+            <returns>The users claims</returns>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Claim.V1.Identifier">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.Identifier.ObjectType">
+            <summary>
+            Gets or sets the type of the object.
+            </summary>
+            <value>The type of the object.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Claim.V1.Identifier.Keys">
+            <summary>
+            Gets or sets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+    </members>
+</doc>

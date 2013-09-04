@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ephorte.ServiceModel.Contracts.Functions.V1</name>
+    </assembly>
+    <members>
+        <member name="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionDescriptor">
+            <summary>
+            Defines a class that contains descriptive information about supported functions.
+            </summary>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionDescriptor.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionDescriptor.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionDescriptor.Parameters">
+            <summary>
+            Gets or sets the parameters.
+            </summary>
+            <value>The parameters.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionParameterDictionary">
+            <summary>
+            Defines a class that contains a collection of parameters required by the <see cref="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionDescriptor">function</see>.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionParameterDictionary.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionParameterDictionary"/> class.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionParameterDictionary.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionParameterDictionary"/> class.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object containing the information required to serialize the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure containing the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</param>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult">
+            <summary>
+            Defines a base class
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult"/> class.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult"/> class.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult.ResultValue">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>The result.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionResult.Empty">
+            <summary>
+            Gets the empty function result.
+            </summary>
+            <value>The empty function result.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.Functions.V1.IFunctions">
+            <summary>
+            Defines a contract for a service working as a function handler.
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Functions.V1.IFunctions.QueryFunctionDescriptors(Ephorte.ServiceModel.Contracts.EphorteIdentity)">
+            <summary>
+            Queries the functions supported by the service.
+            </summary>
+            <param name="identity">The identity.</param>
+            <returns>
+            A collection of <see cref="T:Ephorte.ServiceModel.Contracts.Functions.V1.FunctionDescriptor">function descriptors</see>
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.Functions.V1.IFunctions.ExecuteFunction(Ephorte.ServiceModel.Contracts.EphorteIdentity,System.String,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Executes the function.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="name">The name of the function to execute.</param>
+            <param name="parameters">The parameters required by the function.</param>
+            <returns>
+            The result of the function executed, if any.
+            </returns>
+        </member>
+    </members>
+</doc>

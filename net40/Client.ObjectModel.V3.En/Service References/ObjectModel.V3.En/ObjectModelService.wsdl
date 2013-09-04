@@ -21344,7 +21344,7 @@
             &lt;norwegianFieldName&gt;Klassering.Sak&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
-              <xs:element minOccurs="0" name="CaseId" type="xs:int">
+              <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:int">
                 <xs:annotation>
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
@@ -21443,6 +21443,33 @@
             &lt;norwegianFieldName&gt;Klassering.Sortering&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="Id" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.Id&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistryEntry" nillable="true" type="tns:RegistryEntry">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Registry Entry
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.Journalpost&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistryEntryId" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected registry entry. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.JournalpostId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -21531,6 +21558,24 @@
             Classification sort order
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;KlasseringPropertyFlags.Sortering&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Id" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.Id&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistryEntryId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the connected registry entry. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.JournalpostId&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>

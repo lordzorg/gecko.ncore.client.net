@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ephorte.ServiceModel.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer">
+            <summary>
+            Provides logic for comparing to <see cref="T:Ephorte.ServiceModel.Contracts.IEphorteIdentity">identities</see>
+            </summary>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer.Compare(Ephorte.ServiceModel.Contracts.IEphorteIdentity,Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>
+            Value Condition Less than zerox is less than y.Zerox equals y.Greater than zerox is greater than y.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer.Equals(Ephorte.ServiceModel.Contracts.IEphorteIdentity,Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <param name="x">The first object of type T to compare.</param>
+            <param name="y">The second object of type T to compare.</param>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer.GetHashCode(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The identity.</param>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer.Default">
+            <summary>
+            Gets the default comparer.
+            </summary>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.IEphorteIdentity">
+            <summary>
+            Defines the identity of the user executing the request.
+            </summary>
+            <see cref="T:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer"/>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.IEphorteIdentity.UserName">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.IEphorteIdentity.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.IEphorteIdentity.Role">
+            <summary>
+            Gets or sets the role.
+            </summary>
+            <value>The role.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.IEphorteIdentity.Database">
+            <summary>
+            Gets or sets the database.
+            </summary>
+            <value>The database.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.IEphorteIdentity.ExternalSystemName">
+            <summary>
+            Gets or sets the name of the external system.
+            </summary>
+            <value>The name of the external system.</value>
+        </member>
+        <member name="T:Ephorte.ServiceModel.Contracts.EphorteIdentity">
+            <summary>
+            Defines the identity of the user executing the request.
+            </summary>
+            <seealso cref="T:Ephorte.ServiceModel.Contracts.IEphorteIdentity"/>
+            <seealso cref="T:Ephorte.ServiceModel.Contracts.EphorteIdentityComparer"/>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.Equals(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+            	<c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            The <paramref name="obj"/> parameter is null.
+            </exception>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.CompareTo(Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Compares the current object with another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has the following meanings:
+            Value
+            Meaning
+            Less than zero
+            This object is less than the <paramref name="other"/> parameter.
+            Zero
+            This object is equal to <paramref name="other"/>.
+            Greater than zero
+            This object is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.op_Equality(Ephorte.ServiceModel.Contracts.EphorteIdentity,Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="other">The other.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.op_Inequality(Ephorte.ServiceModel.Contracts.EphorteIdentity,Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="other">The other.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.op_LessThan(Ephorte.ServiceModel.Contracts.EphorteIdentity,Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Implements the operator &lt;.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="other">The other.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Ephorte.ServiceModel.Contracts.EphorteIdentity.op_GreaterThan(Ephorte.ServiceModel.Contracts.EphorteIdentity,Ephorte.ServiceModel.Contracts.IEphorteIdentity)">
+            <summary>
+            Implements the operator &gt;.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="other">The other.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.EphorteIdentity.UserName">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.EphorteIdentity.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.EphorteIdentity.Role">
+            <summary>
+            Gets or sets the role.
+            </summary>
+            <value>The role.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.EphorteIdentity.Database">
+            <summary>
+            Gets or sets the database.
+            </summary>
+            <value>The database.</value>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.EphorteIdentity.ExternalSystemName">
+            <summary>
+            Gets or sets the name of the external system.
+            </summary>
+            <value>The name of the external system.</value>
+        </member>
+    </members>
+</doc>

@@ -24295,7 +24295,7 @@
             &lt;value&gt;Inneholder attributter som beskriver saken som klasseringen er knyttet til.&lt;/value&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
-              <xs:element minOccurs="0" name="SakId" type="xs:int">
+              <xs:element minOccurs="0" name="SakId" nillable="true" type="xs:int">
                 <xs:annotation>
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;
@@ -24328,6 +24328,32 @@
             Valgt dersom ordningsverdien (f.eks et klientnavn) skal unntas offentligheten, ikke valgt ellers.
             Tillates kun valgt dersom tilgangskode er angitt på saken.
             Tilsvarer NOARK4 feltet KL.U1.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Id" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Unique ID - Unik nøkkel til klasseringen. 
+            Tildeles automatisk og kan ikke endres.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Journalpost" nillable="true" type="tns:Journalpost">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Journalposten klasseringen er knyttet til.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder informasjon som beskriver journalposten som klasseringen er knyttet til.&lt;/value&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="JournalpostId" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referanse til journalposten som klasseringen er knyttet til.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -24431,6 +24457,23 @@
             Valgt dersom ordningsverdien (f.eks et klientnavn) skal unntas offentligheten, ikke valgt ellers.
             Tillates kun valgt dersom tilgangskode er angitt på saken.
             Tilsvarer NOARK4 feltet KL.U1.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Id" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Unique ID - Unik nøkkel til klasseringen. 
+            Tildeles automatisk og kan ikke endres.
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="JournalpostId" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referanse til journalposten som klasseringen er knyttet til.
             &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
