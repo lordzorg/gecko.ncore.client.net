@@ -50,7 +50,7 @@
   <ItemGroup>
     <Reference Include="Ephorte.ServiceModel.Contracts, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.6.2.2\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.6.3.0\lib\net45\Ephorte.ServiceModel.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Ephorte.ServiceModel.Contracts.ChangeTracking.V1, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -114,11 +114,11 @@
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.En, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.5.4\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.6.6.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.En.dll</HintPath>
     </Reference>
     <Reference Include="ePhorte.ServiceModel.Contracts.ObjectModel.V3.No, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.6.5.4\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll</HintPath>
+      <HintPath>..\packages\Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.6.6.0\lib\net45\ePhorte.ServiceModel.Contracts.ObjectModel.V3.No.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

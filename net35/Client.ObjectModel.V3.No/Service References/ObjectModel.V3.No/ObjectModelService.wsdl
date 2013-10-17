@@ -14256,6 +14256,102 @@
              &lt;/summary&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="Feltnavn" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="HendelsesId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Noark" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Oppbevaringstid" type="xsd:dateTime">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt0" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt1" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt2" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt3" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelter" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistrertAv" nillable="true" type="tns:Personnavn">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistrertAvId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Tekst" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -14291,6 +14387,102 @@
                 </xsd:annotation>
               </xsd:element>
               <xsd:element minOccurs="0" name="Klokkeslett" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Feltnavn" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="HendelsesId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Noark" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Oppbevaringstid" type="xsd:dateTime">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt0" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt1" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt2" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelt3" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Primærnøkkelfelter" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistrertAv" nillable="true" type="tns:Personnavn">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistrertAvId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Tekst" nillable="true" type="xsd:string">
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;

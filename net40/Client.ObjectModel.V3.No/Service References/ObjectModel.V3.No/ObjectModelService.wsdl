@@ -14256,6 +14256,102 @@
              &lt;/summary&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="Feltnavn" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="HendelsesId" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Noark" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Oppbevaringstid" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt0" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt1" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt2" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt3" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelter" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistrertAv" nillable="true" type="tns:Personnavn">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistrertAvId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Tekst" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -14291,6 +14387,102 @@
                 </xs:annotation>
               </xs:element>
               <xs:element minOccurs="0" name="Klokkeslett" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Feltnavn" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="HendelsesId" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Noark" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Oppbevaringstid" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt0" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt1" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt2" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelt3" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Primærnøkkelfelter" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistrertAv" nillable="true" type="tns:Personnavn">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="RegistrertAvId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Tekst" nillable="true" type="xs:string">
                 <xs:annotation>
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;

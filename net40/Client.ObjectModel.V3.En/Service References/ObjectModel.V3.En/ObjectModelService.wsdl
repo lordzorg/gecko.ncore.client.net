@@ -22068,6 +22068,94 @@
             &lt;norwegianFieldName&gt;LoggInformasjon.Klokkeslett&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
+              <xs:element minOccurs="0" name="CreatedByUserName" nillable="true" type="tns:UserName">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of user
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAv&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="CreatedByUserNameId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the username that created the record. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAvId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.HendelsesId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Feltnavn&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Noark" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Noark&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey0" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt0&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey1" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt1&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey2" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt2&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey3" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt3&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKeyFields" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelter&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="StoreTime" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Oppbevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Tekst&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -22106,6 +22194,94 @@
                   <xs:appinfo />
                   <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
             &lt;norwegianFieldName&gt;LoggInformasjonPropertyFlags.Klokkeslett&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="CreatedByUserName" nillable="true" type="tns:UserName">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Referenced object: All the properties of user
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAv&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="CreatedByUserNameId" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Id of the username that created the record. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAvId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.HendelsesId&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Feltnavn&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Noark" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Noark&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey0" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt0&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey1" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt1&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey2" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt2&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKey3" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt3&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PrimaryKeyFields" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelter&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="StoreTime" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Oppbevaringstid&lt;/norwegianFieldName&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Tekst&lt;/norwegianFieldName&gt;</xs:documentation>
                 </xs:annotation>
               </xs:element>
             </xs:sequence>
