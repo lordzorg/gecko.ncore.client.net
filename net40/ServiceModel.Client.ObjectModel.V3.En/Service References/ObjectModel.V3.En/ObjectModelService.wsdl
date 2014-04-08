@@ -2848,7 +2848,7 @@
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;
-            The Id of the connected records status. Explore the referenced object for more properties
+            Short code for Record status. Explore the referenced object for more properties
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Aktivitet.JournalstatusId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -3100,6 +3100,15 @@
             The Id of the selected phasetype. Explore the referenced object TaskStatus for more properties
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Aktivitet.FaseTypeId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RecordStatusPrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The primary Id of the connected records status. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Aktivitet.JournalstatusHovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -5360,7 +5369,7 @@
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;
-            The Id of the connected records status. Explore the referenced object for more properties
+            Short code for the Record status.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;AktivitetPropertyFlags.JournalstatusId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -5526,6 +5535,15 @@
             The Id of the selected phasetype. Explore the referenced object TaskStatus for more properties
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;AktivitetPropertyFlags.FaseTypeId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RecordStatusPrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The primary Id of the connected records status. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Aktivitet.JournalstatusHovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -7113,6 +7131,42 @@
             &lt;norwegianFieldName&gt;Saksstatus.Midlertidig&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="IsDone" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+             True if the case status means that the case is done, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.Ferdig&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsUsedByArchivist" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if the status can be used by the archivist, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.BenyttesAvArkivar&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsUsedByManagers" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if the status can be used by the manager, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.BenyttesAvLeder&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsUsedByOfficers" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if the status can be used by the officers, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.BenyttesAvSaksbehandler&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -7772,7 +7826,7 @@
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;
-            The Id of the connected records status. Explore the referenced object for more properties
+            Explore the referenced object for more properties
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Journalpost.JournalstatusId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -7956,6 +8010,15 @@
             Number of years the case should be preserved before disposal
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Sak.Bevaringstid&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RecordStatusPrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The primary Id of the connected records status. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalpost.JournalstatusHovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -18529,7 +18592,6 @@
             når arkivpersonalet registrerer eksternt produserte dokumenter (dokumenttype I) i denne journalenheten.
             Verdi J skal benyttes dersom systemet ikke gir mulighet for konfigurering.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSARKIV1
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale1Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -18552,7 +18614,6 @@
             når saksbehandler registrerer eksternt produserte dokumenter (dokumenttype I) i denne journalenheten.
             Verdi S skal benyttes dersom systemet ikke gir mulighet for konfigurering.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSSAKSBH1.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler1Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -18574,7 +18635,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når arkivpersonalet registrerer interne dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale3Id&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -18595,7 +18655,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når saksbehandler registrerer interne dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler3Id&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -18616,7 +18675,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når arkivpersonalet registrerer internt produserte dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSARKIV2
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale2Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -18638,10 +18696,9 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når saksbehandler registrerer egenproduserte dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSSAKSBH2
             &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler2Id&lt;/norwegianFieldName&gt;</xsd:documentation>
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler2HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
@@ -18692,6 +18749,66 @@
             Tilsvarer NOARK4 feltet JE.RPGRUPPE.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhet.Rapportgruppe&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusIncomingArchivePrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale1HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusIncomingOfficerPrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler1HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusInternalArchivePrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale3HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusInternalOfficerPrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler3HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusOutgoingArchivePrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            /// &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale2HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusOutgoingOfficerPrimaryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler2Id&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -18797,6 +18914,33 @@
             Describes who is responsible for next step. 0 - if registration is closed, 1 -  if the Fonds personell is responsible, 2 - if manager or the officer is reponsible
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;Journalstatus.Registreringsansvar&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Default" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Default value
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalstatus.Standard&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryId" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalstatus.HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ShortCode" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Contains displayed status values used to show the state of the processing and archiving of a registry entry
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalstatus.Kortkode&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -19490,7 +19634,6 @@
             når arkivpersonalet registrerer eksternt produserte dokumenter (dokumenttype I) i denne journalenheten.
             Verdi J skal benyttes dersom systemet ikke gir mulighet for konfigurering.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSARKIV1
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.StandardJournalstatusArkivpersonale1Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -19504,7 +19647,6 @@
             når saksbehandler registrerer eksternt produserte dokumenter (dokumenttype I) i denne journalenheten.
             Verdi S skal benyttes dersom systemet ikke gir mulighet for konfigurering.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSSAKSBH1.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.StandardJournalstatusSaksbehandler1Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -19517,7 +19659,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når arkivpersonalet registrerer interne dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.StandardJournalstatusArkivpersonale3Id&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -19529,7 +19670,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når saksbehandler registrerer interne dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.StandardJournalstatusSaksbehandler3Id&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -19541,7 +19681,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når arkivpersonalet registrerer internt produserte dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSARKIV2
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.StandardJournalstatusArkivpersonale2Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -19554,7 +19693,6 @@
             Standardverdi for attributtet Journalstatus (JP.STATUS) i tabellen Journalpost
             når saksbehandler registrerer egenproduserte dokumenter i denne journalenheten.
             Feltlengde: 2 tegn.
-            Oppslag mot tabellen Journalstatus.
             Tilsvarer NOARK4 feltet JE.JSSAKSBH2
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.StandardJournalstatusSaksbehandler2Id&lt;/norwegianFieldName&gt;</xsd:documentation>
@@ -19599,6 +19737,66 @@
             Tilsvarer NOARK4 feltet JE.RPGRUPPE.
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;JournalEnhetPropertyFlags.Rapportgruppe&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusIncomingArchivePrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale1HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusIncomingOfficerPrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler1HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusInternalArchivePrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale3HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusInternalOfficerPrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler3HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusOutgoingArchivePrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            /// &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusArkivpersonale2HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="DefaultRecStatusOutgoingOfficerPrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til journalstatus.
+            Oppslag mot tabellen Journalstatus.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;JournalEnhet.StandardJournalstatusSaksbehandler2Id&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -20355,6 +20553,15 @@
             &lt;norwegianFieldName&gt;SakPropertyFlags.Bevaringstid&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="RecordStatusPrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The primary Id of the connected records status. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalpost.JournalstatusHovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -20875,6 +21082,33 @@
             &lt;norwegianFieldName&gt;JournalstatusPropertyFlags.Registreringsansvar&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="Default" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Default value
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalstatus.Standard&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalstatus.HovedId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ShortCode" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Contains displayed status values used to show the state of the processing and archiving of a registry entry
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Journalstatus.Kortkode&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -21344,7 +21578,7 @@
             &lt;norwegianFieldName&gt;Klassering.Sak&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element minOccurs="0" name="CaseId" type="xsd:int">
+              <xsd:element minOccurs="0" name="CaseId" nillable="true" type="xsd:int">
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;
@@ -21443,6 +21677,33 @@
             &lt;norwegianFieldName&gt;Klassering.Sortering&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="Id" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.Id&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistryEntry" nillable="true" type="tns:RegistryEntry">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Registry Entry
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.Journalpost&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistryEntryId" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The Id of the connected registry entry. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.JournalpostId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -21531,6 +21792,24 @@
             Classification sort order
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;KlasseringPropertyFlags.Sortering&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Id" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.Id&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="RegistryEntryId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The Id of the connected registry entry. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Klassering.JournalpostId&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -22023,6 +22302,94 @@
             &lt;norwegianFieldName&gt;LoggInformasjon.Klokkeslett&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="CreatedByUserName" nillable="true" type="tns:UserName">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referenced object: All the properties of user
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAv&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="CreatedByUserNameId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The Id of the username that created the record. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAvId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="EventType" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.HendelsesId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FieldName" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Feltnavn&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Noark" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Noark&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey0" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt0&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey1" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt1&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey2" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt2&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey3" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt3&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKeyFields" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelter&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="StoreTime" type="xsd:dateTime">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Oppbevaringstid&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Text" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Tekst&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -22061,6 +22428,94 @@
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
             &lt;norwegianFieldName&gt;LoggInformasjonPropertyFlags.Klokkeslett&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="CreatedByUserName" nillable="true" type="tns:UserName">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referenced object: All the properties of user
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAv&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="CreatedByUserNameId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The Id of the username that created the record. Explore the referenced object for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.RegistrertAvId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="EventType" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.HendelsesId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FieldName" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Feltnavn&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Noark" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Noark&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey0" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt0&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey1" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt1&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey2" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt2&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKey3" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelt3&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="PrimaryKeyFields" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Primærnøkkelfelter&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="StoreTime" type="xsd:dateTime">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Oppbevaringstid&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Text" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;&lt;/summary&gt;
+            &lt;norwegianFieldName&gt;LoggInformasjon.Tekst&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
@@ -29710,6 +30165,42 @@
             True if the status indicates that the case is temporary registered
             &lt;/summary&gt;
             &lt;norwegianFieldName&gt;SaksstatusPropertyFlags.Midlertidig&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsDone" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+             True if the case status means that the case is done, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.Ferdig&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsUsedByArchivist" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if the status can be used by the archivist, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.BenyttesAvArkivar&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsUsedByManagers" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if the status can be used by the manager, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.BenyttesAvLeder&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsUsedByOfficers" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if the status can be used by the officers, otherwise false
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Saksstatus.BenyttesAvSaksbehandler&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
             </xsd:sequence>
