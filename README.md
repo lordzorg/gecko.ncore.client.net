@@ -46,13 +46,16 @@ In this how-to we will give an example of how to update the contract for Gecko.N
 
 - This assumes that you already have updates the contract nuget packages with your changes.
 
-1. Update all contract nuget packages in the Gecko.NCore.Host project. 
+1. Update all contract nuget packages in the Gecko.NCore.Host project from the private myget repository. Currently configured to be: https://www.myget.org/F/geckoprivate/. 
 This project will self-host the wcf endpoints using the included contracts. We can than in turn generate new client proxies based on it. 
 Simplest way to do this is to run the following command in the 'Package Manager Console' using the Myget internal package source: update-package -ProjectName gecko.ncore.Host
 2. Open the Gecko.NCore.Client.ObjectModel.V3.En project.
 3. Expand Service References.
 4. Right-click ObjectModel.V3.En and click 'Update service reference' from the dropdown. Do this for all .net versions(3.5, 4.0, 4.5)
 This should update the generated client.
+
+Tip: If Visual Studio complain that port 8888 is in use it may be that you have Fidler open. If it isn't Fiddler then consult this article to find which process is the offending one: http://www.techrepublic.com/blog/the-enterprise-cloud/see-what-process-is-using-a-tcp-port-in-windows-server-2008/.
+
 5. Verify that the contract changes are present in the updated client proxy. 
 This can typically be done by inspecting the generated 'Reference.cs' file. 
 Click 'Show all files' while standing in the project to make it visible below the service reference.
