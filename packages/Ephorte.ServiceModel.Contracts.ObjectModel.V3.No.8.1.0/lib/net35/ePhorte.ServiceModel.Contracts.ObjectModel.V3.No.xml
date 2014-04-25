@@ -10057,6 +10057,18 @@
             Tilleggsattributt 10.
             </summary>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentversjon.UnderKonvertering">
+            <summary>
+            True if this DocumentVersion should be converted, false otherwise
+            </summary>
+            <norwegianFieldName>Dokumentversjon.ConvertFlag</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.Dokumentversjon.KonverteringFeilet">
+            <summary>
+            Number of tries to convert the document.
+            </summary>
+            <norwegianFieldName>Dokumentversjon.TriesToConvert</norwegianFieldName>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.No.DataObjects.DokumentversjonPropertyFlags">
             <summary>
             Inneholder informasjon om den enkelte versjon av dokumentet, samt referanse til dokumentinnholdet. 

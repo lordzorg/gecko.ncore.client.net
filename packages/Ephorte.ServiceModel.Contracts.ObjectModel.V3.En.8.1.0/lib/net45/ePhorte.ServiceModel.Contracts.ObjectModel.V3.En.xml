@@ -8093,6 +8093,18 @@
             </summary>
             <norwegianFieldName>Dokumentversjon.Tilleggsattributt10</norwegianFieldName>
         </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentObject.IsConverting">
+            <summary>
+            True if this DocumentVersion should be converted, false otherwise
+            </summary>
+            <norwegianFieldName>Dokumentversjon.ConvertFlag</norwegianFieldName>
+        </member>
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentObject.ConversionFailed">
+            <summary>
+            Number of tries to convert the document.
+            </summary>
+            <norwegianFieldName>Dokumentversjon.TriesToConvert</norwegianFieldName>
+        </member>
         <member name="T:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentObjectPropertyFlags">
             <summary>
             Inneholder informasjon om den enkelte versjon av dokumentet, samt referanse til dokumentinnholdet.

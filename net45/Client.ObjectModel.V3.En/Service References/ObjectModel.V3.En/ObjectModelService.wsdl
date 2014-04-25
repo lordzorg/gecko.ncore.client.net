@@ -13880,6 +13880,24 @@
             &lt;norwegianFieldName&gt;Dokumentversjon.Versjonsnummer&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="ConversionFailed" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Number of tries to convert the document.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Dokumentversjon.TriesToConvert&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="IsConverting" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            True if this DocumentVersion should be converted, false otherwise
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Dokumentversjon.ConvertFlag&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
