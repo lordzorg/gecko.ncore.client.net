@@ -7327,7 +7327,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         private int VersionNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> ConversionFailedField;
+        private System.Nullable<int> ConversionRetryCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> IsConvertingField;
@@ -8034,14 +8034,14 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         /// </summary>
         /// <norwegianFieldName>Dokumentversjon.TriesToConvert</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
-        public System.Nullable<bool> ConversionFailed {
+        public System.Nullable<int> ConversionRetryCount {
             get {
-                return this.ConversionFailedField;
+                return this.ConversionRetryCountField;
             }
             set {
-                if ((this.ConversionFailedField.Equals(value) != true)) {
-                    this.ConversionFailedField = value;
-                    this.RaisePropertyChanged("ConversionFailed");
+                if ((this.ConversionRetryCountField.Equals(value) != true)) {
+                    this.ConversionRetryCountField = value;
+                    this.RaisePropertyChanged("ConversionRetryCount");
                 }
             }
         }

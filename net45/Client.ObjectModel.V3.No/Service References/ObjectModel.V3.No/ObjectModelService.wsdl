@@ -11101,7 +11101,7 @@
             &lt;/summary&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element minOccurs="0" name="KonverteringFeilet" nillable="true" type="xsd:boolean">
+              <xsd:element minOccurs="0" name="AntallGjentatteKonverteringer" nillable="true" type="xsd:int">
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;

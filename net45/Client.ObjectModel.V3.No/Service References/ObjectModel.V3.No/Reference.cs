@@ -10859,7 +10859,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         private int VersjonsnummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> KonverteringFeiletField;
+        private System.Nullable<int> AntallGjentatteKonverteringerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> UnderKonverteringField;
@@ -11566,14 +11566,14 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         /// </summary>
         /// <norwegianFieldName>Dokumentversjon.TriesToConvert</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
-        public System.Nullable<bool> KonverteringFeilet {
+        public System.Nullable<int> AntallGjentatteKonverteringer {
             get {
-                return this.KonverteringFeiletField;
+                return this.AntallGjentatteKonverteringerField;
             }
             set {
-                if ((this.KonverteringFeiletField.Equals(value) != true)) {
-                    this.KonverteringFeiletField = value;
-                    this.RaisePropertyChanged("KonverteringFeilet");
+                if ((this.AntallGjentatteKonverteringerField.Equals(value) != true)) {
+                    this.AntallGjentatteKonverteringerField = value;
+                    this.RaisePropertyChanged("AntallGjentatteKonverteringer");
                 }
             }
         }
