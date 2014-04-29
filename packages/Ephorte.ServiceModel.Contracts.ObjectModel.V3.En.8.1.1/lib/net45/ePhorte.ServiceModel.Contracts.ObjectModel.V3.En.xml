@@ -8099,7 +8099,7 @@
             </summary>
             <norwegianFieldName>Dokumentversjon.ConvertFlag</norwegianFieldName>
         </member>
-        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentObject.ConversionFailed">
+        <member name="P:Ephorte.ServiceModel.Contracts.ObjectModel.V3.En.DataObjects.DocumentObject.ConversionRetryCount">
             <summary>
             Number of tries to convert the document.
             </summary>
