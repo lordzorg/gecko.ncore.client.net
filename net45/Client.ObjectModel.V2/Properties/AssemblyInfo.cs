@@ -14,13 +14,13 @@ using System.Runtime.InteropServices;
 //      Patch
 // You can specify all the values or you can default the Patche Numbers by using the '*'.
 
-// Dette versjonsnummeret beholdes konstant og endres aldri
+// This should NEVER be changed
 [assembly: AssemblyVersion("6.2.0")]
 
-// Dette versjonsnummeret økes i hennhold til semver.org
+// This should be incremented in compliance with the semver.org versioning scheme.
 [assembly: AssemblyFileVersion("7.0.3")]
 
-// Dette versjonsnummeret bør samsvare med AssemblyFileVersion pluss eventuelt postfiks for pre release pakker.
+// This should be the same as AssemblyFileVersion normally. You may append a postfix for pre-release packages.
 [assembly: AssemblyInformationalVersion("7.0.3")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
