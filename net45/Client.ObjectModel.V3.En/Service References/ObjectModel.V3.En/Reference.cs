@@ -607,6 +607,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.UnitTypePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.Invoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.InvoiceLineItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FeeType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.InvoiceLineItemPropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.InvoicePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FixedPointsAgenda))]
@@ -623,7 +624,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.DeputizePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.County))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.CountyPropertyFlags))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FeeType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.FeeTypePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.IdentificationTypePropertyFlags))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Gecko.NCore.Client.ObjectModel.V3.En.InformationType))]
@@ -16739,7 +16739,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         private Gecko.NCore.Client.ObjectModel.V3.En.Case CaseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> CaseIdField;
+        private int CaseIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Gecko.NCore.Client.ObjectModel.V3.En.Class ClassField;
@@ -16802,7 +16802,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         /// </summary>
         /// <norwegianFieldName>Klassering.SakId</norwegianFieldName>
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> CaseId {
+        public int CaseId {
             get {
                 return this.CaseIdField;
             }
@@ -39846,6 +39846,21 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyRegistrationNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> ExportedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExternalCustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.InvoiceLineItem[] InvoiceLinesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string JournalEntryNumberField;
+        
         /// <summary>
         /// Fakturamottakers adresse.
         /// Feltlengde: 50 tegn.
@@ -40037,8 +40052,101 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 }
             }
         }
+        
+        /// <summary>
+        /// Fakturamottakers organisasjonsnummer eller annen entydig referanse.
+        /// Kan inneholde fødselsnummer for personer.
+        /// Feltlengde: 50 tegn.
+        /// </summary>
+        /// <norwegianFieldName>Faktura.Organisasjonsnr</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public string CompanyRegistrationNumber {
+            get {
+                return this.CompanyRegistrationNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyRegistrationNumberField, value) != true)) {
+                    this.CompanyRegistrationNumberField = value;
+                    this.RaisePropertyChanged("CompanyRegistrationNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Valgt dersom faktura eksportert til eksternt system, ikke valgt ellers.
+        /// </summary>
+        /// <norwegianFieldName>Faktura.Eksportert</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public System.Nullable<bool> Exported {
+            get {
+                return this.ExportedField;
+            }
+            set {
+                if ((this.ExportedField.Equals(value) != true)) {
+                    this.ExportedField = value;
+                    this.RaisePropertyChanged("Exported");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kundenummer i eksternt system.
+        /// Feltlengde: 50 tegn
+        /// </summary>
+        /// <norwegianFieldName>Faktura.EksterntKundenummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public string ExternalCustomerId {
+            get {
+                return this.ExternalCustomerIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalCustomerIdField, value) != true)) {
+                    this.ExternalCustomerIdField = value;
+                    this.RaisePropertyChanged("ExternalCustomerId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Fakturalinjer tilhørende fakturaen.
+        /// </summary>
+        /// <value>Inneholder informasjon som beskriver fakturalinjer som tilhører fakturaen.</value>
+        /// <norwegianFieldName>Faktura.Fakturalinjer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.InvoiceLineItem[] InvoiceLines {
+            get {
+                return this.InvoiceLinesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceLinesField, value) != true)) {
+                    this.InvoiceLinesField = value;
+                    this.RaisePropertyChanged("InvoiceLines");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Bilagsnummer.
+        /// Feltlengde: 50 tegn
+        /// </summary>
+        /// <norwegianFieldName>Faktura.Bilagsnummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string JournalEntryNumber {
+            get {
+                return this.JournalEntryNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JournalEntryNumberField, value) != true)) {
+                    this.JournalEntryNumberField = value;
+                    this.RaisePropertyChanged("JournalEntryNumber");
+                }
+            }
+        }
     }
     
+    /// <summary>
+    /// Invoice description or line item
+    /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceLineItem", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
@@ -40077,6 +40185,12 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> UnitPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExternalItemNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.FeeType FeeTypeField;
         
         /// <summary>
         /// Samlet beløp.
@@ -40267,6 +40381,257 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 }
             }
         }
+        
+        /// <summary>
+        /// Eksternt Varenummer.
+        /// </summary>
+        /// <norwegianFieldName>FakturaLinje.EksterntVarenummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public string ExternalItemNo {
+            get {
+                return this.ExternalItemNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalItemNoField, value) != true)) {
+                    this.ExternalItemNoField = value;
+                    this.RaisePropertyChanged("ExternalItemNo");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gebyrtypen som fakturalinjen tilhører.
+        /// </summary>
+        /// <value>Inneholder informasjon som beskriver gebyrtypen som fakturalinjen tilhører.</value>
+        /// <norwegianFieldName>FakturaLinje.Gebyrtype</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.FeeType FeeType {
+            get {
+                return this.FeeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FeeTypeField, value) != true)) {
+                    this.FeeTypeField = value;
+                    this.RaisePropertyChanged("FeeType");
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Invoice fee type
+    /// </summary>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FeeType", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class FeeType : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FromDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ToDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ContractingAuthorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Gecko.NCore.Client.ObjectModel.V3.En.FileType FileTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FileTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> UnitPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> VatCodeField;
+        
+        /// <summary>
+        /// Betegnelse i klartekst.
+        /// Feltlengde: 255 tegn.
+        /// Obligatorisk.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.Betegnelse</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gyldig fra og med dato.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.FraDato</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FromDate {
+            get {
+                return this.FromDateField;
+            }
+            set {
+                if ((this.FromDateField.Equals(value) != true)) {
+                    this.FromDateField = value;
+                    this.RaisePropertyChanged("FromDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Unique Id
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.Id</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gyldig til og med dato.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.TilDato</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ToDate {
+            get {
+                return this.ToDateField;
+            }
+            set {
+                if ((this.ToDateField.Equals(value) != true)) {
+                    this.ToDateField = value;
+                    this.RaisePropertyChanged("ToDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kontonummer.
+        /// Feltlengde: 70 tegn.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.Kontonummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string AccountNumber {
+            get {
+                return this.AccountNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountNumberField, value) != true)) {
+                    this.AccountNumberField = value;
+                    this.RaisePropertyChanged("AccountNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Oppdragsgiver.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.Oppdragsgiver</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<int> ContractingAuthority {
+            get {
+                return this.ContractingAuthorityField;
+            }
+            set {
+                if ((this.ContractingAuthorityField.Equals(value) != true)) {
+                    this.ContractingAuthorityField = value;
+                    this.RaisePropertyChanged("ContractingAuthority");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Mappetypen denne gebyrtypen er begrenset til.
+        /// </summary>
+        /// <value>Inneholder attributter som beskriver mappetypen denne gebyrtypen er begrenset til.</value>
+        /// <norwegianFieldName>Gebyrtype.Mappetype</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public Gecko.NCore.Client.ObjectModel.V3.En.FileType FileType {
+            get {
+                return this.FileTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileTypeField, value) != true)) {
+                    this.FileTypeField = value;
+                    this.RaisePropertyChanged("FileType");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Referanse til mappetype denne gebyrtypen er begrenset til.
+        /// Feltlengde: 2 tegn.
+        /// Oppslag mot tabellen mappetype.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.MappetypeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string FileTypeId {
+            get {
+                return this.FileTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileTypeIdField, value) != true)) {
+                    this.FileTypeIdField = value;
+                    this.RaisePropertyChanged("FileTypeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kostnad.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.Kostnad</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public System.Nullable<decimal> UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kode for moms, 0 = Ikke moms, 1 = Momsberegning.
+        /// </summary>
+        /// <norwegianFieldName>Gebyrtype.Momskode</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public System.Nullable<int> VatCode {
+            get {
+                return this.VatCodeField;
+            }
+            set {
+                if ((this.VatCodeField.Equals(value) != true)) {
+                    this.VatCodeField = value;
+                    this.RaisePropertyChanged("VatCode");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40307,6 +40672,12 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool UnitPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ExternalItemNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FeeTypeField;
         
         /// <summary>
         /// Samlet beløp.
@@ -40497,6 +40868,41 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 }
             }
         }
+        
+        /// <summary>
+        /// Eksternt varenummer.
+        /// </summary>
+        /// <norwegianFieldName>FakturaLinje.EksterntVarenummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public bool ExternalItemNo {
+            get {
+                return this.ExternalItemNoField;
+            }
+            set {
+                if ((this.ExternalItemNoField.Equals(value) != true)) {
+                    this.ExternalItemNoField = value;
+                    this.RaisePropertyChanged("ExternalItemNo");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Gebyrtypen som fakturalinjen tilhører.
+        /// </summary>
+        /// <value>Inneholder informasjon som beskriver gebyrtypen som fakturalinjen tilhører.</value>
+        /// <norwegianFieldName>FakturaLinjePropertyFlags.Gebyrtype</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public bool FeeType {
+            get {
+                return this.FeeTypeField;
+            }
+            set {
+                if ((this.FeeTypeField.Equals(value) != true)) {
+                    this.FeeTypeField = value;
+                    this.RaisePropertyChanged("FeeType");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40537,6 +40943,21 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool CompanyRegistrationNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ExportedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ExternalCustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool InvoiceLinesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool JournalEntryNumberField;
         
         /// <summary>
         /// Fakturamottakers adresse.
@@ -40726,6 +41147,96 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Fakturamottakers organisasjonsnummer eller annen entydig referanse.
+        /// Kan inneholde fødselsnummer for personer.
+        /// Feltlengde: 50 tegn.
+        /// </summary>
+        /// <norwegianFieldName>FakturaPropertyFlags.Organisasjonsnr</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public bool CompanyRegistrationNumber {
+            get {
+                return this.CompanyRegistrationNumberField;
+            }
+            set {
+                if ((this.CompanyRegistrationNumberField.Equals(value) != true)) {
+                    this.CompanyRegistrationNumberField = value;
+                    this.RaisePropertyChanged("CompanyRegistrationNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Valgt dersom faktura eksportert til eksternt system, ikke valgt ellers.
+        /// </summary>
+        /// <norwegianFieldName>FakturaPropertyFlags.Eksportert</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public bool Exported {
+            get {
+                return this.ExportedField;
+            }
+            set {
+                if ((this.ExportedField.Equals(value) != true)) {
+                    this.ExportedField = value;
+                    this.RaisePropertyChanged("Exported");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kundenummer i eksternt system.
+        /// Feltlengde: 50 tegn
+        /// </summary>
+        /// <norwegianFieldName>FakturaPropertyFlags.EksterntKundenummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public bool ExternalCustomerId {
+            get {
+                return this.ExternalCustomerIdField;
+            }
+            set {
+                if ((this.ExternalCustomerIdField.Equals(value) != true)) {
+                    this.ExternalCustomerIdField = value;
+                    this.RaisePropertyChanged("ExternalCustomerId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Fakturalinjer tilhørende fakturaen.
+        /// </summary>
+        /// <value>Inneholder informasjon som beskriver fakturalinjer som tilhører fakturaen.</value>
+        /// <norwegianFieldName>FakturaPropertyFlags.Fakturalinjer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public bool InvoiceLines {
+            get {
+                return this.InvoiceLinesField;
+            }
+            set {
+                if ((this.InvoiceLinesField.Equals(value) != true)) {
+                    this.InvoiceLinesField = value;
+                    this.RaisePropertyChanged("InvoiceLines");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Bilagsnummer.
+        /// Feltlengde: 50 tegn
+        /// </summary>
+        /// <norwegianFieldName>FakturaPropertyFlags.Bilagsnummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public bool JournalEntryNumber {
+            get {
+                return this.JournalEntryNumberField;
+            }
+            set {
+                if ((this.JournalEntryNumberField.Equals(value) != true)) {
+                    this.JournalEntryNumberField = value;
+                    this.RaisePropertyChanged("JournalEntryNumber");
                 }
             }
         }
@@ -42225,95 +42736,6 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FeeType", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class FeeType : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FromDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ToDateField;
-        
-        /// <summary>
-        /// Betegnelse i klartekst.
-        /// Feltlengde: 255 tegn.
-        /// Obligatorisk.
-        /// </summary>
-        /// <norwegianFieldName>Gebyrtype.Betegnelse</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Gyldig fra og med dato.
-        /// </summary>
-        /// <norwegianFieldName>Gebyrtype.FraDato</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FromDate {
-            get {
-                return this.FromDateField;
-            }
-            set {
-                if ((this.FromDateField.Equals(value) != true)) {
-                    this.FromDateField = value;
-                    this.RaisePropertyChanged("FromDate");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Unique Id
-        /// </summary>
-        /// <norwegianFieldName>Gebyrtype.Id</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Gyldig til og med dato.
-        /// </summary>
-        /// <norwegianFieldName>Gebyrtype.TilDato</norwegianFieldName>
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ToDate {
-            get {
-                return this.ToDateField;
-            }
-            set {
-                if ((this.ToDateField.Equals(value) != true)) {
-                    this.ToDateField = value;
-                    this.RaisePropertyChanged("ToDate");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FeeTypePropertyFlags", Namespace="http://www.gecko.no/ephorte/services/objectmodel/v3/en/dataobjects", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class FeeTypePropertyFlags : Gecko.NCore.Client.ObjectModel.V3.En.DataObject {
@@ -42329,6 +42751,24 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ToDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AccountNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ContractingAuthorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FileTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FileTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UnitPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool VatCodeField;
         
         /// <summary>
         /// Betegnelse i klartekst.
@@ -42396,6 +42836,112 @@ namespace Gecko.NCore.Client.ObjectModel.V3.En {
                 if ((this.ToDateField.Equals(value) != true)) {
                     this.ToDateField = value;
                     this.RaisePropertyChanged("ToDate");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kontonummer.
+        /// Feltlengde: 70 tegn.
+        /// </summary>
+        /// <norwegianFieldName>GebyrtypePropertyFlags.Kontonummer</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool AccountNumber {
+            get {
+                return this.AccountNumberField;
+            }
+            set {
+                if ((this.AccountNumberField.Equals(value) != true)) {
+                    this.AccountNumberField = value;
+                    this.RaisePropertyChanged("AccountNumber");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Oppdragsgiver.
+        /// </summary>
+        /// <norwegianFieldName>GebyrtypePropertyFlags.Oppdragsgiver</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool ContractingAuthority {
+            get {
+                return this.ContractingAuthorityField;
+            }
+            set {
+                if ((this.ContractingAuthorityField.Equals(value) != true)) {
+                    this.ContractingAuthorityField = value;
+                    this.RaisePropertyChanged("ContractingAuthority");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Mappetypen denne gebyrtypen er begrenset til.
+        /// </summary>
+        /// <value>Inneholder attributter som beskriver mappetypen denne gebyrtypen er begrenset til.</value>
+        /// <norwegianFieldName>GebyrtypePropertyFlags.Mappetype</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool FileType {
+            get {
+                return this.FileTypeField;
+            }
+            set {
+                if ((this.FileTypeField.Equals(value) != true)) {
+                    this.FileTypeField = value;
+                    this.RaisePropertyChanged("FileType");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Referanse til mappetype denne gebyrtypen er begrenset til.
+        /// Feltlengde: 2 tegn.
+        /// Oppslag mot tabellen mappetype.
+        /// </summary>
+        /// <norwegianFieldName>GebyrtypePropertyFlags.MappetypeId</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public bool FileTypeId {
+            get {
+                return this.FileTypeIdField;
+            }
+            set {
+                if ((this.FileTypeIdField.Equals(value) != true)) {
+                    this.FileTypeIdField = value;
+                    this.RaisePropertyChanged("FileTypeId");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kostnad.
+        /// </summary>
+        /// <norwegianFieldName>GebyrtypePropertyFlags.Kostnad</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public bool UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Kode for moms, 0 = Ikke moms, 1 = Momsberegning.
+        /// </summary>
+        /// <norwegianFieldName>GebyrtypePropertyFlags.Momskode</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public bool VatCode {
+            get {
+                return this.VatCodeField;
+            }
+            set {
+                if ((this.VatCodeField.Equals(value) != true)) {
+                    this.VatCodeField = value;
+                    this.RaisePropertyChanged("VatCode");
                 }
             }
         }

@@ -16110,6 +16110,14 @@
             &lt;/summary&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="EksterntVarenummer" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Eksternt Varenummer.
+            &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -20576,6 +20584,14 @@
             &lt;/summary&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="EksterntVarenummer" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Eksternt Varenummer.
+            &lt;/summary&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -24682,7 +24698,7 @@
             &lt;value&gt;Inneholder attributter som beskriver saken som klasseringen er knyttet til.&lt;/value&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element minOccurs="0" name="SakId" nillable="true" type="xsd:int">
+              <xsd:element minOccurs="0" name="SakId" type="xsd:int">
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;

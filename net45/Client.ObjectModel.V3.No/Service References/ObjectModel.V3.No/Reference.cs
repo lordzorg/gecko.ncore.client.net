@@ -16815,7 +16815,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         private Gecko.NCore.Client.ObjectModel.V3.No.Sak SakField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> SakIdField;
+        private int SakIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SorteringField;
@@ -16995,7 +16995,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         /// Tilsvarer NOARK4 feltet KL.SAID.
         /// </summary>
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> SakId {
+        public int SakId {
             get {
                 return this.SakIdField;
             }
@@ -39038,6 +39038,9 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SatsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EksterntVarenummerField;
+        
         /// <summary>
         /// Antall enheter.
         /// </summary>
@@ -39233,6 +39236,22 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SatsField.Equals(value) != true)) {
                     this.SatsField = value;
                     this.RaisePropertyChanged("Sats");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Eksternt Varenummer.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public bool EksterntVarenummer {
+            get {
+                return this.EksterntVarenummerField;
+            }
+            set {
+                if ((this.EksterntVarenummerField.Equals(value) != true)) {
+                    this.EksterntVarenummerField = value;
+                    this.RaisePropertyChanged("EksterntVarenummer");
                 }
             }
         }
@@ -46316,6 +46335,9 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> SatsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EksterntVarenummerField;
+        
         /// <summary>
         /// Antall enheter.
         /// </summary>
@@ -46511,6 +46533,22 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SatsField.Equals(value) != true)) {
                     this.SatsField = value;
                     this.RaisePropertyChanged("Sats");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Eksternt Varenummer.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public string EksterntVarenummer {
+            get {
+                return this.EksterntVarenummerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EksterntVarenummerField, value) != true)) {
+                    this.EksterntVarenummerField = value;
+                    this.RaisePropertyChanged("EksterntVarenummer");
                 }
             }
         }

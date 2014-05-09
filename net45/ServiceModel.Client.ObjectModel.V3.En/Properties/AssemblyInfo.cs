@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("6.2.0")]
 
 // This should be incremented in compliance with the semver.org versioning scheme.
-[assembly: AssemblyFileVersion("1.1.1")]
+[assembly: AssemblyFileVersion("1.2.0")]
 
 // This should be the same as AssemblyFileVersion normally. You may append a postfix for pre-release packages.
-[assembly: AssemblyInformationalVersion("1.1.1")]
+[assembly: AssemblyInformationalVersion("1.2.0")]

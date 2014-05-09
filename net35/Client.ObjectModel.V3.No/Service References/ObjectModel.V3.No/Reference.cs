@@ -10858,6 +10858,12 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int VersjonsnummerField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> AntallGjentatteKonverteringerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> UnderKonverteringField;
+        
         /// <summary>
         /// Valgt dersom dette er den nyeste versjonen av saksdokumentet på hovedformat (dvs arkivformat hvis dette finnes,
         /// ellers produksjonsformat), ikke ellers.
@@ -11551,6 +11557,40 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.VersjonsnummerField.Equals(value) != true)) {
                     this.VersjonsnummerField = value;
                     this.RaisePropertyChanged("Versjonsnummer");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Number of tries to convert the document.
+        /// </summary>
+        /// <norwegianFieldName>Dokumentversjon.TriesToConvert</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+        public System.Nullable<int> AntallGjentatteKonverteringer {
+            get {
+                return this.AntallGjentatteKonverteringerField;
+            }
+            set {
+                if ((this.AntallGjentatteKonverteringerField.Equals(value) != true)) {
+                    this.AntallGjentatteKonverteringerField = value;
+                    this.RaisePropertyChanged("AntallGjentatteKonverteringer");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// True if this DocumentVersion should be converted, false otherwise
+        /// </summary>
+        /// <norwegianFieldName>Dokumentversjon.ConvertFlag</norwegianFieldName>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+        public System.Nullable<bool> UnderKonvertering {
+            get {
+                return this.UnderKonverteringField;
+            }
+            set {
+                if ((this.UnderKonverteringField.Equals(value) != true)) {
+                    this.UnderKonverteringField = value;
+                    this.RaisePropertyChanged("UnderKonvertering");
                 }
             }
         }
@@ -16775,7 +16815,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         private Gecko.NCore.Client.ObjectModel.V3.No.Sak SakField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> SakIdField;
+        private int SakIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SorteringField;
@@ -16955,7 +16995,7 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         /// Tilsvarer NOARK4 feltet KL.SAID.
         /// </summary>
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> SakId {
+        public int SakId {
             get {
                 return this.SakIdField;
             }
@@ -38998,6 +39038,9 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SatsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EksterntVarenummerField;
+        
         /// <summary>
         /// Antall enheter.
         /// </summary>
@@ -39193,6 +39236,22 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SatsField.Equals(value) != true)) {
                     this.SatsField = value;
                     this.RaisePropertyChanged("Sats");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Eksternt Varenummer.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public bool EksterntVarenummer {
+            get {
+                return this.EksterntVarenummerField;
+            }
+            set {
+                if ((this.EksterntVarenummerField.Equals(value) != true)) {
+                    this.EksterntVarenummerField = value;
+                    this.RaisePropertyChanged("EksterntVarenummer");
                 }
             }
         }
@@ -46276,6 +46335,9 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> SatsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EksterntVarenummerField;
+        
         /// <summary>
         /// Antall enheter.
         /// </summary>
@@ -46471,6 +46533,22 @@ namespace Gecko.NCore.Client.ObjectModel.V3.No {
                 if ((this.SatsField.Equals(value) != true)) {
                     this.SatsField = value;
                     this.RaisePropertyChanged("Sats");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Eksternt Varenummer.
+        /// </summary>
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public string EksterntVarenummer {
+            get {
+                return this.EksterntVarenummerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EksterntVarenummerField, value) != true)) {
+                    this.EksterntVarenummerField = value;
+                    this.RaisePropertyChanged("EksterntVarenummer");
                 }
             }
         }

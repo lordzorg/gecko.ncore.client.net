@@ -17439,12 +17439,74 @@
             &lt;norwegianFieldName&gt;Faktura.Status&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="CompanyRegistrationNumber" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Fakturamottakers organisasjonsnummer eller annen entydig referanse.
+            Kan inneholde fødselsnummer for personer.
+            Feltlengde: 50 tegn.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Faktura.Organisasjonsnr&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Exported" nillable="true" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Valgt dersom faktura eksportert til eksternt system, ikke valgt ellers.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Faktura.Eksportert&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ExternalCustomerId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kundenummer i eksternt system.
+            Feltlengde: 50 tegn
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Faktura.EksterntKundenummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="InvoiceLines" nillable="true" type="tns:ArrayOfInvoiceLineItem">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Fakturalinjer tilhørende fakturaen.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder informasjon som beskriver fakturalinjer som tilhører fakturaen.&lt;/value&gt;
+            &lt;norwegianFieldName&gt;Faktura.Fakturalinjer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="JournalEntryNumber" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Bilagsnummer.
+            Feltlengde: 50 tegn
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Faktura.Bilagsnummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
       </xsd:complexType>
       <xsd:element name="Invoice" nillable="true" type="tns:Invoice" />
+      <xsd:complexType name="ArrayOfInvoiceLineItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiceLineItem" nillable="true" type="tns:InvoiceLineItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfInvoiceLineItem" nillable="true" type="tns:ArrayOfInvoiceLineItem" />
       <xsd:complexType name="InvoiceLineItem">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Invoice description or line item
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
         <xsd:complexContent mixed="false">
           <xsd:extension xmlns:q155="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q155:DataObject">
             <xsd:sequence>
@@ -17550,14 +17612,222 @@
             &lt;norwegianFieldName&gt;FakturaLinje.Sats&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="ExternalItemNo" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Eksternt Varenummer.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;FakturaLinje.EksterntVarenummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FeeType" nillable="true" type="tns:FeeType">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gebyrtypen som fakturalinjen tilhører.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder informasjon som beskriver gebyrtypen som fakturalinjen tilhører.&lt;/value&gt;
+            &lt;norwegianFieldName&gt;FakturaLinje.Gebyrtype&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
       </xsd:complexType>
       <xsd:element name="InvoiceLineItem" nillable="true" type="tns:InvoiceLineItem" />
-      <xsd:complexType name="InvoiceLineItemPropertyFlags">
+      <xsd:complexType name="FeeType">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Invoice fee type
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
         <xsd:complexContent mixed="false">
           <xsd:extension xmlns:q156="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q156:DataObject">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Betegnelse i klartekst.
+            Feltlengde: 255 tegn.
+            Obligatorisk.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Betegnelse&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gyldig fra og med dato.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.FraDato&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Id" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Unique Id
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Id&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gyldig til og med dato.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.TilDato&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="AccountNumber" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kontonummer.
+            Feltlengde: 70 tegn.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Kontonummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ContractingAuthority" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Oppdragsgiver.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Oppdragsgiver&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FileType" nillable="true" type="tns:FileType">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Mappetypen denne gebyrtypen er begrenset til.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder attributter som beskriver mappetypen denne gebyrtypen er begrenset til.&lt;/value&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Mappetype&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FileTypeId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til mappetype denne gebyrtypen er begrenset til.
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen mappetype.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.MappetypeId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="UnitPrice" nillable="true" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kostnad.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Kostnad&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="VatCode" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kode for moms, 0 = Ikke moms, 1 = Momsberegning.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Gebyrtype.Momskode&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="FeeType" nillable="true" type="tns:FeeType" />
+      <xsd:complexType name="FileType">
+        <xsd:annotation>
+          <xsd:appinfo />
+          <xsd:documentation>&lt;summary&gt;
+            Used to define files in different types eg. case file and specialized case file
+            &lt;/summary&gt;</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q157="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q157:DataObject">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="AccessCode" nillable="true" type="tns:AccessCode">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the access code
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.Tilgangskode&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="AccessCodeId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Access code ID
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.TilgangskodeId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Category" nillable="true" type="xsd:int">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Files are divided in groups eg. Case file is a file type
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.Kategori&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Description of file type
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.Betegnelse&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Id" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Short code
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.Id&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Series" nillable="true" type="tns:Series">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referenced object: All the properties of the Series
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.Arkivdel&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="SeriesId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            The Id of connected Series. Explore the referenced object Series for more properties
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;Mappetype.ArkivdelId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="FileType" nillable="true" type="tns:FileType" />
+      <xsd:complexType name="InvoiceLineItemPropertyFlags">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q158="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q158:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Amount" type="xsd:boolean">
                 <xsd:annotation>
@@ -17661,6 +17931,25 @@
             &lt;norwegianFieldName&gt;FakturaLinjePropertyFlags.Sats&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="ExternalItemNo" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Eksternt varenummer.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;FakturaLinje.EksterntVarenummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FeeType" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Gebyrtypen som fakturalinjen tilhører.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder informasjon som beskriver gebyrtypen som fakturalinjen tilhører.&lt;/value&gt;
+            &lt;norwegianFieldName&gt;FakturaLinjePropertyFlags.Gebyrtype&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -17668,7 +17957,7 @@
       <xsd:element name="InvoiceLineItemPropertyFlags" nillable="true" type="tns:InvoiceLineItemPropertyFlags" />
       <xsd:complexType name="InvoicePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q157="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q157:DataObject">
+          <xsd:extension xmlns:q159="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q159:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Address" type="xsd:boolean">
                 <xsd:annotation>
@@ -17774,6 +18063,56 @@
             &lt;norwegianFieldName&gt;FakturaPropertyFlags.Status&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="CompanyRegistrationNumber" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Fakturamottakers organisasjonsnummer eller annen entydig referanse.
+            Kan inneholde fødselsnummer for personer.
+            Feltlengde: 50 tegn.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;FakturaPropertyFlags.Organisasjonsnr&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="Exported" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Valgt dersom faktura eksportert til eksternt system, ikke valgt ellers.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;FakturaPropertyFlags.Eksportert&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ExternalCustomerId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kundenummer i eksternt system.
+            Feltlengde: 50 tegn
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;FakturaPropertyFlags.EksterntKundenummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="InvoiceLines" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Fakturalinjer tilhørende fakturaen.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder informasjon som beskriver fakturalinjer som tilhører fakturaen.&lt;/value&gt;
+            &lt;norwegianFieldName&gt;FakturaPropertyFlags.Fakturalinjer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="JournalEntryNumber" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Bilagsnummer.
+            Feltlengde: 50 tegn
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;FakturaPropertyFlags.Bilagsnummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -17781,7 +18120,7 @@
       <xsd:element name="InvoicePropertyFlags" nillable="true" type="tns:InvoicePropertyFlags" />
       <xsd:complexType name="FixedPointsAgenda">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q158="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q158:DataObject">
+          <xsd:extension xmlns:q160="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q160:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DMBId" type="xsd:int">
                 <xsd:annotation>
@@ -17804,7 +18143,7 @@
       <xsd:element name="FixedPointsAgenda" nillable="true" type="tns:FixedPointsAgenda" />
       <xsd:complexType name="FixedPointsAgendaPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q159="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q159:DataObject">
+          <xsd:extension xmlns:q161="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q161:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DMBId" type="xsd:boolean">
                 <xsd:annotation>
@@ -17827,7 +18166,7 @@
       <xsd:element name="FixedPointsAgendaPropertyFlags" nillable="true" type="tns:FixedPointsAgendaPropertyFlags" />
       <xsd:complexType name="MergeFieldContent">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q160="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q160:DataObject">
+          <xsd:extension xmlns:q162="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q162:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DocumentTemplateId" type="xsd:int">
                 <xsd:annotation>
@@ -17850,7 +18189,7 @@
       <xsd:element name="MergeFieldContent" nillable="true" type="tns:MergeFieldContent" />
       <xsd:complexType name="MergeFieldContentPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q161="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q161:DataObject">
+          <xsd:extension xmlns:q163="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q163:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DocumentTemplateId" type="xsd:boolean">
                 <xsd:annotation>
@@ -17879,7 +18218,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q162="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q162:DataObject">
+          <xsd:extension xmlns:q164="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q164:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ConvertToPdf" nillable="true" type="xsd:boolean">
                 <xsd:annotation>
@@ -17951,7 +18290,7 @@
       <xsd:element name="SendingMethod" nillable="true" type="tns:SendingMethod" />
       <xsd:complexType name="SendingMethodPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q163="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q163:DataObject">
+          <xsd:extension xmlns:q165="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q165:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ConvertToPdf" type="xsd:boolean">
                 <xsd:annotation>
@@ -18029,7 +18368,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q164="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q164:DataObject">
+          <xsd:extension xmlns:q166="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q166:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -18056,7 +18395,7 @@
       <xsd:element name="SendingStatus" nillable="true" type="tns:SendingStatus" />
       <xsd:complexType name="SendingStatusPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q165="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q165:DataObject">
+          <xsd:extension xmlns:q167="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q167:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -18083,7 +18422,7 @@
       <xsd:element name="SendingStatusPropertyFlags" nillable="true" type="tns:SendingStatusPropertyFlags" />
       <xsd:complexType name="MeetingAttendants">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q166="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q166:DataObject">
+          <xsd:extension xmlns:q168="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q168:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AttendanceCode" nillable="true" type="tns:DMBMemberRole">
                 <xsd:annotation>
@@ -18210,7 +18549,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q167="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q167:DataObject">
+          <xsd:extension xmlns:q169="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q169:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="CanSpeak" nillable="true" type="xsd:boolean">
                 <xsd:annotation>
@@ -18273,7 +18612,7 @@
       <xsd:element name="DMBMemberRole" nillable="true" type="tns:DMBMemberRole" />
       <xsd:complexType name="MeetingAttendantsPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q168="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q168:DataObject">
+          <xsd:extension xmlns:q170="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q170:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AttendanceCodeId" type="xsd:boolean">
                 <xsd:annotation>
@@ -18354,7 +18693,7 @@
       <xsd:element name="MeetingAttendantsPropertyFlags" nillable="true" type="tns:MeetingAttendantsPropertyFlags" />
       <xsd:complexType name="Deputize">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q169="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q169:DataObject">
+          <xsd:extension xmlns:q171="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q171:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Delegate" nillable="true" type="tns:UserRole">
                 <xsd:annotation>
@@ -18414,7 +18753,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q170="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q170:DataObject">
+          <xsd:extension xmlns:q172="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q172:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AdministrativeUnit" nillable="true" type="tns:AdministrativeUnit">
                 <xsd:annotation>
@@ -18582,7 +18921,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q171="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q171:DataObject">
+          <xsd:extension xmlns:q173="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q173:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ClosedDate" nillable="true" type="xsd:dateTime">
                 <xsd:annotation>
@@ -18842,7 +19181,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q172="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q172:DataObject">
+          <xsd:extension xmlns:q174="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q174:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="CheckIfDispatched" nillable="true" type="xsd:boolean">
                 <xsd:annotation>
@@ -18968,7 +19307,7 @@
       <xsd:element name="RecordsStatus" nillable="true" type="tns:RecordsStatus" />
       <xsd:complexType name="DeputizePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q173="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q173:DataObject">
+          <xsd:extension xmlns:q175="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q175:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DelegateId" type="xsd:boolean">
                 <xsd:annotation>
@@ -19004,7 +19343,7 @@
       <xsd:element name="DeputizePropertyFlags" nillable="true" type="tns:DeputizePropertyFlags" />
       <xsd:complexType name="County">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q174="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q174:DataObject">
+          <xsd:extension xmlns:q176="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q176:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Id" type="xsd:int">
                 <xsd:annotation>
@@ -19022,7 +19361,7 @@
       <xsd:element name="County" nillable="true" type="tns:County" />
       <xsd:complexType name="CountyPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q175="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q175:DataObject">
+          <xsd:extension xmlns:q177="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q177:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Id" type="xsd:boolean">
                 <xsd:annotation>
@@ -19038,56 +19377,9 @@
         </xsd:complexContent>
       </xsd:complexType>
       <xsd:element name="CountyPropertyFlags" nillable="true" type="tns:CountyPropertyFlags" />
-      <xsd:complexType name="FeeType">
-        <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q176="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q176:DataObject">
-            <xsd:sequence>
-              <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Betegnelse i klartekst.
-            Feltlengde: 255 tegn.
-            Obligatorisk.
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Gebyrtype.Betegnelse&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Gyldig fra og med dato.
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Gebyrtype.FraDato&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="Id" type="xsd:int">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Unique Id
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Gebyrtype.Id&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Gyldig til og med dato.
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Gebyrtype.TilDato&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:extension>
-        </xsd:complexContent>
-      </xsd:complexType>
-      <xsd:element name="FeeType" nillable="true" type="tns:FeeType" />
       <xsd:complexType name="FeeTypePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q177="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q177:DataObject">
+          <xsd:extension xmlns:q178="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q178:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -19127,6 +19419,64 @@
             &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.TilDato&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element minOccurs="0" name="AccountNumber" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kontonummer.
+            Feltlengde: 70 tegn.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.Kontonummer&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ContractingAuthority" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Oppdragsgiver.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.Oppdragsgiver&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FileType" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Mappetypen denne gebyrtypen er begrenset til.
+            &lt;/summary&gt;
+            &lt;value&gt;Inneholder attributter som beskriver mappetypen denne gebyrtypen er begrenset til.&lt;/value&gt;
+            &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.Mappetype&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="FileTypeId" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Referanse til mappetype denne gebyrtypen er begrenset til.
+            Feltlengde: 2 tegn.
+            Oppslag mot tabellen mappetype.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.MappetypeId&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="UnitPrice" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kostnad.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.Kostnad&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="VatCode" type="xsd:boolean">
+                <xsd:annotation>
+                  <xsd:appinfo />
+                  <xsd:documentation>&lt;summary&gt;
+            Kode for moms, 0 = Ikke moms, 1 = Momsberegning.
+            &lt;/summary&gt;
+            &lt;norwegianFieldName&gt;GebyrtypePropertyFlags.Momskode&lt;/norwegianFieldName&gt;</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -19140,7 +19490,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q178="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q178:DataObject">
+          <xsd:extension xmlns:q179="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q179:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -19167,7 +19517,7 @@
       <xsd:element name="IdentificationType" nillable="true" type="tns:IdentificationType" />
       <xsd:complexType name="IdentificationTypePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q179="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q179:DataObject">
+          <xsd:extension xmlns:q180="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q180:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -19200,7 +19550,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q180="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q180:DataObject">
+          <xsd:extension xmlns:q181="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q181:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AccessCode" nillable="true" type="tns:AccessCode">
                 <xsd:annotation>
@@ -19304,7 +19654,7 @@
       <xsd:element name="InformationType" nillable="true" type="tns:InformationType" />
       <xsd:complexType name="InformationTypePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q181="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q181:DataObject">
+          <xsd:extension xmlns:q182="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q182:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AccessCodeId" type="xsd:boolean">
                 <xsd:annotation>
@@ -19399,7 +19749,7 @@
       <xsd:element name="InformationTypePropertyFlags" nillable="true" type="tns:InformationTypePropertyFlags" />
       <xsd:complexType name="ConferCase">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q182="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q182:DataObject">
+          <xsd:extension xmlns:q183="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q183:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="FromCase" nillable="true" type="tns:Case">
                 <xsd:annotation>
@@ -19516,7 +19866,7 @@
       <xsd:element name="ConferCase" nillable="true" type="tns:ConferCase" />
       <xsd:complexType name="ConferCasePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q183="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q183:DataObject">
+          <xsd:extension xmlns:q184="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q184:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="FromCase" type="xsd:boolean">
                 <xsd:annotation>
@@ -19633,7 +19983,7 @@
       <xsd:element name="ConferCasePropertyFlags" nillable="true" type="tns:ConferCasePropertyFlags" />
       <xsd:complexType name="RegistryManagementUnitPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q184="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q184:DataObject">
+          <xsd:extension xmlns:q185="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q185:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ClosedDate" type="xsd:boolean">
                 <xsd:annotation>
@@ -19914,7 +20264,7 @@
       <xsd:element name="RegistryEntryLinkPropertyFlags" nillable="true" type="tns:RegistryEntryLinkPropertyFlags" />
       <xsd:complexType name="Read">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q185="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q185:DataObject">
+          <xsd:extension xmlns:q186="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q186:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ReadByUnit" nillable="true" type="tns:AdministrativeUnit">
                 <xsd:annotation>
@@ -19990,7 +20340,7 @@
       <xsd:element name="RegistryEntryRead" nillable="true" type="tns:RegistryEntryRead" />
       <xsd:complexType name="ReadPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q186="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q186:DataObject">
+          <xsd:extension xmlns:q187="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q187:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ReadByUnitId" type="xsd:boolean">
                 <xsd:annotation>
@@ -20037,7 +20387,7 @@
       <xsd:element name="RegistryEntryReadPropertyFlags" nillable="true" type="tns:RegistryEntryReadPropertyFlags" />
       <xsd:complexType name="RegistryEntryPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q187="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q187:DataObject">
+          <xsd:extension xmlns:q188="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q188:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AccessCodeId" type="xsd:boolean">
                 <xsd:annotation>
@@ -20587,7 +20937,7 @@
       <xsd:element name="RegistryEntryPropertyFlags" nillable="true" type="tns:RegistryEntryPropertyFlags" />
       <xsd:complexType name="Decision">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q188="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q188:DataObject">
+          <xsd:extension xmlns:q189="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q189:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AdministrativeUnit" nillable="true" type="tns:AdministrativeUnit">
                 <xsd:annotation>
@@ -20791,7 +21141,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q189="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q189:DataObject">
+          <xsd:extension xmlns:q190="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q190:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -20845,7 +21195,7 @@
       <xsd:element name="RegistryEntryDecision" nillable="true" type="tns:RegistryEntryDecision" />
       <xsd:complexType name="DecisionPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q190="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q190:DataObject">
+          <xsd:extension xmlns:q191="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q191:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AdministrativeUnitId" type="xsd:boolean">
                 <xsd:annotation>
@@ -21008,7 +21358,7 @@
       <xsd:element name="RegistryEntryDecisionPropertyFlags" nillable="true" type="tns:RegistryEntryDecisionPropertyFlags" />
       <xsd:complexType name="RecordsStatusPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q191="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q191:DataObject">
+          <xsd:extension xmlns:q192="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q192:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="CheckIfDispatched" type="xsd:boolean">
                 <xsd:annotation>
@@ -21140,7 +21490,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q192="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q192:DataObject">
+          <xsd:extension xmlns:q193="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q193:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -21167,7 +21517,7 @@
       <xsd:element name="DisposalCode" nillable="true" type="tns:DisposalCode" />
       <xsd:complexType name="DisposalCodePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q193="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q193:DataObject">
+          <xsd:extension xmlns:q194="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q194:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -21200,7 +21550,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q194="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q194:DataObject">
+          <xsd:extension xmlns:q195="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q195:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AccessGroup" nillable="true" type="tns:AccessGroup">
                 <xsd:annotation>
@@ -21281,7 +21631,7 @@
       <xsd:element name="Folder" nillable="true" type="tns:Folder" />
       <xsd:complexType name="FolderLink">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q195="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q195:DataObject">
+          <xsd:extension xmlns:q196="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q196:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Folder" nillable="true" type="tns:Folder">
                 <xsd:annotation>
@@ -21363,7 +21713,7 @@
       <xsd:element name="FolderDocumentLink" nillable="true" type="tns:FolderDocumentLink" />
       <xsd:complexType name="FolderLinkPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q196="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q196:DataObject">
+          <xsd:extension xmlns:q197="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q197:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="FolderId" type="xsd:boolean">
                 <xsd:annotation>
@@ -21471,7 +21821,7 @@
       <xsd:element name="FolderRegistryEntryLinkPropertyFlags" nillable="true" type="tns:FolderRegistryEntryLinkPropertyFlags" />
       <xsd:complexType name="FolderPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q197="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q197:DataObject">
+          <xsd:extension xmlns:q198="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q198:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="AccessGroupId" type="xsd:boolean">
                 <xsd:annotation>
@@ -21585,7 +21935,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q198="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q198:DataObject">
+          <xsd:extension xmlns:q199="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q199:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Case" nillable="true" type="tns:Case">
                 <xsd:annotation>
@@ -21596,7 +21946,7 @@
             &lt;norwegianFieldName&gt;Klassering.Sak&lt;/norwegianFieldName&gt;</xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element minOccurs="0" name="CaseId" nillable="true" type="xsd:int">
+              <xsd:element minOccurs="0" name="CaseId" type="xsd:int">
                 <xsd:annotation>
                   <xsd:appinfo />
                   <xsd:documentation>&lt;summary&gt;
@@ -21729,7 +22079,7 @@
       <xsd:element name="Classification" nillable="true" type="tns:Classification" />
       <xsd:complexType name="ClassificationPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q199="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q199:DataObject">
+          <xsd:extension xmlns:q200="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q200:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="CaseId" type="xsd:boolean">
                 <xsd:annotation>
@@ -21889,7 +22239,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q200="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q200:DataObject">
+          <xsd:extension xmlns:q201="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q201:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -21925,7 +22275,7 @@
       <xsd:element name="StorageUnit" nillable="true" type="tns:StorageUnit" />
       <xsd:complexType name="StorageUnitPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q201="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q201:DataObject">
+          <xsd:extension xmlns:q202="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q202:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -21961,7 +22311,7 @@
       <xsd:element name="StorageUnitPropertyFlags" nillable="true" type="tns:StorageUnitPropertyFlags" />
       <xsd:complexType name="FileFormatPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q202="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q202:DataObject">
+          <xsd:extension xmlns:q203="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q203:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -22006,7 +22356,7 @@
       <xsd:element name="FileFormatPropertyFlags" nillable="true" type="tns:FileFormatPropertyFlags" />
       <xsd:complexType name="LinkTypePropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q203="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q203:DataObject">
+          <xsd:extension xmlns:q204="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q204:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Caption" type="xsd:boolean">
                 <xsd:annotation>
@@ -22079,7 +22429,7 @@
       <xsd:element name="LinkTypePropertyFlags" nillable="true" type="tns:LinkTypePropertyFlags" />
       <xsd:complexType name="LoggField">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q204="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q204:DataObject">
+          <xsd:extension xmlns:q205="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q205:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Id" type="xsd:int">
                 <xsd:annotation>
@@ -22097,7 +22447,7 @@
       <xsd:element name="LoggField" nillable="true" type="tns:LoggField" />
       <xsd:complexType name="LogEventObject">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q205="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q205:DataObject">
+          <xsd:extension xmlns:q206="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q206:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ID" type="xsd:int">
                 <xsd:annotation>
@@ -22123,7 +22473,7 @@
       <xsd:element name="LogEventObject" nillable="true" type="tns:LogEventObject" />
       <xsd:complexType name="LogEventObjectPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q206="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q206:DataObject">
+          <xsd:extension xmlns:q207="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q207:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="ID" type="xsd:boolean">
                 <xsd:annotation>
@@ -22149,7 +22499,7 @@
       <xsd:element name="LogEventObjectPropertyFlags" nillable="true" type="tns:LogEventObjectPropertyFlags" />
       <xsd:complexType name="LogEventPerson">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q207="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q207:DataObject">
+          <xsd:extension xmlns:q208="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q208:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="IsActive" type="xsd:boolean">
                 <xsd:annotation>
@@ -22183,7 +22533,7 @@
       <xsd:element name="LogEventPerson" nillable="true" type="tns:LogEventPerson" />
       <xsd:complexType name="LogEventPersonPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q208="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q208:DataObject">
+          <xsd:extension xmlns:q209="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q209:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="IsActive" type="xsd:boolean">
                 <xsd:annotation>
@@ -22217,7 +22567,7 @@
       <xsd:element name="LogEventPersonPropertyFlags" nillable="true" type="tns:LogEventPersonPropertyFlags" />
       <xsd:complexType name="LoggFieldPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q209="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q209:DataObject">
+          <xsd:extension xmlns:q210="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q210:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Id" type="xsd:boolean">
                 <xsd:annotation>
@@ -22235,7 +22585,7 @@
       <xsd:element name="LoggFieldPropertyFlags" nillable="true" type="tns:LoggFieldPropertyFlags" />
       <xsd:complexType name="LogEvent">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q210="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q210:DataObject">
+          <xsd:extension xmlns:q211="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q211:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="EventType" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -22261,7 +22611,7 @@
       <xsd:element name="LogEvent" nillable="true" type="tns:LogEvent" />
       <xsd:complexType name="LogEventPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q211="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q211:DataObject">
+          <xsd:extension xmlns:q212="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q212:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="EventType" type="xsd:boolean">
                 <xsd:annotation>
@@ -22287,7 +22637,7 @@
       <xsd:element name="LogEventPropertyFlags" nillable="true" type="tns:LogEventPropertyFlags" />
       <xsd:complexType name="LogInfo">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q212="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q212:DataObject">
+          <xsd:extension xmlns:q213="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q213:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DatabaseTable" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -22415,7 +22765,7 @@
       <xsd:element name="LogInfo" nillable="true" type="tns:LogInfo" />
       <xsd:complexType name="LogInfoPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q213="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q213:DataObject">
+          <xsd:extension xmlns:q214="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q214:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="DatabaseTable" type="xsd:boolean">
                 <xsd:annotation>
@@ -22549,7 +22899,7 @@
             &lt;/summary&gt;</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q214="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q214:DataObject">
+          <xsd:extension xmlns:q215="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q215:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
                 <xsd:annotation>
@@ -22578,7 +22928,7 @@
       <xsd:element name="LawAndRegulations" nillable="true" type="tns:LawAndRegulations" />
       <xsd:complexType name="LawAndRegulationsPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q215="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q215:DataObject">
+          <xsd:extension xmlns:q216="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q216:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="Description" type="xsd:boolean">
                 <xsd:annotation>
@@ -22607,7 +22957,7 @@
       <xsd:element name="LawAndRegulationsPropertyFlags" nillable="true" type="tns:LawAndRegulationsPropertyFlags" />
       <xsd:complexType name="LawRegulationReferenceToPrecedent">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q216="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q216:DataObject">
+          <xsd:extension xmlns:q217="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q217:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="LawAndRegulation" nillable="true" type="tns:LawAndRegulations">
                 <xsd:annotation>
@@ -22664,7 +23014,7 @@
       <xsd:element name="LawRegulationReferenceToPrecedent" nillable="true" type="tns:LawRegulationReferenceToPrecedent" />
       <xsd:complexType name="LawRegulationReferenceToPrecedentPropertyFlags">
         <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q217="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q217:DataObject">
+          <xsd:extension xmlns:q218="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q218:DataObject">
             <xsd:sequence>
               <xsd:element minOccurs="0" name="LawAndRegulation" type="xsd:boolean">
                 <xsd:annotation>
@@ -22719,84 +23069,6 @@
         </xsd:complexContent>
       </xsd:complexType>
       <xsd:element name="LawRegulationReferenceToPrecedentPropertyFlags" nillable="true" type="tns:LawRegulationReferenceToPrecedentPropertyFlags" />
-      <xsd:complexType name="FileType">
-        <xsd:annotation>
-          <xsd:appinfo />
-          <xsd:documentation>&lt;summary&gt;
-            Used to define files in different types eg. case file and specialized case file
-            &lt;/summary&gt;</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q218="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q218:DataObject">
-            <xsd:sequence>
-              <xsd:element minOccurs="0" name="AccessCode" nillable="true" type="tns:AccessCode">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Referenced object: All the properties of the access code
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.Tilgangskode&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="AccessCodeId" nillable="true" type="xsd:string">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Access code ID
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.TilgangskodeId&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="Category" nillable="true" type="xsd:int">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Files are divided in groups eg. Case file is a file type
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.Kategori&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Description of file type
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.Betegnelse&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="Id" nillable="true" type="xsd:string">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Short code
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.Id&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="Series" nillable="true" type="tns:Series">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            Referenced object: All the properties of the Series
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.Arkivdel&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element minOccurs="0" name="SeriesId" nillable="true" type="xsd:string">
-                <xsd:annotation>
-                  <xsd:appinfo />
-                  <xsd:documentation>&lt;summary&gt;
-            The Id of connected Series. Explore the referenced object Series for more properties
-            &lt;/summary&gt;
-            &lt;norwegianFieldName&gt;Mappetype.ArkivdelId&lt;/norwegianFieldName&gt;</xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:extension>
-        </xsd:complexContent>
-      </xsd:complexType>
-      <xsd:element name="FileType" nillable="true" type="tns:FileType" />
       <xsd:complexType name="FileTypePropertyFlags">
         <xsd:complexContent mixed="false">
           <xsd:extension xmlns:q219="http://www.gecko.no/ephorte/services/objectmodel/v3/en" base="q219:DataObject">
