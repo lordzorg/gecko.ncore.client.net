@@ -65,6 +65,12 @@
     <Compile Include="..\..\Common\GlobalAssemblyInfo\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\..\net45\Client.Documents.V2\Documents\V2\ChunkStream.cs">
+      <Link>Documents\V2\ChunkStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\net45\Client.Documents.V2\Documents\V2\DocumentsAdapter.cs">
+      <Link>Documents\V2\DocumentsAdapter.cs</Link>
+    </Compile>
     <Compile Include="..\..\net45\Client.Documents.V2\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
@@ -118,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Documents.V2\Documents.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Gecko.NCore.Client.csproj">
+      <Project>{4593DFAC-31C1-4B65-9AAF-5ABAB4345D43}</Project>
+      <Name>Gecko.NCore.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

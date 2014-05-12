@@ -18,10 +18,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("6.2.0")]
 
 // This should be incremented in compliance with the semver.org versioning scheme.
-[assembly: AssemblyFileVersion("6.2.4")]
+[assembly: AssemblyFileVersion("6.3.0")]
 
 // This should be the same as AssemblyFileVersion normally. You may append a postfix for pre-release packages.
-[assembly: AssemblyInformationalVersion("6.2.4")]
+[assembly: AssemblyInformationalVersion("6.3.0")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="BasicLinqTests.cs" />
     <Compile Include="DataObjectAccess.cs" />
+    <Compile Include="Documents\V2\ChunkStreamTests.cs" />
     <Compile Include="EphorteContextIdentityTests.cs" />
     <Compile Include="EphorteContextTests.cs" />
     <Compile Include="FakeEphorteContext.cs" />
@@ -96,6 +97,10 @@
     <Compile Include="NcoreVersionTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Client.Documents.V2\Gecko.NCore.Client.Documents.V2.csproj">
+      <Project>{a564d217-5650-4653-85a9-00861a04167f}</Project>
+      <Name>Gecko.NCore.Client.Documents.V2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Client.ObjectModel.V2\Gecko.NCore.Client.ObjectModel.V2.csproj">
       <Project>{371C666E-D2E2-4276-98F3-FBD813A7009C}</Project>
       <Name>Gecko.NCore.Client.ObjectModel.V2 %2804 - NET 4.5\Gecko.NCore.Client.ObjectModel.V2%29</Name>
